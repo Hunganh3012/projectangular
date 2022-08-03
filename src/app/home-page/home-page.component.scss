@@ -285,7 +285,7 @@ body{
     }
     &-item{
         box-shadow: 0px 5px 0px green;
-        position: relative;
+        // position: relative;
         cursor: pointer;
         width: 213px;
         height: 278px;
@@ -317,6 +317,14 @@ body{
         left: 50%;
         transform: translate(-25%, -150%);
     }
+    &-arrow-right{
+      left: 107.8%;
+      top: 33%;
+    }
+    &-arrow-left{
+        right:107.8%;
+        top: 33%;
+    }
     
     &-footer{
         position: relative;
@@ -329,14 +337,7 @@ body{
         position: absolute;
         top: 35%;
     }
-    &-arrow-right{
-        left: 107.8%;
-        top: 33%;
-    }
-    &-arrow-left{
-        right: 81%;
-        top: 33%;
-    }
+    
 }
 .gallery {
     width: 100%;

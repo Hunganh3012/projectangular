@@ -1,1 +1,58 @@
-<p>product works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200;1,400;1,500;1,700&display=swap" rel="stylesheet"><link href="//db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sản phẩm</title>
+</head>
+<body>
+    <app-header></app-header>
+    <div class="wrapper">
+        <div class="desc">
+            <div class="desc-text">
+                Trang chủ / <span class="desc-bold">Tiêu điểm mới nhất</span>
+            </div>
+        </div>
+        <app-tieudiem></app-tieudiem>
+        <div class="newpapers-button">
+            <a href="">
+                <i class="fa-solid fa-angles-left newpapers-angles-left"></i>
+            </a>
+            <ul class="newpapers-footer">
+
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item newpapers-footer-item1">1</a>
+                </li>
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item">2</a>
+                </li>
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item">3</a>
+                </li>
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item">4</a>
+                </li>
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item">5</a>
+                </li>
+                <li class="newpapers-footer-list">
+                    <a href="" class="newpapers-footer-item">...</a>
+                </li>
+            </ul>
+            <a href="">
+                <i class="fa-solid fa-angles-right newpapers-angles-right"></i>
+            </a>
+        </div> 
+    </div>
+    <app-footer></app-footer>
+</body>
+</html>
