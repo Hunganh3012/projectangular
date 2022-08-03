@@ -13,6 +13,8 @@ import { TieudiemComponent } from './tieudiem/tieudiem.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { adminComponent } from './admin/admin.component';
 
+// import { AlertModule } from 'ngx-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +25,14 @@ import { adminComponent } from './admin/admin.component';
     HomePageComponent,
     TieudiemComponent,
     NotFoundErrorComponent,
-    adminComponent
+    adminComponent,
+    // HttpClientModule
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    // AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

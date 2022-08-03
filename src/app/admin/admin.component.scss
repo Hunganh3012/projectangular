@@ -1,0 +1,23 @@
+body{
+    font-size: 1.6rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 20px;
+}
+.wrapper{
+    max-width: 1920px;
+    z-index: 1;
+}
+.container{
+    
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.admin-highlight{
+    margin-bottom: 100px;
+    
+}
+table, th, td {
+    border:1px solid black;
+  }
