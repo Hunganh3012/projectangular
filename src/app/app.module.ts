@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    // AlertModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

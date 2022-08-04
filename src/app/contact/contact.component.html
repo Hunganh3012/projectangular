@@ -54,38 +54,38 @@
                             <div class="contactsupport-box-form-list">
                                 <div class="contactsupport-box-form-detail contactsupport-box-form-detail-namephone">
                                     <label for="">Họ(Last name) <span style="color: red;">*</span></label>
-                                    <input type="text" class="contactsupport-box-form-input" [(ngModel)]="customer.lastname" [ngModelOptions]="{standalone: true}" required>
+                                    <input type="text" class="contactsupport-box-form-input" [(ngModel)]="list.lastname" [ngModelOptions]="{standalone: true}" required>
                                 </div>
                             </div>
                             <div class="contactsupport-box-form-list">
                                 <div class="contactsupport-box-form-detail ">
                                     <label for="">Tên(First name) <span style="color: red;">*</span></label>
-                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="customer.firstname" [ngModelOptions]="{standalone: true}"  required>
+                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="list.firstname" [ngModelOptions]="{standalone: true}"  required>
                                 </div>
                             </div>
                             <div class="contactsupport-box-form-list">
                                 <div class="contactsupport-box-form-detail contactsupport-box-form-detail-namephone">
                                     <label for="">Điện thoại(Mobile) <span style="color: red;">*</span></label>
-                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="customer.phone" [ngModelOptions]="{standalone: true} " required>
+                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="list.phone" [ngModelOptions]="{standalone: true} " required>
                                 </div>
                             </div>
                             <div class="contactsupport-box-form-list">
                                 <div class="contactsupport-box-form-detail">
                                     <label for="">Email <span style="color: red;">*</span></label>
-                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="customer.email" [ngModelOptions]="{standalone: true}  " required>
+                                    <input type="text" class="contactsupport-box-form-input"  [(ngModel)]="list.email" [ngModelOptions]="{standalone: true}  " required>
                                 </div>
                             </div>
                         </div>
                         <div class="contactsupport-box-form-list-advise">
                             <label for="">Nội dung cần tư vấn</label>
-                            <input type="text" class="contactsupport-box-form-input" [(ngModel)]="customer.detailcontent" [ngModelOptions]="{standalone: true}"  required>
+                            <input type="text" class="contactsupport-box-form-input" [(ngModel)]="list.content" [ngModelOptions]="{standalone: true}"  required>
                         </div>
                         <span class="contactsupport-box-form-add">
                             Nếu bạn có ý kiến góp ý hoặc yêu cầu cần hỗ trợ từ NGK, 
                             vui lòng liên lạc ngay với chúng tôi tại đây. 
                             Chúng tôi sẽ xem xét và phản hồi sớm nhất có thể
                         </span>
-                        <input type="submit" (click)="onSubmit()" class="contactsupport-box-form-button" value="Gửi liên hệ">
+                        <input type="submit" (click)="postContent()" class="contactsupport-box-form-button" value="Gửi liên hệ">
                     </form>
                 </div>
             </div>
