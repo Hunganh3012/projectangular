@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="admin-highlight">Danh sách khách hàng gặp vấn đề cần liên hệ</h1>
+            <table style="width:100%">
+                <tr>
+
+                <th class="item-acount">Họ</th>
+                <th class="item-acount">Tên lót</th>
+                <th class="item-acount">Số điện thoại</th>
+                <th class="item-acount">Email</th>
+                <th class="item-acount">Nội dung liên hệ</th>
+                <th>Xử lý yêu cầu</th>
+
+
+                </tr>
+               <tbody *ngFor="let item of list">
+                    <tr>
+                        <td class="item-acount">{{item.lastname}}</td>
+                        <td class="item-acount">{{item.firstname}}</td>
+                        <td class="item-acount">{{item.phone}}</td>
+                        <td class="item-acount">{{item.email}}</td>
+                        <td class="item-acount">{{item.content}}</td>
+                        <td class="item-acount "><button (click)="deleteContent(item.id)" class="button-delete">Xóa</button></td>
+                    </tr>
+               </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

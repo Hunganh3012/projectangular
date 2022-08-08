@@ -5,8 +5,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { ProductComponent } from './product/product.component';
-import { NgModel } from '@angular/forms';
 import { adminComponent } from './admin/admin.component';
+import { ProductAnnounComponent } from './product-announ/product-announ.component';
 const routes: Routes = [
   {
     path:"",
@@ -26,8 +26,12 @@ const routes: Routes = [
     component:ProductComponent
   },
   {
+    path:'product-announ',
+    component:ProductAnnounComponent
+  },
+  {
     path:'admin',
-    component:adminComponent
+    loadChildren : ()=> import('./admin/admin.module').then((m)=> m.AdminModule)
   },
   {
     path:'**',

@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "sale": "30",
+      "name": "Thùng 12 lon bia sapporo",
+      "priceold": 660,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/83669/bhx/thung-24-lon-bia-sapporo-blue-cap-330ml-202205211727190286_300x300.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Thùng 12 lon bia Beck's",
+      "sale": 10,
+      "priceold": 210,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Thùng 6 lon bia tiger bạc",
+      "sale": 10,
+      "priceold": 120,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/266098/bhx/6-lon-strongbow-dau-330ml-202205211838270139_300x300.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Thùng 24 lon bia sài gòn",
+      "sale": 20,
+      "priceold": 335,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/276230/bhx/thung-24-lon-bia-sai-gon-special-sleek-330ml-202205211652200871_300x300.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Thùng 12 lon bia Việt 330ml",
+      "sale": 30,
+      "priceold": 130,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/275901/bhx/thung-12-lon-bia-bia-viet-330ml-202205211900084283_300x300.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Thùng 6 lon bia huda ice blast",
+      "sale": 10,
+      "priceold": 80,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/214408/bhx/6-lon-bia-huda-ice-blast-330ml-202205211820464175_300x300.jpg"
+    },
+    {
+      "name": "6 lon Strongbow táo 330ml",
+      "sale": "20",
+      "priceold": "430",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/266102/bhx/loc-6-lon-strongbow-tao-330ml-202205211837412740_300x300.jpg",
+      "id": 9
+    },
+    {
+      "name": "6 lon bia heineken 0.0 độ 330ml",
+      "sale": "10",
+      "priceold": "110",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/220341/bhx/6-lon-bia-heineken-00-do-con-330ml-202205211623058680_300x300.jpg",
+      "id": 10
+    },
+    {
+      "name": "6 chai bia Hoegaarden",
+      "sale": "20",
+      "priceold": "185",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/195213/bhx/6-chai-bia-hoegaarden-330ml-202205211744424281_300x300.jpg",
+      "id": 11
+    },
+    {
+      "name": "6 lon bia heinekeen Silver",
+      "sale": "30",
+      "priceold": "300",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/200638/bhx/6-lon-bia-heineken-silver-330ml-202205202034155825_300x300.jpg",
+      "id": 12
+    },
+    {
+      "name": "Rượu vang alaita Selection nho chai 750ml",
+      "sale": "330",
+      "priceold": "10",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/240648/bhx/ruou-vang-alita-selection-muscat-sparkling-vi-nho-11-chai-750ml-202206031652326757_300x300.jpg",
+      "id": 13
+    },
+    {
+      "name": "Rượu MG Spirit chai 250ml",
+      "sale": "10",
+      "priceold": "58",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/239152/bhx/ruou-mg-spirit-gin-tonic-55-chai-275ml-202206011439275722_300x300.jpg",
+      "id": 14
+    }
+  ]
+}

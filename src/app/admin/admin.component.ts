@@ -7,31 +7,28 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./admin.component.scss']
 })
 export class adminComponent implements OnInit {
-  list:any=[];
-  dataFormat:any='';
-  mydate:any;
-  constructor( private AppService:AppService,) { }
+  // list:any=[];
+
+  // constructor(private AppService:AppService) { }
 
   ngOnInit(): void {
-    this.renderContent();
+    // this.renderContent();
   }
-  renderContent(){
-    return this.AppService.renderContent().subscribe(data =>{
-      this.list=data;
-    })
-  }
-  // postContent(){
-  //   this.mydate=this.contactComponent.myDate
+  // renderContent(){
+  //   return this.AppService.renderContent().subscribe(data =>{
+  //     this.list=data;
+  //   })
   // }
-  deleteContent(id:number){
-    console.log(id);
-    this.AppService.deleteContent(id).subscribe(data=>{
-      this.list=this.list.filter((item:any) =>{
-        return item.id !=id;
-      })
-      alert('Xóa thành công')
+
+  // deleteContent(id:number){
+  //   console.log(id);
+  //   this.AppService.deleteContent(id).subscribe(data=>{
+  //     this.list=this.list.filter((item:any) =>{
+  //       return item.id !=id;
+  //     })
+  //     alert('Xóa thành công')
      
       
-    })
-  }
+  //   })
+  // }
 }

@@ -1,0 +1,31 @@
+.wrapper{
+    max-width: 1920px;
+    z-index: 1;
+}
+.container{
+    
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+table, th, td {
+    text-align: center;
+    border:1px solid black;
+  }
+.addbutton{
+    cursor: pointer;
+    display: block;
+    border: none;
+    background-color: red;
+    width: 200px;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+.input-addproduct{
+    border: none;
+    outline: none;
+    font-size: 16px;
+}

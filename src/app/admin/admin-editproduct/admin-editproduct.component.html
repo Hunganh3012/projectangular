@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       
+        <div class="wrapper">
+            <div class="container">
+                <h1>Sửa Sản Phẩm</h1>
+                <table style="width:100%">
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>giảm giá(%)</th>
+                        <th>Giá tiền(ngìn đồng)</th>
+                        <th>Ảnh sản phẩm</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text"class="input-addproduct" value="{{edit.name}}"[(ngModel)]="edit.name">
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" value="{{edit.sale}}" [(ngModel)]="edit.sale">
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
+                        </td>
+                        <td>
+                            <input type="file" value="{{edit.img}}"><br>
+                            <span>Hoặc</span><br>
+                            <input type="text" value="{{edit.img}}" >
+                        </td>
+                    </tr>
+            </table>
+            <button class="addbutton" (click)="updateProduct()">Cập nhật</button>
+            </div>
+        </div>
+</body>
+</html>

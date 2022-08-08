@@ -15,6 +15,7 @@ import { adminComponent } from './admin/admin.component';
 
 // import { AlertModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductAnnounComponent } from './product-announ/product-announ.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     TieudiemComponent,
     NotFoundErrorComponent,
     adminComponent,
-    // HttpClientModule
+    ProductAnnounComponent,
+
   ],
   imports: [
     FormsModule,

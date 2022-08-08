@@ -8,37 +8,27 @@
 </head>
 <body>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     <div class="wrapper">
         <div class="container">
-            <h1 class="admin-highlight">Danh sách khách hàng gặp vấn đề cần liên hệ</h1>
-            <table style="width:100%">
-                <tr>
-
-                <th class="item-acount">Họ</th>
-                <th class="item-acount">Tên lót</th>
-                <th class="item-acount">Số điện thoại</th>
-                <th class="item-acount">Email</th>
-                <th class="item-acount">Nội dung liên hệ</th>
-                <th class="item-acpunt">Thời gian</th>
-                <th>Xử lý yêu cầu</th>
-                <th class="item-acount">Tình Trạng</th>
-
-
-                </tr>
-               <tbody *ngFor="let item of list">
-                    <tr>
-                        <td class="item-acount">{{item.lastname}}</td>
-                        <td class="item-acount">{{item.firstname}}</td>
-                        <td class="item-acount">{{item.phone}}</td>
-                        <td class="item-acount">{{item.email}}</td>
-                        <td class="item-acount">{{item.content}}</td>
-                        <td>{{mydate|date:'short'}}</td>
-                        <td class="item-acount"><button (click)="deleteContent(item.id)">Xóa</button></td>
-                        <td class="item-acount"><button>Đã giải quyết</button></td>
-                    </tr>
-               </tbody>
-            </table>
+            <h1 class="quantrivien">Quản trị viên(Admin)</h1>
+          <div class="border">
+            
+            <a routerLink="../admin/admin-contact" class="thea thea-1">Quản lý liên hệ từ khách hàng </a><br>
+            <a routerLink="../admin/admin-product" class="thea thea-2">Quản lý sản phẩm </a><br>
+          </div>
         </div>
+       
     </div>
 </body>
 </html>
+<router-outlet></router-outlet>
