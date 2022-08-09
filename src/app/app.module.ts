@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeadComponent } from './head/head.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { HeadComponent } from './head/head.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

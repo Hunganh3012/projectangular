@@ -34,24 +34,24 @@
                         </li>
                     </ul>
                    <div class="menu-toggle-search">
-                    <img src="/assets/images/search.png" alt=""  class="menu-toggle-search-circle">
-                    <img src="/assets/images/searchdown.png" alt="" class="menu-toggle-search-down">
+                    <img src="./assets/images/search.png" alt=""  class="menu-toggle-search-circle">
+                    <img src="./assets/images/searchdown.png" alt="" class="menu-toggle-search-down">
                    </div>
-                    <span class="menu-language">VN <img src="../assets/images/star.png" alt="" class="menu-icon-star"></span>
+                    <span class="menu-language">VN <img src="./assets/images/star.png" alt="" class="menu-icon-star"></span>
                     
                     <button (click)="logIn()">Đăng nhâp</button>
                     <button (click)="logOut()">Đăng xuất</button>
-                    <img src="/assets/images/drop-down.png" alt="" class="menu-icon-dropdown">
+                    <img src="./assets/images/drop-down.png" alt="" class="menu-icon-dropdown">
                     <a routerLink="../admin">Quan tri vien</a>
                 </nav>
             </div>
             <div class="container">
                 <nav class="nav-menu">
-                    <img src="/assets/images/logo-nuocgiaikhatcopy.png" alt="" class="nav-icon-logo">
-                    <img routerLink="../home-page" src="/assets/images/home.png" alt="" class="nav-icon-home">
+                    <img src="./assets/images/logo-nuocgiaikhatcopy.png" alt="" class="nav-icon-logo">
+                    <img routerLink="../home-page" src="./assets/images/home.png" alt="" class="nav-icon-home">
                     <ul class="nav-menu-list">  
                         <li class="nav-menu-item">
-                            <a routerLink="../">giới thiệu</a>
+                            <a routerLink="../home-page">giới thiệu</a>
                         </li>
                         <li class="nav-menu-item">
                             <a routerLink="../product">Tiêu điểm</a>
@@ -70,12 +70,12 @@
                         </li>
                     </ul>
                    <div class="nav-icon-search">
-                    <img src="/assets/images/search.png" alt=""  class="nav-icon-search-circle">
-                    <img src="/assets/images/searchdown.png" alt="" class="nav-icon-search-down">
+                    <img src="./assets/images/search.png" alt=""  class="nav-icon-search-circle">
+                    <img src="./assets/images/searchdown.png" alt="" class="nav-icon-search-down">
                    </div>
                     <span class="nav-language">VN</span>
-                    <img src="/assets/images/star.png" alt="" class="nav-icon-star">
-                    <img src="/assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
+                    <img src="./assets/images/star.png" alt="" class="nav-icon-star">
+                    <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
                     <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button>
                     <button (click)="logOut()" class="button-log" *ngIf="isShowLogOut">Đăng xuất</button>
                     <a routerLink="../admin" class="nav-menu-item userss" *ngIf="isShow">Quan tri vien</a>
