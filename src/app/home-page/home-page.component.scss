@@ -101,7 +101,7 @@ body{
     position: relative;
     width: 100%;
     min-height: 830px; 
-    background-image: url(Rectangle388.png);
+    background-image: url("/assets/images/Rectangle 388.png");
     // &-header{
         
     // }
@@ -181,7 +181,7 @@ body{
         // position: relative;
         height: 273px;
         margin-top: 4.2rem;
-        background-image:url("product-header.png");
+        background-image:url("/assets/images/product-header.png");
     display: block;
     }
     &-desc{
@@ -513,7 +513,7 @@ body{
           @include green();
       }
   }
-  background-image: url(background-doitac.png);
+  background-image: url(/assets/images/background-doitac.png);
   width: 100%;
   margin-top: 1rem;
   padding-top: 2.8rem;

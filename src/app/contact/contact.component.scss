@@ -61,7 +61,7 @@ body{
 }
 .desc{
     min-height: 93px;
-    // background-image: url(background-newpaper.png);
+    background-image: url(/assets/images/background-newpaper.png);
     background-color: $primary-color;
     &-text{
         padding-top: 35px;
@@ -271,7 +271,7 @@ body{
 .contact{
     background-color: #034da2;
     background-image:
-    url(bạkground-contact.png);
+    url(/assets/images/bạkground-contact.png);
     &-item{
         padding-top: 30px;
         padding-bottom: 30px;

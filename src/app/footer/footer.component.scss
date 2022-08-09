@@ -63,7 +63,7 @@ body{
     z-index: 1;
     background-color: #034da2;
     background-image:
-    url(bạkground-contact.png);
+    url(/assets/images/background-contact.png);
     &-item{
         padding-top: 30px;
         padding-bottom: 30px;
@@ -119,7 +119,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url(background-doitac.png);
+    background-image: url(/assets/images/background-doitac.png);
     &-content{
         margin: 25px 0;
         // display: flex;
