@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 3,
-      "sale": "30",
+      "sale": "19",
       "name": "Thùng 12 lon bia sapporo",
       "priceold": 660,
       "price": "",
@@ -11,7 +11,7 @@
     {
       "id": 4,
       "name": "Thùng 12 lon bia Beck's",
-      "sale": 10,
+      "sale": "11",
       "priceold": 210,
       "price": "",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg"
@@ -27,7 +27,7 @@
     {
       "id": 6,
       "name": "Thùng 24 lon bia sài gòn",
-      "sale": 20,
+      "sale": "23",
       "priceold": 335,
       "price": "",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/276230/bhx/thung-24-lon-bia-sai-gon-special-sleek-330ml-202205211652200871_300x300.jpg"
@@ -35,7 +35,7 @@
     {
       "id": 7,
       "name": "Thùng 12 lon bia Việt 330ml",
-      "sale": 30,
+      "sale": "19",
       "priceold": 130,
       "price": "",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/275901/bhx/thung-12-lon-bia-bia-viet-330ml-202205211900084283_300x300.jpg"
@@ -43,21 +43,21 @@
     {
       "id": 8,
       "name": "Thùng 6 lon bia huda ice blast",
-      "sale": 10,
+      "sale": "3",
       "priceold": 80,
       "price": "",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/214408/bhx/6-lon-bia-huda-ice-blast-330ml-202205211820464175_300x300.jpg"
     },
     {
       "name": "6 lon Strongbow táo 330ml",
-      "sale": "20",
+      "sale": "48",
       "priceold": "430",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/266102/bhx/loc-6-lon-strongbow-tao-330ml-202205211837412740_300x300.jpg",
       "id": 9
     },
     {
       "name": "6 lon bia heineken 0.0 độ 330ml",
-      "sale": "10",
+      "sale": "12",
       "priceold": "110",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/220341/bhx/6-lon-bia-heineken-00-do-con-330ml-202205211623058680_300x300.jpg",
       "id": 10
@@ -85,7 +85,7 @@
     },
     {
       "name": "Rượu MG Spirit chai 250ml",
-      "sale": "10",
+      "sale": "17",
       "priceold": "60",
       "img": "https://cdn.tgdd.vn/Products/Images/9498/239152/bhx/ruou-mg-spirit-gin-tonic-55-chai-275ml-202206011439275722_300x300.jpg",
       "id": 14
@@ -127,7 +127,7 @@
     },
     {
       "name": "6 lon bia red ruby 330ml",
-      "sale": "0",
+      "sale": "4",
       "priceold": "60",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/266426/bhx/loc-6-lon-bia-red-ruby-330ml-202205212031003520_300x300.jpg",
       "id": 20
@@ -162,21 +162,21 @@
     },
     {
       "name": "Rượu vang Santa 13% chai 750ml",
-      "sale": "20",
+      "sale": "12",
       "priceold": "233",
       "img": "https://cdn.tgdd.vn/Products/Images/9498/264292/bhx/ruou-vang-santa-helena-cabernet-sauvignon-13-chai-750ml-202206171239550957_300x300.jpg",
       "id": 25
     },
     {
       "name": "Rượu van Santa Helena chai 750ml",
-      "sale": "20",
+      "sale": "12",
       "priceold": "233",
       "img": "https://cdn.tgdd.vn/Products/Images/9498/264291/bhx/ruou-vang-santa-helena-chardonnay-13-chai-750ml-202206031655207841_300x300.jpg",
       "id": 26
     },
     {
       "name": "Nước tăng lực Rock Energy 240ml",
-      "sale": "50",
+      "sale": "5",
       "priceold": "14",
       "img": "https://cdn.tgdd.vn/Products/Images/3226/265782/bhx/nuoc-tang-luc-rock-energy-power-lon-240ml-202205181627185537_300x300.jpg",
       "id": 27
@@ -194,6 +194,20 @@
       "priceold": "72",
       "img": "https://cdn.tgdd.vn/Products/Images/3226/195238/bhx/6-lon-nuoc-tang-luc-sting-huong-dau-320ml-202205181646335901_300x300.jpg",
       "id": 29
+    },
+    {
+      "name": "6 chai nước khoán Pocari 500ml",
+      "sale": "12",
+      "priceold": "110",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/200350/bhx/6-chai-nuoc-khoang-i-on-pocari-sweat-500ml-202205181634536364_300x300.jpg",
+      "id": 30
+    },
+    {
+      "name": "6 lon nước tăng lực Carabao",
+      "sale": "2",
+      "priceold": "58",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/214683/bhx/6-lon-nuoc-tang-luc-carabao-250ml-202205181649494882_300x300.jpg",
+      "id": 31
     }
   ]
 }

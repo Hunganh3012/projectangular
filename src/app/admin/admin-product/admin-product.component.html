@@ -28,7 +28,7 @@
                 <td>{{item.name}}</td>
                 <td>{{item.sale}}</td>
                 <td>{{item.priceold}}</td>
-                <td>{{item.priceold - ((item.priceold * item.sale)/100) }}</td>
+                <td>{{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}}</td>
                 <td><img src="{{item.img}}" alt="" class="anhsanpham"></td>
                 <td>
                     <button routerLink="../admin-editproduct/{{item.id}}" class="buttonclick">Sửa</button> 
