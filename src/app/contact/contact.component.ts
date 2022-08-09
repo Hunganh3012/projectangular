@@ -23,7 +23,6 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
   postContent(){
-    let myDate=Date.now()
      this.AppService.postContent(this.list).subscribe(data=>{
       alert('Gửi thành công');
       this.router.navigateByUrl('/')

@@ -377,6 +377,26 @@ h2::after {
     opacity: 1;
     bottom: 8px;
 }
+.highlight{
+    cursor: pointer;
+    margin: 30px 0;
+    // background-color: #034DA2;
+    padding: 20px 10px;
+    color: #034DA2;
+    position: relative;
+    &::after{
+        content: '';
+        top: 44%;
+        left: 31%;
+        position: absolute;
+        height: 6px;
+        width: 68%;
+        background-color: #034DA2;
+    }
+}
+.ngx-pagination{
+    text-align: center;
+}
 @media screen and (max-width:1200px){
     .product-grid{ margin: 0 0 30px; }
 }

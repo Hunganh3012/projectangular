@@ -16,6 +16,8 @@ import { adminComponent } from './admin/admin.component';
 // import { AlertModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HeadComponent } from './head/head.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +30,15 @@ import { ProductAnnounComponent } from './product-announ/product-announ.componen
     NotFoundErrorComponent,
     adminComponent,
     ProductAnnounComponent,
+    HeadComponent,
 
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

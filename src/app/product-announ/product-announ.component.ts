@@ -7,8 +7,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./product-announ.component.scss']
 })
 export class ProductAnnounComponent implements OnInit {
-  listProduct:any=[]
+  listProduct:any=[];
+
+
+  totalLength:any;
+  page:number=1;
+
   constructor( private AdminService:AdminService) { }
+
+
 
   ngOnInit(): void {
     this.getProduct();
@@ -17,6 +24,7 @@ export class ProductAnnounComponent implements OnInit {
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       this.listProduct= data;
+      this.totalLength=data.length;
     })
   }
 }
