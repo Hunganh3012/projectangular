@@ -21,6 +21,7 @@
     "@angular/router": "^14.1.0",
     "angular-cli-ghpages": "^1.0.3",
     "bootstrap": "^5.2.0",
+    "ngh": "^0.2.12",
     "ngx-pagination": "^6.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
