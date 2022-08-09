@@ -13,7 +13,6 @@ export class ContactComponent implements OnInit {
     phone:'',
     email:'',
     content:'',
-    time: Date.now(),
   }
   
 
