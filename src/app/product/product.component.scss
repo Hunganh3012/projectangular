@@ -56,7 +56,7 @@ body{
 }
 .container{
     
-    max-width: 1170px;
+    max-width:1380px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -149,7 +149,7 @@ body{
 // ---------------------------------------NEWPAPER.HTML-----------------------
 .desc{
     min-height: 93px;
-    background-image: url(background-newpaper.png);
+    background-image: url();
     background-color: $primary-color;
     &-text{
         padding-top: 3.5rem;

@@ -54,14 +54,24 @@ body{
     z-index: 1;
 }
 .container{
-    
-    max-width: 1280px;
+    // text-align: center;
+    max-width: 1381px;
     padding: 0 15px;
     margin: 0 auto;
 }
 // -----------------------------TRANG CHỦ----------------------------------
 // --------------------------------Slider---------------
 // ---------------prev,next
+
+.button-log{
+    border: none;
+    background-color: #034DA2;
+    margin:0 5px;
+    padding:8px;
+    font-size: 19px;
+    color: #ffffff;
+    border-radius: 10px;
+}
 .carousel-control-prev {
     height: 30px;
     left: 0;

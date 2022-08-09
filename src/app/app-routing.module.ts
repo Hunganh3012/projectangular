@@ -7,6 +7,7 @@ import { NotFoundErrorComponent } from './not-found-error/not-found-error.compon
 import { ProductComponent } from './product/product.component';
 import { adminComponent } from './admin/admin.component';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path:"",
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    loadChildren : ()=> import('./admin/admin.module').then((m)=> m.AdminModule)
+    loadChildren : ()=> import('./admin/admin.module').then((m)=> m.AdminModule),
+    canActivate:[AuthGuard]
   },
   {
     path:'**',
