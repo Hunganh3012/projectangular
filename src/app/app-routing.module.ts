@@ -10,11 +10,7 @@ import { ProductAnnounComponent } from './product-announ/product-announ.componen
 import { AuthGuard } from './auth.guard';
 import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
-  {
-    path:"",
-    redirectTo:'home-page',
-    pathMatch:'full'
-  },
+  
   {
     path:'home-page',
     component:HomePageComponent
@@ -26,6 +22,11 @@ const routes: Routes = [
   {
     path:'product',
     component:ProductComponent
+  },
+  {
+    path:"",
+    redirectTo:'product-announ',
+    pathMatch:'full'
   },
   {
     path:'product-announ',
