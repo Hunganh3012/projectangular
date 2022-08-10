@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { adminComponent } from './admin/admin.component';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { AuthGuard } from './auth.guard';
+import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
   {
     path:"",
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path:'product-announ',
     component:ProductAnnounComponent
+  },
+  {
+    path:'detail/:id',
+    component:DetailComponent
   },
   {
     path:'admin',

@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": 3,
-      "sale": "19",
-      "name": "Thùng 12 lon bia sapporo",
-      "priceold": 660,
-      "price": "",
-      "img": "https://cdn.tgdd.vn/Products/Images/2282/83669/bhx/thung-24-lon-bia-sapporo-blue-cap-330ml-202205211727190286_300x300.jpg"
-    },
-    {
       "id": 4,
       "name": "Thùng 12 lon bia Beck's",
       "sale": "11",
