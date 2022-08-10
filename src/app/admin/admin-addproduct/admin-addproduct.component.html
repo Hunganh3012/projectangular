@@ -15,6 +15,7 @@
                     <th>Tên sản phẩm</th>
                     <th>giảm giá(%)</th>
                     <th>Giá tiền(ngìn đồng)</th>
+                    <th>Mô tả sản phẩm</th>
                     <th>Link ảnh sản phẩm</th>
                 </tr>
                 <tr>
@@ -26,6 +27,9 @@
                     </td>
                     <td>
                         <input type="text" class="input-addproduct" placeholder="giá sản phẩm" [(ngModel)]="listadd.priceold">
+                    </td>
+                    <td>
+                        <input type="text" class="input-addproduct" placeholder="Mô tảsản phẩm" [(ngModel)]="listadd.detail">
                     </td>
                     <td>
                         <!-- <input type="file" [(ngModel)]="listadd.img"><br>

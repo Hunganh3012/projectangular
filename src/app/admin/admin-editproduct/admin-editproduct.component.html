@@ -16,6 +16,7 @@
                         <th>Tên sản phẩm</th>
                         <th>giảm giá(%)</th>
                         <th>Giá tiền(ngìn đồng)</th>
+                        <th>Mô tả sản phẩm</th>
                         <th>Link ảnh sản phẩm</th>
                     </tr>
                     <tr>
@@ -27,6 +28,9 @@
                         </td>
                         <td>
                             <input type="text" class="input-addproduct" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" value="{{edit.detail}}" [(ngModel)]="edit.detail">
                         </td>
                         <td>
                             <!-- <input type="file" value="{{edit.img}}"><br>
