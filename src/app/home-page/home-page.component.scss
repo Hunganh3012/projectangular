@@ -70,7 +70,7 @@ body{
     margin-top: 37%;
 }
 .header-background{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 }
 .title-h1{
@@ -101,7 +101,7 @@ body{
     position: relative;
     width: 100%;
     min-height: 830px; 
-    // background-image: url("../assets/images/Rectangle 388.png");
+    background-image: url("../../assets/images/Rectangle 388.png");
     // &-header{
         
     // }
@@ -181,7 +181,7 @@ body{
         // position: relative;
         height: 273px;
         margin-top: 4.2rem;
-        // background-image:url("../assets/images/product-header.png");
+        background-image:url("../../assets/images/product-header.png");
     display: block;
     }
     &-desc{
@@ -226,7 +226,7 @@ body{
        }
     }
     &-body{
-        // background-image: url(./images/product-footer.png);
+        // background-image: url(../../assets/images/product-footer.png);
       &-highlight{
         &-content{
             margin-right: 8.2rem;
