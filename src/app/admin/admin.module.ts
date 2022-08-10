@@ -7,7 +7,7 @@ import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminAddproductComponent } from './admin-addproduct/admin-addproduct.component';
 import { FormsModule } from '@angular/forms';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+// import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AdminContactComponent,
@@ -19,7 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    NgxPaginationModule
+    // NgxPaginationModule
     // HttpClient
   ]
 })
