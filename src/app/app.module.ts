@@ -20,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HeadComponent } from './head/head.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DetailComponent } from './detail/detail.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { DetailComponent } from './detail/detail.component';
     ProductAnnounComponent,
     HeadComponent,
     DetailComponent,
+    CartComponent,
 
   ],
   imports: [

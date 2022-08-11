@@ -50,7 +50,8 @@
       "sale": "48",
       "priceold": "430",
       "img": "https://cdn.tgdd.vn/Products/Images/2282/266102/bhx/loc-6-lon-strongbow-tao-330ml-202205211837412740_300x300.jpg",
-      "id": 9
+      "id": 9,
+      "detail": "Sản phẩm nước táo lên men Strongbow chính hãng, uy tín được nhiều người lựa chọn, nhất là giới trẻ bởi hương vị thơm ngon, hấp dẫn và dễ uống. Lốc 6 lon Strongbow táo 330ml là loại nước có cồn vị trái cây chất lượng có thể dùng thay thế bia giúp bạn thăng hoa thả ga trong những cuộc vui cùng bạn bè"
     },
     {
       "name": "6 lon bia heineken 0.0 độ 330ml",
@@ -217,5 +218,7 @@
       "id": 30,
       "detail": "Nước khoáng Pocari Sweat bổ sung nước và các ion thiết yếu như Na+, K+, Mg2+, Cl-, Ca2+, giúp cơ thể hấp thụ nhanh, tái tạo năng lượng và sức sống ngay từ bên trong. 6 chai nước khoáng i-on Pocari Sweat 500ml được chiết xuất từ nguồn nước khoáng trong thiên nhiên tốt cho sức khỏe"
     }
+  ],
+  "cart":[
   ]
 }

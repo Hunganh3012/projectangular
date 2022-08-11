@@ -7,7 +7,7 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
   API_Product="http://localhost:3000/products";
-
+API_Cart="http://localhost:3000/cart"
   getProduct(){
     return this.http.get(`${this.API_Product}`)
   }
@@ -27,4 +27,10 @@ export class AdminService {
   porductdetail(id:number){
     return this.http.get(`${this.API_Product}/${id}`)
   }
+  getProductCart(id:number){
+    return this.http.get(`${this.API_Product}/${id}`)
+  }
+  // addtocart(data:any){
+  //   return this.http.post(`${this.API_Cart,data);
+  // }
 }

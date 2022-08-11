@@ -21,7 +21,7 @@
                             <a href="">Tiêu điểm</a>
                         </li>
                         <li class="menu-toggle-item">
-                            <a routerLink="../product-announ">Công bố sản phẩm</a>
+                            <a routerLink="/product-announ">Công bố sản phẩm</a>
                         </li>
                         <li class="menu-toggle-item">
                             <a href="">Tin tức</a>
@@ -51,13 +51,13 @@
                     <img routerLink="" src="./assets/images/home.png" alt="" class="nav-icon-home">
                     <ul class="nav-menu-list">  
                         <li class="nav-menu-item">
-                            <a routerLink="../home-page">giới thiệu</a>
+                            <a routerLink="/home-page">giới thiệu</a>
                         </li>
                         <li class="nav-menu-item">
-                            <a routerLink="../product">Tiêu điểm</a>
+                            <a routerLink="/product">Tiêu điểm</a>
                         </li>
                         <li class="nav-menu-item">
-                            <a routerLink="../product-announ">Công bố sản phẩm</a>
+                            <a routerLink="/">Công bố sản phẩm</a>
                         </li>
                         <li class="nav-menu-item">
                             <a href="">Tin tức</a>
@@ -66,7 +66,7 @@
                             <a href="">Tuyển dụng</a>
                         </li>
                         <li class="nav-menu-item">
-                            <a routerLink="../contact">Liên hệ</a>
+                            <a routerLink="/contact">Liên hệ</a>
                         </li>
                     </ul>
                    <div class="nav-icon-search">
@@ -76,6 +76,7 @@
                     <span class="nav-language">VN</span>
                     <img src="./assets/images/star.png" alt="" class="nav-icon-star">
                     <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
+                    <a routerLink="/cart/:id"><i class="fa-solid fa-cart-shopping"></i></a>
                     <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button>
                     <button (click)="logOut()" class="button-log" *ngIf="isShowLogOut">Đăng xuất</button>
                     <a routerLink="../admin" class="nav-menu-item userss" *ngIf="isShow">Quan tri vien</a>
