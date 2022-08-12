@@ -45,7 +45,7 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
