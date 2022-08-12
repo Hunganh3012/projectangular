@@ -11,6 +11,7 @@ export class AdminAddproductComponent implements OnInit {
     name:'',
     sale:'',
     priceold:'',
+    detail:'',
     img:''
   }
   constructor( private AdminService:AdminService, private Router:Router) { }

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AdminService {
   items = [];
   constructor(private http:HttpClient) { }
-  API_Product="http://localhost:3000/products";
+  API_Product="https://62de1ee1ccdf9f7ec2d15d4e.mockapi.io/product";
 // API_Cart ="http://localhost:3000/cart"
   getProduct(){
     return this.http.get(`${this.API_Product}`)
