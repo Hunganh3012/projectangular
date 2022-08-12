@@ -13,7 +13,7 @@
                 <!-- <h6 class="card-subtitle">globe type chair for rest</h6> -->
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-6" >
-                        <div class="white-box text-center"><img src="{{detail.img}}" class="img-responsive"></div>
+                        <div class="white-box text-center"><img src="{{detail.img}}" class="img-responsive img-w"></div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-6" ng-app="">
                         <h4 class="box-title mt-5"></h4>
@@ -21,8 +21,8 @@
                         <h2 class="mt-5 ">
                             <del>{{detail.priceold}}.000đ    </del> <span class="ml-2 mr-3">{{detail.priceold - ((detail.priceold * detail.sale)/100) | number:'1.0-0'}}.000đ</span><small class="text-danger">-{{detail.sale}}%</small>
                         </h2>
-                        <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                            <a routerLink="/cart/{{detail.id}}"><i class="fa fa-shopping-cart"></i></a>
+                        <button class="btn  mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                            <a routerLink="/cart/{{detail.id}} " class="btn btn-primary btn-rounded"><i class="fa fa-shopping-cart"></i></a>
                         </button>
                         <button class="btn btn-primary btn-rounded">Mua ngay</button>
                         <h3 class="box-title mt-5">Cam kết</h3>
@@ -61,18 +61,7 @@
                                         <td>Số lượng</td>
                                         <td>lớn</td>
                                     </tr>
-                                    <tr>
-                                        <td>Upholstery Included</td>
-                                        <td>Yes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Upholstery Type</td>
-                                        <td>Cushion</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Head Support</td>
-                                        <td>No</td>
-                                    </tr>
+                                    
                                     
                                 </tbody>
                             </table>
