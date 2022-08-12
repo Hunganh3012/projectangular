@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeadComponent } from './head/head.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 @NgModule({

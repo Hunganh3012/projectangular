@@ -1,0 +1,223 @@
+{
+  "products": [
+    {
+      "id": 4,
+      "name": "Thùng 12 lon bia Beck's",
+      "sale": "11",
+      "priceold": 210,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg",
+      "detail": "Hương vị bia Beck's của Đức cân bằng, dễ uống cùng mùi thơm nồng đặc trưng. Lon cao thon gọn thanh lịch, vừa tầm tay, thiết kế ấn tượng cực phong cách. 12 lon bia Beck's dung tích 500ml nhiều hơn cho những cuộc vui sảng khoái. Sản phẩm chính hãng, đảm bảo chất lượng và an toàn vệ sinh"
+    },
+    {
+      "id": 5,
+      "name": "Thùng 6 lon nước ép lên men Strongbow",
+      "sale": 10,
+      "priceold": 120,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/266098/bhx/6-lon-strongbow-dau-330ml-202205211838270139_300x300.jpg",
+      "detail": "Được hình thành từ quá trình lên men táo tự nhiên, mang đến vị ngọt dịu kết hợp vị chát nhẹ đặc trưng của táo. 4 lon Strongbow dâu đen 330ml thơm lừng vị trái cây dễ uống thích hợp cho những cuộc vui nhẹ nhàng. Cam kết chính hãng và đảm bảo an toàn"
+    },
+    {
+      "id": 6,
+      "name": "Thùng 24 lon bia sài gòn",
+      "sale": "23",
+      "priceold": 335,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/276230/bhx/thung-24-lon-bia-sai-gon-special-sleek-330ml-202205211652200871_300x300.jpg",
+      "detail": "Bia ngon chất lượng quen thuộc với người dân Việt Nam đặc biệt là người dân miền Nam. Thùng 24 lon bia Sài Gòn Special Sleek 330ml chính hãng bia Sài Gòn với hương vị truyền thống thơm ngon, cân bằng, dễ uống, thiết kế lon cao thanh lịch sang trọng, hiện đại"
+    },
+    {
+      "id": 7,
+      "name": "Thùng 12 lon bia Việt 330ml",
+      "sale": "19",
+      "priceold": 130,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/275901/bhx/thung-12-lon-bia-bia-viet-330ml-202205211900084283_300x300.jpg",
+      "detail": "Từ những nguyên liệu tự nhiên tuyển chọn. Thùng 12 lon bia Việt 330ml bia Việt 330ml chính hãng bia Bia Việt giá tốt, tiết kiệm với công nghệ lên men lạnh ở nhiệt độ 8-10 độ C giúp lưu giữ tinh túy của hoa bia và mang đến cảm giác sảng khoái bất tận khi thưởng thức"
+    },
+    {
+      "id": 8,
+      "name": "Thùng 6 lon bia huda ice blast",
+      "sale": "3",
+      "priceold": 80,
+      "price": "",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/214408/bhx/6-lon-bia-huda-ice-blast-330ml-202205211820464175_300x300.jpg",
+      "detail": "Được sản xuất từ nguôn nguyên liệu thượng hạng, có nồng độ cồn nhỏ, không chứa tạp chất, bảo đảm an toàn cho sức khỏe. 6 lon bia Huda Ice Blast 330ml có mùi thơm đặc trưng, hương vị bia đậm đà và hấp dẫn vị giác. Sản phẩm chính hãng bia Huda chất lượng"
+    },
+    {
+      "name": "6 lon Strongbow táo 330ml",
+      "sale": "48",
+      "priceold": "430",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/266102/bhx/loc-6-lon-strongbow-tao-330ml-202205211837412740_300x300.jpg",
+      "id": 9,
+      "detail": "Sản phẩm nước táo lên men Strongbow chính hãng, uy tín được nhiều người lựa chọn, nhất là giới trẻ bởi hương vị thơm ngon, hấp dẫn và dễ uống. Lốc 6 lon Strongbow táo 330ml là loại nước có cồn vị trái cây chất lượng có thể dùng thay thế bia giúp bạn thăng hoa thả ga trong những cuộc vui cùng bạn bè"
+    },
+    {
+      "name": "6 lon bia heineken 0.0 độ 330ml",
+      "sale": "12",
+      "priceold": "110",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/220341/bhx/6-lon-bia-heineken-00-do-con-330ml-202205211623058680_300x300.jpg",
+      "id": 10,
+      "detail": "Heineken là thương hiệu bia được ưa chuộng tại hơn 192 quốc gia trên thế giới. 6 lon bia Heineken 0.0% độ cồn 330ml vẫn giữ hương vị đặc trưng, cân bằng và êm dịu của bia Heineken và đặc biệt không chứa cồn cho những cuộc vui sảng khoái mà không sợ say, thoải mái tham gia giao thông tỉnh táo"
+    },
+    {
+      "name": "6 chai bia Hoegaarden",
+      "sale": "20",
+      "priceold": "185",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/195213/bhx/6-chai-bia-hoegaarden-330ml-202205211744424281_300x300.jpg",
+      "id": 11,
+      "detail": "Với thành phần chính là các rau mùi cay kết hợp cùng vỏ cam Curacao, mang đến một hương vị bia không đâu sánh bằng. 6 chai bia Hoegaarden 330ml thơm ngon đậm đà chất lượng từ thương hiệu bia Bỉ nổi tiếng Hoegaarden. Cam kết chính hãng, chất lượng và an toàn"
+    },
+    {
+      "name": "6 lon bia heinekeen Silver",
+      "sale": "30",
+      "priceold": "300",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/200638/bhx/6-lon-bia-heineken-silver-330ml-202205202034155825_300x300.jpg",
+      "id": 12,
+      "detail": "Chất lượng từ thương hiệu bia được ưa chuộng tại hơn 192 quốc gia trên thế giới đến từ Hà Lan. Bia Heineken mang hương vị đặc trưng thơm ngon hương vị bia tuyệt hảo, cân bằng và êm dịu. Bên cạnh đó là thiết kế đẹp mắt, cho người dùng cảm giác sang trọng, nâng tầm đẳng cấp."
+    },
+    {
+      "name": "Rượu vang alaita nho chai 750ml",
+      "sale": "10",
+      "priceold": "330",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/240648/bhx/ruou-vang-alita-selection-muscat-sparkling-vi-nho-11-chai-750ml-202206031652326757_300x300.jpg",
+      "id": 13,
+      "detail": "Sản phẩm rượu vang chất lượng từ thương hiệu Alita. Rượu vang Alita Selection Muscat Sparkling vị nho 11% 750ml được làm từ những quả nho lên men không qua chưng cưng cất, có hương vị thơm ngon, dễ uống cùng mùi hương hấp dẫn cho những cuộc vui sảng khoái bên gia đình và bạn bè"
+    },
+    {
+      "name": "Rượu MG Spirit chai 250ml",
+      "sale": "17",
+      "priceold": "60",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/239152/bhx/ruou-mg-spirit-gin-tonic-55-chai-275ml-202206011439275722_300x300.jpg",
+      "id": 14,
+      "detail": "Rượu ngon hảo hạng thương hiệu MG Spirit từ Tây Ban Nha. Rượu MG Spirit Gin Tonic 5.5% 275ml là sự kết hợp độc đáo giữa nước Tonic và rượu Gin - một dòng rượu mạnh khá nổi tiếng đem đến trải nghiệm vị giác ấn tượng, khó quên. Cam kết chính hãng, chất lượng và an toàn"
+    },
+    {
+      "name": "Thùng 24 chai bia coronita 207ml",
+      "sale": "10",
+      "priceold": "560",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/242164/bhx/thung-24-chai-bia-coronita-extra-207ml-202205241132161724_300x300.jpg",
+      "id": 15,
+      "detail": "Vị bia nhẹ nhàng, ấn tượng với nồng độ cồn 4.5% cực thơm ngon. 24 chai bia Coronita Extra 207ml là sản phẩm thuộc thương hiệu Coronita đến từ Mexico với màu vàng tươi đẹp mắt hấp dẫn, chai 210ml nhỏ nhắn vừa tay, dễ uống. Cam kết chính hãng, chất lượng đảm bảo an toàn tuyệt đối"
+    },
+    {
+      "name": "6 lon bia tiger Platinum 330ml",
+      "sale": "15",
+      "priceold": "120",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/248688/bhx/loc-6-lon-bia-tiger-platinum-wheat-lager-330ml-202205211722160499_300x300.jpg",
+      "id": 16,
+      "detail": "Được lên men tự nhiên từ các thành phần nước, đại mạch, lúa mì, ngũ cốc, hoa bia, bổ sung thêm vỏ cam, hạt râu mùi, Pectin táo, hương cam giống tự nhiên và men. 6 lon bia Tiger Platinum Wheat Lager 330ml mang hương vị độc đáo khác biệt so với những loại bia Tiger khác. Cam kết chính hãng chất lượng"
+    },
+    {
+      "name": "6 lon bia Larue Special 330ml",
+      "sale": "8",
+      "priceold": "70",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/195204/bhx/6-lon-bia-larue-special-330ml-202205202033268220_300x300.jpg",
+      "id": 17,
+      "detail": "Được sản xuất tại Việt Nam từ nước, malt đại mạch, ngũ cốc và hoa bia. 6 lon bia Sài Gòn Lager 330ml có hương vị đậm đà, thơm ngon, cùng hương thơm ngũ cốc dễ chịu giúp bạn thăng hoa hơn, sản khoái hơn tỏng những cuộc vui cùng gia đình và bạn bè. Chính hãng, chất lượng từ bia Sài Gòn"
+    },
+    {
+      "name": "6 lon bia corona extra 330ml",
+      "sale": "10",
+      "priceold": "235",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/199966/bhx/6-chai-bia-corona-extra-330ml-202205241135523141_300x300.jpg",
+      "id": 18,
+      "detail": "Là thương hiệu bia nổi tiếng có nguồn gốc từ Mexico từ năm 1925 mang hương vị tuyệt hảo. 6 chai bia Corona Extra 330ml có màu vàng rơm óng, trong vắt, hương thơm dịu, vị bia êm, mượt mà và ga mạnh. Bia Corona có nồng độ không cao rất thích hợp cho những buổi trò chuyện cùng gia đình, bạn bè."
+    },
+    {
+      "name": "4 chai strongbow Táo 330ml",
+      "sale": "20",
+      "priceold": "105",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/168356/bhx/4-chai-strongbow-tao-330ml-202205211849425765_300x300.jpg",
+      "id": 19,
+      "detail": "Rất sảng khoái với độ ngọt dịu và hậu vị sang trọng kéo dài. Strongbow táo chai 330ml vị táo nguyên bản sẽ làm cho bạn cực kỳ dễ chịu và khi thưởng thức sẽ không cảm nhận được nhiều vị cồn vì thức uống này được lên men trực tiếp từ trái cây, phù hợp cho những cuộc trò chuyện, cuộc vui nhẹ nhàng"
+    },
+    {
+      "name": "6 lon bia red ruby 330ml",
+      "sale": "4",
+      "priceold": "60",
+      "img": "https://cdn.tgdd.vn/Products/Images/2282/266426/bhx/loc-6-lon-bia-red-ruby-330ml-202205212031003520_300x300.jpg",
+      "id": 20
+    },
+    {
+      "name": "Rượu gạo Korice chai 750ml",
+      "sale": "20",
+      "priceold": "68",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/238313/bhx/ruou-gao-korice-mak-geol-li-hat-de-6-chai-750ml-202205260838311823_300x300.jpg",
+      "id": 21,
+      "detail": "Rượu gạo Hàn Quốc thơm ngon hảo hạng từ thương hiệu Korice. Rượu gạo Korice Mak Geol Li hạt dẻ 6% 750ml với vị ngọt dịu kết hợp với vị thơm bùi của hạt dẻ chắc chắn là món uống “mùa thu” thích hợp cho những phút giây sum vầy. Sản phẩm chất lượng từ Hàn Quốc"
+    },
+    {
+      "name": "Rượu MG cam cahi 275ml",
+      "sale": "30",
+      "priceold": "58",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/239153/bhx/ruou-mg-spirit-vodka-orange-huong-cam-55-chai-275ml-202206011440135034_300x300.jpg",
+      "id": 22,
+      "detail": "Rượu ngon hảo hạng thương hiệu MG Spirit từ Tây Ban Nha. Rượu MG Spirit Vodka Orange hương cam 5.5% 275ml sự kết hợp độc đáo nhẹ nhàng mà hấp dẫn giữa vị rượu mạnh Vodka pha vị chua chua của cam cho cảm giác thưởng thức mới lạ, khoan khoái, dễ chịu. Cam kết chính hãng, chất lượng và an toàn"
+    },
+    {
+      "name": "Rượu vang Ramirana chai 750ml",
+      "sale": "20",
+      "priceold": "255",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/264059/bhx/ruou-vang-ramirana-cabernet-sauvignon-125-chai-750ml-202207271130502018_300x300.jpg",
+      "id": 23,
+      "detail": "Rượu vang là thức uống thơm ngon được nhiều người yêu thích. Rượu vang Ramirana Cabernet Sauvignon 12.5% chai 750ml với màu đỏ quyến rũ cùng hương vị đặc trưng từ nho lên men mà không qua chưng cất. Đặt mua ngay các loại rượu Ramirana chính hãng, giá tốt, giao hàng nhanh chóng tại Bách hoá XANH."
+    },
+    {
+      "name": "Nước mơ lên men có ga chai 275ml",
+      "sale": "20",
+      "priceold": "48",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/224681/bhx/nuoc-mo-len-men-co-ga-hoshi-sakura-45-chai-275ml-202206061614154470_300x300.jpg",
+      "id": 24
+    },
+    {
+      "name": "Rượu vang Santa 13% chai 750ml",
+      "sale": "12",
+      "priceold": "233",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/264292/bhx/ruou-vang-santa-helena-cabernet-sauvignon-13-chai-750ml-202206171239550957_300x300.jpg",
+      "id": 25,
+      "detail": "Rượu Santa Helena với hương vị thơm ngon, độc đáo đến từ Chi Lê được nhiều người yêu thích. Rượu vang Santa Helena Cabernet Sauvignon 13% chai 750ml với màu rượu đỏ đẹp mắt cùng hương thơm nồng nàn, quyến rũ và vị ngon cân bằng, mang đến những trải nghiệm thú vị khi thưởng thức."
+    },
+    {
+      "name": "Rượu van Santa Helena chai 750ml",
+      "sale": "12",
+      "priceold": "233",
+      "img": "https://cdn.tgdd.vn/Products/Images/9498/264291/bhx/ruou-vang-santa-helena-chardonnay-13-chai-750ml-202206031655207841_300x300.jpg",
+      "id": 26
+    },
+    {
+      "name": "Nước tăng lực Rock Energy 240ml",
+      "sale": "5",
+      "priceold": "14",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/265782/bhx/nuoc-tang-luc-rock-energy-power-lon-240ml-202205181627185537_300x300.jpg",
+      "id": 27,
+      "detail": "Sản phẩm nước uống tăng lực thơm ngon, mạnh mẽ chính hãng thương hiệu nước tăng lực Rock Energy chất lượng. Nước tăng lực Rock Energy Power lon 240ml được bổ sung thêm sâm Ngọc Linh bổ dưỡng mang đến cho cơ thể nguồn năng lượng bứt phá, tràn đầy sức sống"
+    },
+    {
+      "name": "Nước tăng lực Gmax lon 250ml",
+      "sale": "30",
+      "priceold": "25",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/256314/bhx/nuoc-tang-luc-gmax-premium-lon-250ml-202205181621508648_300x300.jpg",
+      "id": 28,
+      "detail": "6 lon tăng lực Gmax Premium 250ml có những dưỡng chất bổ sung năng lượng như taurine, caffeine và các vitamin, …. sản phẩm nước tăng lực chính hãng của thương hiệu GMAX sẽ mang đến cho bạn năng lượng để đạt hiệu quả tối đa trong công việc và sinh hoạt."
+    },
+    {
+      "name": "6 lon nước tăng lực Sting dâu 320ml ",
+      "sale": "10",
+      "priceold": "72",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/195238/bhx/6-lon-nuoc-tang-luc-sting-huong-dau-320ml-202205181646335901_300x300.jpg",
+      "id": 29,
+      "detail": "Sản phẩm nước tăng lực với mùi vị thơm ngon, sảng khoái cùng hương dâu dễ chịu. Sting giúp cơ thể bù đắp nước, bổ sung năng lượng, vitamin C và E, giúp xua tan cơn khát và cảm giác mệt mỏi cùng dâu cho nhẹ nhàng và dễ chịu. Cam kết chính hãng, chất lượng và an toàn"
+    },
+    {
+      "name": "6 chai nước khoán Pocari 500ml",
+      "sale": "12",
+      "priceold": "110",
+      "img": "https://cdn.tgdd.vn/Products/Images/3226/200350/bhx/6-chai-nuoc-khoang-i-on-pocari-sweat-500ml-202205181634536364_300x300.jpg",
+      "id": 30,
+      "detail": "Nước khoáng Pocari Sweat bổ sung nước và các ion thiết yếu như Na+, K+, Mg2+, Cl-, Ca2+, giúp cơ thể hấp thụ nhanh, tái tạo năng lượng và sức sống ngay từ bên trong. 6 chai nước khoáng i-on Pocari Sweat 500ml được chiết xuất từ nguồn nước khoáng trong thiên nhiên tốt cho sức khỏe"
+    }
+  ],
+  "cart": []
+}
