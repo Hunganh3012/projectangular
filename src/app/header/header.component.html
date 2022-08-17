@@ -69,17 +69,73 @@
                             <a routerLink="/contact">Liên hệ</a>
                         </li>
                     </ul>
-                   <div class="nav-icon-search">
-                    <img src="./assets/images/search.png" alt=""  class="nav-icon-search-circle">
-                    <img src="./assets/images/searchdown.png" alt="" class="nav-icon-search-down">
-                   </div>
-                    <span class="nav-language">VN</span>
-                    <img src="./assets/images/star.png" alt="" class="nav-icon-star">
-                    <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
-                    <a routerLink="/cart/:id"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="search">
+                        <input type="text">
+                    <div class="nav-icon-search">
+                       <a href="" style="cursor:pointer;">
+                        <img src="./assets/images/search.png" alt=""  class="nav-icon-search-circle">
+                        <img src="./assets/images/searchdown.png" alt="" class="nav-icon-search-down">
+                       </a>
+                    </div>
+                    </div>
+                    <!-- <span class="nav-language">VN</span>
+                    <img src="./assets/images/star.png" alt="" class="nav-icon-star"> -->
+                    
+                    <a routerLink="/cart/:id" class="link-cart"><i class="fa-solid fa-cart-shopping cart-icon">
+                        <small class="number-cart ">125</small>
+                        
+                            <ul class="dropdown__list">
+                                
+                                <li class="dropdown__item">
+                                    <div class="cartmini-left">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg" alt="" class="img-cartmini">
+                                        <span class="name-cartmini">Thùng 12 lon bia Beck's</span>
+                                    </div>
+                                <span class="price-cartmini">100.000đ</span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <div class="cartmini-left">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg" alt="" class="img-cartmini">
+                                        <span class="name-cartmini">Thùng 12 lon bia Beck's</span>
+                                    </div>
+                                    <span class="price-cartmini">100.000đ</span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <div class="cartmini-left">
+                                    <img src="https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg" alt="" class="img-cartmini">
+                                    <span class="name-cartmini">Thùng 12 lon bia Beck's</span>
+                                    </div>
+                                    <span class="price-cartmini">100.000đ</span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <div class="cartmini-left">
+                                    <img src="https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg" alt="" class="img-cartmini">
+                                    <span class="name-cartmini">Thùng 12 lon bia Beck's</span>
+                                    </div>
+                                    <span class="price-cartmini">100.000đ</span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <div class="cartmini-left">
+                                    <img src="https://cdn.tgdd.vn/Products/Images/2282/177686/bhx/thung-12-lon-bia-becks-500ml-202205211708091211_300x300.jpg" alt="" class="img-cartmini">
+                                    <span class="name-cartmini">Thùng 12 lon bia Beck's</span>
+                                    </div>
+                                    <span class="price-cartmini">100.000đ</span>
+                                </li>
+                              
+                          </ul>
+                        
+                    </i></a>
+                    <a class="nav-menu-item users" style="text-decoration:none; cursor:pointer; padding:10px 0px;" *ngIf="isShow">Quan tri vien
+                        <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
+                        <div class="user-dropdown">
+                            <span class="user-dropdown-item"><a routerLink="/admin" >Tài khoản của tôi</a></span>
+                            <span class="user-dropdown-item"><a routerLink="/cart/:id">Giỏ hàng</a></span>
+                            <span class="user-dropdown-item"><a (click)="logOut()" class="" *ngIf="isShowLogOut">Đăng xuất</a></span>
+                </div>
+                    </a>
+                    
                     <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button>
-                    <button (click)="logOut()" class="button-log" *ngIf="isShowLogOut">Đăng xuất</button>
-                    <a routerLink="/admin" class="nav-menu-item userss" *ngIf="isShow">Quan tri vien</a>
+                    <!-- <button (click)="logOut()" class="button-log" *ngIf="isShowLogOut">Đăng xuất</button> -->
                 </nav>
             </div>
             <!-- <img src="../assets/images/Rectangle 385.png" alt="" class="header-highlight"> -->

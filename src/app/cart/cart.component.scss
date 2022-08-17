@@ -5,10 +5,10 @@
 //     }
     
     .card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
+    padding-left: 12px;
+    padding-right: 12px;
     }
     
     .card-registration .select-arrow {
@@ -32,3 +32,14 @@
     border-bottom-right-radius: 16px;
     }
     }
+    .form-input{
+        width: 40px;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+      }

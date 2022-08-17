@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-product-announ',
   templateUrl: './product-announ.component.html',
   styleUrls: ['./product-announ.component.scss']
 })
 export class ProductAnnounComponent implements OnInit {
-  listProduct:any=[];
+  
 
+  
+
+  
+
+
+
+  listProduct:any=[];
+  slidesStore: any[]=[];
   listCart={
     name:'',
     priceold:'',
@@ -19,16 +27,46 @@ export class ProductAnnounComponent implements OnInit {
   };
   totalLength:any;
   page:number=1;
-
+  
   constructor( private AdminService:AdminService,
-                private Router:Router) { }
+                private Router:Router,
+                ) { }
 
 
 
   ngOnInit(): void {
+
     this.getProduct();
   }
-
+  // getPassedData(data: SlidesOutputData) {
+  //   this.activeSlides = data;
+  //   console.log(this.activeSlides);
+  // }
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', '',''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1,
+        
+      }
+    },
+    nav: false
+  }
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       this.listProduct= data;
@@ -40,4 +78,6 @@ export class ProductAnnounComponent implements OnInit {
   //     this.AdminService.
   //   })
   // }
+
+
 }
