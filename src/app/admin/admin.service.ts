@@ -27,6 +27,9 @@ export class AdminService {
   porductdetail(id:number){
     return this.http.get(`${this.API_Product}/${id}`)
   }
+
+
+  
   getCart(){
     this.API_Product;
   }

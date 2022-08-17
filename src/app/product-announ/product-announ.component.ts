@@ -47,15 +47,18 @@ export class ProductAnnounComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: true,
+    dots:false,
     navSpeed: 700,
-    navText: ['', '',''],
+    navText: [
+      '<i class="fa-solid fa-angle-left "></i>',
+
+     '<i class="fa-solid fa-angle-right"></i>',],
     responsive: {
       0: {
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
         items: 1
@@ -65,7 +68,7 @@ export class ProductAnnounComponent implements OnInit {
         
       }
     },
-    nav: false
+    nav: true
   }
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
