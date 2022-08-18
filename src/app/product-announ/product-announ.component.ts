@@ -9,6 +9,7 @@ import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 })
 export class ProductAnnounComponent implements OnInit {  
   public productListcart:any=[];
+  public filterCategory : any;
   listProduct:any=[];
   slidesStore: any[]=[];
   listCart={
@@ -69,6 +70,10 @@ export class ProductAnnounComponent implements OnInit {
       this.listProduct= data;
       this.totalLength=data.length;
     })
+  }
+
+  addtoCart(item:any){
+    this.AdminService.addtoCart(item);
   }
   // addtocart(){
   //   this.AdminService.addtocart(this.listCart).subscribe(data =>{

@@ -1,4 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "app/contact/contact.component.scss";
+$primary-color: #034DA2;
+$second-color: #111111;
+$third-color: #007F3E;
+@mixin textShadow {
+    text-shadow: rgb(3, 77, 162) 1px 0px 0px, rgb(3, 77, 162) 0.540302px 0.841471px 0px, rgb(3, 77, 162) -0.416147px 0.909297px 0px, rgb(3, 77, 162) -0.989992px 0.14112px 0px, rgb(3, 77, 162) -0.653644px -0.756802px 0px, rgb(3, 77, 162) 0.283662px -0.958924px 0px, rgb(3, 77, 162) 0.96017px -0.279416px 0px;
+            // background-color: #034DA2;
+             color: white;
+}
+@mixin green {
+    &::before{
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 34%;
+        width: 70px;
+        height: 10px;
+        background-color: #007F3E;
+        transform: skewX(-25deg);
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 40%;
+        right: 34%;
+        width: 70px;
+        height: 10px;
+        background-color: #007F3E;
+        transform: skewX(-25deg);
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    // font-size: 62.5%;
+    z-index: 1;
+}
+ul,
+li,
+a{
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 20px;
+}
+
 .banner{
     position: relative;
 }
@@ -12,36 +65,96 @@
     background:transparent !important;
 }
 .banner .owl-prev{
-    left:-60px;
+    left:50px;
 }
 .banner .owl-next{
-   right:-170px  ;
+   right:-60px;
 }
 .banner .owl-prev:before,.banner .owl-next:before{
     position:absolute;
     top:50%;
     transform: translate(-50%,-50%);
-    width: 110px;
-    height: 110px;
-    background: #c9c8c8;
+    width: 60px;
+    height: 60px;
+    background: #c9c8c87e;
     content:'';
     border-radius: 50%;;
 }
 .banner .owl-prev:before{
-    left:106px;
+    left:3px;
 }
 .banner .owl-next:before{
-    right: -10px;
+    right: -50px;
 }
 .banner .owl-prev i,.banner .owl-next i{
+    color: gray;
     font-size:30px;
     position: absolute;
     top: 50%;
 }
 .banner .owl-prev i{
-    transform: translate(217%, -50%);
+    transform: translate(-307%, -50%);
 }
 .banner .owl-next i{
-    transform: translate(-285%, -50%);
+    transform: translate(195%, -50%);
 }
+
+.carousel__slide{
+    position: relative;
+}
+.carousel__slide .owl-prev,.carousel__slide .owl-next{
+    width: 110px;
+    height: 110px;
+    position:absolute;
+    top: 33%;
+    transform: translate(-50%,0);
+    overflow: hidden;
+    background:transparent !important;
+}
+.carousel__slide .owl-prev{
+    left:50px;
+}
+.carousel__slide .owl-next{
+   right:-50px  ;
+}
+.carousel__slide .owl-prev:before,.carousel__slide .owl-next:before{
+    position:absolute;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 110px;
+    height: 110px;
+    background: #c9c8c8ac;
+    content:'';
+    border-radius: 50%;;
+}
+.carousel__slide .owl-prev:before{
+    left:0px;
+}
+.carousel__slide .owl-next{
+    right: -3.2%;
+}
+.carousel__slide .owl-next:before{
+    right: -100px;
+}
+.carousel__slide .owl-prev i,.carousel__slide .owl-next i{
+    font-size:30px;
+    position: absolute;
+    top: 50%;
+}
+.carousel__slide .owl-prev i{
+    transform: translate(-250%, -50%);
+}
+.carousel__slide .owl-next i{
+    transform: translate(125%, -50%);
+}
+.carousel__slide .owl-dots{
+    position: absolute;
+    bottom: 20px;
+    right:48%;
+}
+.carousel__slide .owl-dot{
+    color:$primary-color;
+}
+
+
 
