@@ -7,15 +7,8 @@ import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
   templateUrl: './product-announ.component.html',
   styleUrls: ['./product-announ.component.scss']
 })
-export class ProductAnnounComponent implements OnInit {
-  
-
-  
-
-  
-
-
-
+export class ProductAnnounComponent implements OnInit {  
+  public productListcart:any=[];
   listProduct:any=[];
   slidesStore: any[]=[];
   listCart={
@@ -35,13 +28,14 @@ export class ProductAnnounComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.getProduct();
+
+    // this.AdminService.getProductCart()
+    // .subscribe(res =>{
+    //   this.productListcart=res
+    // })
   }
-  // getPassedData(data: SlidesOutputData) {
-  //   this.activeSlides = data;
-  //   console.log(this.activeSlides);
-  // }
+  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -58,13 +52,13 @@ export class ProductAnnounComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 1
+        items: 2
       },
       740: {
-        items: 1
+        items: 2
       },
       940: {
-        items: 1,
+        items: 1
         
       }
     },
