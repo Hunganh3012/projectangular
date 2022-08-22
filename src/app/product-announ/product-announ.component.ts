@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
+import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 @Component({
@@ -12,31 +13,25 @@ export class ProductAnnounComponent implements OnInit {
   public filterCategory : any;
   listProduct:any=[];
   slidesStore: any[]=[];
-  listCart={
-    name:'',
-    priceold:'',
-    sale:'',
-    img:'',
+  
+  // listCart={
+  //   name:'',
+  //   priceold:'',
+  //   sale:'',
+  //   img:'',
 
-  };
+  // };
   totalLength:any;
   page:number=1;
-  
-  constructor( private AdminService:AdminService,
-                private Router:Router,
-                ) { }
-
-
-
+  product:any;
+  cartNumber:number =0;
+  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {}
   ngOnInit(): void {
+    
     this.getProduct();
-
-    // this.AdminService.getProductCart()
-    // .subscribe(res =>{
-    //   this.productListcart=res
-    // })
+    
+    
   }
-  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -71,15 +66,37 @@ export class ProductAnnounComponent implements OnInit {
       this.totalLength=data.length;
     })
   }
-
+  // itemCart:any=[]
   addtoCart(item:any){
-    this.AdminService.addtoCart(item);
+    
+    // let cartDatanull=localStorage.getItem('cart-item');
+    // if(cartDatanull ==null){
+    //   let storeDataGet:any=[];
+    //   storeDataGet.push(item);
+    //   localStorage.setItem('cart-item',JSON.stringify(storeDataGet))
+    // }else{
+    //   var id = item.id;
+    //   let index:number=-1;
+    //   this.itemCart=JSON.parse(localStorage.getItem('cart-item') || '{}')
+    //   for(let i=0 ;i<this.itemCart.length;i++){
+    //     if(parseInt(id) ===parseInt(this.itemCart[i].id)){
+    //       this.itemCart[i].price= item.price;
+    //       index=i;
+    //       break;
+    //     }
+    //   }
+    //   if(index == -1){
+    //     // this.itemCart.push(item);
+    //     localStorage.setItem('cart-item',JSON.stringify(this.itemCart))
+    //   }else{localStorage.setItem('cart-item',JSON.stringify(this.itemCart))}
+    // }
+    this.AdminService.addtoCart(item)
+    this.cartNumberFunc();
   }
-  // addtocart(){
-  //   this.AdminService.addtocart(this.listCart).subscribe(data =>{
-  //     this.AdminService.
-  //   })
-  // }
-
+  cartNumberFunc(){
+    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.cartNumber=cartValue.length;
+    this.AdminService.cartSubject.next(this.cartNumber)
+  }
 
 }

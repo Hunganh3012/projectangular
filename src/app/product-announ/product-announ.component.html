@@ -381,7 +381,8 @@
                                 <li class="far fa-star"></li>
                             </ul> -->
                             <h3 class="title"><a href="#">{{item.name}}</a></h3>
-                            <div class="price"><del class="mr-2">{{item.priceold}}.000đ</del>{{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}}.000đ</div>
+                            <!-- {{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}} -->
+                            <div class="price"> {{item.priceold}}.000đ</div>
                             <a class="add-to-cart" (click)="addtoCart(item)">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
