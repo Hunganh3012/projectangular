@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
 import { ActivatedRoute,Router } from '@angular/router';
-// import { CurrencyPipe } from '@angular/common';
-// import { ViewChildren, ElementRef, QueryList  } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { ViewChildren, ElementRef, QueryList  } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -10,19 +10,19 @@ import { ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  // @ViewChildren('subTotalWrap')
-  // subTotalItems!: QueryList<ElementRef>;
-  // @ViewChildren('subTotalWrap_existing')
-  // subTotalItems_existing!: QueryList<ElementRef>;
+  @ViewChildren('subTotalWrap')  subTotalItems!:QueryList<ElementRef>;
+  @ViewChildren('subTotalWrap_existing')  subTotalItems_existing!: QueryList<ElementRef>;
+
   cart:any=[];
   constructor(
     private adminService:AdminService, 
     private route:ActivatedRoute,
     private Router:Router,
-    // private currencyPipe: CurrencyPipe // private builder: FormBuilder
+    private currencyPipe: CurrencyPipe // private builder: FormBuilder
     ) { }
   public totalItem:number=0;
   ngOnInit(): void {
+    this.adminService.loadCart();
       this.cartDetail();
   }
 
@@ -60,9 +60,8 @@ export class CartComponent implements OnInit {
     const qty = item.qtyTotal;
     const amt = item.priceold;
     const subTotal = amt * qty;
-    // const subTotal_converted = this.currencyPipe.transform(subTotal, 'VND');
-
-    // this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
+    const subTotal_converted = this.currencyPipe.transform(subTotal,"VND");
+    this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
     this.adminService.saveCart();
   }
 }

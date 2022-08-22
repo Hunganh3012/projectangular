@@ -29,27 +29,30 @@
                         </h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
+                        <!-- <button class="btn btn-link px-2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
-                        </button>
+                        </button> -->
   
-                        <input id="form1" min="1" name="" type="number"
+                        <input id="form1"
+                          min="1"
+                          name="" 
+                          type="number"
                           class="form-control form-control-sm form-input" 
                           [(ngModel)]="getDetail.qtyTotal"
                           [ngModelOptions]="{standalone: true}"
                           value="{{ getDetail.qtyTotal }}"
-                          (change)="changeSubtotal(getDetail,i  )"
+                          (change)="changeSubtotal(getDetail,i  )"  
                           />
   
-                        <button class="btn btn-link px-2"
+                        <!-- <button class="btn btn-link px-2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
-                        </button>
+                        </button> -->
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                         <!-- {{getDetail.priceold - ((getDetail.priceold * getDetail.sale)/100) | number:'1.0-0'}} -->
-                        <h6 class="mb-0">{{getDetail.priceold}}.000đ</h6>
+                        <h6 class="mb-0"  #subTotalWrap>{{getDetail.priceold}}.000đ</h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                         <a class="text-muted" (click)="removeFromCart(getDetail)"><i class="fas fa-times"></i></a>

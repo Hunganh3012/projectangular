@@ -51,7 +51,9 @@ export class AdminService {
     productNumber:any;
 
     
-    
+    loadCart(): void {
+      this.items = JSON.parse(localStorage.getItem("cart-item") || '{}') ?? [];
+    }
     addtoCart(product:any){
       this.cartItemList.push(product);
       console.log(product);

@@ -13,6 +13,7 @@ import { TieudiemComponent } from './tieudiem/tieudiem.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { adminComponent } from './admin/admin.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -50,7 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CurrencyPipe,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
