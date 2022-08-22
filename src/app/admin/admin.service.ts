@@ -61,7 +61,7 @@ export class AdminService {
       return this.cartItemList;
     }
     saveCart(): void {
-      localStorage.setItem('cart_item', JSON.stringify(this.items)); 
+      localStorage.setItem('cart-item', JSON.stringify(this.cartItemList)); 
     }
     // setItem(product:any){
     //   product.price=1;
