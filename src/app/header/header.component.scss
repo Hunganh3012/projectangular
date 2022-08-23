@@ -240,6 +240,12 @@ body{
     }
 }
 .name-cartmini{
+
+
+    -webkit-line-clamp: 1;  /* số dòng hiển thị */
+  	-webkit-box-orient: vertical;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
     margin-left:10px;
     font-size: 16px;
     color: black;
@@ -247,8 +253,12 @@ body{
 .price-cartmini{
     color: #111111;
     font-size: 16px;
+    padding: 0 10px;
+     font-weight: bold;;
 }
 .dropdown-item{
+
+    font-family:"Montserrat";
     margin-bottom: 20px;
     padding:0;
     display: none;
@@ -260,9 +270,13 @@ body{
     top: 39%;
     right: -58px    
 }
+
 .add-cart-button{
     // margin-top: 50px;
-    font-family:'Times New Roman', Times, serif;
+    // text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 200;
+    font-size: 20px;
     text-align:center;
     // margin-top:20px;
     padding:20px 0;
