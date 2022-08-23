@@ -66,12 +66,10 @@ export class ProductAnnounComponent implements OnInit {
 
 
   addtowlist(item:any){
-    if(!this.AdminService.itemInWlist(item)){
       this.AdminService.addtowishlist(item);
-    }
   alert('Đã thêm vào mục sản phẩm yêu thích');
 
-  console.log(this.listProduct.splice(0,4))
+
   }
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
