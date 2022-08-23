@@ -68,30 +68,11 @@ export class ProductAnnounComponent implements OnInit {
   }
   // itemCart:any=[]
   addtoCart(item:any){
-    
-    // let cartDatanull=localStorage.getItem('cart-item');
-    // if(cartDatanull ==null){
-    //   let storeDataGet:any=[];
-    //   storeDataGet.push(item);
-    //   localStorage.setItem('cart-item',JSON.stringify(storeDataGet))
-    // }else{
-    //   var id = item.id;
-    //   let index:number=-1;
-    //   this.itemCart=JSON.parse(localStorage.getItem('cart-item') || '{}')
-    //   for(let i=0 ;i<this.itemCart.length;i++){
-    //     if(parseInt(id) ===parseInt(this.itemCart[i].id)){
-    //       this.itemCart[i].price= item.price;
-    //       index=i;
-    //       break;
-    //     }
-    //   }
-    //   if(index == -1){
-    //     // this.itemCart.push(item);
-    //     localStorage.setItem('cart-item',JSON.stringify(this.itemCart))
-    //   }else{localStorage.setItem('cart-item',JSON.stringify(this.itemCart))}
-    // }
-    this.AdminService.addtoCart(item)
-    this.cartNumberFunc();
+    if(!this.AdminService.itemInCart(item)){
+      this.AdminService.addtoCart(item)
+      this.cartNumberFunc();
+    }
+
   }
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');

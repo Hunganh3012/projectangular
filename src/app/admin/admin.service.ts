@@ -84,6 +84,9 @@ export class AdminService {
         this.saveCart();
       }
     }
+    itemInCart(item:any):boolean{
+      return this.cartItemList.findIndex((o:any) => o.id === item.id) > -1;
+    }
     
 }
 
