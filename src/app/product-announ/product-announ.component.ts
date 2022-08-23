@@ -89,10 +89,9 @@ export class ProductAnnounComponent implements OnInit {
   }
   // itemCart:any=[]
   addtoCart(item:any){
-    if(!this.AdminService.itemInCart(item)){
       this.AdminService.addtoCart(item)
       this.cartNumberFunc();
-    }
+
 
   }
   cartNumberFunc(){

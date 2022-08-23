@@ -56,7 +56,7 @@ export class AdminService {
     getwlist(){
       return this.wlistItem;
     }
-    savewlist(){
+    savewlist():void{
         localStorage.setItem('wlist-item', JSON.stringify(this.wlistItem)); 
     }
     clearwlist(items:any){
@@ -93,13 +93,6 @@ export class AdminService {
     saveCart(): void {
       localStorage.setItem('cart-item', JSON.stringify(this.cartItemList)); 
     }
-    // setItem(product:any){
-    //   product.price=1;
-    //   let cartItem={
-    //     [ product.name]:product
-    //   }
-    //   localStorage.setItem("cart-item",JSON.stringify(cartItem))
-    // }
     clearCart(items:any){
       this.cartItemList=[];
       localStorage.removeItem("cart-item");
