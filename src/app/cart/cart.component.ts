@@ -36,13 +36,12 @@ export class CartComponent implements OnInit {
   
   
   successbuy(){
+    this.adminService.clearCart(this.getCartDetail);
     this.Router.navigateByUrl("/");
     alert('Mua hàng thành công')
   }
   clearCart(item:any){
     this.adminService.clearCart(this.getCartDetail);
-    // const adminProduct=[...this.adminService.getProduct()]
-    // this.getCartDetail=[...this.adminService.getProduct()]
   }
   removeFromCart(item:any) {
     this.adminService.removeItem(item);
@@ -60,7 +59,7 @@ export class CartComponent implements OnInit {
     const qty = item.qtyTotal;
     const amt = item.priceold;
     const subTotal = amt * qty;
-    const subTotal_converted = this.currencyPipe.transform(subTotal,"VND");
+    const subTotal_converted = this.currencyPipe.transform(subTotal,"VND",'symbol','1.2-3');
     this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
     this.adminService.saveCart();
   }
