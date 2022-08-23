@@ -43,6 +43,34 @@ export class AdminService {
   //   }))
   // }
 
+//----------------------------Sản phẩm yêu thích--------------------------
+    public wlistItem:any=[]
+    addtowishlist(wlist:any){
+      this.wlistItem.push(wlist);
+      console.log(wlist);
+      localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem));
+    }
+    itemInWlist(item:any):boolean{
+      return this.wlistItem.findIndex((o:any)=>o.id === item.id) >-1;
+    }
+    getwlist(){
+      return this.wlistItem;
+    }
+    savewlist(){
+        localStorage.setItem('wlist-item', JSON.stringify(this.wlistItem)); 
+    }
+    clearwlist(items:any){
+      this.wlistItem=[];
+      localStorage.removeItem("wlist-item");
+    }
+    removewlist(item:any){
+      const index = this.wlistItem.findIndex((o:any) => o.id === item.id);
+  
+      if (index > -1) {
+        this.wlistItem.splice(index, 1);
+        this.savewlist();
+      }
+    }
 // ---------------------------Giỏ hàng---------------------------------------
 
     public cartItemList:any=[];

@@ -23,6 +23,7 @@ import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WishlistComponent } from './admin/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeadComponent,
     DetailComponent,
     CartComponent,
+    WishlistComponent
   ],
   imports: [
     FormsModule,

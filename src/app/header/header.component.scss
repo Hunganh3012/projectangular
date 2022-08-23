@@ -185,6 +185,7 @@ body{
     &:hover{
         color: #8499b2;
         & .user-dropdown{
+            z-index: 100;
             display: block;
         }
     }
@@ -408,13 +409,17 @@ body{
     }
 }
 .search{
+    font-size: 16px;
     position: relative;
     & input{
         width:200px;
         border: 1px solid #034DA2;
         border-radius:20px;
         outline: none;
-        padding: 0px 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 20px;
+        padding-right: 40px;
 
     }
 }

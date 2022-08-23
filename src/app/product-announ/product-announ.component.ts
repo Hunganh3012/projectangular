@@ -12,6 +12,7 @@ export class ProductAnnounComponent implements OnInit {
   public productListcart:any=[];
   public filterCategory : any;
   listProduct:any=[];
+  listProductHighlight:any=[];
   slidesStore: any[]=[];
   
   // listCart={
@@ -21,6 +22,7 @@ export class ProductAnnounComponent implements OnInit {
   //   img:'',
 
   // };
+  getFourProduct:any=[];
   totalLength:any;
   page:number=1;
   product:any;
@@ -29,6 +31,7 @@ export class ProductAnnounComponent implements OnInit {
   ngOnInit(): void {
     
     this.getProduct();
+    this.getProductHighlight();
     
     
   }
@@ -60,10 +63,28 @@ export class ProductAnnounComponent implements OnInit {
     },
     nav: true
   }
+
+
+  addtowlist(item:any){
+    if(!this.AdminService.itemInWlist(item)){
+      this.AdminService.addtowishlist(item);
+    }
+  alert('Đã thêm vào mục sản phẩm yêu thích');
+
+  console.log(this.listProduct.splice(0,4))
+  }
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       this.listProduct= data;
       this.totalLength=data.length;
+      console.log(this.listProduct)
+    })
+  }
+  getProductHighlight(){
+    return this.AdminService.getProduct().subscribe( (data:any)=>{
+      this.listProductHighlight= data.splice(0,4);
+
+
     })
   }
   // itemCart:any=[]

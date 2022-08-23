@@ -18,12 +18,14 @@
                         <h4 class="box-title mt-5"></h4>
                         <p>{{detail.detail}}</p>
                         <h2 class="mt-5 ">
-                            <del>{{detail.priceold}}.000đ    </del> <span class="ml-2 mr-3">{{detail.priceold - ((detail.priceold * detail.sale)/100) | number:'1.0-0'}}.000đ</span><small class="text-danger">-{{detail.sale}}%</small>
+                            <span class="ml-2 mr-3">{{detail.priceold}}.000đ</span><small class="text-danger">-{{detail.sale}}%</small>
                         </h2>
                         <button class="btn  mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                            <a routerLink="/cart/{{detail.id}} " class="btn btn-primary btn-rounded"><i class="fa fa-shopping-cart"></i></a>
+                            <a routerLink="/cart" class="btn btn-primary btn-rounded" ><i class="fa fa-shopping-cart" ></i>
+                                <button class="btn btn-primary btn-rounded" (click)="addtocart(detail)">Thêm vào giỏ hàng</button></a>
+                            
                         </button>
-                        <button class="btn btn-primary btn-rounded">Mua ngay</button>
+                        
                         <h3 class="box-title mt-5">Cam kết</h3>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-check text-success"></i>Đặt online giao tận nhà ĐÚNG GIỜ (nếu trễ tặng PMH 50.000₫)</li>

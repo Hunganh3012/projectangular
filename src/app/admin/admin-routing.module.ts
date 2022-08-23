@@ -5,6 +5,7 @@ import { AdminContactComponent } from './admin-contact/admin-contact.component';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { adminComponent } from './admin.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const Adminroutes: Routes = [
     {
@@ -18,6 +19,10 @@ const Adminroutes: Routes = [
     {
       path:'admin-product',
       component:AdminProductComponent
+    },
+    {
+      path:'wishlist',
+      component:WishlistComponent
     },
     {
       path:'admin-addproduct',

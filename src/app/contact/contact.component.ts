@@ -7,19 +7,19 @@ import { AppService } from '../app.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+
+  constructor( private AppService:AppService,
+              private router:Router) { }
+
+  ngOnInit(): void {
+    
+  }
   list:any={
     lastname:'',
     firstname:'',
     phone:'',
     email:'',
     content:'',
-  }
-  
-
-  constructor( private AppService:AppService,
-              private router:Router) { }
-
-  ngOnInit(): void {
   }
   postContent(){
      this.AppService.postContent(this.list).subscribe(data=>{

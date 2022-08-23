@@ -8,15 +8,27 @@ import { AdminService } from '../admin/admin.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  cartNumber:number =0;
   detail:any=[];
-  constructor(private adminService:AdminService, private route:ActivatedRoute,private Router:Router, ) { }
+  constructor(private AdminService:AdminService, private route:ActivatedRoute,private Router:Router, ) { }
 
   ngOnInit(): void {
     this.productDetail();
   }
+  addtocart(item:any){
+    if(!this.AdminService.itemInCart(item)){
+      this.AdminService.addtoCart(item)
+      this.cartNumberFunc();
+    }
+  }
+  cartNumberFunc(){
+    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.cartNumber=cartValue.length;
+    this.AdminService.cartSubject.next(this.cartNumber)
+  }
   productDetail(){
     this.route.params.subscribe((data:any)=>{
-      this.adminService.porductdetail(data.id).subscribe(data =>{
+      this.AdminService.porductdetail(data.id).subscribe(data =>{
         this.detail=data;
         console.log(this.detail);
        

@@ -11,5 +11,7 @@ export class AdminProductHighlightComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  getCartDetail(){
+    
+  }
 }
