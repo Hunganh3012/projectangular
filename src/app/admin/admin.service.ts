@@ -46,9 +46,33 @@ export class AdminService {
 //----------------------------Sản phẩm yêu thích--------------------------
     public wlistItem:any=[]
     addtowishlist(wlist:any){
-      this.wlistItem.push(wlist);
       console.log(wlist);
-      localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem));
+      let cartDataNull=localStorage.getItem('wlist-item');
+      if(cartDataNull ==null){
+        let storeDataGet:any=[];
+        storeDataGet.push(wlist)
+        localStorage.setItem('wlist-item',JSON.stringify(storeDataGet));
+      }
+      else{
+        var id=wlist.id;
+        let index:number=-1;
+        this.wlistItem=JSON.parse(localStorage.getItem('wlist-item') || '{}');
+        for(let i=0;i<this.wlistItem.length;i++){  
+          if(parseInt(id) === parseInt(this.wlistItem[i].id)){
+            index=i;
+            break;
+          }
+        }
+        if(index ==-1){
+          this.wlistItem.push(wlist);
+          localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem))
+        console.log(this. cartItemList)
+
+        }
+        else{
+          localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem))
+        }
+      }
     }
     itemInWlist(item:any):boolean{
       return this.wlistItem.findIndex((o:any)=>o.id === item.id) >-1;
@@ -64,11 +88,16 @@ export class AdminService {
       localStorage.removeItem("wlist-item");
     }
     removewlist(item:any){
-      const index = this.wlistItem.findIndex((o:any) => o.id === item.id);
-  
-      if (index > -1) {
-        this.wlistItem.splice(index, 1);
-        this.savewlist();
+      if(localStorage.getItem('wlist-item')){
+        this.wlistItem=JSON.parse(localStorage.getItem('wlist-item') || '{}')
+
+        for(let i=0;i<this.wlistItem.length;i++){
+          if(this.wlistItem[i].id === item){ 
+            this.wlistItem.splice(i,1);
+            console.log(this.wlistItem)
+            this.savewlist();
+          }
+        }
       }
     }
 // ---------------------------Giỏ hàng---------------------------------------
