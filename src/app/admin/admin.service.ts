@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
-  items = [];
+  items:any= [];
   listProduct:any=[];
   constructor(private http:HttpClient) { }
   API_Product="https://62de1ee1ccdf9f7ec2d15d4e.mockapi.io/product";
@@ -74,8 +74,8 @@ export class AdminService {
 // ---------------------------Giỏ hàng---------------------------------------
 
     public cartItemList:any=[];
-    
     public totalItem:any;
+
     productNumber:any;
 
     
@@ -83,9 +83,38 @@ export class AdminService {
       this.items = JSON.parse(localStorage.getItem("cart-item") || '{}') ?? [];
     }
     addtoCart(product:any){
-      this.cartItemList.push(product);
+
+      // this.cartItemList.push(product);
+      // localStorage.setItem('cart-item',JSON.stringify(product))
       console.log(product);
-      localStorage.setItem('cart-item',JSON.stringify(this.cartItemList));
+      let cartDataNull=localStorage.getItem('cart-item');
+      if(cartDataNull ==null){
+        let storeDataGet:any=[];
+        storeDataGet.push(product)
+        localStorage.setItem('cart-item',JSON.stringify(storeDataGet));
+      }
+      else{
+        var id=product.id;
+        let index:number=-1;
+        this. cartItemList=JSON.parse(localStorage.getItem('cart-item') || '{}');
+        for(let i=0;i<this. cartItemList.length;i++){  
+          if(parseInt(id) === parseInt(this. cartItemList[i].id)){
+            index=i;
+            break;
+          }
+        }
+        if(index == -1){
+          this. cartItemList.push(product);
+          localStorage.setItem('cart-item',JSON.stringify(this. cartItemList))
+        console.log(this. cartItemList)
+
+        }
+        else{
+          localStorage.setItem('cart-item',JSON.stringify(this. cartItemList))
+        }
+      }
+      
+      
     }
     getItem(){
       return this.cartItemList;
@@ -97,12 +126,25 @@ export class AdminService {
       this.cartItemList=[];
       localStorage.removeItem("cart-item");
     }
-    removeItem(item:any) {
-      const index = this.cartItemList.findIndex((o:any) => o.id === item.id);
+    // removeItem(item:any) {
+    //   const index = this.cartItemList.findIndex((o:any) => o.id === item.id);
   
-      if (index > -1) {
-        this.cartItemList.splice(index, 1);
-        this.saveCart();
+    //   if (index > -1) {
+    //     this.cartItemList.splice(index, 1);
+    //     this.saveCart();
+    //   }
+    // }
+    removeItem(item:any){
+      if(localStorage.getItem('cart-item')){
+        this.cartItemList=JSON.parse(localStorage.getItem('cart-item') || '{}')
+
+        for(let i=0;i<this.cartItemList.length;i++){
+          if(this.cartItemList[i].id === item){ 
+            this.cartItemList.splice(i,1);
+            console.log(this.cartItemList)
+            this.saveCart();
+          }
+        }
       }
     }
     itemInCart(item:any):boolean{

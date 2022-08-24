@@ -86,12 +86,15 @@ export class ProductAnnounComponent implements OnInit {
     })
   }
   // itemCart:any=[]
-  addtoCart(item:any){
-      this.AdminService.addtoCart(item)
+  addtoCart(product:any){
+      // console.log(item);
+      // localStorage.setItem('cart-item',JSON.stringify(item))
+      this.AdminService.addtoCart(product);
       this.cartNumberFunc();
 
 
   }
+
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;

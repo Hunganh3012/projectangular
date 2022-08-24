@@ -89,10 +89,7 @@
                 <p class="highlight-content">Bia, các loại nước giải khát</p>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 mb-4"  *ngFor="let item of listProduct | 
-                            paginate: { itemsPerPage: 12, currentPage: page,
-                                totalItems:totalLength
-                            }">
+                <div class="col-md-3 col-sm-6 mb-4"  *ngFor="let item of listProduct | paginate: { itemsPerPage: 12, currentPage: page,totalItems:totalLength }">
                     <div class="product-grid">
                         <div class="product-image">
                             <a routerLink="../detail/{{item.id}}"  class="image">
