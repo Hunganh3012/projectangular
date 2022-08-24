@@ -80,7 +80,8 @@ export class ProductAnnounComponent implements OnInit {
   }
   getProductHighlight(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
-      this.listProductHighlight= data.splice(0,4);
+      console.log(data.splice(5,9))
+      this.listProductHighlight= data.splice(5,4);
 
 
     })
