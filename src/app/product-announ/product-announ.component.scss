@@ -414,12 +414,12 @@ h2::after {
     color: #034DA2;
     position: relative;
     &::after{
+        left: 56%;
+        width: 44%;
         content: '';
         top: 44%;
-        left: 31%;
         position: absolute;
         height: 6px;
-        width: 68%;
         background-color: #034DA2;
     }
 }

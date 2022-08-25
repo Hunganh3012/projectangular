@@ -35,6 +35,8 @@ export class CartComponent implements OnInit {
   }
   
   
+  
+  
   successbuy(){
     this.adminService.clearCart(this.getCartDetail);
     this.Router.navigateByUrl("/");
@@ -42,10 +44,13 @@ export class CartComponent implements OnInit {
   }
   clearCart(item:any){
     this.adminService.clearCart(this.getCartDetail);
+    this.cartNumber=0;
   }
   removeFromCart(item:any) {
     this.adminService.removeItem(item);
     this.getCartDetail = this.adminService.getItem();
+    this.cartNumberFunc();
+    this.productNumberFunc();
   }
   get Total(){
     return this.getCartDetail.reduce((sum:any,x:any) =>({
@@ -62,5 +67,18 @@ export class CartComponent implements OnInit {
     const subTotal_converted = this.currencyPipe.transform(subTotal,"VND",'symbol','1.2-3');
     this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
     this.adminService.saveCart();
+  }
+  cartNumber:number=0;
+  cartNumberFunc(){
+    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.cartNumber=cartValue.length;
+    this.adminService.cartSubject.next(this.cartNumber);
+  }
+  productcart:any=[];
+  productNumberFunc(){
+    var productValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.productcart=productValue;
+    this.adminService.productmini.next(this.productcart);
+
   }
 }

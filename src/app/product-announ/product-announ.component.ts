@@ -27,6 +27,7 @@ export class ProductAnnounComponent implements OnInit {
   page:number=1;
   product:any;
   cartNumber:number =0;
+  productcart:any=[];
   constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {}
   ngOnInit(): void {
     
@@ -51,10 +52,10 @@ export class ProductAnnounComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
-        items: 2
+        items: 1
       },
       940: {
         items: 1
@@ -92,14 +93,18 @@ export class ProductAnnounComponent implements OnInit {
       // localStorage.setItem('cart-item',JSON.stringify(item))
       this.AdminService.addtoCart(product);
       this.cartNumberFunc();
-
-
+      this.productNumberFunc();
   }
 
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;
-    this.AdminService.cartSubject.next(this.cartNumber)
+    this.AdminService.cartSubject.next(this.cartNumber);
   }
+  productNumberFunc(){
+    var productValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.productcart=productValue;
+    this.AdminService.productmini.next(this.productcart);
 
+  }
 }
