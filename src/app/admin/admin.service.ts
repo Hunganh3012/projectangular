@@ -58,12 +58,12 @@ export class AdminService {
         var id=wlist.id;
         let index:number=-1;
         this.wlistItem=JSON.parse(localStorage.getItem('wlist-item') || '{}');
-        for(let i=0;i<this.wlistItem.length;i++){  
-          if(parseInt(id) === parseInt(this.wlistItem[i].id)){
-            index=i;
-            break;
-          }
-        }
+        // for(let i=0;i<this.wlistItem.length;i++){  
+        //   if(parseInt(id) === parseInt(this.wlistItem[i].id)){
+        //     index=i;
+        //     break;
+        //   }
+        // }
         if(index ==-1){
           this.wlistItem.push(wlist);
           localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem))
@@ -127,16 +127,17 @@ export class AdminService {
         var id=product.id;
         let index:number=-1;
         this. cartItemList=JSON.parse(localStorage.getItem('cart-item') || '{}');
-        for(let i=0;i<this. cartItemList.length;i++){  
-          if(parseInt(id) === parseInt(this. cartItemList[i].id)){
-            index=i;
-            break;
-          }
-        }
+        // for(let i=0;i<this. cartItemList.length;i++){  
+        //   if(parseInt(id) === parseInt(this. cartItemList[i].id)){
+        //     index=i;
+        //     break;
+        //   }
+        // }
         if(index == -1){
           this. cartItemList.push(product);
+          
+          console.log(this. cartItemList)
           localStorage.setItem('cart-item',JSON.stringify(this. cartItemList))
-        console.log(this. cartItemList)
 
         }
         else{
