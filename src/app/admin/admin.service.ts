@@ -33,6 +33,8 @@ export class AdminService {
   OpenLoginService=new Subject<any>();
   cartSubject=new Subject<any>()
   productmini=new Subject<any>();
+  qty=new Subject<any>();
+  updateQtycart= new Subject<any>();
 //Ban đầu
   
 
@@ -58,12 +60,12 @@ export class AdminService {
         var id=wlist.id;
         let index:number=-1;
         this.wlistItem=JSON.parse(localStorage.getItem('wlist-item') || '{}');
-        // for(let i=0;i<this.wlistItem.length;i++){  
-        //   if(parseInt(id) === parseInt(this.wlistItem[i].id)){
-        //     index=i;
-        //     break;
-        //   }
-        // }
+        for(let i=0;i<this.wlistItem.length;i++){  
+          if(parseInt(id) === parseInt(this.wlistItem[i].id)){
+            index=i;
+            break;
+          }
+        }
         if(index ==-1){
           this.wlistItem.push(wlist);
           localStorage.setItem('wlist-item',JSON.stringify(this.wlistItem))
@@ -112,6 +114,9 @@ export class AdminService {
     loadCart(): void {
       this.items = JSON.parse(localStorage.getItem("cart-item") || '{}') ?? [];
     }
+    updateQty(item:any){
+      this.updateQtycart.next(item);
+    }
     addtoCart(product:any){
 
       // this.cartItemList.push(product);
@@ -127,12 +132,12 @@ export class AdminService {
         var id=product.id;
         let index:number=-1;
         this. cartItemList=JSON.parse(localStorage.getItem('cart-item') || '{}');
-        // for(let i=0;i<this. cartItemList.length;i++){  
-        //   if(parseInt(id) === parseInt(this. cartItemList[i].id)){
-        //     index=i;
-        //     break;
-        //   }
-        // }
+        for(let i=0;i<this. cartItemList.length;i++){  
+          if(parseInt(id) === parseInt(this. cartItemList[i].id)){
+            index=i;
+            break;
+          }
+        }
         if(index == -1){
           this. cartItemList.push(product);
           
@@ -147,7 +152,7 @@ export class AdminService {
       
       
     }
-    getItem(){
+    getItems(){
       return this.cartItemList;
     }
     saveCart(): void {
@@ -172,7 +177,7 @@ export class AdminService {
         for(let i=0;i<this.cartItemList.length;i++){
           if(this.cartItemList[i].id === item){ 
             this.cartItemList.splice(i,1);
-            console.log(this.cartItemList)
+            // console.log(this.cartItemList)
             this.saveCart();
           }
         }

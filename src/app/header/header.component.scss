@@ -1,6 +1,14 @@
 $primary-color: #034DA2;
 $second-color: #111111;
 $third-color: #007F3E;
+table{
+    width: 100%;
+    height: 200px;
+}
+table, th, td {
+    text-align: center;
+    border:1px solid black;
+  }
 @mixin textShadow {
     text-shadow: rgb(3, 77, 162) 1px 0px 0px, rgb(3, 77, 162) 0.540302px 0.841471px 0px, rgb(3, 77, 162) -0.416147px 0.909297px 0px, rgb(3, 77, 162) -0.989992px 0.14112px 0px, rgb(3, 77, 162) -0.653644px -0.756802px 0px, rgb(3, 77, 162) 0.283662px -0.958924px 0px, rgb(3, 77, 162) 0.96017px -0.279416px 0px;
             // background-color: #034DA2;
@@ -173,6 +181,11 @@ body{
     cursor: pointer;
 }
 // -------------------------------------END--------------------------
+.tr-class td{
+    width:200px;
+    height:100px;
+
+}
 .is-toggle{
     display: block;
     transform: translateX(0);
@@ -272,6 +285,8 @@ body{
 }
 
 .add-cart-button{
+    display:flex;
+    justify-content:center;
     // margin-top: 50px;
     // text-transform: uppercase;
     font-family: 'Montserrat';
@@ -356,7 +371,7 @@ body{
  }
  
  .dropdown__item {
-
+    justify-content: space-between;
     transition: background-color 0.2s linear;
  }
  

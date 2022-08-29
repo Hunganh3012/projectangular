@@ -12,50 +12,47 @@
                     <div class="d-flex justify-content-between align-items-center mb-5">
                       <h1 class="fw-bold mb-0 text-black">Giỏ hàng</h1>
                       <!-- <h6 class="mb-0 text-muted"> sản phẩm</h6> -->
+                      <div class="pt-5">
+                        <h6 class="mb-0"><a routerLink="/product-announ" class="text-body" (click)="clearCart(getCartDetail)">
+                          Xóa tất cả</a></h6>
+                      </div>
                     </div>
                     <hr class="my-4">
-  
-                    <div class="row mb-4 d-flex justify-content-between align-items-center" *ngFor="let getDetail of getCartDetail ; let i = index">
+                    
+                    <div class="row mb-4 d-flex justify-content-between align-items-center" *ngFor="let qtyDetail of getCartDetail ; let i = index">
                       <div class="col-md-2 col-lg-2 col-xl-2">
                         <img
-                          src="{{getDetail.img}}"
+                          src="{{qtyDetail.img}}"
                           class="img-fluid rounded-3" alt="ảnh sản phẩm">
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">{{getDetail.name}}</h6>
+                        <h6 class="text-muted">{{qtyDetail.name}}</h6>
                         <!-- <h6 class="text-black mb-0">Cotton T-shirt</h6> -->
                         <h6 class="mt-5 ">
-                            <span>{{getDetail.priceold}}.000đ    </span> <span class="ml-2 mr-3"></span><small class="text-danger">-{{getDetail.sale}}%</small>
+                            <span>{{qtyDetail.priceold}}.000đ    </span> <span class="ml-2 mr-3"></span><small class="text-danger">-{{qtyDetail.sale}}%</small>
                         </h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <!-- <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <button class="btn btn-link px-2" (click)="decrease(qtyDetail)">
                           <i class="fas fa-minus"></i>
-                        </button> -->
-  
-                        <input id="form1"
-                          min="1"
-                          name="" 
-                          type="number"
-                          class="form-control form-control-sm form-input" 
-                          [(ngModel)]="getDetail.qtyTotal"
-                          [ngModelOptions]="{standalone: true}"
-                          value="{{ getDetail.qtyTotal }}"
-                          (change)="changeSubtotal(getDetail,i  )"  
-                          />
-  
-                        <!-- <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        </button>
+                        <input style="width:50px"
+                            [(ngModel)]="qtyDetail.qtyTotal"
+                            min="1"
+                            type="number"
+                            name=""
+                            class="form-control"/>
+
+                        <button class="btn btn-link px-2" (click)="increase(qtyDetail)">
                           <i class="fas fa-plus"></i>
-                        </button> -->
+                        </button>
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" >
                         <!-- {{getDetail.priceold - ((getDetail.priceold * getDetail.sale)/100) | number:'1.0-0'}} -->
-                        <h6 class="mb-0" #subTotalWrap >đ{{getDetail.priceold}}.00 </h6>
+                        <h6 class="mb-0" #subTotalWrap >đ{{qtyDetail.priceold}}.00 </h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a class="text-muted" (click)="removeFromCart(getDetail.id)"><i class="fas fa-times"></i></a>
+                        <a class="text-muted" (click)="removeFromCart(qtyDetail.id)"><i class="fas fa-times"></i></a>
                       </div>
                     </div>
   
@@ -68,10 +65,7 @@
                     
   
                     <hr class="my-4">
-                    <div class="pt-5">
-                      <h6 class="mb-0"><a routerLink="/product-announ" class="text-body" (click)="clearCart(getCartDetail)">
-                        Xóa tất cả</a></h6>
-                    </div>
+
                     <div class="pt-5">
                       <h6 class="mb-0"><a routerLink="/product-announ" class="text-body"><i
                             class="fas fa-long-arrow-alt-left me-2"></i>Trở về trang chủ</a></h6>

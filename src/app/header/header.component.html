@@ -60,10 +60,10 @@
                             <a routerLink="/">Công bố sản phẩm</a>
                         </li>
                         <li class="nav-menu-item">
-                            <a href="">Tin tức</a>
+                            <a routerLink="/product">Tin tức</a>
                         </li>
                         <li class="nav-menu-item">
-                            <a href="">Tuyển dụng</a>
+                            <a routerLink="/contact">Tuyển dụng</a>
                         </li>
                         <li class="nav-menu-item">
                             <a routerLink="/contact">Liên hệ</a>
@@ -85,19 +85,21 @@
                         <small class="number-cart ">{{totalItem}}</small>
                             <div class="dropdown-item" >
                                 <ul class="dropdown__list" > 
-                                    
-                                    <li class="dropdown__item" *ngFor="let getDetail of getCartDetailheader">
+                    
+                                    <li class="dropdown__item" *ngFor="let Detail of  CartDetailheader">
                                         <div class="cartmini-left">
-                                            <img src="{{getDetail.img}}" alt="" class="img-cartmini">
-                                            <span class="name-cartmini">{{getDetail.name}}</span>
+                                            <img src="{{Detail.img}}" alt="" class="img-cartmini">
+                                            <span class="name-cartmini">{{Detail.name}}</span>
                                         </div>
-                                    <span class="price-cartmini">{{getDetail.priceold}}.000đ</span>
+                                        <span>{{Detail.qtyTotal}}</span>
+                                    <span class="price-cartmini">{{Detail.priceold}}.000đ</span>
                                     </li>
                                     
                                 
                                 </ul>
                                 <div class="add-cart-button">
-                                    <a routerLink="/cart"> <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
+                                    <!-- <a routerLink="/cart" class="">Thành tiền: {{Total | currency: 'VND':'symbol':'1.2-2'}}0</a> -->
+                                    <a routerLink="/cart" > <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
                                 </div>
                             </div>
                     </i></a>

@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
   cartDetail(){
     if(localStorage.getItem('cart-item')){
       this.getCartDetail=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
-      console.log(this.getCartDetail);
+      // console.log(this.getCartDetail);
     }
   }
   
@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
   }
   removeFromCart(item:any) {
     this.adminService.removeItem(item);
-    this.getCartDetail = this.adminService.getItem();
+    this.getCartDetail = this.adminService.getItems();
     this.cartNumberFunc();
     this.productNumberFunc();
   }
@@ -60,25 +60,66 @@ export class CartComponent implements OnInit {
     {qtyTotal:1, priceold:0}
     ).priceold;
   }
-  changeSubtotal(item:any, index:any) {
-    const qty = item.qtyTotal;
-    const amt = item.priceold;
-    const subTotal = amt * qty;
-    const subTotal_converted = this.currencyPipe.transform(subTotal,"VND",'symbol','1.2-3');
-    this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
-    this.adminService.saveCart();
+  increase(prod:any){
+    if(prod.qtyTotal !=10){
+      prod.qtyTotal +=1;
+      this.adminService.updateQty(prod);
+    }
+    localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
+    // this.getCartDetail = this.adminService.getItem();
+    // this.qtyNumberFunc(prod.qtyTotal)
+
   }
+  decrease(prod:any){
+    if(prod.qtyTotal !=1){
+      prod.qtyTotal -=1;
+      this.adminService.updateQty(prod);
+      // this.qtyNumberFunc();
+    }
+    localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
+
+  }
+  // changeSubtotal(item:any, index:number) {
+  //   const qty = item.qtyTotal;
+  //   console.log(qty)
+  //   const amt = item.priceold;
+  //   const subTotal = amt * qty;
+  //   const subTotal_converted = this.currencyPipe.transform(subTotal,"VND",'symbol','1.2-3');
+  //   this.subTotalItems.toArray()[index].nativeElement.innerHTML =subTotal_converted;
+  //   console.log(this.subTotalItems)
+  //   this.adminService.saveCart();
+  // }
   cartNumber:number=0;
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;
     this.adminService.cartSubject.next(this.cartNumber);
+    console.log(this.cartNumber)
   }
-  productcart:any=[];
+
+
+
+  qtyNum:number=0;;
+  qtyNumberFunc(){
+    const cartDetail=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    console.log(cartDetail)
+    const cartfilter=cartDetail.filter((data:any) =>{ 
+          this.qtyNum=data.qtyTotal;
+          console.log(this.qtyNum); 
+          this.adminService.qty.next(this.qtyNum);
+        })
+    // console.log(cartfilter)
+  
+  }
+
+
+
+  productcart:object=[];
   productNumberFunc(){
     var productValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.productcart=productValue;
+    console.log(this.productcart)
     this.adminService.productmini.next(this.productcart);
-
   }
+
 }

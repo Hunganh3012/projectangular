@@ -25,14 +25,15 @@ export class ProductAnnounComponent implements OnInit {
   getFourProduct:any=[];
   totalLength:any;
   page:number=1;
-  product:any;
-  cartNumber:number =0;
-  productcart:any=[];
+  productincart:any=[];
+  
+
   constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {}
   ngOnInit(): void {
     
     this.getProduct();
     this.getProductHighlight();
+    this.cartDetail();
     
     
   }
@@ -76,31 +77,53 @@ export class ProductAnnounComponent implements OnInit {
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       this.listProduct= data;
       this.totalLength=data.length;
-      console.log(this.listProduct)
+      // console.log(this.listProduct)
     })
   }
+
   getProductHighlight(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
-      console.log(data.splice(5,9))
+      // console.log(data.splice(5,9))
       this.listProductHighlight= data.splice(5,4);
 
 
     })
   }
-  // itemCart:any=[]
-  addtoCart(product:any){
-      // console.log(item);
-      // localStorage.setItem('cart-item',JSON.stringify(item))
-      this.AdminService.addtoCart(product);
-      this.cartNumberFunc();
-      this.productNumberFunc();
+  products:any=[];
+  cartDetail(){
+    if(localStorage.getItem('cart-item')){
+      this.products=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
+      console.log(this.products);
+    }
   }
+  Desc(prod:any){
+    if(prod.qtyTotal!=0){
+      prod.qtyTotal-=1;
+    }
+  }
+  Insc(prod:any){
+    if(prod.qtyTotal!=10){
+      prod.qtyTotal+=1;
+    }
 
+  }
+  addtoCart(product:any){
+    product.qtyTotal+=1;
+    // console.log(item);
+    // localStorage.setItem('cart-item',JSON.stringify(item))
+    this.AdminService.addtoCart(product);
+    this.cartNumberFunc();
+    this.productNumberFunc();
+}
+
+  cartNumber:number =0;
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;
     this.AdminService.cartSubject.next(this.cartNumber);
   }
+
+  productcart:any=[];
   productNumberFunc(){
     var productValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.productcart=productValue;

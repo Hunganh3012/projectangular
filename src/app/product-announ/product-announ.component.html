@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<app-head></app-head>
-<body>
-    <app-header></app-header>
+
+
+<app-header></app-header>
     
     <div class="">
         <div class="container ">
@@ -26,14 +24,9 @@
                                                 <li><a routerLink="../detail/{{hl.id}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                                             </ul>
                                         </div>
+                                        
                                         <div class="product-content">
-                                            <!-- <ul class="rating">
-                                                <li class="fas fa-star"></li>
-                                                <li class="fas fa-star"></li>
-                                                <li class="fas fa-star"></li>
-                                                <li class="far fa-star"></li>
-                                                <li class="far fa-star"></li>
-                                            </ul> -->
+                                            
                                             <h3 class="title"><a href="#">{{hl.name}}</a></h3>
                                             <!-- {{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}} -->
                                             <div class="price"> {{hl.priceold}}.000đ</div>
@@ -102,7 +95,9 @@
                                 <li><a routerLink="../detail/{{item.id}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                             </ul>
                         </div>
+
                         <div class="product-content">
+                            
                             <!-- <ul class="rating">
                                 <li class="fas fa-star"></li>
                                 <li class="fas fa-star"></li>
@@ -110,13 +105,33 @@
                                 <li class="far fa-star"></li>
                                 <li class="far fa-star"></li>
                             </ul> -->
-                            <h3 class="title"><a href="#">{{item.name}}</a></h3>
+                            <h3 class="title tilte-name"><a href="#">{{item.name}}</a></h3>
+                            
                             <!-- {{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}} -->
                             <div class="price"> {{item.priceold}}.000đ</div>
+                            
                             <a class="add-to-cart" (click)="addtoCart(item)">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
+                    <!-- <div class="col-md-3 col-lg-3 col-xl-2 d-flex add-to-qty "  >
+                        <button class="btn btn-link px-2" (click)="Desc(item)" >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <input style="width:60px"
+                            [(ngModel)]="item.qtyTotal"
+                            [ngModelOptions]="{ standalone: true }"
+                            min="1"
+                            type="number"
+                            value="{{item.qtyTotal}}"
+                            name=""
+                            class="form-control"/>
+    
+                        <button class="btn btn-link px-2" (click)="Insc(item)">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                    </div> -->
                 </div>
+
             </div>
         <div class="container pag-fix">
             <pagination-controls (pageChange)="page = $event" style="text-align:center"></pagination-controls>
@@ -128,5 +143,3 @@
 
 
 
-</body>
-</html>
