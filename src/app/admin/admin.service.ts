@@ -38,14 +38,6 @@ export class AdminService {
 //Ban đầu
   
 
-
-  // getProductCart(){
-  //   return this.http.get<any>(this.API_Product)
-  //   .pipe(map((res:any)=> {
-  //     return res;
-  //   }))
-  // }
-
 //----------------------------Sản phẩm yêu thích--------------------------
     public wlistItem:any=[]
     addtowishlist(wlist:any){
@@ -108,15 +100,15 @@ export class AdminService {
     public cartItemList:any=[];
     public totalItem:any;
 
-    productNumber:any;
 
-    
     loadCart(): void {
       this.items = JSON.parse(localStorage.getItem("cart-item") || '{}') ?? [];
     }
     updateQty(item:any){
       this.updateQtycart.next(item);
     }
+
+  
     addtoCart(product:any){
 
       // this.cartItemList.push(product);
@@ -134,8 +126,10 @@ export class AdminService {
         this. cartItemList=JSON.parse(localStorage.getItem('cart-item') || '{}');
         for(let i=0;i<this. cartItemList.length;i++){  
           if(parseInt(id) === parseInt(this. cartItemList[i].id)){
+            this.cartItemList[i].qtyTotal+=1;
+            // console.log(this.cartItemList[i].id)
             index=i;
-            break;
+            // break;
           }
         }
         if(index == -1){

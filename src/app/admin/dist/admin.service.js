@@ -22,12 +22,6 @@ var AdminService = /** @class */ (function () {
         this.qty = new rxjs_1.Subject();
         this.updateQtycart = new rxjs_1.Subject();
         //Ban đầu
-        // getProductCart(){
-        //   return this.http.get<any>(this.API_Product)
-        //   .pipe(map((res:any)=> {
-        //     return res;
-        //   }))
-        // }
         //----------------------------Sản phẩm yêu thích--------------------------
         this.wlistItem = [];
         // ---------------------------Giỏ hàng---------------------------------------
@@ -128,8 +122,10 @@ var AdminService = /** @class */ (function () {
             this.cartItemList = JSON.parse(localStorage.getItem('cart-item') || '{}');
             for (var i = 0; i < this.cartItemList.length; i++) {
                 if (parseInt(id) === parseInt(this.cartItemList[i].id)) {
+                    this.cartItemList[i].qtyTotal += 1;
+                    // console.log(this.cartItemList[i].id)
                     index = i;
-                    break;
+                    // break;
                 }
             }
             if (index == -1) {

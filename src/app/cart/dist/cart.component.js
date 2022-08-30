@@ -69,20 +69,16 @@ var CartComponent = /** @class */ (function () {
         configurable: true
     });
     CartComponent.prototype.increase = function (prod) {
-        if (prod.qtyTotal != 10) {
-            prod.qtyTotal += 1;
-            this.adminService.updateQty(prod);
-        }
+        prod.qtyTotal += 1;
+        this.adminService.updateQty(prod);
         localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
         // this.getCartDetail = this.adminService.getItem();
         // this.qtyNumberFunc(prod.qtyTotal)
     };
     CartComponent.prototype.decrease = function (prod) {
-        if (prod.qtyTotal != 1) {
-            prod.qtyTotal -= 1;
-            this.adminService.updateQty(prod);
-            // this.qtyNumberFunc();
-        }
+        prod.qtyTotal -= 1;
+        this.adminService.updateQty(prod);
+        // this.qtyNumberFunc();
         localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
     };
     CartComponent.prototype.cartNumberFunc = function () {

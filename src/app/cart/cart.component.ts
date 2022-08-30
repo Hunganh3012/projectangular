@@ -61,21 +61,18 @@ export class CartComponent implements OnInit {
     ).priceold;
   }
   increase(prod:any){
-    if(prod.qtyTotal !=10){
       prod.qtyTotal +=1;
       this.adminService.updateQty(prod);
-    }
+
     localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
     // this.getCartDetail = this.adminService.getItem();
     // this.qtyNumberFunc(prod.qtyTotal)
 
   }
   decrease(prod:any){
-    if(prod.qtyTotal !=1){
       prod.qtyTotal -=1;
       this.adminService.updateQty(prod);
       // this.qtyNumberFunc();
-    }
     localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
 
   }
