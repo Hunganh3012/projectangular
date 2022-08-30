@@ -274,7 +274,7 @@ body{
     font-family:"Montserrat";
     margin-bottom: 20px;
     padding:0;
-    display: none;
+    display: block;
     margin-top: 2.5rem;
     z-index:999;
     width:500px;
@@ -283,10 +283,13 @@ body{
     top: 39%;
     right: -58px    
 }
-
+.cartmini-left{
+    width:285px;
+    overflow:hidden;
+}
 .add-cart-button{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     // margin-top: 50px;
     // text-transform: uppercase;
     font-family: 'Montserrat';

@@ -98,7 +98,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         }
     };
     ProductAnnounComponent.prototype.addtoCart = function (product) {
-        product.qtyTotal += 1;
+        product.qtyTotal = 1;
         // console.log(item);
         // localStorage.setItem('cart-item',JSON.stringify(item))
         this.AdminService.addtoCart(product);

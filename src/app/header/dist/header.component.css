@@ -227,7 +227,7 @@ body {
   font-family: "Montserrat";
   margin-bottom: 20px;
   padding: 0;
-  display: none;
+  display: block;
   margin-top: 2.5rem;
   z-index: 999;
   width: 500px;
@@ -237,9 +237,14 @@ body {
   right: -58px;
 }
 
+.cartmini-left {
+  width: 285px;
+  overflow: hidden;
+}
+
 .add-cart-button {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-family: "Montserrat";
   font-weight: 200;
   font-size: 20px;

@@ -48,8 +48,8 @@
                         </button>
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" >
-                        <!-- {{getDetail.priceold - ((getDetail.priceold * getDetail.sale)/100) | number:'1.0-0'}} -->
-                        <h6 class="mb-0" #subTotalWrap >đ{{qtyDetail.priceold}}.00 </h6>
+                        <!-- {{qtyDetail.priceold - ((qtyDetail.priceold * qtyDetail.sale)/100) | number:'1.0-0'}} -->
+                        <h6 class="mb-0"  >đ{{qtyDetail.priceold}}.00 </h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                         <a class="text-muted" (click)="removeFromCart(qtyDetail.id)"><i class="fas fa-times"></i></a>

@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   isShow=false;
   isShowLogIn=true;
   isShowLogOut=false;
+  isShowClose=true;
   constructor(private authService:AuthService, private adminService:AdminService) { 
     this.adminService.cartSubject.subscribe(data =>{
       this.totalItem=data;
@@ -18,9 +19,6 @@ export class HeaderComponent implements OnInit {
     this.adminService.productmini.subscribe(data =>{
       this.CartDetailheader=data;
       // console.log(this.getCartDetailheader)
-    })
-    this.adminService.qty.subscribe(data =>{
-      this.qtyCart=data;
     })
   }
   public qtyCart:any;
@@ -38,7 +36,7 @@ export class HeaderComponent implements OnInit {
     })
 
     this.adminService.getProduct().subscribe((res :any)=>{
-      this.productCart.push(res)
+      this.productCart.push(res);
       this.productItemFunc();
     })
 
@@ -47,6 +45,14 @@ export class HeaderComponent implements OnInit {
       
     // })
     // console.log(this.numberProduct)
+  }
+  get Totals(){
+    return this.CartDetailheader.reduce((sum:any,x:any) =>({
+      qtyTotal: 1,
+      priceold:sum.priceold +x.qtyTotal * x.priceold
+    }),
+    {qtyTotal:1, priceold:0}
+    ).priceold;
   }
   cartItemFunc(){
     this.totalItem= this.getCartItemFromLocal().length ?? 0;
@@ -126,6 +132,10 @@ export class HeaderComponent implements OnInit {
     this.isShowLogIn=true;
     this.isShow=false;
   }
+  // close(){
+  //   this.authService.close();
+  //   this.isShowClose=false;
+  // }
 }
 
 

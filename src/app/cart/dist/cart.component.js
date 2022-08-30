@@ -19,6 +19,8 @@ var CartComponent = /** @class */ (function () {
         this.cart = [];
         this.totalItem = 0;
         this.getCartDetail = [];
+        this.cartNumbers = 0;
+        this.productcarts = [];
         // changeSubtotal(item:any, index:number) {
         //   const qty = item.qtyTotal;
         //   console.log(qty)
@@ -30,7 +32,6 @@ var CartComponent = /** @class */ (function () {
         //   this.adminService.saveCart();
         // }
         this.cartNumber = 0;
-        this.qtyNum = 0;
         this.productcart = [];
     }
     CartComponent.prototype.ngOnInit = function () {
@@ -70,34 +71,31 @@ var CartComponent = /** @class */ (function () {
     });
     CartComponent.prototype.increase = function (prod) {
         prod.qtyTotal += 1;
-        this.adminService.updateQty(prod);
+        this.productNumberFunction();
         localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
         // this.getCartDetail = this.adminService.getItem();
         // this.qtyNumberFunc(prod.qtyTotal)
     };
     CartComponent.prototype.decrease = function (prod) {
         prod.qtyTotal -= 1;
-        this.adminService.updateQty(prod);
-        // this.qtyNumberFunc();
+        this.productNumberFunction();
         localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
+    };
+    CartComponent.prototype.cartNumberFunction = function () {
+        var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
+        this.cartNumber = cartValue.length;
+        this.adminService.cartSubject.next(this.cartNumber);
+    };
+    CartComponent.prototype.productNumberFunction = function () {
+        var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
+        this.productcart = productValue;
+        this.adminService.productmini.next(this.productcart);
     };
     CartComponent.prototype.cartNumberFunc = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.cartNumber = cartValue.length;
         this.adminService.cartSubject.next(this.cartNumber);
         console.log(this.cartNumber);
-    };
-    ;
-    CartComponent.prototype.qtyNumberFunc = function () {
-        var _this = this;
-        var cartDetail = JSON.parse(localStorage.getItem('cart-item') || '{}');
-        console.log(cartDetail);
-        var cartfilter = cartDetail.filter(function (data) {
-            _this.qtyNum = data.qtyTotal;
-            console.log(_this.qtyNum);
-            _this.adminService.qty.next(_this.qtyNum);
-        });
-        // console.log(cartfilter)
     };
     CartComponent.prototype.productNumberFunc = function () {
         var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');

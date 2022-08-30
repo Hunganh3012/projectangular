@@ -81,9 +81,9 @@
                     <!-- <span class="nav-language">VN</span>
                     <img src="./assets/images/star.png" alt="" class="nav-icon-star"> -->
                     
-                    <a routerLink="/cart" class="link-cart"><i class="fa-solid fa-cart-shopping cart-icon">
+                    <a routerLink="/cart" class="link-cart" ><i class="fa-solid fa-cart-shopping cart-icon">
                         <small class="number-cart ">{{totalItem}}</small>
-                            <div class="dropdown-item" >
+                            <div class="dropdown-item" *ngIf="isShowClose">
                                 <ul class="dropdown__list" > 
                     
                                     <li class="dropdown__item" *ngFor="let Detail of  CartDetailheader">
@@ -98,6 +98,7 @@
                                 
                                 </ul>
                                 <div class="add-cart-button">
+                                    <a routerLink="/cart" class="">Total :  {{Totals | currency: 'VND':'symbol':'1.2-2'}}0</a>
                                     <!-- <a routerLink="/cart" class="">Thành tiền: {{Total | currency: 'VND':'symbol':'1.2-2'}}0</a> -->
                                     <a routerLink="/cart" > <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
                                 </div>

@@ -8,4 +8,6 @@ export class AuthService {
   constructor() { }
   logIn(){this.isAuthrized=true};
   logOut(){this.isAuthrized=false};
+  open(){this.isAuthrized=true}
+  close(){this.isAuthrized=false}
 }

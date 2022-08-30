@@ -62,8 +62,7 @@ export class CartComponent implements OnInit {
   }
   increase(prod:any){
       prod.qtyTotal +=1;
-      this.adminService.updateQty(prod);
-
+      this.productNumberFunction(); 
     localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
     // this.getCartDetail = this.adminService.getItem();
     // this.qtyNumberFunc(prod.qtyTotal)
@@ -71,9 +70,23 @@ export class CartComponent implements OnInit {
   }
   decrease(prod:any){
       prod.qtyTotal -=1;
-      this.adminService.updateQty(prod);
-      // this.qtyNumberFunc();
+      this.productNumberFunction();
     localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
+
+  }
+
+  cartNumbers:number =0;
+  cartNumberFunction(){
+    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.cartNumber=cartValue.length;
+    this.adminService.cartSubject.next(this.cartNumber);
+  }
+
+  productcarts:any=[];
+  productNumberFunction(){
+    var productValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.productcart=productValue;
+    this.adminService.productmini.next(this.productcart);
 
   }
   // changeSubtotal(item:any, index:number) {
@@ -96,18 +109,6 @@ export class CartComponent implements OnInit {
 
 
 
-  qtyNum:number=0;;
-  qtyNumberFunc(){
-    const cartDetail=JSON.parse(localStorage.getItem('cart-item') || '{}');
-    console.log(cartDetail)
-    const cartfilter=cartDetail.filter((data:any) =>{ 
-          this.qtyNum=data.qtyTotal;
-          console.log(this.qtyNum); 
-          this.adminService.qty.next(this.qtyNum);
-        })
-    // console.log(cartfilter)
-  
-  }
 
 
 

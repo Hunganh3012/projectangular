@@ -16,6 +16,7 @@ var HeaderComponent = /** @class */ (function () {
         this.isShow = false;
         this.isShowLogIn = true;
         this.isShowLogOut = false;
+        this.isShowClose = true;
         this.totalItem = 0;
         this.numberProduct = [];
         this.productCart = [];
@@ -36,9 +37,6 @@ var HeaderComponent = /** @class */ (function () {
             _this.CartDetailheader = data;
             // console.log(this.getCartDetailheader)
         });
-        this.adminService.qty.subscribe(function (data) {
-            _this.qtyCart = data;
-        });
     }
     HeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -57,6 +55,16 @@ var HeaderComponent = /** @class */ (function () {
         // })
         // console.log(this.numberProduct)
     };
+    Object.defineProperty(HeaderComponent.prototype, "Totals", {
+        get: function () {
+            return this.CartDetailheader.reduce(function (sum, x) { return ({
+                qtyTotal: 1,
+                priceold: sum.priceold + x.qtyTotal * x.priceold
+            }); }, { qtyTotal: 1, priceold: 0 }).priceold;
+        },
+        enumerable: false,
+        configurable: true
+    });
     HeaderComponent.prototype.cartItemFunc = function () {
         var _a;
         this.totalItem = (_a = this.getCartItemFromLocal().length) !== null && _a !== void 0 ? _a : 0;
