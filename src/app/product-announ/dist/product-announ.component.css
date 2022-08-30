@@ -18,11 +18,15 @@ a {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 16px;
   font-family: "Montserrat";
   font-weight: 500;
   line-height: 20px;
   background: #e2eaef;
+}
+
+.font {
+  font-size: 20px;
 }
 
 .wrapper {
@@ -490,6 +494,9 @@ h2::after {
   position: absolute;
   height: 6px;
   background-color: #034DA2;
+}
+.highlight-content {
+  font-size: 50px;
 }
 
 .ngx-pagination {

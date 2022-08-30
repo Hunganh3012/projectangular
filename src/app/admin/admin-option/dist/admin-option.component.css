@@ -1,0 +1,38 @@
+.wrapper {
+  max-width: 1920px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.border {
+  border: 1px solid black;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.quantrivien {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 60px;
+}
+
+.thea {
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.thea-1 {
+  margin-bottom: 30px;
+}

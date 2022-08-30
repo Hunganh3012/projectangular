@@ -10,7 +10,7 @@ import { ProductAnnounComponent } from './product-announ/product-announ.componen
 import { AuthGuard } from './auth.guard';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
-import { AdminProductHighlightComponent } from './admin/admin-product-highlight/admin-product-highlight.component';
+
 import { WishlistComponent } from './admin/wishlist/wishlist.component';
 const routes: Routes = [
   
@@ -42,10 +42,6 @@ const routes: Routes = [
   {
     path:'cart',
     component:CartComponent
-  },
-  {
-    path:'admin-product-highlight',
-    component:AdminProductHighlightComponent
   },
   {
     path:'admin',

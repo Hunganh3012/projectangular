@@ -19,7 +19,6 @@ var AdminService = /** @class */ (function () {
         this.OpenLoginService = new rxjs_1.Subject();
         this.cartSubject = new rxjs_1.Subject();
         this.productmini = new rxjs_1.Subject();
-        this.qty = new rxjs_1.Subject();
         this.updateQtycart = new rxjs_1.Subject();
         //Ban đầu
         //----------------------------Sản phẩm yêu thích--------------------------
@@ -102,9 +101,6 @@ var AdminService = /** @class */ (function () {
     AdminService.prototype.loadCart = function () {
         var _a;
         this.items = (_a = JSON.parse(localStorage.getItem("cart-item") || '{}')) !== null && _a !== void 0 ? _a : [];
-    };
-    AdminService.prototype.updateQty = function (item) {
-        this.updateQtycart.next(item);
     };
     AdminService.prototype.addtoCart = function (product) {
         // this.cartItemList.push(product);

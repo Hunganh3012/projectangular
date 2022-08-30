@@ -132,10 +132,14 @@ export class HeaderComponent implements OnInit {
     this.isShowLogIn=true;
     this.isShow=false;
   }
-  // close(){
-  //   this.authService.close();
-  //   this.isShowClose=false;
-  // }
+  close(){
+    this.authService.close();
+    this.isShowClose=false;
+  } 
+  open(){
+    this.authService.open();
+    this.isShowClose=true;
+  } 
 }
 
 

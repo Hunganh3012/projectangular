@@ -224,10 +224,10 @@ body {
 }
 
 .dropdown-item {
-  font-family: "Montserrat";
+  font-family: "Roboto";
   margin-bottom: 20px;
   padding: 0;
-  display: block;
+  display: none;
   margin-top: 2.5rem;
   z-index: 999;
   width: 500px;
@@ -245,7 +245,7 @@ body {
 .add-cart-button {
   display: flex;
   justify-content: space-between;
-  font-family: "Montserrat";
+  font-family: "Roboto";
   font-weight: 200;
   font-size: 20px;
   text-align: center;
@@ -266,7 +266,7 @@ body {
   border: 1px solid #034DA2;
   height: 100%;
   width: 100%;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto";
   z-index: 9999;
 }
 
@@ -493,7 +493,7 @@ body {
     padding: 0 15px;
   }
   .menu-toggle-item {
-    font-family: "Montserrat";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -525,7 +525,7 @@ body {
     color: white;
     padding-top: 2rem;
     display: block;
-    font-family: "Mark Pro";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 18px;

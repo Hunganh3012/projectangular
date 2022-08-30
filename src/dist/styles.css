@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Roboto";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  z-index: 1;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner .owl-prev, .banner .owl-next {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 33%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: #c7c7c8fa !important;
+  border-radius: 50% !important;
+}
+
+.banner .owl-prev {
+  left: -4px;
+}
+
+.banner .owl-next {
+  right: -65px;
+}
+
+.banner .owl-prev i, .banner .owl-next i {
+  color: gray;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+}
+
+.banner .owl-prev i {
+  transform: translate(-50%, -50%);
+}
+
+.banner .owl-next i {
+  transform: translate(-50%, -50%);
+}
+
+.carousel__slide {
+  position: relative;
+}
+
+.carousel__slide .owl-prev, .carousel__slide .owl-next {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 33%;
+  transform: translate(-50%, 100%);
+  overflow: hidden;
+  background-color: #c8c6c6 !important;
+  border-radius: 50% !important;
+}
+
+.carousel__slide .owl-prev {
+  left: 50px;
+}
+
+.carousel__slide .owl-next {
+  right: -13px;
+}
+
+.carousel__slide .owl-prev i, .carousel__slide .owl-next i {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+}
+
+.carousel__slide .owl-prev i {
+  transform: translate(-72%, -50%);
+}
+
+.carousel__slide .owl-next i {
+  transform: translate(-35%, -50%);
+}
+
+.carousel__slide .owl-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 48%;
+}
+
+.carousel__slide .owl-dot {
+  color: #034DA2;
+}

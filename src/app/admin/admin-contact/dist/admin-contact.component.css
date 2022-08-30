@@ -1,0 +1,53 @@
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.wrapper {
+  max-width: 1920px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.admin-highlight {
+  margin-bottom: 100px;
+  text-align: center;
+  background-color: #d85e6a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.item-acount {
+  font-size: 20px;
+  padding: 20px;
+  align-items: center;
+  line-height: 30px;
+}
+
+table {
+  margin-bottom: 50px;
+}
+
+.button-delete {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: #d85e6a;
+  font-size: 20px;
+  color: wheat;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.button-delete:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

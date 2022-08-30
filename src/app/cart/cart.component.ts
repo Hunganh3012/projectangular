@@ -69,9 +69,11 @@ export class CartComponent implements OnInit {
 
   }
   decrease(prod:any){
+    if(prod.qtyTotal !=0){
       prod.qtyTotal -=1;
       this.productNumberFunction();
     localStorage.setItem('cart-item',JSON.stringify(this.getCartDetail))
+    }
 
   }
 

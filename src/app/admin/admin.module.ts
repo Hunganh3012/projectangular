@@ -7,8 +7,8 @@ import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminAddproductComponent } from './admin-addproduct/admin-addproduct.component';
 import { FormsModule } from '@angular/forms';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
-import { AdminProductHighlightComponent } from './admin-product-highlight/admin-product-highlight.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { AdminOptionComponent } from './admin-option/admin-option.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     AdminProductComponent,
     AdminAddproductComponent,
     AdminEditproductComponent,
-    AdminProductHighlightComponent,
+    AdminOptionComponent,
     // WishlistComponent,
   ],
   imports: [

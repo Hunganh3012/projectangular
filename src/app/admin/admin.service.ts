@@ -33,7 +33,6 @@ export class AdminService {
   OpenLoginService=new Subject<any>();
   cartSubject=new Subject<any>()
   productmini=new Subject<any>();
-  qty=new Subject<any>();
   updateQtycart= new Subject<any>();
 //Ban đầu
   
@@ -103,9 +102,6 @@ export class AdminService {
 
     loadCart(): void {
       this.items = JSON.parse(localStorage.getItem("cart-item") || '{}') ?? [];
-    }
-    updateQty(item:any){
-      this.updateQtycart.next(item);
     }
 
   

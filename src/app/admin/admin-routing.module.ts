@@ -4,13 +4,14 @@ import { AdminAddproductComponent } from './admin-addproduct/admin-addproduct.co
 import { AdminContactComponent } from './admin-contact/admin-contact.component';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
+import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { adminComponent } from './admin.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const Adminroutes: Routes = [
     {
       path:'',
-      component:adminComponent
+      component:AdminOptionComponent
     },
     {
       path:'admin-contact',

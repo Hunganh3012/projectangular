@@ -1,64 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<app-head></app-head>
-<body>
-    <app-header></app-header>
-    <section class="h-100 h-custom" style="background-color: #034da2a8 ;">
-        <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12">
-              <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                <div class="card-body p-0">
-                  <div class="row g-0"    >
-                    <div class="col-lg-12">
-                      <div class="p-5">
-                        <div class="d-flex justify-content-between align-items-center mb-5">
-                          <h1 class="fw-bold mb-0 text-black">SẢN PHẨM YÊU THÍCH</h1>
-                          <!-- <h6 class="mb-0 text-muted"> sản phẩm</h6> -->
-                        </div>
-                        <hr class="my-4">
-      
-                        <div class="row mb-4 d-flex justify-content-between align-items-center" *ngFor="let getwlist of wListDetail">
-                          <div class="col-md-2 col-lg-2 col-xl-2">
-                            <img
-                              src="{{getwlist.img}}"
-                              class="img-fluid rounded-3" alt="ảnh sản phẩm">
-                          </div>
-                          <div class="col-md-3 col-lg-3 col-xl-3 ">
-                            
-                            <h6 class="text-muted">{{getwlist.name}}</h6>
+<section class="h-100 h-custom" style="background-color: #034da2a8 ;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0"    >
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="fw-bold mb-0 text-black">SẢN PHẨM YÊU THÍCH</h1>
+                    <!-- <h6 class="mb-0 text-muted"> sản phẩm</h6> -->
+                  </div>
+                  <hr class="my-4">
 
-                            <!-- <h6 class="text-black mb-0">Cotton T-shirt</h6> -->
-                            <h6 class="mt-5 ">
-                                <span>{{getwlist.priceold}}.000đ    </span> <span class="ml-2 mr-3"></span><small class="text-danger">-20%</small>
-                            </h6>
-                          </div>
-                          <button class="btn  mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                            <a routerLink="/detail/{{getwlist.id}}"class="btn btn-primary btn-rounded" >
-                                <button class="btn btn-primary btn-rounded" >Xem chi tiết</button></a>
-                            
-                        </button>
-                          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" >
-                            <h6 class="mb-0" #subTotalWrap >đ{{getwlist.priceold}}.00 </h6>
-                          </div>
-                          <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                            <a class="text-muted" (click)="removeFromwList(getwlist.id)"><i class="fas fa-times"></i></a>
-                          </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="pt-5">
-                          <h6 class="mb-0"><a routerLink="/product-announ" class="text-body" (click)="clearwlist(wListDetail)">
-                            Xóa tất cả</a></h6>
-                        </div>
-                      </div>
+                  <div class="row mb-4 d-flex justify-content-between align-items-center" *ngFor="let getwlist of wListDetail">
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <img
+                        src="{{getwlist.img}}"
+                        class="img-fluid rounded-3" alt="ảnh sản phẩm">
                     </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3 ">
+                      
+                      <h6 class="text-muted">{{getwlist.name}}</h6>
+
+                      <!-- <h6 class="text-black mb-0">Cotton T-shirt</h6> -->
+                      <h6 class="mt-5 ">
+                          <span>{{getwlist.priceold}}.000đ    </span> <span class="ml-2 mr-3"></span><small class="text-danger">-20%</small>
+                      </h6>
+                    </div>
+                    <button class="btn  mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                      <a routerLink="/detail/{{getwlist.id}}"class="btn btn-primary btn-rounded" >
+                          <button class="btn btn-primary btn-rounded" >Xem chi tiết</button></a>
+                      
+                  </button>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" >
+                      <h6 class="mb-0" #subTotalWrap >đ{{getwlist.priceold}}.00 </h6>
+                    </div>
+                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                      <a class="text-muted" (click)="removeFromwList(getwlist.id)"><i class="fas fa-times"></i></a>
+                    </div>
+                  </div>
+                  <hr class="my-4">
+                  <div class="pt-5">
+                    <h6 class="mb-0"><a routerLink="/product-announ" class="text-body" (click)="clearwlist(wListDetail)">
+                      Xóa tất cả</a></h6>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <app-footer></app-footer>
-</body>
-</html>
+      </div>
+    </div>
+  </div>
+</section>

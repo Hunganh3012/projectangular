@@ -77,9 +77,11 @@ var CartComponent = /** @class */ (function () {
         // this.qtyNumberFunc(prod.qtyTotal)
     };
     CartComponent.prototype.decrease = function (prod) {
-        prod.qtyTotal -= 1;
-        this.productNumberFunction();
-        localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
+        if (prod.qtyTotal != 0) {
+            prod.qtyTotal -= 1;
+            this.productNumberFunction();
+            localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
+        }
     };
     CartComponent.prototype.cartNumberFunction = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');

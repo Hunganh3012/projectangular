@@ -134,6 +134,14 @@ var HeaderComponent = /** @class */ (function () {
         this.isShowLogIn = true;
         this.isShow = false;
     };
+    HeaderComponent.prototype.close = function () {
+        this.authService.close();
+        this.isShowClose = false;
+    };
+    HeaderComponent.prototype.open = function () {
+        this.authService.open();
+        this.isShowClose = true;
+    };
     HeaderComponent = __decorate([
         core_1.Component({
             selector: 'app-header',
