@@ -13,6 +13,21 @@ table, th, td {
     text-align: center;
     // background-color: rgb(241, 237, 237);
 }
+.admin-highlight{
+    margin-bottom: 100px;
+    text-align: center;
+    color: white;
+    // background-color: rgb(216, 94, 106);
+    background-color:#034da2;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    
+}
+.ngx-pagination{
+    text-align: center;
+}
 .anhsanpham{
     text-align: center;
     width: 100px;

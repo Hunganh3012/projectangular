@@ -16,6 +16,7 @@ var admin_addproduct_component_1 = require("./admin-addproduct/admin-addproduct.
 var forms_1 = require("@angular/forms");
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_option_component_1 = require("./admin-option/admin-option.component");
+var ngx_pagination_1 = require("ngx-pagination");
 // import { NgxPaginationModule } from 'ngx-pagination';
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
@@ -33,6 +34,8 @@ var AdminModule = /** @class */ (function () {
                 common_1.CommonModule,
                 admin_routing_module_1.AdminRoutingModule,
                 forms_1.FormsModule,
+                ngx_pagination_1.NgxPaginationModule
+                // HttpClient
             ]
         })
     ], AdminModule);

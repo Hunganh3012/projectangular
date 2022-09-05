@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
+import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-admin-product',
@@ -8,8 +9,9 @@ import { AdminService } from '../admin.service';
 })
 export class AdminProductComponent implements OnInit {
   listproductAdmin:any=[];
+  totalLength:any;
+  page:number=1;
   constructor( private AdminService:AdminService) { }
-
   ngOnInit(): void {
     this.getProduct();
   }

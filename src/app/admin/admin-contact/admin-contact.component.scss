@@ -17,7 +17,9 @@ body{
 .admin-highlight{
     margin-bottom: 100px;
     text-align: center;
-    background-color: rgb(216, 94, 106);
+    color: white;
+    // background-color: rgb(216, 94, 106);
+    background-color:#034da2;
     padding:20px;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -32,19 +34,24 @@ table, th, td {
     padding: 20px;
     align-items: center;
     line-height: 30px;
+    word-break: break-all;
+    width: 0;
 }
 table{
     margin-bottom: 50px;
 }
 .button-delete{
+    padding: 0 10px;
     transition: all 0.2s ease;
     &:hover{
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     }
     cursor: pointer;
-    background-color: rgb(216, 94, 106);
+    background-color: #034da2;
     font-size: 20px;
-    color: wheat;
-    // border: none;
+    color: white;
+    border-radius:20px ;
+    outline: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+

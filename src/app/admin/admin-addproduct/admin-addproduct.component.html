@@ -1,34 +1,38 @@
 
     <div class="wrapper">
-        <div class="container">
+        <div class="table-responsive">
             <h1>Thêm sản phẩm mới </h1>
-            <table style="width:100%">
-                <tr>
-                    <th>Tên sản phẩm</th>
-                    <th>giảm giá(%)</th>
-                    <th>Giá tiền(ngìn đồng)</th>
-                    <th>Mô tả sản phẩm</th>
-                    <th>Link ảnh sản phẩm</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text"class="input-addproduct" placeholder="Tên sản phẩm" [(ngModel)]="listadd.name" >
-                    </td>
-                    <td>
-                        <input type="text" class="input-addproduct" placeholder="sale" [(ngModel)]="listadd.sale">
-                    </td>
-                    <td>
-                        <input type="text" class="input-addproduct" placeholder="giá sản phẩm" [(ngModel)]="listadd.priceold">
-                    </td>
-                    <td>
-                        <input type="text" class="input-addproduct" placeholder="Mô tảsản phẩm" [(ngModel)]="listadd.detail">
-                    </td>
-                    <td>
-                        <!-- <input type="file" [(ngModel)]="listadd.img"><br>
-                        <span>Hoặc</span><br> -->
-                        <input type="text" placeholder="img" [(ngModel)]="listadd.img">
-                    </td>
-                </tr>
+            <table style="width:100%" class="table table-striped">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>giảm giá(%)</th>
+                        <th>Giá tiền(ngìn đồng)</th>
+                        <th>Mô tả sản phẩm</th>
+                        <th>Link ảnh sản phẩm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text"class="input-addproduct" placeholder="Tên sản phẩm" [(ngModel)]="listadd.name" >
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" placeholder="sale" [(ngModel)]="listadd.sale">
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" placeholder="giá sản phẩm" [(ngModel)]="listadd.priceold">
+                        </td>
+                        <td>
+                            <input type="text" class="input-addproduct" placeholder="Mô tảsản phẩm" [(ngModel)]="listadd.detail">
+                        </td>
+                        <td>
+                            <!-- <input type="file" [(ngModel)]="listadd.img"><br>
+                            <span>Hoặc</span><br> -->
+                            <input type="text" class="input-addproduct" placeholder="img" [(ngModel)]="listadd.img">
+                        </td>
+                    </tr>
+                </tbody>
         </table>
         <button class="addbutton" (click)="addProduct()">Thêm sản phẩm</button>
         </div>

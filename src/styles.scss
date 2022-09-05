@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "app/contact/contact.component.scss";
+.ngx-pagination{
+    font-size:22px;
+    margin-top:20px
+}
 $primary-color: #034DA2;
 $second-color: #111111;
 $third-color: #007F3E;

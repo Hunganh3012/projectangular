@@ -23,7 +23,7 @@ table, th, td {
     cursor: pointer;
     display: block;
     border: none;
-    background-color: red;
+    background-color:#034da2;
     width: 200px;
     border-radius: 20px;
     margin: 20px auto;
@@ -32,6 +32,9 @@ table, th, td {
     font-size: 20px;
 }
 .input-addproduct{
+    width: 200px;
+    height:60px;
+    text-align:center;
     border: none;
     outline: none;
     font-size: 16px;
