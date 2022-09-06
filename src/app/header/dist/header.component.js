@@ -29,7 +29,7 @@ var HeaderComponent = /** @class */ (function () {
         //   }
         // }
         // -----------------------Log In & Log Out--------------------------
-        this.isDisplay = false;
+        this.isDisplay = true;
         this.adminService.cartSubject.subscribe(function (data) {
             _this.totalItem = data;
         });

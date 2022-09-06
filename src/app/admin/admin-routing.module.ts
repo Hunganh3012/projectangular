@@ -7,15 +7,23 @@ import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { adminComponent } from './admin.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { DasboardComponent } from './dasboard/dasboard.component';
+
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const Adminroutes: Routes = [
     {
       path:'',
-      component:AdminOptionComponent
+      component:DasboardComponent,
+
     },
     {
       path:'admin-contact',
       component:AdminContactComponent
+    },
+    {
+      path:'dasboard',
+      component:DasboardComponent
     },
     {
       path:'admin-product',

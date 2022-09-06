@@ -13,6 +13,7 @@ var admin_routing_module_1 = require("./admin-routing.module");
 var admin_contact_component_1 = require("./admin-contact/admin-contact.component");
 var admin_product_component_1 = require("./admin-product/admin-product.component");
 var admin_addproduct_component_1 = require("./admin-addproduct/admin-addproduct.component");
+var sidebar_component_1 = require("./sidebar/sidebar.component");
 var forms_1 = require("@angular/forms");
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_option_component_1 = require("./admin-option/admin-option.component");
@@ -29,6 +30,8 @@ var AdminModule = /** @class */ (function () {
                 admin_addproduct_component_1.AdminAddproductComponent,
                 admin_editproduct_component_1.AdminEditproductComponent,
                 admin_option_component_1.AdminOptionComponent,
+                sidebar_component_1.SidebarComponent
+                // WishlistComponent,
             ],
             imports: [
                 common_1.CommonModule,

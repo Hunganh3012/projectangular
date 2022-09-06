@@ -115,7 +115,7 @@ export class HeaderComponent implements OnInit {
 
 
   // -----------------------Log In & Log Out--------------------------
-  isDisplay=false;
+  isDisplay=true;
   clickToggle(){
     this.isDisplay=!this.isDisplay;
   }

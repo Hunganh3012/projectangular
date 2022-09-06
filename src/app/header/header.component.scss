@@ -173,6 +173,14 @@ body{
     text-decoration: none;
     color: #ffffff;
 }
+.nav-menu-item {
+    transition: all 0.3s ease;
+    &:hover{
+        transition: all 0.5s ease;
+        border-bottom: 1px solid #034DA2;
+        
+    }
+}
 .nav-menu-item a {
     text-decoration: none;
     color: #034DA2;

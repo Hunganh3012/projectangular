@@ -5,13 +5,15 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminContactComponent } from './admin-contact/admin-contact.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminAddproductComponent } from './admin-addproduct/admin-addproduct.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import * as $ from 'jquery';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { DasboardComponent } from './dasboard/dasboard.component';
+
+
 // import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AdminEditproductComponent,
     AdminOptionComponent,
     SidebarComponent,
+    DasboardComponent
     // WishlistComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
+    
     NgxPaginationModule
+    
     // HttpClient
   ]
 })

@@ -10,6 +10,12 @@ export class AdminOptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  //   $(document).on("load",function () {
+  //     $('#sidebarCollapse').on('click', function (e) {
+  //           e.preventDefault();
+  //         $('#sidebar').toggleClass('active');
+  //     });
+  // });
   }
 
-}
+} 

@@ -8,12 +8,15 @@ import { AppService } from 'src/app/app.service';
 })
 export class AdminContactComponent implements OnInit {
   list:any=[];
+  page:number=1;
+  totalLength:any;
   constructor( private AppService:AppService) { }
 
   ngOnInit(): void {
     this.renderContent();
   }
-
+  sum=0;
+ numId:number=0;
   renderContent(){
     return this.AppService.renderContent().subscribe(data =>{
       this.list=data;
@@ -26,7 +29,7 @@ export class AdminContactComponent implements OnInit {
          this.list=this.list.filter((item:any) =>{
            return item.id !=id;
          })
-         alert('Xóa thành công')
+         alert('Xóa thành công');
        })
      }
 }
