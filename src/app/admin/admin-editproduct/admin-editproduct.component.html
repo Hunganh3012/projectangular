@@ -1,6 +1,71 @@
 
+
+    <div class="wrapper d-flex mt-5">
+        <app-sidebar></app-sidebar> 
+        <div id="content" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+     
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span class="ml-2">Điều chỉnh thanh quản trị</span>
+                    </button>
+    
+     
+                    
+                </div>
+             </nav>
+
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <h1>Sửa Sản Phẩm</h1>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>giảm giá(%)</th>
+                                <th>Giá tiền(ngìn đồng)</th>
+                                <th>Mô tả sản phẩm</th>
+                                <th>Link ảnh sản phẩm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text"class="input-addproduct" value="{{edit.name}}"[(ngModel)]="edit.name">
+                                </td>
+                                <td>
+                                    <input type="text" class="input-addproduct" value="{{edit.sale}}" [(ngModel)]="edit.sale">
+                                </td>
+                                <td>
+                                    <input type="text" class="input-addproduct" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
+                                </td>
+                                <td>
+                                    <textarea  class="input-addproduct" value="{{edit.detail}}" [(ngModel)]="edit.detail" rows="4" cols="50"></textarea>
+                                </td>
+                                <td>
+                                    <!-- <input type="file" value="{{edit.img}}"><br>
+                                    <span>Hoặc</span><br> -->
+                                    <input type="text" value="{{edit.img}}"  [(ngModel)]="edit.img">
+                                </td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                    <button class="addbutton" (click)="updateProduct()">Cập nhật</button>
+
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+    
+    
+    
        
-        <div class="wrapper">
+        <!-- <div class="wrapper">
             <div class="container">
                 <h1>Sửa Sản Phẩm</h1>
                 <table style="width:100%">
@@ -25,13 +90,13 @@
                             <input type="text" class="input-addproduct" value="{{edit.detail}}" [(ngModel)]="edit.detail">
                         </td>
                         <td>
-                            <!-- <input type="file" value="{{edit.img}}"><br>
+   \ <input type="file" value="{{edit.img}}"><br>
                             <span>Hoặc</span><br> -->
-                            <input type="text" value="{{edit.img}}"  [(ngModel)]="edit.img">
+                            <!-- <input type="text" value="{{edit.img}}"  [(ngModel)]="edit.img">
                         </td>
                     </tr>
             </table>
             <button class="addbutton" (click)="updateProduct()">Cập nhật</button>
             </div>
-        </div>
+        </div>  -->
 

@@ -13,8 +13,10 @@ var AdminContactComponent = /** @class */ (function () {
         this.AppService = AppService;
         this.list = [];
         this.page = 1;
+        this.selectlist = [];
         this.sum = 0;
         this.numId = 0;
+        this.parentSelector = false;
     }
     AdminContactComponent.prototype.ngOnInit = function () {
         this.renderContent();
@@ -32,7 +34,45 @@ var AdminContactComponent = /** @class */ (function () {
             _this.list = _this.list.filter(function (item) {
                 return item.id != id;
             });
-            alert('Xóa thành công');
+            //  alert('Xóa thành công');
+        });
+    };
+    AdminContactComponent.prototype.onChangelist = function ($event) {
+        var _this = this;
+        var listid = $event.target.value;
+        var isChecked = $event.target.checked;
+        this.list = this.list.filter(function (d) {
+            if (d.id == listid) {
+                d.select = isChecked;
+                console.log(d);
+            }
+            if (listid == -1) {
+                d.select = _this.parentSelector;
+                return d;
+            }
+            return d;
+        });
+    };
+    AdminContactComponent.prototype.deleteChoose = function () {
+        var _this = this;
+        //list: là danh sach khách hàng;
+        this.list = this.list.forEach(function (e) {
+            if (e.select == true) {
+                _this.selectlist.push(e);
+            }
+        });
+        console.log(this.selectlist);
+        //this.selectlist: là mảng mới gồm các obj được click checkbox.
+        //bên phần Service:
+        // deleteContent(id:number){
+        //   return this.http.delete(`${this.API_URL}/${id}`)
+        // }
+        this.selectlist = this.selectlist.forEach(function (item) {
+            _this.AppService.deleteContent(item.id).subscribe(function (data) {
+                _this.list = _this.list.filter(function (e) {
+                    return e.id != item.id;
+                });
+            });
         });
     };
     AdminContactComponent = __decorate([

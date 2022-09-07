@@ -10,6 +10,7 @@ export class AdminContactComponent implements OnInit {
   list:any=[];
   page:number=1;
   totalLength:any;
+  selectlist:any=[];
   constructor( private AppService:AppService) { }
 
   ngOnInit(): void {
@@ -29,7 +30,53 @@ export class AdminContactComponent implements OnInit {
          this.list=this.list.filter((item:any) =>{
            return item.id !=id;
          })
-         alert('Xóa thành công');
+        //  alert('Xóa thành công');
        })
      }
+
+  parentSelector:boolean=false;
+  onChangelist($event:any){
+    const listid=$event.target.value;
+    const isChecked=$event.target.checked;
+    this.list=this.list.filter((d:any)=>{
+      if(d.id == listid){
+        d.select =isChecked;
+        console.log(d)
+      }
+      if(listid == -1){
+        d.select=this.parentSelector;
+        return d;
+      }
+      return d;
+    })
+
+  }
+  deleteChoose(){
+    //list: là danh sach khách hàng;
+    this.list=this.list.forEach((e:any,) => {
+      if(e.select == true){
+        this.selectlist.push(e);
+      }
+      
+    })
+    console.log(this.selectlist);
+    //this.selectlist: là mảng mới gồm các obj được click checkbox.
+    //bên phần Service:
+    // deleteContent(id:number){
+    //   return this.http.delete(`${this.API_URL}/${id}`)
+    // }
+    this.selectlist=this.selectlist.forEach((item:any) =>{
+      this.AppService.deleteContent(item.id).subscribe((data)=>{
+        this.list=this.list.filter((e:any) =>{
+          return e.id !=item.id;
+        })
+      })
+    })
+
+  }
+
+  
 }
+
+
+
