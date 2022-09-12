@@ -14,7 +14,7 @@ export class AdminProductComponent implements OnInit {
   constructor( private AdminService:AdminService) { }
   ngOnInit(): void {
     this.getProduct();
-    $(document).ready(function () {
+    $(function () {
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
       });

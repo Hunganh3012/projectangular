@@ -20,7 +20,7 @@ var AdminContactComponent = /** @class */ (function () {
         this.parentSelector = false;
     }
     AdminContactComponent.prototype.ngOnInit = function () {
-        $(document).ready(function () {
+        $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

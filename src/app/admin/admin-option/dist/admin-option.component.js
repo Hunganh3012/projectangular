@@ -13,7 +13,7 @@ var AdminOptionComponent = /** @class */ (function () {
     function AdminOptionComponent() {
     }
     AdminOptionComponent.prototype.ngOnInit = function () {
-        $(document).ready(function () {
+        $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

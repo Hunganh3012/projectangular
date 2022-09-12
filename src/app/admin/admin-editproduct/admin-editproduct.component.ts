@@ -16,7 +16,7 @@ export class AdminEditproductComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    $(document).ready(function () {
+    $(function () {
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
       });

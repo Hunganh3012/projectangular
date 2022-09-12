@@ -14,7 +14,7 @@ export class AdminContactComponent implements OnInit {
   constructor( private AppService:AppService) { }
 
   ngOnInit(): void {
-    $(document).ready(function () {
+    $(function () {
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
       });

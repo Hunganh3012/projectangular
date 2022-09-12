@@ -17,7 +17,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.edit = [];
     }
     AdminEditproductComponent.prototype.ngOnInit = function () {
-        $(document).ready(function () {
+        $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

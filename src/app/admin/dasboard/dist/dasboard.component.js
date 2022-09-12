@@ -13,7 +13,7 @@ var DasboardComponent = /** @class */ (function () {
     function DasboardComponent() {
     }
     DasboardComponent.prototype.ngOnInit = function () {
-        $(document).ready(function () {
+        $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

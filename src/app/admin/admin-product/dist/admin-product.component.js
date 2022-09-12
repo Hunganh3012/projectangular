@@ -17,7 +17,7 @@ var AdminProductComponent = /** @class */ (function () {
     }
     AdminProductComponent.prototype.ngOnInit = function () {
         this.getProduct();
-        $(document).ready(function () {
+        $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
