@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-editproduct',
   templateUrl: './admin-editproduct.component.html',

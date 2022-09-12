@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminEditproductComponent = void 0;
 var core_1 = require("@angular/core");
+var $ = require("jquery");
 var AdminEditproductComponent = /** @class */ (function () {
     function AdminEditproductComponent(AdminService, route, Router) {
         this.AdminService = AdminService;

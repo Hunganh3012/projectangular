@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminOptionComponent = void 0;
 var core_1 = require("@angular/core");
+var $ = require("jquery");
 var AdminOptionComponent = /** @class */ (function () {
     function AdminOptionComponent() {
     }
