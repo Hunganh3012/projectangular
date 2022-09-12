@@ -14,6 +14,7 @@ var adminComponent = /** @class */ (function () {
     // list:any=[];
     // constructor(private AppService:AppService) { }
     adminComponent.prototype.ngOnInit = function () {
+        // this.renderContent();
     };
     adminComponent = __decorate([
         core_1.Component({
