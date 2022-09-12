@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminContactComponent = void 0;
 var core_1 = require("@angular/core");
+var $ = require("jquery");
 var AdminContactComponent = /** @class */ (function () {
     function AdminContactComponent(AppService) {
         this.AppService = AppService;
@@ -19,6 +20,11 @@ var AdminContactComponent = /** @class */ (function () {
         this.parentSelector = false;
     }
     AdminContactComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
         this.renderContent();
     };
     AdminContactComponent.prototype.renderContent = function () {
@@ -67,13 +73,15 @@ var AdminContactComponent = /** @class */ (function () {
         // deleteContent(id:number){
         //   return this.http.delete(`${this.API_URL}/${id}`)
         // }
-        this.selectlist = this.selectlist.forEach(function (item) {
-            _this.AppService.deleteContent(item.id).subscribe(function (data) {
-                _this.list = _this.list.filter(function (e) {
-                    return e.id != item.id;
-                });
-            });
-        });
+        // this.selectlist=this.selectlist.forEach((item:any) =>{
+        //   this.AppService.deleteContent(item.id).subscribe((data)=>{
+        //     this.list=this.list.filter((e:any) =>{
+        //       return e.id !=item.id;
+        //     })
+        //   })
+        // })
+    };
+    AdminContactComponent.prototype.clearAll = function () {
     };
     AdminContactComponent = __decorate([
         core_1.Component({

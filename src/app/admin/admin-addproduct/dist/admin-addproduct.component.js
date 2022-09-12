@@ -21,6 +21,11 @@ var AdminAddproductComponent = /** @class */ (function () {
         };
     }
     AdminAddproductComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
     };
     AdminAddproductComponent.prototype.addProduct = function () {
         var _this = this;

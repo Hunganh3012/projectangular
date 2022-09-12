@@ -17,16 +17,17 @@ var wishlist_component_1 = require("./wishlist/wishlist.component");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
 var Adminroutes = [
     {
-        path: '',
+        path: 'dasboard',
         component: dasboard_component_1.DasboardComponent
+    },
+    {
+        path: "",
+        redirectTo: 'dasboard',
+        pathMatch: 'full'
     },
     {
         path: 'admin-contact',
         component: admin_contact_component_1.AdminContactComponent
-    },
-    {
-        path: 'dasboard',
-        component: dasboard_component_1.DasboardComponent
     },
     {
         path: 'admin-product',

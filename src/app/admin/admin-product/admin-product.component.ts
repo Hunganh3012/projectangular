@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-product',
   templateUrl: './admin-product.component.html',
@@ -14,6 +14,11 @@ export class AdminProductComponent implements OnInit {
   constructor( private AdminService:AdminService) { }
   ngOnInit(): void {
     this.getProduct();
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+    });
   }
   getProduct(){
     return this.AdminService.getProduct().subscribe((data:any)=>{

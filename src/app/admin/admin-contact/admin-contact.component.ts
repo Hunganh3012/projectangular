@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-contact',
   templateUrl: './admin-contact.component.html',
@@ -14,6 +14,11 @@ export class AdminContactComponent implements OnInit {
   constructor( private AppService:AppService) { }
 
   ngOnInit(): void {
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+    });
     this.renderContent();
   }
   sum=0;
@@ -65,16 +70,19 @@ export class AdminContactComponent implements OnInit {
     // deleteContent(id:number){
     //   return this.http.delete(`${this.API_URL}/${id}`)
     // }
-    this.selectlist=this.selectlist.forEach((item:any) =>{
-      this.AppService.deleteContent(item.id).subscribe((data)=>{
-        this.list=this.list.filter((e:any) =>{
-          return e.id !=item.id;
-        })
-      })
-    })
+    // this.selectlist=this.selectlist.forEach((item:any) =>{
+    //   this.AppService.deleteContent(item.id).subscribe((data)=>{
+    //     this.list=this.list.filter((e:any) =>{
+    //       return e.id !=item.id;
+    //     })
+    //   })
+    
+    // })
 
   }
-
+  clearAll(){
+      
+  }
   
 }
 

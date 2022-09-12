@@ -17,6 +17,11 @@ export class AdminAddproductComponent implements OnInit {
   constructor( private AdminService:AdminService, private Router:Router) { }
 
   ngOnInit(): void {
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+    });
   }
   addProduct(){
     this.AdminService.addProduct(this.listadd).subscribe(data =>{

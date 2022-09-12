@@ -11,4 +11,6 @@ import { AdminContactComponent } from './admin-contact.component';
     HttpClientModule
   ]
 })
-export class AdminContactModule { }
+export class AdminContactModule {
+  
+ }

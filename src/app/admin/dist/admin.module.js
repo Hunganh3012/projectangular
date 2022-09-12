@@ -18,6 +18,7 @@ var forms_1 = require("@angular/forms");
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_option_component_1 = require("./admin-option/admin-option.component");
 var ngx_pagination_1 = require("ngx-pagination");
+var dasboard_component_1 = require("./dasboard/dasboard.component");
 // import { NgxPaginationModule } from 'ngx-pagination';
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
@@ -30,7 +31,8 @@ var AdminModule = /** @class */ (function () {
                 admin_addproduct_component_1.AdminAddproductComponent,
                 admin_editproduct_component_1.AdminEditproductComponent,
                 admin_option_component_1.AdminOptionComponent,
-                sidebar_component_1.SidebarComponent
+                sidebar_component_1.SidebarComponent,
+                dasboard_component_1.DasboardComponent
                 // WishlistComponent,
             ],
             imports: [

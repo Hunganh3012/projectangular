@@ -13,17 +13,18 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 const Adminroutes: Routes = [
     {
-      path:'',
+      path:'dasboard',
       component:DasboardComponent,
 
     },
     {
-      path:'admin-contact',
-      component:AdminContactComponent
+      path:"",
+      redirectTo:'dasboard',
+      pathMatch:'full'
     },
     {
-      path:'dasboard',
-      component:DasboardComponent
+      path:'admin-contact',
+      component:AdminContactComponent
     },
     {
       path:'admin-product',

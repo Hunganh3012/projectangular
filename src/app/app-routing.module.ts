@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundError } from 'rxjs';
 import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
@@ -11,7 +10,6 @@ import { AuthGuard } from './auth.guard';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 
-import { WishlistComponent } from './admin/wishlist/wishlist.component';
 const routes: Routes = [
   
   {
