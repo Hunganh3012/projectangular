@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminProductComponent = void 0;
 var core_1 = require("@angular/core");
-var $ = require("jquery");
 var AdminProductComponent = /** @class */ (function () {
     function AdminProductComponent(AdminService) {
         this.AdminService = AdminService;
@@ -17,11 +16,6 @@ var AdminProductComponent = /** @class */ (function () {
     }
     AdminProductComponent.prototype.ngOnInit = function () {
         this.getProduct();
-        $(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
     };
     AdminProductComponent.prototype.getProduct = function () {
         var _this = this;

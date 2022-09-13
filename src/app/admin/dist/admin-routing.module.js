@@ -13,37 +13,44 @@ var admin_addproduct_component_1 = require("./admin-addproduct/admin-addproduct.
 var admin_contact_component_1 = require("./admin-contact/admin-contact.component");
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_product_component_1 = require("./admin-product/admin-product.component");
+var admin_component_1 = require("./admin.component");
 var wishlist_component_1 = require("./wishlist/wishlist.component");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
 var Adminroutes = [
     {
         path: '',
-        component: dasboard_component_1.DasboardComponent
+        component: admin_component_1.adminComponent,
+        children: [
+            {
+                path: 'admin-contact',
+                component: admin_contact_component_1.AdminContactComponent
+            },
+            {
+                path: '',
+                component: dasboard_component_1.DasboardComponent
+            },
+            {
+                path: 'dasboard',
+                component: dasboard_component_1.DasboardComponent
+            },
+            {
+                path: 'admin-product',
+                component: admin_product_component_1.AdminProductComponent
+            },
+            {
+                path: 'wishlist',
+                component: wishlist_component_1.WishlistComponent
+            },
+            {
+                path: 'admin-addproduct',
+                component: admin_addproduct_component_1.AdminAddproductComponent
+            },
+            {
+                path: 'admin-editproduct/:id',
+                component: admin_editproduct_component_1.AdminEditproductComponent
+            }
+        ]
     },
-    {
-        path: 'admin-contact',
-        component: admin_contact_component_1.AdminContactComponent
-    },
-    {
-        path: 'dasboard',
-        component: dasboard_component_1.DasboardComponent
-    },
-    {
-        path: 'admin-product',
-        component: admin_product_component_1.AdminProductComponent
-    },
-    {
-        path: 'wishlist',
-        component: wishlist_component_1.WishlistComponent
-    },
-    {
-        path: 'admin-addproduct',
-        component: admin_addproduct_component_1.AdminAddproductComponent
-    },
-    {
-        path: 'admin-editproduct/:id',
-        component: admin_editproduct_component_1.AdminEditproductComponent
-    }
 ];
 var AdminRoutingModule = /** @class */ (function () {
     function AdminRoutingModule() {

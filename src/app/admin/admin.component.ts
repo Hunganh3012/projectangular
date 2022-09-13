@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -11,7 +12,22 @@ export class adminComponent implements OnInit {
 
   // constructor(private AppService:AppService) { }
 
+  isDisplay=true;
+  isDisplay2=true;
+
+
+  clickToggle(){
+    this.isDisplay=!this.isDisplay;
+  }
+  clickToggle2(){
+    this.isDisplay2=!this.isDisplay2;
+  }
   ngOnInit(): void {
+    $(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+    });
     // this.renderContent();
   }
   // renderContent(){

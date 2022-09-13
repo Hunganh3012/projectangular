@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AdminAddproductComponent } from './admin-addproduct/admin-addproduct.component';
 import { AdminContactComponent } from './admin-contact/admin-contact.component';
 import { AdminEditproductComponent } from './admin-editproduct/admin-editproduct.component';
@@ -14,33 +15,39 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 const Adminroutes: Routes = [
     {
       path:'',
-      component:DasboardComponent,
+      component:adminComponent,
+      children:[
+        {
+          path:'admin-contact',
+          component:AdminContactComponent
+        },
+        {
+          path:'',
+          component:DasboardComponent
+        },
+        {
+          path:'dasboard',
+          component:DasboardComponent
+        },
+        {
+          path:'admin-product',
+          component:AdminProductComponent
+        },
+        {
+          path:'wishlist',
+          component:WishlistComponent
+        },
+        {
+          path:'admin-addproduct',
+          component:AdminAddproductComponent
+        },
+        {
+          path:'admin-editproduct/:id',
+          component:AdminEditproductComponent
+        }
+      ]
+    },
 
-    },
-    {
-      path:'admin-contact',
-      component:AdminContactComponent
-    },
-    {
-      path:'dasboard',
-      component:DasboardComponent
-    },
-    {
-      path:'admin-product',
-      component:AdminProductComponent
-    },
-    {
-      path:'wishlist',
-      component:WishlistComponent
-    },
-    {
-      path:'admin-addproduct',
-      component:AdminAddproductComponent
-    },
-    {
-      path:'admin-editproduct/:id',
-      component:AdminEditproductComponent
-    }
 ];
 
 @NgModule({

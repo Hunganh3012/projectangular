@@ -8,12 +8,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.adminComponent = void 0;
 var core_1 = require("@angular/core");
+var $ = require("jquery");
 var adminComponent = /** @class */ (function () {
     function adminComponent() {
+        // list:any=[];
+        // constructor(private AppService:AppService) { }
+        this.isDisplay = true;
+        this.isDisplay2 = true;
+        // renderContent(){
+        //   return this.AppService.renderContent().subscribe(data =>{
+        //     this.list=data;
+        //   })
+        // }
+        // deleteContent(id:number){
+        //   console.log(id);
+        //   this.AppService.deleteContent(id).subscribe(data=>{
+        //     this.list=this.list.filter((item:any) =>{
+        //       return item.id !=id;
+        //     })
+        //     alert('Xóa thành công')
+        //   })
+        // }
     }
-    // list:any=[];
-    // constructor(private AppService:AppService) { }
+    adminComponent.prototype.clickToggle = function () {
+        this.isDisplay = !this.isDisplay;
+    };
+    adminComponent.prototype.clickToggle2 = function () {
+        this.isDisplay2 = !this.isDisplay2;
+    };
     adminComponent.prototype.ngOnInit = function () {
+        $(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
         // this.renderContent();
     };
     adminComponent = __decorate([

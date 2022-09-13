@@ -5,13 +5,14 @@ import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { ProductComponent } from './product/product.component';
-import { adminComponent } from './admin/admin.component';
+
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { AuthGuard } from './auth.guard';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 
 import { WishlistComponent } from './admin/wishlist/wishlist.component';
+import { Chain } from '@angular/compiler';
 const routes: Routes = [
   
   {
@@ -26,11 +27,7 @@ const routes: Routes = [
     path:'product',
     component:ProductComponent
   },
-  {
-    path:"",
-    redirectTo:'product-announ',
-    pathMatch:'full'
-  },
+
   {
     path:'product-announ',
     component:ProductAnnounComponent
@@ -47,6 +44,12 @@ const routes: Routes = [
     path:'admin',
     loadChildren : ()=> import('./admin/admin.module').then((m)=> m.AdminModule),
     canActivate:[AuthGuard]
+    
+  },
+  {
+    path:"",
+    redirectTo:'product-announ',
+    pathMatch:'full'
   },
   {
     path:'**',

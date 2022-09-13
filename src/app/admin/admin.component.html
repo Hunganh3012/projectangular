@@ -1,5 +1,73 @@
+
 <div class="wrapper d-flex" >
-    <app-sidebar></app-sidebar>
+    <div class="wrapper" >
+ 
+        <!-- Sidebar -->
+        <nav id="sidebar">
+         <div class="sidebar-header">
+             <h3>Quản trị viên</h3>
+             <strong>Ad</strong>
+         </div>
+
+         <ul class="list-unstyled components">
+           <li>
+             <a routerLink="/admin/dasboard">
+               <i class="fas fa-home"></i>
+                 Dasboard
+             </a>
+             <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle()">
+                 <i class="fas fa-copy"></i>
+                 Quản lý chi tiết
+             </a>
+             <ul class=" list-unstyled" [hidden]="isDisplay">
+                 <li>
+                     <a routerLink="/admin/admin-product">Quản lý sản phẩm</a>
+                 </li>
+                 <li>
+                     <a routerLink="/admin/admin-contact">Quản lý yêu cầu khách hàng</a>
+                 </li>
+
+             </ul>
+         </li>
+             <li class="active">
+                 <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle2()">
+                   <i class="fas fa-briefcase"></i>
+                     Quản lý nhân viên
+                 </a>
+                 <ul class=" list-unstyled" id="homeSubmenu" [hidden]="isDisplay2">
+                     <li>
+                         <a routerLink="/admin">tài khoản nhân viên </a>
+                     </li>
+                     <li>
+                         <a routerLink="/admin">Chấm công</a>
+                     </li>
+
+                 </ul>
+             </li>
+            
+             <li>
+                 <a href="#">
+                     <i class="fas fa-image"></i>
+                     Portfolio
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <i class="fas fa-question"></i>
+                     Câu hỏi thường gặp
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <i class="fas fa-paper-plane"></i>
+                        Báo lỗi
+                 </a>
+             </li>
+         </ul>
+
+     </nav>
+
+   </div>
     <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -16,10 +84,10 @@
             </div>
          </nav>
          <!-- <router-outlet></router-outlet> -->
-         
          <router-outlet></router-outlet>
     </div>
 </div>
+
 
 
 

@@ -1,83 +1,71 @@
- <!-- <div class="wrapper">
-    <div class="container">
-        <h1 class="quantrivien">Quản trị viên(Admin)</h1>
-      <div class="border">
-        
-        <a routerLink="../admin/admin-contact" class="thea thea-1">Quản lý liên hệ từ khách hàng </a><br>
-        <a routerLink="../admin/admin-product" class="thea thea-2">Quản lý sản phẩm </a><br>
-      </div>
-    </div>
-</div>  -->
-
+<div class="wrapper" style="height: 100%;">
  
-     <div class="wrapper" style="height: 100%;">
- 
-        <!-- Sidebar -->
-        <nav id="sidebar">
-         <div class="sidebar-header">
-             <h3>Quản trị viên</h3>
-             <strong>Ad</strong>
-         </div>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+     <div class="sidebar-header">
+         <h3>Quản trị viên</h3>
+         <strong>Ad</strong>
+     </div>
 
-         <ul class="list-unstyled components">
-           <li>
-             <a routerLink="/admin/dasboard">
-               <i class="fas fa-home"></i>
-                 Dasboard
+     <ul class="list-unstyled components">
+       <li>
+         <a routerLink="/admin/dasboard">
+           <i class="fas fa-home"></i>
+             Dasboard
+         </a>
+         <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle()">
+             <i class="fas fa-copy"></i>
+             Quản lý chi tiết
+         </a>
+         <ul class=" list-unstyled" [hidden]="isDisplay">
+             <li>
+                 <a routerLink="/admin/admin-product">Quản lý sản phẩm</a>
+             </li>
+             <li>
+                 <a routerLink="/admin/admin-contact">Quản lý yêu cầu khách hàng</a>
+             </li>
+
+         </ul>
+     </li>
+         <li class="active">
+             <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle2()">
+               <i class="fas fa-briefcase"></i>
+                 Quản lý nhân viên
              </a>
-             <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle()">
-                 <i class="fas fa-copy"></i>
-                 Quản lý chi tiết
-             </a>
-             <ul class=" list-unstyled" [hidden]="isDisplay">
+             <ul class=" list-unstyled" id="homeSubmenu" [hidden]="isDisplay2">
                  <li>
-                     <a routerLink="/admin/admin-product">Quản lý sản phẩm</a>
+                     <a routerLink="/admin">tài khoản nhân viên </a>
                  </li>
                  <li>
-                     <a routerLink="/admin/admin-contact">Quản lý yêu cầu khách hàng</a>
+                     <a routerLink="/admin">Chấm công</a>
                  </li>
 
              </ul>
          </li>
-             <li class="active">
-                 <a  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="clickToggle2()">
-                   <i class="fas fa-briefcase"></i>
-                     Quản lý nhân viên
-                 </a>
-                 <ul class=" list-unstyled" id="homeSubmenu" [hidden]="isDisplay2">
-                     <li>
-                         <a routerLink="/admin">tài khoản nhân viên </a>
-                     </li>
-                     <li>
-                         <a routerLink="/admin">Chấm công</a>
-                     </li>
+        
+         <li>
+             <a href="#">
+                 <i class="fas fa-image"></i>
+                 Portfolio
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <i class="fas fa-question"></i>
+                 Câu hỏi thường gặp
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <i class="fas fa-paper-plane"></i>
+                    Báo lỗi
+             </a>
+         </li>
+     </ul>
 
-                 </ul>
-             </li>
-            
-             <li>
-                 <a href="#">
-                     <i class="fas fa-image"></i>
-                     Portfolio
-                 </a>
-             </li>
-             <li>
-                 <a href="#">
-                     <i class="fas fa-question"></i>
-                     Câu hỏi thường gặp
-                 </a>
-             </li>
-             <li>
-                 <a href="#">
-                     <i class="fas fa-paper-plane"></i>
-                        Báo lỗi
-                 </a>
-             </li>
-         </ul>
+ </nav>
 
-     </nav>
-
-   </div>
+</div>
    
 
 

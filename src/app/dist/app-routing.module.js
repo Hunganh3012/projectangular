@@ -31,11 +31,6 @@ var routes = [
         component: product_component_1.ProductComponent
     },
     {
-        path: "",
-        redirectTo: 'product-announ',
-        pathMatch: 'full'
-    },
-    {
         path: 'product-announ',
         component: product_announ_component_1.ProductAnnounComponent
     },
@@ -51,6 +46,11 @@ var routes = [
         path: 'admin',
         loadChildren: function () { return Promise.resolve().then(function () { return require('./admin/admin.module'); }).then(function (m) { return m.AdminModule; }); },
         canActivate: [auth_guard_1.AuthGuard]
+    },
+    {
+        path: "",
+        redirectTo: 'product-announ',
+        pathMatch: 'full'
     },
     {
         path: '**',

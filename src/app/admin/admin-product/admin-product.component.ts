@@ -14,16 +14,13 @@ export class AdminProductComponent implements OnInit {
   constructor( private AdminService:AdminService) { }
   ngOnInit(): void {
     this.getProduct();
-    $(function () {
-      $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-      });
-    });
+
   }
   getProduct(){
     return this.AdminService.getProduct().subscribe((data:any)=>{
       this.listproductAdmin=data;
     })
+
   }
   deleteProduct(id:number){
     return this.AdminService.deleteProduct(id).subscribe(data=>{
