@@ -27,18 +27,18 @@ import { WishlistComponent } from './admin/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ContactComponent,
-    ProductComponent,
-    HomePageComponent,
-    TieudiemComponent,
-    NotFoundErrorComponent,
+    // HeaderComponent,
+    // FooterComponent,
+
+    // ProductComponent,
+    // HomePageComponent,
+    // TieudiemComponent,
+    // NotFoundErrorComponent,
     adminComponent,
-    ProductAnnounComponent,
-    HeadComponent,
-    DetailComponent,
-    CartComponent,
+    // ProductAnnounComponent,
+    // HeadComponent,
+    // DetailComponent,
+    // CartComponent,
     WishlistComponent
   ],
   imports: [

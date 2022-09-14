@@ -10,11 +10,7 @@ export class DasboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    $(function () {
-      $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-      });
-    });
+
   }
 
 

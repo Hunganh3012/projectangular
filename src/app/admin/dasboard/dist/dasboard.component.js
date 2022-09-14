@@ -8,16 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.DasboardComponent = void 0;
 var core_1 = require("@angular/core");
-var $ = require("jquery");
 var DasboardComponent = /** @class */ (function () {
     function DasboardComponent() {
     }
     DasboardComponent.prototype.ngOnInit = function () {
-        $(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
     };
     DasboardComponent = __decorate([
         core_1.Component({

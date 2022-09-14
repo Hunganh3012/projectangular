@@ -12,23 +12,12 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
-var header_component_1 = require("./header/header.component");
-var footer_component_1 = require("./footer/footer.component");
-var contact_component_1 = require("./contact/contact.component");
-var product_component_1 = require("./product/product.component");
-var home_page_component_1 = require("./home-page/home-page.component");
-var tieudiem_component_1 = require("./tieudiem/tieudiem.component");
-var not_found_error_component_1 = require("./not-found-error/not-found-error.component");
 var admin_component_1 = require("./admin/admin.component");
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
-var product_announ_component_1 = require("./product-announ/product-announ.component");
 var ngx_pagination_1 = require("ngx-pagination");
-var head_component_1 = require("./head/head.component");
 var common_2 = require("@angular/common");
-var detail_component_1 = require("./detail/detail.component");
-var cart_component_1 = require("./cart/cart.component");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -39,18 +28,17 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                header_component_1.HeaderComponent,
-                footer_component_1.FooterComponent,
-                contact_component_1.ContactComponent,
-                product_component_1.ProductComponent,
-                home_page_component_1.HomePageComponent,
-                tieudiem_component_1.TieudiemComponent,
-                not_found_error_component_1.NotFoundErrorComponent,
+                // HeaderComponent,
+                // FooterComponent,
+                // ProductComponent,
+                // HomePageComponent,
+                // TieudiemComponent,
+                // NotFoundErrorComponent,
                 admin_component_1.adminComponent,
-                product_announ_component_1.ProductAnnounComponent,
-                head_component_1.HeadComponent,
-                detail_component_1.DetailComponent,
-                cart_component_1.CartComponent,
+                // ProductAnnounComponent,
+                // HeadComponent,
+                // DetailComponent,
+                // CartComponent,
                 wishlist_component_1.WishlistComponent
             ],
             imports: [

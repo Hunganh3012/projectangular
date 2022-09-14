@@ -13,33 +13,15 @@ import { CartComponent } from './cart/cart.component';
 
 import { WishlistComponent } from './admin/wishlist/wishlist.component';
 import { Chain } from '@angular/compiler';
+import { WebComponent } from './web/web.component';
 const routes: Routes = [
-  
   {
-    path:'home-page',
-    component:HomePageComponent
-  },
-  {
-    path:'contact',
-    component:ContactComponent
-  },
-  {
-    path:'product',
-    component:ProductComponent
+    path:'web',
+    // component:WebComponent
+    loadChildren: ()=> import('./web/web.module').then((m) => m.WebModule)
   },
 
-  {
-    path:'product-announ',
-    component:ProductAnnounComponent
-  },
-  {
-    path:'detail/:id',
-    component:DetailComponent
-  },
-  {
-    path:'cart',
-    component:CartComponent
-  },
+
   {
     path:'admin',
     loadChildren : ()=> import('./admin/admin.module').then((m)=> m.AdminModule),
@@ -48,7 +30,7 @@ const routes: Routes = [
   },
   {
     path:"",
-    redirectTo:'product-announ',
+    redirectTo:'/web/product-announ',
     pathMatch:'full'
   },
   {

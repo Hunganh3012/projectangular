@@ -12,7 +12,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DasboardComponent } from './dasboard/dasboard.component';
-
+import { HeadComponent } from '../head/head.component';
 
 // import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
@@ -23,7 +23,8 @@ import { DasboardComponent } from './dasboard/dasboard.component';
     AdminEditproductComponent,
     AdminOptionComponent,
     SidebarComponent,
-    DasboardComponent
+    DasboardComponent,
+    // HeadComponent
     // WishlistComponent,
   ],
   imports: [

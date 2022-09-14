@@ -16,6 +16,7 @@ var admin_product_component_1 = require("./admin-product/admin-product.component
 var admin_component_1 = require("./admin.component");
 var wishlist_component_1 = require("./wishlist/wishlist.component");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
+var sidebar_component_1 = require("./sidebar/sidebar.component");
 var Adminroutes = [
     {
         path: '',
@@ -48,6 +49,10 @@ var Adminroutes = [
             {
                 path: 'admin-editproduct/:id',
                 component: admin_editproduct_component_1.AdminEditproductComponent
+            },
+            {
+                path: 'sidebar',
+                component: sidebar_component_1.SidebarComponent
             }
         ]
     },

@@ -44,6 +44,10 @@ const Adminroutes: Routes = [
         {
           path:'admin-editproduct/:id',
           component:AdminEditproductComponent
+        },
+        {
+          path:'sidebar',
+          component:SidebarComponent
         }
       ]
     },

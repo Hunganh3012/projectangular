@@ -9,38 +9,13 @@ exports.__esModule = true;
 exports.AppRoutingModule = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var contact_component_1 = require("./contact/contact.component");
-var home_page_component_1 = require("./home-page/home-page.component");
 var not_found_error_component_1 = require("./not-found-error/not-found-error.component");
-var product_component_1 = require("./product/product.component");
-var product_announ_component_1 = require("./product-announ/product-announ.component");
 var auth_guard_1 = require("./auth.guard");
-var detail_component_1 = require("./detail/detail.component");
-var cart_component_1 = require("./cart/cart.component");
 var routes = [
     {
-        path: 'home-page',
-        component: home_page_component_1.HomePageComponent
-    },
-    {
-        path: 'contact',
-        component: contact_component_1.ContactComponent
-    },
-    {
-        path: 'product',
-        component: product_component_1.ProductComponent
-    },
-    {
-        path: 'product-announ',
-        component: product_announ_component_1.ProductAnnounComponent
-    },
-    {
-        path: 'detail/:id',
-        component: detail_component_1.DetailComponent
-    },
-    {
-        path: 'cart',
-        component: cart_component_1.CartComponent
+        path: 'web',
+        // component:WebComponent
+        loadChildren: function () { return Promise.resolve().then(function () { return require('./web/web.module'); }).then(function (m) { return m.WebModule; }); }
     },
     {
         path: 'admin',
@@ -49,7 +24,7 @@ var routes = [
     },
     {
         path: "",
-        redirectTo: 'product-announ',
+        redirectTo: '/web/product-announ',
         pathMatch: 'full'
     },
     {

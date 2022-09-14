@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminContactComponent = void 0;
 var core_1 = require("@angular/core");
-var $ = require("jquery");
 var AdminContactComponent = /** @class */ (function () {
     function AdminContactComponent(AppService) {
         this.AppService = AppService;
@@ -20,11 +19,6 @@ var AdminContactComponent = /** @class */ (function () {
         this.parentSelector = false;
     }
     AdminContactComponent.prototype.ngOnInit = function () {
-        $(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
         this.renderContent();
     };
     AdminContactComponent.prototype.renderContent = function () {

@@ -32,8 +32,7 @@ var AdminModule = /** @class */ (function () {
                 admin_editproduct_component_1.AdminEditproductComponent,
                 admin_option_component_1.AdminOptionComponent,
                 sidebar_component_1.SidebarComponent,
-                dasboard_component_1.DasboardComponent
-                // WishlistComponent,
+                dasboard_component_1.DasboardComponent,
             ],
             imports: [
                 common_1.CommonModule,
