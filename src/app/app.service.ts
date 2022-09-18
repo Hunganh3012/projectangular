@@ -16,5 +16,8 @@ export class AppService {
   deleteContent(id:number){
     return this.http.delete(`${this.API_URL}/${id}`)
   }
+  deletelist(a:any){
+    
+  }
 
 }

@@ -3,6 +3,7 @@ import { AdminService } from '../admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-admin-editproduct',
   templateUrl: './admin-editproduct.component.html',
@@ -13,6 +14,7 @@ export class AdminEditproductComponent implements OnInit {
   constructor(private AdminService:AdminService,
     private route: ActivatedRoute,
     private Router: Router,
+    private toastr :ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,6 @@ export class AdminEditproductComponent implements OnInit {
     this.AdminService.updateProduct(this.edit.id,this.edit).subscribe(data =>{
       this.Router.navigateByUrl('/admin/admin-product')
     })
-    alert('Cập nhật thành công')
+    this.toastr.success('Sửa thành công','thông báo');
   }
 }

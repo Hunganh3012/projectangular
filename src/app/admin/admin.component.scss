@@ -111,7 +111,14 @@ span {
     max-width: 80px;
     text-align: center;
 }
-
+.button-head{
+    background-color: #034DA2;
+    color:#fff;
+    &:hover{
+        background-color: #034da2b4;
+        color:#fff;
+    }
+}
 #sidebar.active .sidebar-header h3,
 #sidebar.active .CTAs {
     display: none;
@@ -290,4 +297,7 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+.pag-fix .ng-star-inserted{
+    display: none;
 }

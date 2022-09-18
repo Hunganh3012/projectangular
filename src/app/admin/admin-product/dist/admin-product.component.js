@@ -9,10 +9,15 @@ exports.__esModule = true;
 exports.AdminProductComponent = void 0;
 var core_1 = require("@angular/core");
 var AdminProductComponent = /** @class */ (function () {
-    function AdminProductComponent(AdminService) {
+    function AdminProductComponent(AdminService, toastr) {
         this.AdminService = AdminService;
+        this.toastr = toastr;
         this.listproductAdmin = [];
         this.page = 1;
+        this.labels = {
+            previousLabel: '',
+            nextLabel: ''
+        };
     }
     AdminProductComponent.prototype.ngOnInit = function () {
         this.getProduct();
@@ -29,7 +34,7 @@ var AdminProductComponent = /** @class */ (function () {
             _this.listproductAdmin = _this.listproductAdmin.filter(function (item) {
                 return item.id != id;
             });
-            alert('Xóa sản phẩm thành công');
+            _this.toastr.success('Xóa thành công', 'thông báo');
         });
     };
     AdminProductComponent = __decorate([

@@ -36,6 +36,10 @@ body {
   border: none;
   border-radius: 20px;
 }
+.addbutton:hover {
+  background-color: #034da2bf;
+  color: white;
+}
 
 .input-addproduct {
   outline: none;

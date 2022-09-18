@@ -130,9 +130,16 @@
                 </div>
 
             </div>
-        <div class="container pag-fix">
-            <pagination-controls (pageChange)="page = $event" style="text-align:center"></pagination-controls>
-        </div>
+        
+            <div class="container pag-fix">
+                <pagination-controls 
+
+                (pageChange)="page = $event"
+                style="text-align:center"
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                ></pagination-controls>
+            </div>
         </div>
     </div>
     

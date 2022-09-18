@@ -15,22 +15,22 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Discount(%)</th>
-                                <th>Giá gốc(nghìn đồng)</th>
-                                <th>Giá khuyến mãi( nghìn đồng)</th>
                                 <th>Ảnh sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giảm giá (%)</th>
+                                <th>Giá gốc</th>
+                                <th>Giá khuyến mãi</th>
                                 <th>Admin</th>
                             </tr>
                         </thead>
                         <tbody *ngFor="let item of listproductAdmin | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength}">
                             <tr ng-app="">
                                 <td>{{item.id}}</td>
+                                <td><img src="{{item.img}}" alt="" class="anhsanpham"></td>
                                 <td>{{item.name}}</td>
                                 <td>{{item.sale}}</td>
                                 <td>{{item.priceold}}</td>
                                 <td>{{item.priceold - ((item.priceold * item.sale)/100) | number:'1.0-0'}}</td>
-                                <td><img src="{{item.img}}" alt="" class="anhsanpham"></td>
                                 <td>
                                     <button routerLink="../admin-editproduct/{{item.id}}" class="buttonclick"> <i class="fa-solid fa-pen-to-square"></i></button> 
                                     <button class="buttonclick" (click)="deleteProduct(item.id)"><i class="fa-solid fa-trash-can"></i></button>
@@ -42,7 +42,13 @@
                 </div>
             </div>  
             <div class="container pag-fix">
-                <pagination-controls (pageChange)="page = $event" style="text-align:center"></pagination-controls>
+                <pagination-controls 
+
+                (pageChange)="page = $event"
+                style="text-align:center"
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                ></pagination-controls>
             </div>
         </div>
         

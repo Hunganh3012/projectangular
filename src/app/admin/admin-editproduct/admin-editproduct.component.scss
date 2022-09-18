@@ -36,6 +36,10 @@ body{
     background-color: #034DA2;
     border: none;
     border-radius: 20px;
+    &:hover{
+        background-color: #034da2bf;
+        color: white;
+    }
 }
 .input-addproduct{
     outline: none;

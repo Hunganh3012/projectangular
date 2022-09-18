@@ -1,43 +1,125 @@
-
-
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Tên sản phẩm</th>
-                                <th>giảm giá(%)</th>
-                                <th>Giá tiền(ngìn đồng)</th>
-                                <th>Mô tả sản phẩm</th>
-                                <th>Link ảnh sản phẩm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input type="text"class="input-addproduct" placeholder="Tên sản phẩm" [(ngModel)]="listadd.name" >
-                                </td>
-                                <td>
-                                    <input type="text" class="input-addproduct" placeholder="sale" [(ngModel)]="listadd.sale">
-                                </td>
-                                <td>
-                                    <input type="text" class="input-addproduct" placeholder="giá sản phẩm" [(ngModel)]="listadd.priceold">
-                                </td>
-                                <td>
-                                    <textarea class="input-addproduct" placeholder="Mô tảsản phẩm" [(ngModel)]="listadd.detail" rows="4" cols="50"></textarea> 
-                                </td>
-                                <td>
-                                    <!-- <input type="file" [(ngModel)]="listadd.img"><br>
-                                    <span>Hoặc</span><br> -->
-                                    <input type="text" class="input-addproduct" placeholder="img" [(ngModel)]="listadd.img">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="addbutton" (click)="addProduct()">Thêm sản phẩm</button>
+<div class="container">
+  
+    <section class="panel panel-default">
+  <div class="panel-heading"> 
+  <h3 class="panel-title">Tạo sản phẩm</h3> 
+  </div> 
+  <div class="panel-body">
+    
+  <form action="designer-finish.html" class="form-horizontal" role="form" [formGroup]="form" (ngSubmit)="OnSubmit()">
+   <!-- form-group // -->
+  
+     <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Tên sản phẩm</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" name="name" id="name" 
+        placeholder="tên sản phẩm" [(ngModel)]="listadd.name"
+        formControlName="nameproduct"
+        [ngClass]="{ 'is-invalid': submitted && f['nameproduct'].errors }">
+        <div *ngIf="submitted && f['nameproduct'].errors" class="invalid-feedback">
+          <div *ngIf="f['nameproduct'].errors['required']">Vui lòng nhập tên sản phẩm</div>
+          <div *ngIf="f['nameproduct'].errors['minlength']">
+            Tên sản phẩn ít nhất là 6 kí tự
+          </div>
+        </div>
+      </div>
+    </div> <!-- form-group // -->
+    <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" name="name" id="name" placeholder="https//:...."
+          [(ngModel)]="listadd.img"
+          formControlName="linkphoto"
+          [ngClass]="{ 'is-invalid': submitted && f['linkphoto'].errors }">
+          <div *ngIf="submitted && f['linkphoto'].errors" class="invalid-feedback">
+            <div *ngIf="f['linkphoto'].errors['required']">Vui lòng nhập link hình ảnh sản phẩm</div>
+            <div *ngIf="f['linkphoto'].errors['minlength']">
+              Link ảnh sản phẩn ít nhất là 6 kí tự
+          </div>
+          </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="row ">
+            <div class="col-sm-6">
+                <label for="qty" class="col-sm-6 control-label">Giá sản phẩm( 000đồng)</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng"
+                     currencyMark [(ngModel)]="listadd.priceold" 
+                     formControlName="priceold"
+                     [ngClass]="{ 'is-invalid': submitted && f['priceold'].errors }"/>
+                     <div *ngIf="submitted && f['priceold'].errors" class="invalid-feedback">
+                      <div *ngIf="f['priceold'].errors['required']">Vui lòng nhập giá sản phẩm</div>
+                      <div *ngIf="f['priceold'].errors['pattern']">
+                        Giá tiền phải là số 0-9 
+                      </div>
+                    </div>
 
                 </div>
-            </div>  
+            </div>
+            <div class="col-sm-6">
+                <label class="col-sm-6 control-label">Giảm giá(%)</label>
+                <div class="col-sm-12"> 
+                  <input type="text" class="form-control" name="date_start" id="date_start" placeholder="50"
+                   [(ngModel)]="listadd.sale"
+                   formControlName="sale"
+                   [ngClass]="{ 'is-invalid': submitted && f['sale'].errors }"/>
+                   <div *ngIf="submitted && f['sale'].errors" class="invalid-feedback">
+                    <div *ngIf="f['sale'].errors['required']">Vui lòng nhập giảm giá</div>
+                    <div *ngIf="f['sale'].errors['pattern']">
+                     Giảm giá là số gồm 1 đến 2 con số
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="form-group">
+      <label for="about" class="col-sm-3 control-label">Mô tả sẩn phẩm</label>
+      <div class="col-sm-12">
+        <textarea class="form-control" cols="" rows="10"  [(ngModel)]="listadd.detail"
+        formControlName="detail"
+        [ngClass]="{ 'is-invalid' : submitted && f['detail'].errors   }"></textarea>
+         <div *ngIf="submitted && f['detail'].errors" class="invalid-feedback">
+          <div *ngIf="f['detail'].errors['required']">Vui lòng nhập mô tả sản phẩm</div>
+          <div *ngIf="f['detail'].errors['minlength']">
+            Mô tả sản phẩn ít nhất là 6 kí tự
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        id="acceptTerms"
+        class="form-check-input"
+        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
+      />
+      <label for="acceptTerms" class="form-check-label"
+        >Xác nhận thay dodỏi</label
+      >
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        Accept Ts & Cs is required
+      </div>
+    </div>
+
+    <hr>
+    <div class="form-group float-right">
+      <div class="col-sm-offset-3 col-sm-12">
+        <button type="submit" class="btn btn-secondary addbutton"  >Thêm sản phẩm</button>
+      </div>
+    </div> 
+  </form>
+    
+  </div>
+  </section>
+  
+    
+  </div>
+
+
+     
 
     
     

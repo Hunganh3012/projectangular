@@ -9,9 +9,10 @@ exports.__esModule = true;
 exports.ContactComponent = void 0;
 var core_1 = require("@angular/core");
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent(AppService, router) {
+    function ContactComponent(AppService, router, toastr) {
         this.AppService = AppService;
         this.router = router;
+        this.toastr = toastr;
         this.list = {
             lastname: '',
             firstname: '',
@@ -31,8 +32,8 @@ var ContactComponent = /** @class */ (function () {
         var timedate = time + " " + date;
         this.list.time = timedate;
         console.log(timedate);
+        this.toastr.success('Sửa thành công', 'thông báo');
         this.AppService.postContent(this.list).subscribe(function (data) {
-            alert('Gửi thành công');
             _this.router.navigateByUrl('/');
         });
     };

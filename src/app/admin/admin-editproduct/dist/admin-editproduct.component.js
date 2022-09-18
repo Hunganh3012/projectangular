@@ -10,10 +10,11 @@ exports.AdminEditproductComponent = void 0;
 var core_1 = require("@angular/core");
 var $ = require("jquery");
 var AdminEditproductComponent = /** @class */ (function () {
-    function AdminEditproductComponent(AdminService, route, Router) {
+    function AdminEditproductComponent(AdminService, route, Router, toastr) {
         this.AdminService = AdminService;
         this.route = route;
         this.Router = Router;
+        this.toastr = toastr;
         this.edit = [];
     }
     AdminEditproductComponent.prototype.ngOnInit = function () {
@@ -35,7 +36,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.AdminService.updateProduct(this.edit.id, this.edit).subscribe(function (data) {
             _this.Router.navigateByUrl('/admin/admin-product');
         });
-        alert('Cập nhật thành công');
+        this.toastr.success('Sửa thành công', 'thông báo');
     };
     AdminEditproductComponent = __decorate([
         core_1.Component({

@@ -10,26 +10,16 @@ exports.adminComponent = void 0;
 var core_1 = require("@angular/core");
 var $ = require("jquery");
 var adminComponent = /** @class */ (function () {
-    function adminComponent() {
-        // list:any=[];
-        // constructor(private AppService:AppService) { }
+    // list:any=[];
+    function adminComponent(AppService, toastr) {
+        this.AppService = AppService;
+        this.toastr = toastr;
         this.isDisplay = true;
         this.isDisplay2 = true;
-        // renderContent(){
-        //   return this.AppService.renderContent().subscribe(data =>{
-        //     this.list=data;
-        //   })
-        // }
-        // deleteContent(id:number){
-        //   console.log(id);
-        //   this.AppService.deleteContent(id).subscribe(data=>{
-        //     this.list=this.list.filter((item:any) =>{
-        //       return item.id !=id;
-        //     })
-        //     alert('Xóa thành công')
-        //   })
-        // }
     }
+    adminComponent.prototype.error = function () {
+        this.toastr.error("Cảnh báo", 'thông báo');
+    };
     adminComponent.prototype.clickToggle = function () {
         this.isDisplay = !this.isDisplay;
     };

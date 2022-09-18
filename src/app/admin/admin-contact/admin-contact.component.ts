@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-admin-contact',
   templateUrl: './admin-contact.component.html',
@@ -11,7 +12,12 @@ export class AdminContactComponent implements OnInit {
   page:number=1;
   totalLength:any;
   selectlist:any=[];
-  constructor( private AppService:AppService) { }
+  public labels:any={   
+    previousLabel:'',
+    nextLabel:'',
+
+  }
+  constructor( private AppService:AppService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
 
@@ -26,6 +32,7 @@ export class AdminContactComponent implements OnInit {
   }
 
   deleteContent(id:number){
+    this.toastr.success('Xóa thành công','thông báo')
        console.log(id);
        this.AppService.deleteContent(id).subscribe(data=>{
          this.list=this.list.filter((item:any) =>{

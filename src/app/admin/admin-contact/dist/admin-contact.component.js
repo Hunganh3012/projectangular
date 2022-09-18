@@ -9,11 +9,16 @@ exports.__esModule = true;
 exports.AdminContactComponent = void 0;
 var core_1 = require("@angular/core");
 var AdminContactComponent = /** @class */ (function () {
-    function AdminContactComponent(AppService) {
+    function AdminContactComponent(AppService, toastr) {
         this.AppService = AppService;
+        this.toastr = toastr;
         this.list = [];
         this.page = 1;
         this.selectlist = [];
+        this.labels = {
+            previousLabel: '',
+            nextLabel: ''
+        };
         this.sum = 0;
         this.numId = 0;
         this.parentSelector = false;
@@ -29,6 +34,7 @@ var AdminContactComponent = /** @class */ (function () {
     };
     AdminContactComponent.prototype.deleteContent = function (id) {
         var _this = this;
+        this.toastr.success('Xóa thành công', 'thông báo');
         console.log(id);
         this.AppService.deleteContent(id).subscribe(function (data) {
             _this.list = _this.list.filter(function (item) {

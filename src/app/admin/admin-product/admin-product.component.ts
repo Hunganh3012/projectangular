@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
+import { ToastrService } from 'ngx-toastr';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-product',
@@ -11,7 +12,12 @@ export class AdminProductComponent implements OnInit {
   listproductAdmin:any=[];
   totalLength:any;
   page:number=1;
-  constructor( private AdminService:AdminService) { }
+  public labels:any={   
+    previousLabel:'',
+    nextLabel:'',
+
+  }
+  constructor( private AdminService:AdminService, private toastr:ToastrService) { }
   ngOnInit(): void {
     this.getProduct();
 
@@ -27,7 +33,6 @@ export class AdminProductComponent implements OnInit {
       this.listproductAdmin=this.listproductAdmin.filter((item:any) =>{
           return item.id !=id;
       })
-      alert('Xóa sản phẩm thành công')
-    })
+      this.toastr.success('Xóa thành công','thông báo');    })
   }
 }

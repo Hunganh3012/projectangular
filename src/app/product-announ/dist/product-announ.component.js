@@ -17,6 +17,10 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.listProduct = [];
         this.listProductHighlight = [];
         this.slidesStore = [];
+        this.labels = {
+            previousLabel: '',
+            nextLabel: ''
+        };
         // listCart={
         //   name:'',
         //   priceold:'',

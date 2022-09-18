@@ -9,16 +9,18 @@ exports.__esModule = true;
 exports.AdminModule = void 0;
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
+var forms_1 = require("@angular/forms");
 var admin_routing_module_1 = require("./admin-routing.module");
 var admin_contact_component_1 = require("./admin-contact/admin-contact.component");
 var admin_product_component_1 = require("./admin-product/admin-product.component");
 var admin_addproduct_component_1 = require("./admin-addproduct/admin-addproduct.component");
 var sidebar_component_1 = require("./sidebar/sidebar.component");
-var forms_1 = require("@angular/forms");
+// import { FormsModule } from '@angular/forms';
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_option_component_1 = require("./admin-option/admin-option.component");
 var ngx_pagination_1 = require("ngx-pagination");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
+var ngx_currency_1 = require("ngx-currency");
 // import { NgxPaginationModule } from 'ngx-pagination';
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
@@ -38,7 +40,9 @@ var AdminModule = /** @class */ (function () {
                 common_1.CommonModule,
                 admin_routing_module_1.AdminRoutingModule,
                 forms_1.FormsModule,
-                ngx_pagination_1.NgxPaginationModule
+                forms_1.ReactiveFormsModule,
+                ngx_pagination_1.NgxPaginationModule,
+                ngx_currency_1.NgxCurrencyModule
                 // HttpClient
             ]
         })

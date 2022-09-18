@@ -1,50 +1,64 @@
 
-
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <h1>Sửa Sản Phẩm</h1>
-                    </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Tên sản phẩm</th>
-                                <th>giảm giá(%)</th>
-                                <th>Giá tiền(ngìn đồng)</th>
-                                <th>Mô tả sản phẩm</th>
-                                <th>Link ảnh sản phẩm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input type="text"class="input-addproduct" value="{{edit.name}}"[(ngModel)]="edit.name">
-                                </td>
-                                <td>
-                                    <input type="text" class="input-addproduct" value="{{edit.sale}}" [(ngModel)]="edit.sale">
-                                </td>
-                                <td>
-                                    <input type="text" class="input-addproduct" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
-                                </td>
-                                <td>
-                                    <textarea  class="input-addproduct" value="{{edit.detail}}" [(ngModel)]="edit.detail" rows="4" cols="50"></textarea>
-                                </td>
-                                <td>
-                                    <!-- <input type="file" value="{{edit.img}}"><br>
-                                    <span>Hoặc</span><br> -->
-                                    <input type="text" value="{{edit.img}}"  [(ngModel)]="edit.img">
-                                </td>
-                            </tr>
+<div class="container">
+  
+    <section class="panel panel-default">
+  <div class="panel-heading"> 
+  <h3 class="panel-title">Sửa sản phẩm</h3> 
+  </div> 
+  <div class="panel-body">
     
-                        </tbody>
-                    </table>
-                    <button class="addbutton" (click)="updateProduct()"> <i class="fa-solid fa-upload mr-2"></i>Cập nhật</button>
-
+  <form action="designer-finish.html" class="form-horizontal" role="form">
+   <!-- form-group // -->
+  
+     <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Tên sản phẩm</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="name" placeholder="tên sản phẩm"  value="{{edit.name}}" [(ngModel)]="edit.name">
+      </div>
+    </div> <!-- form-group // -->
+    <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" name="name" id="name" placeholder="https//:...." value="{{edit.img}}" [(ngModel)]="edit.img">
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="row ">
+            <div class="col-sm-6">
+                <label for="qty" class="col-sm-6 control-label">Giá sản phẩm( 000đồng)</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
                 </div>
-            </div>  
+            </div>
+            <div class="col-sm-6">
+                <label class="col-sm-6 control-label">Link ảnh sản phẩm</label>
+                <div class="col-sm-12"> 
+                  <input type="text" class="form-control" name="date_start" id="date_start" placeholder="50"value="{{edit.sale}}"  [(ngModel)]="edit.sale">
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="form-group">
+      <label for="about" class="col-sm-3 control-label">Mô tả sẩn phẩm</label>
+      <div class="col-sm-12">
+        <textarea class="form-control" cols="" rows="10" value="{{edit.detail}}" [(ngModel)]="edit.detail"></textarea>
+      </div>
+    </div> 
 
+    <hr>
+    <div class="form-group float-right">
+      <div class="col-sm-offset-3 col-sm-12">
+        <button type="submit" class="btn addbutton" (click)="updateProduct()"> <i class="fa-solid fa-upload mr-2"></i>Cập nhật sản phẩm</button>
+      </div>
+    </div> 
+  </form>
     
-    
-    
-    
-       
+  </div>
+  </section>
+  
+</div>
+
+
+     
+
+

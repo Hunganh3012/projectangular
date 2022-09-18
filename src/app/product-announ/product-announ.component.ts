@@ -14,7 +14,11 @@ export class ProductAnnounComponent implements OnInit {
   listProduct:any=[];
   listProductHighlight:any=[];
   slidesStore: any[]=[];
-  
+  public labels:any={   
+    previousLabel:'',
+    nextLabel:'',
+
+  }
   // listCart={
   //   name:'',
   //   priceold:'',
@@ -28,13 +32,17 @@ export class ProductAnnounComponent implements OnInit {
   productincart:any=[];
   
 
-  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {}
+  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {
+    
+    
+  }
   ngOnInit(): void {
     
     this.getProduct();
     this.getProductHighlight();
     this.cartDetail();
-    
+  
+
     
   }
   customOptions: OwlOptions = {

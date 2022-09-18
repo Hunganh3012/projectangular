@@ -1,3 +1,4 @@
+
 body{
     font-size: 1.6rem;
     font-family: 'Roboto';
@@ -181,16 +182,19 @@ table.table .avatar {
     padding: 0 6px;
 }
 
-
 .addbutton{
-    cursor: pointer;
-    display: block;
-    border: none;
+    // cursor: pointer;
+    // display: block;
+    // border: none;
     background-color:#034da2;
-    width: 200px;
-    border-radius: 20px;
-    margin: 20px auto;
-    padding: 20px;
+    // width: 200px;
+    // border-radius: 20px;
+    // margin: 20px auto;
+    // padding: 20px;
     color: white;
-    font-size: 20px;
+    &:hover{
+        background-color: #034da2bf;
+        color: white;
+    }
+    // font-size: 20px;
 }

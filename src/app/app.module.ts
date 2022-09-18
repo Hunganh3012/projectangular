@@ -24,21 +24,13 @@ import { CartComponent } from './cart/cart.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WishlistComponent } from './admin/wishlist/wishlist.component';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxCurrencyModule } from "ngx-currency";
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 @NgModule({
   declarations: [
     AppComponent,
-    // HeaderComponent,
-    // FooterComponent,
-
-    // ProductComponent,
-    // HomePageComponent,
-    // TieudiemComponent,
-    // NotFoundErrorComponent,
     adminComponent,
-    // ProductAnnounComponent,
-    // HeadComponent,
-    // DetailComponent,
-    // CartComponent,
     WishlistComponent
   ],
   imports: [
@@ -48,7 +40,19 @@ import { WishlistComponent } from './admin/wishlist/wishlist.component';
     HttpClientModule,
     NgxPaginationModule,
     CarouselModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,  
+    NgxCurrencyModule,
+    CurrencyMaskModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 1000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true,
+        progressBar:true,
+        progressAnimation:'increasing',
+      }
+    ),
+
 
 
   ],

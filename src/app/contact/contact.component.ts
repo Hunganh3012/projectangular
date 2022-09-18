@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AppService } from '../app.service';
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,8 @@ import { AppService } from '../app.service';
 export class ContactComponent implements OnInit {
 
   constructor( private AppService:AppService,
-              private router:Router) { }
+              private router:Router,
+              private toastr:ToastrService) { }
 
   ngOnInit(): void {
     
@@ -29,9 +31,9 @@ export class ContactComponent implements OnInit {
     var timedate=time +" "+ date;
     this.list.time=timedate;
     console.log(timedate);
+    this.toastr.success('Sửa thành công','thông báo');
      this.AppService.postContent(this.list).subscribe(data=>{
 
-      alert('Gửi thành công');
       this.router.navigateByUrl('/')
      })
   }
