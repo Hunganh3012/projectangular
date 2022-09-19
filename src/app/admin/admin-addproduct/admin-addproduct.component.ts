@@ -37,24 +37,16 @@ export class AdminAddproductComponent implements OnInit {
 
 
   // FORM VALIDATION
-  form!: FormGroup;
+  form!: FormGroup; 
   submitted = false;
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
         nameproduct: ['', [Validators.required,Validators.minLength(6)]],
-        linkphoto: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(6),
-          ]
-        ],
+        linkphoto: ['',[Validators.required,Validators.minLength(6),]],
         priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
         sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
         detail: ['', [Validators.required, Validators.minLength(6),]],
-
-        confirmPassword: ['', Validators.required],
         acceptTerms: [false, Validators.requiredTrue]
       },
     );
@@ -64,19 +56,22 @@ export class AdminAddproductComponent implements OnInit {
   }
   OnSubmit() {
     this.submitted = true;
-    if(this.form.invalid){
+    if(this.form.valid){
+
+      this.AdminService.addProduct(this.listadd).subscribe(data =>{
+    
+        this.Router.navigateByUrl('/admin/admin-product')
+      })
+      this.toastr.success('Thêm thành công','thông báo');
+
+    }else{
+      this.toastr.error('Vui lòng nhập thông tin','thông báo');
       return;
     }
-      alert('oke');
-    
 
    
       
-      // this.AdminService.addProduct(this.listadd).subscribe(data =>{
-    
-      //   this.Router.navigateByUrl('/admin/admin-product')
-      // })
-      // this.toastr.success('Thêm thành công','thông báo');
+
     
   }
   // addProduct(){

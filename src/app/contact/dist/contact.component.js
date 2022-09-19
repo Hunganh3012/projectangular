@@ -13,6 +13,7 @@ var ContactComponent = /** @class */ (function () {
         this.AppService = AppService;
         this.router = router;
         this.toastr = toastr;
+        this.submitted = false;
         this.list = {
             lastname: '',
             firstname: '',
@@ -23,6 +24,16 @@ var ContactComponent = /** @class */ (function () {
         };
     }
     ContactComponent.prototype.ngOnInit = function () {
+        // this.form = this.fb.group(
+        //   {
+        //     lastname: ['', [Validators.required,Validators.minLength(2)]],
+        //     firstname: ['',[Validators.required,Validators.minLength(2),]],
+        //     priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
+        //     sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
+        //     detail: ['', [Validators.required, Validators.minLength(6),]],
+        //     acceptTerms: [false, Validators.requiredTrue]
+        //   },
+        // );
     };
     ContactComponent.prototype.postContent = function () {
         var _this = this;
@@ -36,6 +47,9 @@ var ContactComponent = /** @class */ (function () {
         this.AppService.postContent(this.list).subscribe(function (data) {
             _this.router.navigateByUrl('/');
         });
+    };
+    ContactComponent.prototype.OnSubmit = function () {
+        this.submitted = true;
     };
     ContactComponent = __decorate([
         core_1.Component({

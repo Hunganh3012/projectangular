@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminProductComponent = void 0;
 var core_1 = require("@angular/core");
+var sweetalert2_1 = require("sweetalert2");
 var AdminProductComponent = /** @class */ (function () {
     function AdminProductComponent(AdminService, toastr) {
         this.AdminService = AdminService;
@@ -30,11 +31,25 @@ var AdminProductComponent = /** @class */ (function () {
     };
     AdminProductComponent.prototype.deleteProduct = function (id) {
         var _this = this;
-        return this.AdminService.deleteProduct(id).subscribe(function (data) {
-            _this.listproductAdmin = _this.listproductAdmin.filter(function (item) {
-                return item.id != id;
-            });
-            _this.toastr.success('Xóa thành công', 'thông báo');
+        sweetalert2_1["default"].fire({
+            title: 'Bạn chắc chắn xóa không ?',
+            text: "Sẽ bị xóa vĩnh viễn",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Hủy',
+            confirmButtonText: 'Xóa thông tin'
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                sweetalert2_1["default"].fire('Xóa thành công', 'Thông tin đã được xóa', 'success');
+                _this.AdminService.deleteProduct(id).subscribe(function (data) {
+                    _this.listproductAdmin = _this.listproductAdmin.filter(function (item) {
+                        return item.id != id;
+                    });
+                    _this.toastr.success('Xóa thành công', 'thông báo');
+                });
+            }
         });
     };
     AdminProductComponent = __decorate([

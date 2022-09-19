@@ -2,19 +2,37 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AppService } from '../app.service';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
+  submitted=false;
+  form!: FormGroup; 
   constructor( private AppService:AppService,
               private router:Router,
-              private toastr:ToastrService) { }
+              private toastr:ToastrService,
+
+              ) { }
 
   ngOnInit(): void {
-    
+    // this.form = this.fb.group(
+    //   {
+    //     lastname: ['', [Validators.required,Validators.minLength(2)]],
+    //     firstname: ['',[Validators.required,Validators.minLength(2),]],
+    //     priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
+    //     sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
+    //     detail: ['', [Validators.required, Validators.minLength(6),]],
+    //     acceptTerms: [false, Validators.requiredTrue]
+    //   },
+    // );
   }
   list:any={
     lastname:'',
@@ -36,5 +54,9 @@ export class ContactComponent implements OnInit {
 
       this.router.navigateByUrl('/')
      })
+  }
+  OnSubmit(){
+    this.submitted=true
+
   }
 }

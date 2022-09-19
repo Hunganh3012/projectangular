@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2'
 import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-product',
@@ -29,10 +30,29 @@ export class AdminProductComponent implements OnInit {
 
   }
   deleteProduct(id:number){
-    return this.AdminService.deleteProduct(id).subscribe(data=>{
-      this.listproductAdmin=this.listproductAdmin.filter((item:any) =>{
-          return item.id !=id;
-      })
-      this.toastr.success('Xóa thành công','thông báo');    })
+    Swal.fire({
+      title: 'Bạn chắc chắn xóa không ?',
+      text: "Sẽ bị xóa vĩnh viễn",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText:'Hủy',
+      confirmButtonText: 'Xóa thông tin'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Xóa thành công',
+          'Thông tin đã được xóa',
+          'success'
+        )
+         this.AdminService.deleteProduct(id).subscribe(data=>{
+          this.listproductAdmin=this.listproductAdmin.filter((item:any) =>{
+              return item.id !=id;
+          })
+          this.toastr.success('Xóa thành công','thông báo');    })
+      }
+    })
+    
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-admin-contact',
   templateUrl: './admin-contact.component.html',
@@ -32,15 +33,32 @@ export class AdminContactComponent implements OnInit {
   }
 
   deleteContent(id:number){
-    this.toastr.success('Xóa thành công','thông báo')
-       console.log(id);
-       this.AppService.deleteContent(id).subscribe(data=>{
-         this.list=this.list.filter((item:any) =>{
-           return item.id !=id;
-         })
-        //  alert('Xóa thành công');
-       })
-     }
+    Swal.fire({
+      title: 'Bạn chắc chắn xóa không ?',
+      text: "Sẽ bị xóa vĩnh viễn",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText:'Hủy',
+      confirmButtonText: 'Xóa thông tin'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Xóa thành công',
+          'Thông tin đã được xóa',
+          'success'
+        )
+        this.toastr.success('Xóa thành công','thông báo')
+        this.AppService.deleteContent(id).subscribe(data=>{
+          this.list=this.list.filter((item:any) =>{
+            return item.id !=id;
+          })
+        })
+      }
+    })
+
+  }
 
   parentSelector:boolean=false;
   onChangelist($event:any){

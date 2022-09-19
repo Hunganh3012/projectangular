@@ -12,9 +12,10 @@
      <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Tên sản phẩm</label>
       <div class="col-sm-12">
-        <input type="text" class="form-control" name="name" id="name" 
-        placeholder="tên sản phẩm" [(ngModel)]="listadd.name"
+        <input type="text" class="form-control" 
+        placeholder="tên sản phẩm" 
         formControlName="nameproduct"
+        [(ngModel)]="listadd.name"
         [ngClass]="{ 'is-invalid': submitted && f['nameproduct'].errors }">
         <div *ngIf="submitted && f['nameproduct'].errors" class="invalid-feedback">
           <div *ngIf="f['nameproduct'].errors['required']">Vui lòng nhập tên sản phẩm</div>
@@ -27,9 +28,9 @@
     <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
       <div class="col-sm-12">
-        <input type="text" class="form-control" name="name" id="name" placeholder="https//:...."
-          [(ngModel)]="listadd.img"
-          formControlName="linkphoto"
+        <input type="text" class="form-control"  placeholder="https//:...."
+        formControlName="linkphoto"
+        [(ngModel)]="listadd.img"
           [ngClass]="{ 'is-invalid': submitted && f['linkphoto'].errors }">
           <div *ngIf="submitted && f['linkphoto'].errors" class="invalid-feedback">
             <div *ngIf="f['linkphoto'].errors['required']">Vui lòng nhập link hình ảnh sản phẩm</div>
@@ -44,7 +45,7 @@
             <div class="col-sm-6">
                 <label for="qty" class="col-sm-6 control-label">Giá sản phẩm( 000đồng)</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng"
+                    <input type="text" class="form-control" placeholder=".000 đồng"
                      currencyMark [(ngModel)]="listadd.priceold" 
                      formControlName="priceold"
                      [ngClass]="{ 'is-invalid': submitted && f['priceold'].errors }"/>
@@ -97,17 +98,17 @@
         [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
       />
       <label for="acceptTerms" class="form-check-label"
-        >Xác nhận thay dodỏi</label
+        >Xác nhận thay đổi</label
       >
       <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
-        Accept Ts & Cs is required
+        Vui lòng xác nhận 
       </div>
     </div>
 
     <hr>
     <div class="form-group float-right">
       <div class="col-sm-offset-3 col-sm-12">
-        <button type="submit" class="btn btn-secondary addbutton"  >Thêm sản phẩm</button>
+        <button type="submit" class="btn btn-secondary addbutton"  > <i class="fa-solid fa-arrow-up-from-bracket mr-2"></i> Thêm sản phẩm</button>
       </div>
     </div> 
   </form>
