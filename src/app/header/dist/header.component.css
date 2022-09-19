@@ -557,3 +557,8 @@ body {
     display: none;
   }
 }
+@media screen and (max-width: 737px) {
+  .search {
+    display: none;
+  }
+}
