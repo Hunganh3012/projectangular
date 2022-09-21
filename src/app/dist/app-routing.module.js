@@ -30,7 +30,7 @@ var routes = [
     {
         path: '**',
         component: not_found_error_component_1.NotFoundErrorComponent
-    }
+    },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

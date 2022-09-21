@@ -47,7 +47,8 @@
             </div>
             <div class="container">
                 <nav class="nav-menu">
-                    <img src="./assets/images/logo-nuocgiaikhatcopy.png" alt="" class="nav-icon-logo">
+                    <a routerLink="/web/product-announ" (click)="open()"> <img src="./assets/images/logo-nuocgiaikhatcopy.png" alt="" class="nav-icon-logo"></a>
+                    
                     <img routerLink="" src="./assets/images/home.png" alt="" class="nav-icon-home">
                     <ul class="nav-menu-list">  
                         <li class="nav-menu-item">
@@ -98,9 +99,9 @@
                                 
                                 </ul>
                                 <div class="add-cart-button">
-                                    <a routerLink="/cart" class="">Total :  {{Totals | currency: 'VND':'symbol':'1.2-2'}}0</a>
+                                    <a routerLink="/web/cart" class="">Total :  {{Totals | currency: 'VND':'symbol':'1.2-2'}}0</a>
                                     <!-- <a routerLink="/cart" class="">Thành tiền: {{Total | currency: 'VND':'symbol':'1.2-2'}}0</a> -->
-                                    <a routerLink="/cart" > <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
+                                    <a routerLink="/web/cart" > <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
                                 </div>
                             </div>
                     </i></a>
@@ -108,8 +109,8 @@
                         <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
                         <div class="user-dropdown">
                             <span class="user-dropdown-item"><a routerLink="/admin/" >Tài khoản của tôi</a></span>
-                            <span class="user-dropdown-item"><a routerLink="/cart/" (click)="close()" >Giỏ hàng</a></span>
-                            <span class="user-dropdown-item"><a routerLink="/admin/wishlist">Sản phẩm yêu thích</a></span>
+                            <span class="user-dropdown-item"><a routerLink="/web/cart/" (click)="close()" >Giỏ hàng</a></span>
+                            <span class="user-dropdown-item"><a routerLink="/web/wishlist">Sản phẩm yêu thích</a></span>
                             <span class="user-dropdown-item"><a (click)="logOut()" class="" *ngIf="isShowLogOut">Đăng xuất</a></span>
                 </div>
                     </a>

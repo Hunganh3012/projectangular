@@ -19,20 +19,20 @@ export class ContactComponent implements OnInit {
   constructor( private AppService:AppService,
               private router:Router,
               private toastr:ToastrService,
-
+              private fb: FormBuilder,
               ) { }
 
   ngOnInit(): void {
-    // this.form = this.fb.group(
-    //   {
-    //     lastname: ['', [Validators.required,Validators.minLength(2)]],
-    //     firstname: ['',[Validators.required,Validators.minLength(2),]],
-    //     priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
-    //     sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
-    //     detail: ['', [Validators.required, Validators.minLength(6),]],
-    //     acceptTerms: [false, Validators.requiredTrue]
-    //   },
-    // );
+    this.form = this.fb.group(
+      {
+        lastname: ['', [Validators.required,Validators.minLength(2)]],
+        firstname: ['',[Validators.required,Validators.minLength(2),]],
+        phonenum: ['', [Validators.required,Validators.pattern("[0-9 ]{10}")]],
+        email: ['', [Validators.required, Validators.email]],
+        detail: ['', [Validators.required, Validators.minLength(3),]],
+        // acceptTerms: [false, Validators.requiredTrue]
+      },
+    );
   }
   list:any={
     lastname:'',
@@ -42,21 +42,31 @@ export class ContactComponent implements OnInit {
     content:'',
     time:''
   }
-  postContent(){
-    var today=new Date();
-    var time = today.getHours() + ":" + today.getMinutes() +":"+ today.getSeconds();
-    var date=  today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-    var timedate=time +" "+ date;
-    this.list.time=timedate;
-    console.log(timedate);
-    this.toastr.success('Sửa thành công','thông báo');
-     this.AppService.postContent(this.list).subscribe(data=>{
-
-      this.router.navigateByUrl('/')
-     })
+  // postContent(){
+    
+  // }
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
   }
   OnSubmit(){
-    this.submitted=true
+    this.submitted=true;
+    if(this.form.valid){
 
+      var today=new Date();
+      var time = today.getHours() + ":" + today.getMinutes() +":"+ today.getSeconds();
+      var date=  today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+      var timedate=time +" "+ date;
+      this.list.time=timedate;
+      console.log(timedate);
+      this.toastr.success('Gửi thành công','thông báo');
+       this.AppService.postContent(this.list).subscribe(data=>{
+  
+        this.router.navigateByUrl('/')
+       })
+
+    }else{
+      this.toastr.error('Vui lòng nhập thông tin','thông báo');
+      return;
+    }
   }
 }

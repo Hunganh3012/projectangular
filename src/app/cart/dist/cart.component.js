@@ -10,16 +10,20 @@ exports.CartComponent = void 0;
 var core_1 = require("@angular/core");
 var core_2 = require("@angular/core");
 var CartComponent = /** @class */ (function () {
-    function CartComponent(adminService, route, Router, currencyPipe // private builder: FormBuilder
+    function CartComponent(authService, adminService, route, Router, currencyPipe, toastr
+    // private builder: FormBuilder
     ) {
+        this.authService = authService;
         this.adminService = adminService;
         this.route = route;
         this.Router = Router;
         this.currencyPipe = currencyPipe;
+        this.toastr = toastr;
+        this.isShowClose = true;
         this.cart = [];
         this.totalItem = 0;
         this.getCartDetail = [];
-        this.cartNumbers = 0;
+        this.cartNumber = 0;
         this.productcarts = [];
         // changeSubtotal(item:any, index:number) {
         //   const qty = item.qtyTotal;
@@ -31,7 +35,6 @@ var CartComponent = /** @class */ (function () {
         //   console.log(this.subTotalItems)
         //   this.adminService.saveCart();
         // }
-        this.cartNumber = 0;
         this.productcart = [];
     }
     CartComponent.prototype.ngOnInit = function () {
@@ -46,18 +49,26 @@ var CartComponent = /** @class */ (function () {
     };
     CartComponent.prototype.successbuy = function () {
         this.adminService.clearCart(this.getCartDetail);
-        this.Router.navigateByUrl("/");
-        alert('Mua hàng thành công');
+        this.Router.navigateByUrl("/web/product");
+        this.authService.open();
+        this.isShowClose = true;
+        this.cartNumberFunc();
+        this.productNumberFunc();
+        this.toastr.success('Mua thành công', 'thông báo');
     };
     CartComponent.prototype.clearCart = function (item) {
         this.adminService.clearCart(this.getCartDetail);
         this.cartNumber = 0;
+        this.cartNumberFunc();
+        this.productNumberFunc();
+        this.toastr.success('Xóa thành công giỏ hàng', 'thông báo');
     };
     CartComponent.prototype.removeFromCart = function (item) {
         this.adminService.removeItem(item);
         this.getCartDetail = this.adminService.getItems();
         this.cartNumberFunc();
         this.productNumberFunc();
+        this.toastr.success('Xóa thành công', 'thông báo');
     };
     Object.defineProperty(CartComponent.prototype, "Total", {
         get: function () {
@@ -83,7 +94,7 @@ var CartComponent = /** @class */ (function () {
             localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
         }
     };
-    CartComponent.prototype.cartNumberFunction = function () {
+    CartComponent.prototype.cartNumberFunc = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.cartNumber = cartValue.length;
         this.adminService.cartSubject.next(this.cartNumber);
@@ -93,17 +104,19 @@ var CartComponent = /** @class */ (function () {
         this.productcart = productValue;
         this.adminService.productmini.next(this.productcart);
     };
-    CartComponent.prototype.cartNumberFunc = function () {
-        var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
-        this.cartNumber = cartValue.length;
-        this.adminService.cartSubject.next(this.cartNumber);
-        console.log(this.cartNumber);
-    };
     CartComponent.prototype.productNumberFunc = function () {
         var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.productcart = productValue;
         console.log(this.productcart);
         this.adminService.productmini.next(this.productcart);
+    };
+    CartComponent.prototype.close = function () {
+        this.authService.close();
+        this.isShowClose = false;
+    };
+    CartComponent.prototype.open = function () {
+        this.authService.open();
+        this.isShowClose = true;
     };
     __decorate([
         core_2.ViewChildren('subTotalWrap')

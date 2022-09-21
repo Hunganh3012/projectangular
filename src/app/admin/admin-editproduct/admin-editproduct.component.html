@@ -13,13 +13,19 @@
      <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Tên sản phẩm</label>
       <div class="col-sm-12">
-        <input type="text" class="form-control" id="name" placeholder="tên sản phẩm"  value="{{edit.name}}" [(ngModel)]="edit.name">
+        <input type="text" class="form-control" id="name" placeholder="tên sản phẩm"  value="{{edit.name}}" [(ngModel)]="edit.name" [ngModelOptions]="{standalone: true}">
       </div>
     </div> <!-- form-group // -->
     <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
+      <ngx-dropzone (change)="onSelect($event)">
+        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of file" src="edit.img" [removable]="true" (removed)="onRemove(f)" [file]="f">
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-image-preview>
+      </ngx-dropzone>
       <div class="col-sm-12">
-        <input type="text" class="form-control" name="name" id="name" placeholder="https//:...." value="{{edit.img}}" [(ngModel)]="edit.img">
+        <input type="text" class="form-control" name="name" id="name" placeholder="https//:...." value="{{edit.img}}" [(ngModel)]="edit.img" [ngModelOptions]="{standalone: true}">
       </div>
     </div>
     <div class="form-group">
@@ -27,13 +33,13 @@
             <div class="col-sm-6">
                 <label for="qty" class="col-sm-6 control-label">Giá sản phẩm( 000đồng)</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng" value="{{edit.priceold}}" [(ngModel)]="edit.priceold">
+                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng" value="{{edit.priceold}}" [(ngModel)]="edit.priceold" [ngModelOptions]="{standalone: true}">
                 </div>
             </div>
             <div class="col-sm-6">
                 <label class="col-sm-6 control-label">Link ảnh sản phẩm</label>
                 <div class="col-sm-12"> 
-                  <input type="text" class="form-control" name="date_start" id="date_start" placeholder="50"value="{{edit.sale}}"  [(ngModel)]="edit.sale">
+                  <input type="text" class="form-control" name="date_start" id="date_start" placeholder="50"value="{{edit.sale}}"  [(ngModel)]="edit.sale" [ngModelOptions]="{standalone: true}">
                 </div>
             </div>
         </div> 
@@ -41,7 +47,7 @@
     <div class="form-group">
       <label for="about" class="col-sm-3 control-label">Mô tả sẩn phẩm</label>
       <div class="col-sm-12">
-        <textarea class="form-control" cols="" rows="10" value="{{edit.detail}}" [(ngModel)]="edit.detail"></textarea>
+        <textarea class="form-control" cols="" rows="10" value="{{edit.detail}}" [(ngModel)]="edit.detail" [ngModelOptions]="{standalone: true}"></textarea>
       </div>
     </div> 
 

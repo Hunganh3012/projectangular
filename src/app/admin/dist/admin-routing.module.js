@@ -14,7 +14,6 @@ var admin_contact_component_1 = require("./admin-contact/admin-contact.component
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_product_component_1 = require("./admin-product/admin-product.component");
 var admin_component_1 = require("./admin.component");
-var wishlist_component_1 = require("./wishlist/wishlist.component");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
 var sidebar_component_1 = require("./sidebar/sidebar.component");
 var Adminroutes = [
@@ -37,10 +36,6 @@ var Adminroutes = [
             {
                 path: 'admin-product',
                 component: admin_product_component_1.AdminProductComponent
-            },
-            {
-                path: 'wishlist',
-                component: wishlist_component_1.WishlistComponent
             },
             {
                 path: 'admin-addproduct',

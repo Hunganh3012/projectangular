@@ -63,9 +63,7 @@ export class HeaderComponent implements OnInit {
   // qtyCarts(){
   //   this
   // }
-  getqtyItemFromLocal(): any {
 
-  }
   getCartItemFromLocal(): any {
     const data = localStorage.getItem('cart-item');
     if (!data) return;

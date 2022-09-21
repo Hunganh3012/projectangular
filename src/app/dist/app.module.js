@@ -43,6 +43,7 @@ var AppModule = /** @class */ (function () {
                 ngx_owl_carousel_o_1.CarouselModule,
                 animations_1.BrowserAnimationsModule,
                 ngx_currency_1.NgxCurrencyModule,
+                forms_1.ReactiveFormsModule,
                 ng2_currency_mask_1.CurrencyMaskModule,
                 ngx_toastr_1.ToastrModule.forRoot({
                     timeOut: 1000,

@@ -16,6 +16,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.Router = Router;
         this.toastr = toastr;
         this.edit = [];
+        this.file = [];
     }
     AdminEditproductComponent.prototype.ngOnInit = function () {
         $(function () {
@@ -37,6 +38,15 @@ var AdminEditproductComponent = /** @class */ (function () {
             _this.Router.navigateByUrl('/admin/admin-product');
         });
         this.toastr.success('Sửa thành công', 'thông báo');
+    };
+    AdminEditproductComponent.prototype.onSelect = function (event) {
+        var _a;
+        console.log(event);
+        (_a = this.file).push.apply(_a, event.addedFiles);
+    };
+    AdminEditproductComponent.prototype.onRemove = function (event) {
+        console.log(event);
+        this.file.splice(this.file.indexOf(event), 1);
     };
     AdminEditproductComponent = __decorate([
         core_1.Component({

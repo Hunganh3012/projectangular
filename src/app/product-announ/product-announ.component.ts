@@ -3,6 +3,7 @@ import { AdminService } from '../admin/admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-announ',
   templateUrl: './product-announ.component.html',
@@ -32,7 +33,8 @@ export class ProductAnnounComponent implements OnInit {
   productincart:any=[];
   
 
-  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute) {
+  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute,
+    private toastr:ToastrService) {
     
     
   }
@@ -77,7 +79,7 @@ export class ProductAnnounComponent implements OnInit {
 
   addtowlist(item:any){
       this.AdminService.addtowishlist(item);
-  alert('Đã thêm vào mục sản phẩm yêu thích');
+      this.toastr.success('Đã thêm vào sản phẩm yêu thích','thông báo');
 
 
   }

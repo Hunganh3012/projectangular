@@ -15,6 +15,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { HeadComponent } from '../head/head.component';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { FileUploadModule } from "ng2-file-upload"; 
+import {CloudinaryModule} from '@cloudinary/ng';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+// import {CloudinaryModule} from '@cloudinary/angular';
 // import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
@@ -30,11 +34,14 @@ import { NgxCurrencyModule } from 'ngx-currency';
   ],
   imports: [
     CommonModule,
+    FileUploadModule,
+    CloudinaryModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    NgxDropzoneModule
     // HttpClient
   ]
 })

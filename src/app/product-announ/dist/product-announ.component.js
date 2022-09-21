@@ -9,10 +9,11 @@ exports.__esModule = true;
 exports.ProductAnnounComponent = void 0;
 var core_1 = require("@angular/core");
 var ProductAnnounComponent = /** @class */ (function () {
-    function ProductAnnounComponent(AdminService, Router, route) {
+    function ProductAnnounComponent(AdminService, Router, route, toastr) {
         this.AdminService = AdminService;
         this.Router = Router;
         this.route = route;
+        this.toastr = toastr;
         this.productListcart = [];
         this.listProduct = [];
         this.listProductHighlight = [];
@@ -68,7 +69,7 @@ var ProductAnnounComponent = /** @class */ (function () {
     };
     ProductAnnounComponent.prototype.addtowlist = function (item) {
         this.AdminService.addtowishlist(item);
-        alert('Đã thêm vào mục sản phẩm yêu thích');
+        this.toastr.success('Đã thêm vào sản phẩm yêu thích', 'thông báo');
     };
     ProductAnnounComponent.prototype.getProduct = function () {
         var _this = this;

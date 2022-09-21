@@ -13,7 +13,7 @@
       <label for="name" class="col-sm-3 control-label">Tên sản phẩm</label>
       <div class="col-sm-12">
         <input type="text" class="form-control" 
-        placeholder="tên sản phẩm" 
+        placeholder="Tên sản phẩm" 
         formControlName="nameproduct"
         [(ngModel)]="listadd.name"
         [ngClass]="{ 'is-invalid': submitted && f['nameproduct'].errors }">
@@ -22,13 +22,29 @@
           <div *ngIf="f['nameproduct'].errors['minlength']">
             Tên sản phẩn ít nhất là 6 kí tự
           </div>
+  
         </div>
       </div>
     </div> <!-- form-group // -->
     <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
+      <ngx-dropzone (change)="onSelect($event)">
+        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of file" [removable]="true" (removed)="onRemove(f)" [file]="f">
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-image-preview>
+      </ngx-dropzone>
+      <!-- <button (click)="onUpload()" 
+          class="btn btn-success">
+          Upload
+      </button> -->
+    </div>
+    <!-- <div class="form-group">
+      
       <div class="col-sm-12">
-        <input type="text" class="form-control"  placeholder="https//:...."
+        
+        <input type="file" class="form-control"  placeholder="https//:...."
+
         formControlName="linkphoto"
         [(ngModel)]="listadd.img"
           [ngClass]="{ 'is-invalid': submitted && f['linkphoto'].errors }">
@@ -38,8 +54,12 @@
               Link ảnh sản phẩn ít nhất là 6 kí tự
           </div>
           </div>
+          <button (click)="onUpload()" 
+          class="btn btn-success">
+          Upload
+      </button>
       </div>
-    </div>
+    </div> -->
     <div class="form-group">
         <div class="row ">
             <div class="col-sm-6">

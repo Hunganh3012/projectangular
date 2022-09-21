@@ -36,4 +36,15 @@ export class AdminEditproductComponent implements OnInit {
     })
     this.toastr.success('Sửa thành công','thông báo');
   }
+
+  file:File[]=[]
+  onSelect(event:any) {
+    console.log(event);
+    this.file.push(...event.addedFiles);
+  }
+  
+  onRemove(event:any) {
+    console.log(event);
+    this.file.splice(this.file.indexOf(event), 1);
+  }
 }

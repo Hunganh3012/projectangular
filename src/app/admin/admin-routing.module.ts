@@ -34,10 +34,6 @@ const Adminroutes: Routes = [
           component:AdminProductComponent
         },
         {
-          path:'wishlist',
-          component:WishlistComponent
-        },
-        {
           path:'admin-addproduct',
           component:AdminAddproductComponent
         },

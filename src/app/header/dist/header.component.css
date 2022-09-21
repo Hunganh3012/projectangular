@@ -488,7 +488,7 @@ body {
     left: 87.2%;
   }
   .header-toggle {
-    width: 100%;
+    width: 70%;
     top: 100%;
     transition: all 0.2s linear;
     text-align: center;

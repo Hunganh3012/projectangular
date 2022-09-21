@@ -52,6 +52,7 @@ var WebModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 ngx_pagination_1.NgxPaginationModule,
                 ngx_owl_carousel_o_1.CarouselModule,
+                forms_1.ReactiveFormsModule
             ],
             providers: [common_2.CurrencyPipe,]
         })

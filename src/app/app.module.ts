@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -27,6 +27,9 @@ import { WishlistComponent } from './admin/wishlist/wishlist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxCurrencyModule } from "ngx-currency";
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     CarouselModule,
     BrowserAnimationsModule,  
     NgxCurrencyModule,
+    ReactiveFormsModule,
     CurrencyMaskModule,
     ToastrModule.forRoot(
       {

@@ -8,11 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.ContactComponent = void 0;
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent(AppService, router, toastr) {
+    function ContactComponent(AppService, router, toastr, fb) {
         this.AppService = AppService;
         this.router = router;
         this.toastr = toastr;
+        this.fb = fb;
         this.submitted = false;
         this.list = {
             lastname: '',
@@ -24,32 +26,42 @@ var ContactComponent = /** @class */ (function () {
         };
     }
     ContactComponent.prototype.ngOnInit = function () {
-        // this.form = this.fb.group(
-        //   {
-        //     lastname: ['', [Validators.required,Validators.minLength(2)]],
-        //     firstname: ['',[Validators.required,Validators.minLength(2),]],
-        //     priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
-        //     sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
-        //     detail: ['', [Validators.required, Validators.minLength(6),]],
-        //     acceptTerms: [false, Validators.requiredTrue]
-        //   },
-        // );
-    };
-    ContactComponent.prototype.postContent = function () {
-        var _this = this;
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-        var timedate = time + " " + date;
-        this.list.time = timedate;
-        console.log(timedate);
-        this.toastr.success('Sửa thành công', 'thông báo');
-        this.AppService.postContent(this.list).subscribe(function (data) {
-            _this.router.navigateByUrl('/');
+        this.form = this.fb.group({
+            lastname: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
+            firstname: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2),]],
+            phonenum: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{10}")]],
+            email: ['', [forms_1.Validators.required, forms_1.Validators.email]],
+            detail: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3),]]
         });
     };
+    Object.defineProperty(ContactComponent.prototype, "f", {
+        // postContent(){
+        // }
+        get: function () {
+            return this.form.controls;
+        },
+        enumerable: false,
+        configurable: true
+    });
     ContactComponent.prototype.OnSubmit = function () {
+        var _this = this;
         this.submitted = true;
+        if (this.form.valid) {
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+            var timedate = time + " " + date;
+            this.list.time = timedate;
+            console.log(timedate);
+            this.toastr.success('Gửi thành công', 'thông báo');
+            this.AppService.postContent(this.list).subscribe(function (data) {
+                _this.router.navigateByUrl('/');
+            });
+        }
+        else {
+            this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
+            return;
+        }
     };
     ContactComponent = __decorate([
         core_1.Component({

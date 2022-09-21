@@ -3,7 +3,8 @@ import { AdminService } from '../admin/admin.service';
 import { ActivatedRoute,Router } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { ViewChildren, ElementRef, QueryList  } from '@angular/core';
-
+import { AuthService } from '../auth.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -12,13 +13,16 @@ import { ViewChildren, ElementRef, QueryList  } from '@angular/core';
 export class CartComponent implements OnInit {
   @ViewChildren('subTotalWrap')  subTotalItems!:QueryList<ElementRef>;
   @ViewChildren('subTotalWrap_existing')  subTotalItems_existing!: QueryList<ElementRef>;
-
+  isShowClose=true;
   cart:any=[];
   constructor(
+    private authService:AuthService,
     private adminService:AdminService, 
     private route:ActivatedRoute,
     private Router:Router,
-    private currencyPipe: CurrencyPipe // private builder: FormBuilder
+    private currencyPipe: CurrencyPipe ,
+    private toastr:ToastrService
+    // private builder: FormBuilder
     ) { }
   public totalItem:number=0;
   ngOnInit(): void {
@@ -39,18 +43,26 @@ export class CartComponent implements OnInit {
   
   successbuy(){
     this.adminService.clearCart(this.getCartDetail);
-    this.Router.navigateByUrl("/");
-    alert('Mua hàng thành công')
+    this.Router.navigateByUrl("/web/product");
+    this.authService.open();
+    this.isShowClose=true;
+    this.cartNumberFunc();
+    this.productNumberFunc();
+    this.toastr.success('Mua thành công','thông báo')
   }
   clearCart(item:any){
     this.adminService.clearCart(this.getCartDetail);
     this.cartNumber=0;
+    this.cartNumberFunc();
+    this.productNumberFunc();
+    this.toastr.success('Xóa thành công giỏ hàng','thông báo')
   }
   removeFromCart(item:any) {
     this.adminService.removeItem(item);
     this.getCartDetail = this.adminService.getItems();
     this.cartNumberFunc();
     this.productNumberFunc();
+    this.toastr.success('Xóa thành công','thông báo')
   }
   get Total(){
     return this.getCartDetail.reduce((sum:any,x:any) =>({
@@ -77,8 +89,8 @@ export class CartComponent implements OnInit {
 
   }
 
-  cartNumbers:number =0;
-  cartNumberFunction(){
+  cartNumber:number =0;
+  cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;
     this.adminService.cartSubject.next(this.cartNumber);
@@ -101,13 +113,7 @@ export class CartComponent implements OnInit {
   //   console.log(this.subTotalItems)
   //   this.adminService.saveCart();
   // }
-  cartNumber:number=0;
-  cartNumberFunc(){
-    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
-    this.cartNumber=cartValue.length;
-    this.adminService.cartSubject.next(this.cartNumber);
-    console.log(this.cartNumber)
-  }
+
 
 
 
@@ -122,4 +128,13 @@ export class CartComponent implements OnInit {
     this.adminService.productmini.next(this.productcart);
   }
 
+
+  close(){
+    this.authService.close();
+    this.isShowClose=false;
+  } 
+  open(){
+    this.authService.open();
+    this.isShowClose=true;
+  } 
 }

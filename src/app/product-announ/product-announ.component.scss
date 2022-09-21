@@ -65,7 +65,11 @@ body{
     padding: 0 15px;
     margin: 0 auto;
 }
-
+.img-wh{
+    object-fit: cover;
+    width: 313px !important;
+    height: 313px !important;
+}
 //-------------------------------------------- Carousel---------------------
 
 

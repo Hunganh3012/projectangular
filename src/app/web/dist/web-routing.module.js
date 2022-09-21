@@ -16,6 +16,7 @@ var contact_component_1 = require("../contact/contact.component");
 var detail_component_1 = require("../detail/detail.component");
 var cart_component_1 = require("../cart/cart.component");
 var web_component_1 = require("./web.component");
+var wishlist_component_1 = require("../admin/wishlist/wishlist.component");
 var routes = [
     {
         path: '',
@@ -32,6 +33,10 @@ var routes = [
             {
                 path: 'product',
                 component: product_component_1.ProductComponent
+            },
+            {
+                path: "wishlist",
+                component: wishlist_component_1.WishlistComponent
             },
             {
                 path: '',

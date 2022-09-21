@@ -7,6 +7,7 @@ import { ContactComponent } from '../contact/contact.component';
 import { DetailComponent } from '../detail/detail.component';
 import { CartComponent } from '../cart/cart.component';
 import { WebComponent } from './web.component';
+import { WishlistComponent } from '../admin/wishlist/wishlist.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,7 +25,10 @@ const routes: Routes = [
         path:'product',
         component:ProductComponent
       },
-
+      {
+        path:"wishlist",
+        component:WishlistComponent
+      },
       {
         path:'',
         component:ProductAnnounComponent

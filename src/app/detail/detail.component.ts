@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
     this.productDetail();
   }
   addtocart(item:any){
+    item.qtyTotal=1;
     if(!this.AdminService.itemInCart(item)){
       this.AdminService.addtoCart(item)
       this.cartNumberFunc();

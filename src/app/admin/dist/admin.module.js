@@ -21,6 +21,10 @@ var admin_option_component_1 = require("./admin-option/admin-option.component");
 var ngx_pagination_1 = require("ngx-pagination");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
 var ngx_currency_1 = require("ngx-currency");
+var ng2_file_upload_1 = require("ng2-file-upload");
+var ng_1 = require("@cloudinary/ng");
+var ngx_dropzone_1 = require("ngx-dropzone");
+// import {CloudinaryModule} from '@cloudinary/angular';
 // import { NgxPaginationModule } from 'ngx-pagination';
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
@@ -38,11 +42,14 @@ var AdminModule = /** @class */ (function () {
             ],
             imports: [
                 common_1.CommonModule,
+                ng2_file_upload_1.FileUploadModule,
+                ng_1.CloudinaryModule,
                 admin_routing_module_1.AdminRoutingModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 ngx_pagination_1.NgxPaginationModule,
-                ngx_currency_1.NgxCurrencyModule
+                ngx_currency_1.NgxCurrencyModule,
+                ngx_dropzone_1.NgxDropzoneModule
                 // HttpClient
             ]
         })

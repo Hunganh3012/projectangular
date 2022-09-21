@@ -9,13 +9,15 @@ exports.__esModule = true;
 exports.AdminAddproductComponent = void 0;
 var core_1 = require("@angular/core");
 var ngx_currency_1 = require("ngx-currency");
+var file_upload_service_1 = require("src/app/file-upload.service");
 var forms_1 = require("@angular/forms");
 var AdminAddproductComponent = /** @class */ (function () {
-    function AdminAddproductComponent(AdminService, Router, toastr, formBuilder) {
+    function AdminAddproductComponent(AdminService, Router, toastr, formBuilder, uploadfileService) {
         this.AdminService = AdminService;
         this.Router = Router;
         this.toastr = toastr;
         this.formBuilder = formBuilder;
+        this.uploadfileService = uploadfileService;
         this.listadd = {
             name: '',
             sale: '',
@@ -30,16 +32,19 @@ var AdminAddproductComponent = /** @class */ (function () {
             inputMode: ngx_currency_1.CurrencyMaskInputMode.NATURAL
         };
         this.submitted = false;
+        //Upload File
+        this.file = [];
     }
     AdminAddproductComponent.prototype.ngOnInit = function () {
         this.form = this.formBuilder.group({
             nameproduct: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]],
-            linkphoto: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6),]],
+            // linkphoto: ['',[Validators.required,Validators.minLength(6),]],
             priceold: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{2,10}")]],
             sale: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{1,2}")]],
             detail: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6),]],
             acceptTerms: [false, forms_1.Validators.requiredTrue]
         });
+        //UPLOAD FILE
     };
     Object.defineProperty(AdminAddproductComponent.prototype, "f", {
         get: function () {
@@ -51,22 +56,48 @@ var AdminAddproductComponent = /** @class */ (function () {
     AdminAddproductComponent.prototype.OnSubmit = function () {
         var _this = this;
         this.submitted = true;
+        //Upload FILE
+        var imageapi = '';
         if (this.form.valid) {
-            this.AdminService.addProduct(this.listadd).subscribe(function (data) {
-                _this.Router.navigateByUrl('/admin/admin-product');
+            var file_data = this.file[0];
+            var data = new FormData();
+            data.append('file', file_data);
+            data.append('upload_preset', 'project-angular');
+            data.append('cloud_name', 'db1zqfcad');
+            this.uploadfileService.upload(data).subscribe(function (response) {
+                console.log(response);
+                imageapi = response.secure_url;
+                _this.listadd.img = imageapi;
+                _this.AdminService.addProduct(_this.listadd).subscribe(function (data) {
+                    console.log(data);
+                    _this.Router.navigateByUrl('/admin/admin-product');
+                });
+                _this.toastr.success('Thêm thành công', 'thông báo');
             });
-            this.toastr.success('Thêm thành công', 'thông báo');
+            console.log(imageapi);
+            console.log(this.listadd);
+            //Success add product
         }
         else {
             this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
             return;
         }
     };
+    AdminAddproductComponent.prototype.onSelect = function (event) {
+        var _a;
+        console.log(event);
+        (_a = this.file).push.apply(_a, event.addedFiles);
+    };
+    AdminAddproductComponent.prototype.onRemove = function (event) {
+        console.log(event);
+        this.file.splice(this.file.indexOf(event), 1);
+    };
     AdminAddproductComponent = __decorate([
         core_1.Component({
             selector: 'app-admin-addproduct',
             templateUrl: './admin-addproduct.component.html',
-            styleUrls: ['./admin-addproduct.component.scss']
+            styleUrls: ['./admin-addproduct.component.scss'],
+            providers: [file_upload_service_1.FileUploadService]
         })
     ], AdminAddproductComponent);
     return AdminAddproductComponent;

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web.component';
 import { HeaderComponent } from '../header/header.component';
@@ -41,6 +41,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule,
     CarouselModule,
+    ReactiveFormsModule
   ],
   providers: [CurrencyPipe,],
 })

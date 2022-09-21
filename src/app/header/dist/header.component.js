@@ -75,8 +75,6 @@ var HeaderComponent = /** @class */ (function () {
     // qtyCarts(){
     //   this
     // }
-    HeaderComponent.prototype.getqtyItemFromLocal = function () {
-    };
     HeaderComponent.prototype.getCartItemFromLocal = function () {
         var data = localStorage.getItem('cart-item');
         if (!data)
