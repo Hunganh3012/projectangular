@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.AdminEditproductComponent = void 0;
 var core_1 = require("@angular/core");
 var $ = require("jquery");
+var forms_1 = require("@angular/forms");
 var AdminEditproductComponent = /** @class */ (function () {
     function AdminEditproductComponent(AdminService, route, Router, toastr, uploadfileService) {
         this.AdminService = AdminService;
@@ -16,6 +17,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.Router = Router;
         this.toastr = toastr;
         this.uploadfileService = uploadfileService;
+        this.formControlExample = new forms_1.FormControl(20);
         this.edit = [];
         this.url = this.edit.img;
         this.file = [];
@@ -48,7 +50,7 @@ var AdminEditproductComponent = /** @class */ (function () {
             console.log(response);
             imageapi = response.secure_url;
             _this.edit.img = imageapi;
-            //Sửa sản phẩm
+            //Sửa sản phâ
             _this.AdminService.updateProduct(_this.edit.id, _this.edit).subscribe(function (data) {
                 _this.Router.navigateByUrl('/admin/admin-product');
             });

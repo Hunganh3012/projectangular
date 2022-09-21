@@ -6,12 +6,14 @@ import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { FileUploadService } from 'src/app/file-upload.service';
 import { image } from '@cloudinary/url-gen/qualifiers/source';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-admin-editproduct',
   templateUrl: './admin-editproduct.component.html',
   styleUrls: ['./admin-editproduct.component.scss']
 })
 export class AdminEditproductComponent implements OnInit {
+  formControlExample = new FormControl(20);
   edit:any=[];
   url=this.edit.img;
   constructor(private AdminService:AdminService,
@@ -47,7 +49,7 @@ export class AdminEditproductComponent implements OnInit {
         console.log(response)
         imageapi=response.secure_url;
         this.edit.img=imageapi;
-        //Sửa sản phẩm
+        //Sửa sản phâ
         this.AdminService.updateProduct(this.edit.id,this.edit).subscribe(data =>{
           this.Router.navigateByUrl('/admin/admin-product')
         })

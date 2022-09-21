@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.AdminAddproductComponent = void 0;
 var core_1 = require("@angular/core");
-var ngx_currency_1 = require("ngx-currency");
 var file_upload_service_1 = require("src/app/file-upload.service");
 var forms_1 = require("@angular/forms");
 var AdminAddproductComponent = /** @class */ (function () {
@@ -18,18 +17,14 @@ var AdminAddproductComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.formBuilder = formBuilder;
         this.uploadfileService = uploadfileService;
+        this.formControlExample = new forms_1.FormControl(20);
+        this.value = 0;
         this.listadd = {
             name: '',
             sale: '',
             priceold: '',
             detail: '',
             img: ''
-        };
-        this.options = {
-            prefix: 'VND',
-            thousands: ',',
-            decimal: '.',
-            inputMode: ngx_currency_1.CurrencyMaskInputMode.NATURAL
         };
         this.submitted = false;
         //Upload File

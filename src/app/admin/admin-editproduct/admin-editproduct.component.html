@@ -31,9 +31,14 @@
     <div class="form-group">
         <div class="row ">
             <div class="col-sm-6">
-                <label for="qty" class="col-sm-6 control-label">Giá sản phẩm( 000đồng)</label>
+                <label for="qty" class="col-sm-6 control-label">Giá sản phẩm</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" name="qty" id="qty" placeholder=".000 đồng" value="{{edit.priceold}}" [(ngModel)]="edit.priceold" [ngModelOptions]="{standalone: true}">
+                    <input type="text" class="form-control" name="qty" id="qty"
+                    
+                     
+                     
+                     currencyMask [formControl]="formControlExample"  [(ngModel)]="edit.priceold" 
+                     >
                 </div>
             </div>
             <div class="col-sm-6">

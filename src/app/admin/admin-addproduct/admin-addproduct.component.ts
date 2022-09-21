@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CurrencyMaskInputMode } from 'ngx-currency';
 import { Input } from '@angular/core';
 import {Cloudinary, CloudinaryImage, } from '@cloudinary/url-gen';
 import { FileUploadService } from 'src/app/file-upload.service';
+
 import * as $ from 'jquery';
 import {
   AbstractControl,
   FormBuilder,
+  FormControl,
   FormGroup,
   Validators
 } from '@angular/forms';
@@ -20,6 +21,8 @@ import {
   providers:[FileUploadService]
 })
 export class AdminAddproductComponent implements OnInit {
+  formControlExample = new FormControl(20);
+  value=0
   listadd:any={
     name:'',
     sale:'',
@@ -27,12 +30,7 @@ export class AdminAddproductComponent implements OnInit {
     detail:'',
     img:''
   }
-  options = {
-    prefix: 'VND',
-    thousands: ',',
-    decimal: '.',
-    inputMode: CurrencyMaskInputMode.NATURAL,
-  };
+
 
   constructor( private AdminService:AdminService,
      private Router:Router,
@@ -120,6 +118,9 @@ export class AdminAddproductComponent implements OnInit {
     console.log(event);
     this.file.splice(this.file.indexOf(event), 1);
   }
+
+  //Currency VND
+  montantAnnuel!: number;
 }
 
 

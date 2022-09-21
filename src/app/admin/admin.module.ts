@@ -14,12 +14,24 @@ import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { HeadComponent } from '../head/head.component';
-import { NgxCurrencyModule } from 'ngx-currency';
+
 import { FileUploadModule } from "ng2-file-upload"; 
 import {CloudinaryModule} from '@cloudinary/ng';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
 // import {CloudinaryModule} from '@cloudinary/angular';
 // import { NgxPaginationModule } from 'ngx-pagination';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: 'left',
+  allowNegative: false,
+  decimal: ',',
+  precision: 3,
+  prefix: '',
+  suffix:'',
+  thousands: '.',
+};
 @NgModule({
   declarations: [
     AdminContactComponent,
@@ -40,9 +52,12 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    NgxCurrencyModule,
-    NgxDropzoneModule
-    // HttpClient
+
+    NgxDropzoneModule,
+    CurrencyMaskModule
+  ],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
   ]
 })
 export class AdminModule { }
