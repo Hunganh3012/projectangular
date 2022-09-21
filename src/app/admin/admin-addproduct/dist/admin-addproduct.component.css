@@ -215,3 +215,7 @@ table.table .avatar {
   background-color: #034da2bf;
   color: white;
 }
+
+.link-img {
+  padding: 15px;
+}

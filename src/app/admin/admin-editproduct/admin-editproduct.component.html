@@ -16,7 +16,7 @@
         <input type="text" class="form-control" id="name" placeholder="tên sản phẩm"  value="{{edit.name}}" [(ngModel)]="edit.name" [ngModelOptions]="{standalone: true}">
       </div>
     </div> <!-- form-group // -->
-    <div class="form-group">
+    <div class="form-group link-img">
       <label for="name" class="col-sm-3 control-label">Link ảnh sản phẩm</label>
       <ngx-dropzone (change)="onSelect($event)">
         <ngx-dropzone-image-preview  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of file"  [removable]="true" (removed)="onRemove(f)" [file]="f">

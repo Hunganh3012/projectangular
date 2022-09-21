@@ -76,6 +76,10 @@ table {
   color: white;
 }
 
+.link-img {
+  padding: 15px;
+}
+
 .table-responsive {
   margin: 30px 0;
 }
