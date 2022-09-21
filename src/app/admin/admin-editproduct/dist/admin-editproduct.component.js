@@ -17,6 +17,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.uploadfileService = uploadfileService;
         this.edit = [];
+        this.url = this.edit.img;
         this.file = [];
     }
     AdminEditproductComponent.prototype.ngOnInit = function () {
@@ -35,7 +36,9 @@ var AdminEditproductComponent = /** @class */ (function () {
     };
     AdminEditproductComponent.prototype.updateProduct = function () {
         var _this = this;
+        console.log(this.file);
         var imageapi;
+        //UPLOAD FILE
         var file_data = this.file[0];
         var data = new FormData();
         data.append('file', file_data);
@@ -45,6 +48,7 @@ var AdminEditproductComponent = /** @class */ (function () {
             console.log(response);
             imageapi = response.secure_url;
             _this.edit.img = imageapi;
+            //Sửa sản phẩm
             _this.AdminService.updateProduct(_this.edit.id, _this.edit).subscribe(function (data) {
                 _this.Router.navigateByUrl('/admin/admin-product');
             });

@@ -13,6 +13,7 @@ import { image } from '@cloudinary/url-gen/qualifiers/source';
 })
 export class AdminEditproductComponent implements OnInit {
   edit:any=[];
+  url=this.edit.img;
   constructor(private AdminService:AdminService,
     private route: ActivatedRoute,
     private Router: Router,
@@ -34,11 +35,10 @@ export class AdminEditproductComponent implements OnInit {
     })
   }
   updateProduct(){
-    
+    console.log(this.file)
     let imageapi:any;
-
+    //UPLOAD FILE
     const file_data=this.file[0]; 
-
       const data= new FormData();
       data.append('file',file_data);
       data.append('upload_preset','project-angular');
@@ -47,6 +47,7 @@ export class AdminEditproductComponent implements OnInit {
         console.log(response)
         imageapi=response.secure_url;
         this.edit.img=imageapi;
+        //Sửa sản phẩm
         this.AdminService.updateProduct(this.edit.id,this.edit).subscribe(data =>{
           this.Router.navigateByUrl('/admin/admin-product')
         })
@@ -59,6 +60,7 @@ export class AdminEditproductComponent implements OnInit {
   }
 
   file:File[]=[];
+  
   onSelect(event:any) {
     console.log(event);
     this.file.push(...event.addedFiles);
