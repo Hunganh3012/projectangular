@@ -109,6 +109,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.AdminService.addtoCart(product);
         this.cartNumberFunc();
         this.productNumberFunc();
+        this.toastr.success('Đã thêm vào giỏ', 'thông báo');
     };
     ProductAnnounComponent.prototype.cartNumberFunc = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');

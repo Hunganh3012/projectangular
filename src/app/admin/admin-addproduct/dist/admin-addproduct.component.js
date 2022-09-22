@@ -55,6 +55,7 @@ var AdminAddproductComponent = /** @class */ (function () {
         var imageapi = '';
         if (this.form.valid) {
             var file_data = this.file[0];
+            console.log(file_data);
             var data = new FormData();
             data.append('file', file_data);
             data.append('upload_preset', 'project-angular');

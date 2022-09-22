@@ -124,6 +124,7 @@ export class ProductAnnounComponent implements OnInit {
     this.AdminService.addtoCart(product);
     this.cartNumberFunc();
     this.productNumberFunc();
+    this.toastr.success('Đã thêm vào giỏ','thông báo')
 }
 
   cartNumber:number =0;

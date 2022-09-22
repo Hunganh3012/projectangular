@@ -24,6 +24,9 @@ var AppService = /** @class */ (function () {
     };
     AppService.prototype.deletelist = function (a) {
     };
+    AppService.prototype.getload = function (vals) {
+        return this.http.get("" + this.API_URL);
+    };
     AppService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

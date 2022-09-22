@@ -11,9 +11,10 @@ var core_1 = require("@angular/core");
 var $ = require("jquery");
 var adminComponent = /** @class */ (function () {
     // list:any=[];
-    function adminComponent(AppService, toastr) {
+    function adminComponent(AppService, toastr, location) {
         this.AppService = AppService;
         this.toastr = toastr;
+        this.location = location;
         this.isDisplay = true;
         this.isDisplay2 = true;
     }
@@ -26,13 +27,15 @@ var adminComponent = /** @class */ (function () {
     adminComponent.prototype.clickToggle2 = function () {
         this.isDisplay2 = !this.isDisplay2;
     };
+    adminComponent.prototype.backClicked = function () {
+        this.location.back();
+    };
     adminComponent.prototype.ngOnInit = function () {
         $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
-        // this.renderContent();
     };
     adminComponent = __decorate([
         core_1.Component({

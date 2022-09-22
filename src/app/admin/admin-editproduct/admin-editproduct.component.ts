@@ -20,7 +20,7 @@ export class AdminEditproductComponent implements OnInit {
     private route: ActivatedRoute,
     private Router: Router,
     private toastr :ToastrService,
-    private uploadfileService:FileUploadService
+    private uploadfileService:FileUploadService,
     ) { }
 
   ngOnInit(): void {
@@ -62,10 +62,13 @@ export class AdminEditproductComponent implements OnInit {
   }
 
   file:File[]=[];
-  
+  filebefore:File[]=[];
+
   onSelect(event:any) {
     console.log(event);
     this.file.push(...event.addedFiles);
+    console.log(this.file);
+    
   }
   
   onRemove(event:any) {
@@ -73,3 +76,5 @@ export class AdminEditproductComponent implements OnInit {
     this.file.splice(this.file.indexOf(event), 1);
   }
 }
+
+

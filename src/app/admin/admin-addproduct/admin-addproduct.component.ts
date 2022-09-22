@@ -73,6 +73,7 @@ export class AdminAddproductComponent implements OnInit {
     let imageapi:any='';
     if(this.form.valid){
       const file_data=this.file[0]; 
+      console.log(file_data)
       const data= new FormData();
       data.append('file',file_data)
       data.append('upload_preset','project-angular');
@@ -122,5 +123,7 @@ export class AdminAddproductComponent implements OnInit {
   //Currency VND
   montantAnnuel!: number;
 }
+
+
 
 

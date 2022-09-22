@@ -16,4 +16,8 @@ export class FileUploadService {
       let data = val; 
       return this.http.post('https://api.cloudinary.com/v1_1/db1zqfcad/image/upload',data)
   }
+  // getload(vals:any):Observable<any>{
+  //   let data=vals;
+  //   return this.http.get('')
+  // }
 }

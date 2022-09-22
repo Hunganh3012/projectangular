@@ -21,6 +21,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         this.edit = [];
         this.url = this.edit.img;
         this.file = [];
+        this.filebefore = [];
     }
     AdminEditproductComponent.prototype.ngOnInit = function () {
         $(function () {
@@ -61,6 +62,7 @@ var AdminEditproductComponent = /** @class */ (function () {
         var _a;
         console.log(event);
         (_a = this.file).push.apply(_a, event.addedFiles);
+        console.log(this.file);
     };
     AdminEditproductComponent.prototype.onRemove = function (event) {
         console.log(event);

@@ -529,6 +529,13 @@ body{
 
         margin-top: 100%;
     }
+    .search input{
+        width: 400px;
+    }
+    .nav-icon-search{
+        display: block;
+        right: 10%;
+    }
     .header{
         &-menu-bars{
             color: $primary-color;
@@ -562,7 +569,7 @@ body{
         &-toggle-list{
             // text-align: center;
             color: white;
-            margin-top: 30px;
+
             padding: 0 15px;
         }
         &-toggle-item{
@@ -572,9 +579,12 @@ body{
             font-size: 16px;
             line-height: 20px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            padding-bottom: 20px;
+            padding-top:20px ;
             border-bottom: 1px solid gainsboro;
-            padding-bottom: 1rem;
+            &:hover{
+                background-color: #0083caba;
+            }
 
         }
         &-toggle-search{
@@ -616,7 +626,6 @@ body{
     }
     .nav{
         &-icon-home,
-        &-icon-search,
         &-language,
         &-icon-star,
         &-icon-dropdown{
@@ -637,5 +646,27 @@ body{
 @media screen and (max-width:737px){
     .search{
         display: none;
+    }
+    .nav-icon-logo{
+        margin-right: 5px;
+    }
+    .dropdown-item:before {
+        z-index: 3;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 153px;
+        border-left: 21px solid transparent;
+        border-right: 21px solid transparent;
+        border-bottom: 21px solid $primary-color;
+        transform: translateY(-100%);
+        transition: border-color 0.2s linear;
+     }
+     .dropdown-item{
+
+        width: 375px;
+        height: 353px;
+        top: 39%;
+        right: -162px;
     }
 }

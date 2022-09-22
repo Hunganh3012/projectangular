@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import {Location} from '@angular/common';
 import * as $ from 'jquery';
 
 @Component({
@@ -12,7 +13,7 @@ import * as $ from 'jquery';
 export class adminComponent implements OnInit {
   // list:any=[];
 
-  constructor(private AppService:AppService ,private toastr:ToastrService) { }
+  constructor(private AppService:AppService ,private toastr:ToastrService,private location:Location) { }
   error(){
     this.toastr.error("Cảnh báo",'thông báo')
   }
@@ -25,29 +26,15 @@ export class adminComponent implements OnInit {
   clickToggle2(){
     this.isDisplay2=!this.isDisplay2;
   }
+  backClicked() {
+    this.location.back();
+  }
   ngOnInit(): void {
     $(function () {
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
       });
     });
-    // this.renderContent();
   }
-  // renderContent(){
-  //   return this.AppService.renderContent().subscribe(data =>{
-  //     this.list=data;
-  //   })
-  // }
 
-  // deleteContent(id:number){
-  //   console.log(id);
-  //   this.AppService.deleteContent(id).subscribe(data=>{
-  //     this.list=this.list.filter((item:any) =>{
-  //       return item.id !=id;
-  //     })
-  //     alert('Xóa thành công')
-     
-      
-  //   })
-  // }
 }
