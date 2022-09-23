@@ -60,10 +60,10 @@ body{
     margin: 0 auto;
 }
 .contact{
-    z-index: 1;
+    // z-index: 1;
     background-color: #034da2;
-    background-image:
-    url(/assets/images/background-contact.png);
+    background-image: url("../../assets/images/background-contact.png");
+    // background-image: url("/assets/images/background-contact.png");
     &-item{
         padding-top: 30px;
         padding-bottom: 30px;

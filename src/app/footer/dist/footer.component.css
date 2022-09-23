@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  z-index: 1;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.wrapper {
+  max-width: 1920px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1380px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.contact {
+  background-color: #034da2;
+  background-image: url("../../assets/images/background-contact.png");
+}
+.contact-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-item-copyright {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.contact-item-list {
+  display: flex;
+  align-items: center;
+}
+.contact-item-we {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  color: #FFFFFF;
+}
+.contact-icon {
+  cursor: pointer;
+  display: block;
+  padding: 8px;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(/assets/images/background-doitac.png);
+}
+.footer-bottom-content {
+  margin: 25px 0;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111111;
+}
+.footer-bottom-text {
+  display: block;
+  align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer-bottom-content {
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .contact-item-copyright {
+    font-size: 13px;
+  }
+
+  .contact-item-we {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    text-align: center;
+  }
+
+  .contact-item-copyright {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-item-list {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .footer-bottom-content {
+    font-size: 12px;
+    line-height: 25px;
+  }
+}

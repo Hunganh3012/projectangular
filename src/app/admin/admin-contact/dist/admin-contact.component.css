@@ -62,7 +62,7 @@ table {
   background-color: #034da2;
   font-size: 20px;
   color: white;
-  border-radius: 20px;
+  border-radius: 6px;
   outline: none;
 }
 .button-delete:hover {
