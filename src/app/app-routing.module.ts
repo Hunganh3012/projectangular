@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path:"",
     redirectTo:'/web/product-announ',
-    pathMatch:'full'
+    pathMatch:'full',
+
   },
   {
     path:'**',

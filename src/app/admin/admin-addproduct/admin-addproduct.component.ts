@@ -69,6 +69,7 @@ export class AdminAddproductComponent implements OnInit {
     return this.form.controls;
   }
   OnSubmit() {
+    this.submitted = true;
     let imageapi:any='';
     
     if(Date.now()-this.lastClick >=this.rate){
@@ -94,7 +95,7 @@ export class AdminAddproductComponent implements OnInit {
         return;
       }
     }
-    this.submitted = true;
+    
 
     //Upload FILE
     

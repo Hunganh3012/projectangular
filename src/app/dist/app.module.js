@@ -24,6 +24,7 @@ var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
 var ngx_toastr_1 = require("ngx-toastr");
 var ngx_currency_1 = require("ngx-currency");
 var ng2_currency_mask_1 = require("ng2-currency-mask");
+var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -43,6 +44,7 @@ var AppModule = /** @class */ (function () {
                 ngx_owl_carousel_o_1.CarouselModule,
                 animations_1.BrowserAnimationsModule,
                 ngx_currency_1.NgxCurrencyModule,
+                ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule,
                 forms_1.ReactiveFormsModule,
                 ng2_currency_mask_1.CurrencyMaskModule,
                 ngx_toastr_1.ToastrModule.forRoot({

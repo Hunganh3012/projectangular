@@ -115,12 +115,10 @@
                 </div>
                     </a>
                     
-                    <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button>
-                    <!-- <button (click)="logOut()" class="button-log" *ngIf="isShowLogOut">Đăng xuất</button> -->
+                    <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button> 
                 </nav>
-            </div>
-            <!-- <img src="../assets/images/Rectangle 385.png" alt="" class="header-highlight"> -->
-            
+            </div> 
+            <app-ng-dynamic-breadcrumb class="fontfamily" [bgColor]="' transparent'" [fontSize]="'16px'" [fontColor]="'#0f5089'" [lastLinkColor]="'#000'" [symbol]="'   >   '"></app-ng-dynamic-breadcrumb>
         </div>
     </div>
 </body>

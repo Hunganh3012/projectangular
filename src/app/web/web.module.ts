@@ -15,7 +15,7 @@ import { ProductAnnounComponent } from '../product-announ/product-announ.compone
 import { HeadComponent } from '../head/head.component';
 import { DetailComponent } from '../detail/detail.component';
 import { CartComponent } from '../cart/cart.component';
-
+import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { CurrencyPipe } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -41,7 +41,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule,
     CarouselModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgDynamicBreadcrumbModule
   ],
   providers: [CurrencyPipe,],
 })

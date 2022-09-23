@@ -53,6 +53,7 @@ var AdminAddproductComponent = /** @class */ (function () {
     });
     AdminAddproductComponent.prototype.OnSubmit = function () {
         var _this = this;
+        this.submitted = true;
         var imageapi = '';
         if (Date.now() - this.lastClick >= this.rate) {
             console.log("Clicked " + ++this.count + " times");
@@ -78,7 +79,6 @@ var AdminAddproductComponent = /** @class */ (function () {
                 return;
             }
         }
-        this.submitted = true;
         //Upload FILE
     };
     AdminAddproductComponent.prototype.onSelect = function (event) {

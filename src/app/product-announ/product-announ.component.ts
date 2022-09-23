@@ -103,7 +103,7 @@ export class ProductAnnounComponent implements OnInit {
   cartDetail(){
     if(localStorage.getItem('cart-item')){
       this.products=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
-      console.log(this.products);
+
     }
   }
   Desc(prod:any){

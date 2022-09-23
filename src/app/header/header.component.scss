@@ -168,7 +168,17 @@ body{
         background-color: $primary-color;
     }
 }
-
+.custom-bread-crumb span li a {
+    margin-right: 10px;
+}
+.fontfamily{
+    font-family: "Roboto";
+    // line-height: 500;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 10px;
+}
 .menu-toggle-item a{
     text-decoration: none;
     color: #ffffff;
@@ -605,6 +615,7 @@ body{
                 bottom: -9px;
             }
         }
+        
         &-language{
             color: white;
             padding-top: 2rem;

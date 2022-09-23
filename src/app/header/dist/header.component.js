@@ -22,12 +22,6 @@ var HeaderComponent = /** @class */ (function () {
         this.productCart = [];
         this.CartDetailheader = [];
         this.getCartDetail = [];
-        // cartDetailHeader(){
-        //   if(localStorage.getItem('cart-item')){
-        //     this.getCartDetailheader=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
-        //     // console.log(this.getCartDetailheader);
-        //   }
-        // }
         // -----------------------Log In & Log Out--------------------------
         this.isDisplay = true;
         this.adminService.cartSubject.subscribe(function (data) {
@@ -35,7 +29,6 @@ var HeaderComponent = /** @class */ (function () {
         });
         this.adminService.productmini.subscribe(function (data) {
             _this.CartDetailheader = data;
-            // console.log(this.getCartDetailheader)
         });
     }
     HeaderComponent.prototype.ngOnInit = function () {
@@ -50,10 +43,6 @@ var HeaderComponent = /** @class */ (function () {
             _this.productCart.push(res);
             _this.productItemFunc();
         });
-        // this.adminService.cartItemList().subscribe((res:any)=>{
-        //   this.qtyCart.push(res);
-        // })
-        // console.log(this.numberProduct)
     };
     Object.defineProperty(HeaderComponent.prototype, "Totals", {
         get: function () {
@@ -114,7 +103,6 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent.prototype.cartDetail = function () {
         if (localStorage.getItem('cart-item')) {
             this.getCartDetail = JSON.parse(localStorage.getItem('cart-item') || '{}');
-            console.log(this.getCartDetail);
         }
     };
     HeaderComponent.prototype.clickToggle = function () {

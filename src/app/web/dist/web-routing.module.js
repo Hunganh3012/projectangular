@@ -24,15 +24,42 @@ var routes = [
         children: [
             {
                 path: 'home-page',
-                component: home_page_component_1.HomePageComponent
+                component: home_page_component_1.HomePageComponent,
+                data: {
+                    title: 'Home',
+                    breadcrumb: [
+                        {
+                            label: 'Home',
+                            url: ''
+                        }
+                    ]
+                }
             },
             {
                 path: 'contact',
-                component: contact_component_1.ContactComponent
+                component: contact_component_1.ContactComponent,
+                data: {
+                    title: 'Contact',
+                    breadcrumb: [
+                        {
+                            label: 'Contact',
+                            url: ''
+                        }
+                    ]
+                }
             },
             {
                 path: 'product',
-                component: product_component_1.ProductComponent
+                component: product_component_1.ProductComponent,
+                data: {
+                    title: 'Tin tức',
+                    breadcrumb: [
+                        {
+                            label: 'Tin tức',
+                            url: ''
+                        }
+                    ]
+                }
             },
             {
                 path: "wishlist",
@@ -44,15 +71,54 @@ var routes = [
             },
             {
                 path: 'product-announ',
-                component: product_announ_component_1.ProductAnnounComponent
+                component: product_announ_component_1.ProductAnnounComponent,
+                data: {
+                    title: 'Sản phẩm ',
+                    breadcrumb: [
+                        {
+                            label: 'Sản phẩm',
+                            url: ''
+                        }
+                    ]
+                }
             },
             {
                 path: 'detail/:id',
-                component: detail_component_1.DetailComponent
+                component: detail_component_1.DetailComponent,
+                data: {
+                    title: 'Chi tiết sản phẩm ',
+                    breadcrumb: [
+                        {
+                            label: 'Sản phẩm',
+                            url: '/web/product-announ'
+                        },
+                        {
+                            label: 'Chi tiết sản phẩm',
+                            url: 'detail/:id'
+                        }
+                    ]
+                }
             },
             {
                 path: 'cart',
-                component: cart_component_1.CartComponent
+                component: cart_component_1.CartComponent,
+                data: {
+                    title: 'Chi tiết sản phẩm ',
+                    breadcrumb: [
+                        {
+                            label: 'SẢN PHẨM',
+                            url: '/web/product-announ'
+                        },
+                        {
+                            label: 'Chi tiết sản phẩm',
+                            url: 'detail/:id'
+                        },
+                        {
+                            label: 'Giỏ hàng',
+                            url: '/web/cart'
+                        }
+                    ]
+                }
             },
         ]
     }

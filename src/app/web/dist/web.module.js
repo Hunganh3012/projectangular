@@ -23,6 +23,7 @@ var product_announ_component_1 = require("../product-announ/product-announ.compo
 var head_component_1 = require("../head/head.component");
 var detail_component_1 = require("../detail/detail.component");
 var cart_component_1 = require("../cart/cart.component");
+var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
 var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var ngx_pagination_1 = require("ngx-pagination");
@@ -52,7 +53,8 @@ var WebModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 ngx_pagination_1.NgxPaginationModule,
                 ngx_owl_carousel_o_1.CarouselModule,
-                forms_1.ReactiveFormsModule
+                forms_1.ReactiveFormsModule,
+                ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule
             ],
             providers: [common_2.CurrencyPipe,]
         })

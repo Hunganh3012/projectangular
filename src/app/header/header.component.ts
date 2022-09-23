@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
     })
     this.adminService.productmini.subscribe(data =>{
       this.CartDetailheader=data;
-      // console.log(this.getCartDetailheader)
     })
   }
   public qtyCart:any;
@@ -39,12 +38,6 @@ export class HeaderComponent implements OnInit {
       this.productCart.push(res);
       this.productItemFunc();
     })
-
-    // this.adminService.cartItemList().subscribe((res:any)=>{
-    //   this.qtyCart.push(res);
-      
-    // })
-    // console.log(this.numberProduct)
   }
   get Totals(){
     return this.CartDetailheader.reduce((sum:any,x:any) =>({
@@ -92,18 +85,11 @@ export class HeaderComponent implements OnInit {
   cartDetail(){
     if(localStorage.getItem('cart-item')){
       this.getCartDetail=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
-      console.log(this.getCartDetail);
     }
   }
 
 
 
-  // cartDetailHeader(){
-  //   if(localStorage.getItem('cart-item')){
-  //     this.getCartDetailheader=JSON.parse(localStorage.getItem('cart-item') || '{}') ;
-  //     // console.log(this.getCartDetailheader);
-  //   }
-  // }
 
 
 

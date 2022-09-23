@@ -27,7 +27,7 @@ import { WishlistComponent } from './admin/wishlist/wishlist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxCurrencyModule } from "ngx-currency";
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-
+import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 
 
 @NgModule({
@@ -45,6 +45,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     CarouselModule,
     BrowserAnimationsModule,  
     NgxCurrencyModule,
+    NgDynamicBreadcrumbModule,
     ReactiveFormsModule,
     CurrencyMaskModule,
     ToastrModule.forRoot(

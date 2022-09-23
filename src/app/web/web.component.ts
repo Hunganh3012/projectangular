@@ -11,5 +11,4 @@ export class WebComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -89,7 +89,6 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.cartDetail = function () {
         if (localStorage.getItem('cart-item')) {
             this.products = JSON.parse(localStorage.getItem('cart-item') || '{}');
-            console.log(this.products);
         }
     };
     ProductAnnounComponent.prototype.Desc = function (prod) {

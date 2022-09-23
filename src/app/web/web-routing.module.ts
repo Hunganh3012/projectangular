@@ -12,18 +12,46 @@ const routes: Routes = [
   {
     path: '',
     component:WebComponent,
+    
     children:[
       {
         path:'home-page',
-        component:HomePageComponent
+        component:HomePageComponent,
+        data: {
+          title: 'Home',
+          breadcrumb: [
+            {
+              label: 'Home',
+              url: ''
+            }
+          ]
+        },
       },
       {
         path:'contact',
-        component:ContactComponent
+        component:ContactComponent,
+        data: {
+          title: 'Contact',
+          breadcrumb: [
+            {
+              label: 'Contact',
+              url: ''
+            }
+          ]
+        },
       },
       {
         path:'product',
-        component:ProductComponent
+        component:ProductComponent,
+        data: {
+          title: 'Tin tức',
+          breadcrumb: [
+            {
+              label: 'Tin tức',
+              url: ''
+            }
+          ]
+        },
       },
       {
         path:"wishlist",
@@ -36,16 +64,55 @@ const routes: Routes = [
 
       {
         path:'product-announ',
-        component:ProductAnnounComponent
+        component:ProductAnnounComponent,
+        data: {
+          title: 'Sản phẩm ',
+          breadcrumb: [
+            {
+              label: 'Sản phẩm',
+              url: ''
+            }
+          ]
+        },
       },
 
       {
         path:'detail/:id',
-        component:DetailComponent
+        component:DetailComponent,
+        data: {
+          title: 'Chi tiết sản phẩm ',
+          breadcrumb: [
+            {
+              label: 'Sản phẩm',
+              url: '/web/product-announ'
+            },
+            {
+              label: 'Chi tiết sản phẩm',
+              url: 'detail/:id'
+            }
+          ]
+        },
       },
       {
         path:'cart',
-        component:CartComponent
+        component:CartComponent,
+        data: {
+          title: 'Chi tiết sản phẩm ',
+          breadcrumb: [
+            {
+              label: 'SẢN PHẨM',
+              url: '/web/product-announ'
+            },
+            {
+              label: 'Chi tiết sản phẩm',
+              url: 'detail/:id'
+            },
+            {
+              label: 'Giỏ hàng',
+              url: '/web/cart'
+            }
+          ]
+        },
       },
     ]
   }
