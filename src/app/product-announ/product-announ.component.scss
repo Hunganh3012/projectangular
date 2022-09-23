@@ -489,6 +489,13 @@ h2::after {
 .ngx-pagination{
     text-align: center;
 }
+@media screen and (max-width:1023px){
+    .img-wh{
+        object-fit: cover;
+        width: 100% !important;
+        height: auto !important;
+    }
+}
 @media screen and (max-width:1200px){
     .product-grid{ margin: 0 0 30px; }
 }

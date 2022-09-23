@@ -10,6 +10,7 @@ exports.AppRoutingModule = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var not_found_error_component_1 = require("./not-found-error/not-found-error.component");
+var router_2 = require("@angular/router");
 var auth_guard_1 = require("./auth.guard");
 var routes = [
     {
@@ -37,7 +38,9 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
+            imports: [router_1.RouterModule.forRoot(routes, {
+                    preloadingStrategy: router_2.PreloadAllModules
+                }),],
             exports: [router_1.RouterModule]
         })
     ], AppRoutingModule);

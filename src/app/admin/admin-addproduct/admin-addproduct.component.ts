@@ -21,6 +21,9 @@ import {
   providers:[FileUploadService]
 })
 export class AdminAddproductComponent implements OnInit {
+  count = 0;
+  rate = 5000;
+  lastClick = Date.now() - this.rate;
   formControlExample = new FormControl(20);
   value=0
   listadd:any={
@@ -66,41 +69,35 @@ export class AdminAddproductComponent implements OnInit {
     return this.form.controls;
   }
   OnSubmit() {
+    let imageapi:any='';
+    
+    if(Date.now()-this.lastClick >=this.rate){
+      console.log(`Clicked ${++this.count} times`);
+      this.lastClick=Date.now();
+      if(this.form.valid){
+        const file_data=this.file[0]; 
+        const data= new FormData();
+        data.append('file',file_data)
+        data.append('upload_preset','project-angular');
+        data.append('cloud_name','db1zqfcad')
+        this.uploadfileService.upload(data).subscribe(response =>{
+          imageapi=response.secure_url;
+          this.listadd.img=imageapi;
+          this.AdminService.addProduct(this.listadd).subscribe(data =>{
+            this.Router.navigateByUrl('/admin/admin-product')
+          })
+          this.toastr.success('Thêm thành công','thông báo');
+          })
+        //Success add product
+      }else{
+        this.toastr.error('Vui lòng nhập thông tin','thông báo');
+        return;
+      }
+    }
     this.submitted = true;
 
-
     //Upload FILE
-    let imageapi:any='';
-    if(this.form.valid){
-      const file_data=this.file[0]; 
-      console.log(file_data)
-      const data= new FormData();
-      data.append('file',file_data)
-      data.append('upload_preset','project-angular');
-      data.append('cloud_name','db1zqfcad')
-      this.uploadfileService.upload(data).subscribe(response =>{
-        console.log(response)
-        imageapi=response.secure_url;
-        this.listadd.img=imageapi;
-        this.AdminService.addProduct(this.listadd).subscribe(data =>{
-
-          console.log(data)
-          this.Router.navigateByUrl('/admin/admin-product')
-        })
-        this.toastr.success('Thêm thành công','thông báo');
-        })
-        console.log(imageapi)
-
-        console.log(this.listadd)
-
-
-      //Success add product
-
-
-    }else{
-      this.toastr.error('Vui lòng nhập thông tin','thông báo');
-      return;
-    }
+    
 
    
       

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AppService } from '../app.service';
+
+import { fromEvent, Observable } from 'rxjs';
+import { throttleTime, scan } from 'rxjs/operators';
 import {
   AbstractControl,
   FormBuilder,
@@ -14,6 +17,9 @@ import {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  count = 0;
+  rate = 5000;
+  lastClick = Date.now() - this.rate;
   submitted=false;
   form!: FormGroup; 
   constructor( private AppService:AppService,
@@ -50,23 +56,29 @@ export class ContactComponent implements OnInit {
   }
   OnSubmit(){
     this.submitted=true;
-    if(this.form.valid){
 
-      var today=new Date();
-      var time = today.getHours() + ":" + today.getMinutes() +":"+ today.getSeconds();
-      var date=  today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-      var timedate=time +" "+ date;
-      this.list.time=timedate;
-      console.log(timedate);
-      this.toastr.success('Gửi thành công','thông báo');
-       this.AppService.postContent(this.list).subscribe(data=>{
+    if(Date.now()-this.lastClick >=this.rate){
+      console.log(`Clicked ${++this.count} times`);
+      this.lastClick=Date.now()
+      if(this.form.valid){
   
+        var today=new Date();
+        var time = today.getHours() + ":" + today.getMinutes() +":"+ today.getSeconds();
+        var date=  today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+        var timedate=time +" "+ date;
+        this.list.time=timedate;
+        console.log(timedate);
+        this.toastr.success('Gửi thành công','thông báo');
+         this.AppService.postContent(this.list).subscribe(data=>{
+    
+        })
         this.router.navigateByUrl('/')
-       })
-
-    }else{
-      this.toastr.error('Vui lòng nhập thông tin','thông báo');
-      return;
+  
+      }else{
+        this.toastr.error('Vui lòng nhập thông tin','thông báo');
+        return;
+      }
     }
+    
   }
 }

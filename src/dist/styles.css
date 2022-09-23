@@ -48,11 +48,11 @@ body {
 }
 
 .banner .owl-prev {
-  left: -4px;
+  left: 14px;
 }
 
 .banner .owl-next {
-  right: -65px;
+  right: -46px;
 }
 
 .banner .owl-prev i, .banner .owl-next i {

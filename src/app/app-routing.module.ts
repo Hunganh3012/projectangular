@@ -5,7 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { ProductComponent } from './product/product.component';
-
+import { PreloadAllModules } from '@angular/router';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { AuthGuard } from './auth.guard';
 import { DetailComponent } from './detail/detail.component';
@@ -42,7 +42,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules,
+  }),],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

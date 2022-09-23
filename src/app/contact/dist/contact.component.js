@@ -15,6 +15,9 @@ var ContactComponent = /** @class */ (function () {
         this.router = router;
         this.toastr = toastr;
         this.fb = fb;
+        this.count = 0;
+        this.rate = 5000;
+        this.lastClick = Date.now() - this.rate;
         this.submitted = false;
         this.list = {
             lastname: '',
@@ -44,23 +47,26 @@ var ContactComponent = /** @class */ (function () {
         configurable: true
     });
     ContactComponent.prototype.OnSubmit = function () {
-        var _this = this;
         this.submitted = true;
-        if (this.form.valid) {
-            var today = new Date();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-            var timedate = time + " " + date;
-            this.list.time = timedate;
-            console.log(timedate);
-            this.toastr.success('Gửi thành công', 'thông báo');
-            this.AppService.postContent(this.list).subscribe(function (data) {
-                _this.router.navigateByUrl('/');
-            });
-        }
-        else {
-            this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
-            return;
+        if (Date.now() - this.lastClick >= this.rate) {
+            console.log("Clicked " + ++this.count + " times");
+            this.lastClick = Date.now();
+            if (this.form.valid) {
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+                var timedate = time + " " + date;
+                this.list.time = timedate;
+                console.log(timedate);
+                this.toastr.success('Gửi thành công', 'thông báo');
+                this.AppService.postContent(this.list).subscribe(function (data) {
+                });
+                this.router.navigateByUrl('/');
+            }
+            else {
+                this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
+                return;
+            }
         }
     };
     ContactComponent = __decorate([

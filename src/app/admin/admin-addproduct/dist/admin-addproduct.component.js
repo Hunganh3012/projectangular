@@ -17,6 +17,9 @@ var AdminAddproductComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.formBuilder = formBuilder;
         this.uploadfileService = uploadfileService;
+        this.count = 0;
+        this.rate = 5000;
+        this.lastClick = Date.now() - this.rate;
         this.formControlExample = new forms_1.FormControl(20);
         this.value = 0;
         this.listadd = {
@@ -50,34 +53,33 @@ var AdminAddproductComponent = /** @class */ (function () {
     });
     AdminAddproductComponent.prototype.OnSubmit = function () {
         var _this = this;
+        var imageapi = '';
+        if (Date.now() - this.lastClick >= this.rate) {
+            console.log("Clicked " + ++this.count + " times");
+            this.lastClick = Date.now();
+            if (this.form.valid) {
+                var file_data = this.file[0];
+                var data = new FormData();
+                data.append('file', file_data);
+                data.append('upload_preset', 'project-angular');
+                data.append('cloud_name', 'db1zqfcad');
+                this.uploadfileService.upload(data).subscribe(function (response) {
+                    imageapi = response.secure_url;
+                    _this.listadd.img = imageapi;
+                    _this.AdminService.addProduct(_this.listadd).subscribe(function (data) {
+                        _this.Router.navigateByUrl('/admin/admin-product');
+                    });
+                    _this.toastr.success('Thêm thành công', 'thông báo');
+                });
+                //Success add product
+            }
+            else {
+                this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
+                return;
+            }
+        }
         this.submitted = true;
         //Upload FILE
-        var imageapi = '';
-        if (this.form.valid) {
-            var file_data = this.file[0];
-            console.log(file_data);
-            var data = new FormData();
-            data.append('file', file_data);
-            data.append('upload_preset', 'project-angular');
-            data.append('cloud_name', 'db1zqfcad');
-            this.uploadfileService.upload(data).subscribe(function (response) {
-                console.log(response);
-                imageapi = response.secure_url;
-                _this.listadd.img = imageapi;
-                _this.AdminService.addProduct(_this.listadd).subscribe(function (data) {
-                    console.log(data);
-                    _this.Router.navigateByUrl('/admin/admin-product');
-                });
-                _this.toastr.success('Thêm thành công', 'thông báo');
-            });
-            console.log(imageapi);
-            console.log(this.listadd);
-            //Success add product
-        }
-        else {
-            this.toastr.error('Vui lòng nhập thông tin', 'thông báo');
-            return;
-        }
     };
     AdminAddproductComponent.prototype.onSelect = function (event) {
         var _a;
