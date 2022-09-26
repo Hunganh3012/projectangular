@@ -12,11 +12,26 @@ var router_1 = require("@angular/router");
 var not_found_error_component_1 = require("./not-found-error/not-found-error.component");
 var router_2 = require("@angular/router");
 var auth_guard_1 = require("./auth.guard");
+var dangnhap_component_1 = require("./dangnhap/dangnhap.component");
+var dangky_component_1 = require("./dangky/dangky.component");
+var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
 var routes = [
     {
         path: 'web',
         // component:WebComponent
         loadChildren: function () { return Promise.resolve().then(function () { return require('./web/web.module'); }).then(function (m) { return m.WebModule; }); }
+    },
+    {
+        path: 'dangnhap',
+        component: dangnhap_component_1.DangnhapComponent
+    },
+    {
+        path: 'dangky',
+        component: dangky_component_1.DangkyComponent
+    },
+    {
+        path: 'quenmatkhau',
+        component: quenmatkhau_component_1.QuenmatkhauComponent
     },
     {
         path: 'admin',

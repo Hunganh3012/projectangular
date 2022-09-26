@@ -28,13 +28,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxCurrencyModule } from "ngx-currency";
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
+import { DangnhapComponent } from './dangnhap/dangnhap.component';
+import { DangkyComponent } from './dangky/dangky.component';
+import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     adminComponent,
-    WishlistComponent
+    WishlistComponent,
+    DangnhapComponent,
+    DangkyComponent,
+    QuenmatkhauComponent
   ],
   imports: [
     FormsModule,

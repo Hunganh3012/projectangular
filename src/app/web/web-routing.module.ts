@@ -8,12 +8,15 @@ import { DetailComponent } from '../detail/detail.component';
 import { CartComponent } from '../cart/cart.component';
 import { WebComponent } from './web.component';
 import { WishlistComponent } from '../admin/wishlist/wishlist.component';
+import { DangnhapComponent } from '../dangnhap/dangnhap.component';
+import { DangkyComponent } from '../dangky/dangky.component';
 const routes: Routes = [
   {
     path: '',
     component:WebComponent,
     
     children:[
+      
       {
         path:'home-page',
         component:HomePageComponent,

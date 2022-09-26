@@ -1,0 +1,134 @@
+<div class="wrapper-res bg-img">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center wrapper-login">
+
+            <div class="col-xl-12 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                            <div class="col-lg-7 font-text">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Tạo tài khoản </h1>
+                                    </div>
+                                    <form class="user"  [formGroup]="form" (ngSubmit)="OnSubmit()">
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                                    placeholder="Họ"
+                                                    formControlName="firstname"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
+                                                    <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['firstname'].errors['required']" class="ml-1">Vui lòng nhập thông tin</div>
+                                                        <div *ngIf="f['firstname'].errors['minlength']">
+                                                            Tên sản phẩn ít nhất là 6 kí tự
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                                    placeholder="Tên lót"
+                                                    formControlName="lastname"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }">
+                                                    <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['lastname'].errors['required']" class="ml-1">Vui lòng nhập thông tin</div>
+                                                        <div *ngIf="f['lastname'].errors['minlength']">
+                                                            Tên sản phẩn ít nhất là 6 kí tự
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                                placeholder="Email"
+                                                formControlName="email"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['email'].errors['required']" class="ml-1">Vui lòng nhập Email</div>
+                                                        <div *ngIf="f['email'].errors['email']">
+                                                            Đây không phải dạng Email
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="form-group row password-form">
+                                            <div class="col-sm-6 mb-3 mb-sm-0 ">
+                                                <input [type]="password" class="form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Mật khẩu"
+                                                    formControlName="password"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['password'].errors['required']" class="ml-1">Vui lòng nhập mật khẩu</div>
+                                                        <div *ngIf="f['password'].errors['minlength']">
+                                                            Mật khẩu quá ngắn
+                                                        </div>
+                                                        <div *ngIf="f['password'].errors['maxlength']">
+                                                            Mật khẩu quá dài
+                                                        </div>
+                                                    </div>
+                                                    <div class="eyes password-form2" (click)="clickeyes()" >
+                                                        <i class="fa-solid fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                                                        <i class="fa-solid fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleRepeatPassword" placeholder="Nhập lại mật khẩu"
+                                                    formControlName="confirmPassword"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+                                                    <div *ngIf="submitted && f['confirmPassword'].errors"class="invalid-feedback">
+                                                        <div *ngIf="f['confirmPassword'].errors['required']">
+                                                            Vui lòng nhập lại mật khẩu
+                                                        </div>
+                                                        <div *ngIf="f['confirmPassword'].errors['confirmedValidator']">
+                                                            Mật khẩu không trùng khớp
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                            <button class="btn btn-primary btn-user btn-block">
+                                            Đăng ký
+                                        </button>
+                                        
+                                        
+                                        <hr>
+                                        <button  class="btn btn-google btn-user btn-block mb-2">
+                                            <i class="fab fa-google fa-fw"></i> Đăng ký bằng Google
+                                        </button>
+                                        <button    class="btn btn-facebook  btn-user btn-block mb-2">
+                                            <i class="fab fa-facebook-f fa-fw"></i> Đăng ký bằng Facebook
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a  routerLink="/quenmatkhau"class="small" href="forgot-password.html">Quên mật khẩu</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href= ""class="small" routerLink="/dangnhap">Đã có tài khoản! Đăng nhập</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
+

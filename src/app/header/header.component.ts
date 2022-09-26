@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AdminService } from '../admin/admin.service';
+import { NgDynamicBreadcrumbService } from 'ng-dynamic-breadcrumb';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   isShowLogIn=true;
   isShowLogOut=false;
   isShowClose=true;
-  constructor(private authService:AuthService, private adminService:AdminService) { 
+  constructor(private authService:AuthService, private adminService:AdminService,
+    private ngDynamicBreadcrumbService: NgDynamicBreadcrumbService) { 
     this.adminService.cartSubject.subscribe(data =>{
       this.totalItem=data;
       
@@ -26,6 +28,9 @@ export class HeaderComponent implements OnInit {
   productCart:any=[];
   CartDetailheader:any=[];
   ngOnInit(): void {  
+    const breadcrumb =  {customText: 'This is Custom Text', dynamicText: 'Level 2 '};
+    this.ngDynamicBreadcrumbService.updateBreadcrumbLabels(breadcrumb);
+  
     this.adminService.loadCart();
     this.cartDetail();
 
@@ -109,6 +114,9 @@ export class HeaderComponent implements OnInit {
     this.isShow=true;
     this.isShowLogIn=false;
     this.isShowLogOut=true;
+  }
+  signIn(){
+    
   }
   logOut(){
     this.authService.logOut();

@@ -14,8 +14,8 @@
       <div class="col-sm-12">
         <input type="text" class="form-control" 
         placeholder="Tên sản phẩm" 
-        formControlName="nameproduct"
         [(ngModel)]="listadd.name"
+        formControlName="nameproduct"
         [ngClass]="{ 'is-invalid': submitted && f['nameproduct'].errors }">
         <div *ngIf="submitted && f['nameproduct'].errors" class="invalid-feedback">
           <div *ngIf="f['nameproduct'].errors['required']">Vui lòng nhập tên sản phẩm</div>

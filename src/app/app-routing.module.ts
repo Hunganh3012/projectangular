@@ -14,13 +14,27 @@ import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './admin/wishlist/wishlist.component';
 import { Chain } from '@angular/compiler';
 import { WebComponent } from './web/web.component';
+import { DangnhapComponent } from './dangnhap/dangnhap.component';
+import { DangkyComponent } from './dangky/dangky.component';
+import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 const routes: Routes = [
   {
     path:'web',
     // component:WebComponent
     loadChildren: ()=> import('./web/web.module').then((m) => m.WebModule)
   },
-
+  {
+    path:'dangnhap',
+    component:DangnhapComponent
+  },
+  {
+    path:'dangky',
+    component:DangkyComponent
+  },
+  {
+    path:'quenmatkhau',
+    component:QuenmatkhauComponent
+  },
 
   {
     path:'admin',

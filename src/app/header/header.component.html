@@ -112,10 +112,16 @@
                             <span class="user-dropdown-item"><a routerLink="/web/cart/" (click)="close()" >Giỏ hàng</a></span>
                             <span class="user-dropdown-item"><a routerLink="/web/wishlist">Sản phẩm yêu thích</a></span>
                             <span class="user-dropdown-item"><a (click)="logOut()" class="" *ngIf="isShowLogOut">Đăng xuất</a></span>
-                </div>
+                        </div>
                     </a>
-                    
-                    <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button> 
+                    <a >
+
+                        <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng nhâp</button> 
+                    </a>
+                    <a routerLink="/dangky">
+
+                        <button (click)="logIn()" class="button-log" *ngIf="isShowLogIn">Đăng ký</button> 
+                    </a>
                 </nav>
             </div> 
             <app-ng-dynamic-breadcrumb class="fontfamily" [bgColor]="' transparent'" [fontSize]="'16px'" [fontColor]="'#0f5089'" [lastLinkColor]="'#000'" [symbol]="'   >   '"></app-ng-dynamic-breadcrumb>

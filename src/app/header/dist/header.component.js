@@ -9,10 +9,11 @@ exports.__esModule = true;
 exports.HeaderComponent = void 0;
 var core_1 = require("@angular/core");
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(authService, adminService) {
+    function HeaderComponent(authService, adminService, ngDynamicBreadcrumbService) {
         var _this = this;
         this.authService = authService;
         this.adminService = adminService;
+        this.ngDynamicBreadcrumbService = ngDynamicBreadcrumbService;
         this.isShow = false;
         this.isShowLogIn = true;
         this.isShowLogOut = false;
@@ -33,6 +34,8 @@ var HeaderComponent = /** @class */ (function () {
     }
     HeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
+        var breadcrumb = { customText: 'This is Custom Text', dynamicText: 'Level 2 ' };
+        this.ngDynamicBreadcrumbService.updateBreadcrumbLabels(breadcrumb);
         this.adminService.loadCart();
         this.cartDetail();
         this.adminService.getProduct().subscribe(function (res) {
@@ -113,6 +116,8 @@ var HeaderComponent = /** @class */ (function () {
         this.isShow = true;
         this.isShowLogIn = false;
         this.isShowLogOut = true;
+    };
+    HeaderComponent.prototype.signIn = function () {
     };
     HeaderComponent.prototype.logOut = function () {
         this.authService.logOut();
