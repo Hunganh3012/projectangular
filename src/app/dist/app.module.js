@@ -17,7 +17,6 @@ var admin_component_1 = require("./admin/admin.component");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var ngx_pagination_1 = require("ngx-pagination");
-var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -25,6 +24,9 @@ var ngx_toastr_1 = require("ngx-toastr");
 var ngx_currency_1 = require("ngx-currency");
 var ng2_currency_mask_1 = require("ng2-currency-mask");
 var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
+var dangnhap_component_1 = require("./dangnhap/dangnhap.component");
+var dangky_component_1 = require("./dangky/dangky.component");
+var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -33,7 +35,10 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 admin_component_1.adminComponent,
-                wishlist_component_1.WishlistComponent
+                wishlist_component_1.WishlistComponent,
+                dangnhap_component_1.DangnhapComponent,
+                dangky_component_1.DangkyComponent,
+                quenmatkhau_component_1.QuenmatkhauComponent
             ],
             imports: [
                 forms_1.FormsModule,
@@ -56,7 +61,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_2.HashLocationStrategy }],
+            providers: [common_1.CurrencyPipe],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

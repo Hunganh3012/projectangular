@@ -68,7 +68,7 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
