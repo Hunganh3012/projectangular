@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.DangkyComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var sweetalert2_1 = require("sweetalert2");
 var DangkyComponent = /** @class */ (function () {
     function DangkyComponent(formBuilder) {
         this.formBuilder = formBuilder;
@@ -69,6 +70,22 @@ var DangkyComponent = /** @class */ (function () {
             this.password = 'password';
             this.show = false;
         }
+    };
+    DangkyComponent.prototype.onclickgg = function () {
+        sweetalert2_1["default"].fire({
+            title: 'Xin lỗi bất tiện này',
+            text: "Tính năng chưa phát triển",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Quay lại',
+            confirmButtonText: 'Thử lại sau'
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                sweetalert2_1["default"].fire('Thank you', 'Chúng tôi sẽ cập nhật sớm nhất', 'success');
+            }
+        });
     };
     DangkyComponent = __decorate([
         core_1.Component({

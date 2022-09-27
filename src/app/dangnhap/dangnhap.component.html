@@ -17,15 +17,34 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Đăng nhập</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" [formGroup]="form" (ngSubmit)="OnSubmit()" >
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Nhập email...">
+                                                placeholder="Nhập email..."
+                                                formControlName="email"
+                                                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['email'].errors['required']" class="ml-1">Vui lòng nhập Email</div>
+                                                    <div *ngIf="f['email'].errors['email']">
+                                                        Đây không phải dạng Email
+                                                    </div>
+                                                </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Mật khẩu">
+                                                id="exampleInputPassword" placeholder="Mật khẩu"
+                                                formControlName="password"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['password'].errors['required']" class="ml-1">Vui lòng nhập mật khẩu</div>
+                                                        <div *ngIf="f['password'].errors['minlength']">
+                                                            Mật khẩu quá ngắn
+                                                        </div>
+                                                        <div *ngIf="f['password'].errors['maxlength']">
+                                                            Mật khẩu quá dài
+                                                        </div>
+                                                    </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -33,15 +52,15 @@
                                                 <label class="custom-control-label" for="customCheck">Ghi nhớ mật khẩu</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button  class="btn btn-primary btn-user btn-block">
+                                            Đăng nhập
+                                        </button>
                                         <hr>
                 
-                                        <button  class="btn btn-google btn-user btn-block mb-2">
+                                        <button (click)="onclickgg()" class="btn btn-google btn-user btn-block mb-2">
                                             <i class="fab fa-google fa-fw"></i> Đăng nhập Google
                                         </button>
-                                        <button   class="btn btn-facebook  btn-user btn-block mb-2">
+                                        <button (click)="onclickgg()"  class="btn btn-facebook  btn-user btn-block mb-2">
                                             <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập bằng Facebook
                                         </button>
                                 

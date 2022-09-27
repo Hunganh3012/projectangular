@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
-import { ValidationError } from 'validation-utils';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-dangky',
   templateUrl: './dangky.component.html',
@@ -73,5 +73,24 @@ export class DangkyComponent implements OnInit {
       this.show = false;
     }
   }
-
+  onclickgg(){
+    Swal.fire({
+      title: 'Xin lỗi bất tiện này',
+      text: "Tính năng chưa phát triển",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText:'Quay lại',
+      confirmButtonText: 'Thử lại sau'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Thank you',
+          'Chúng tôi sẽ cập nhật sớm nhất',
+          'success'
+        )
+      }
+    })
+  }
 }
