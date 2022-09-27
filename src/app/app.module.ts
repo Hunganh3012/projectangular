@@ -1,15 +1,10 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProductComponent } from './product/product.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { TieudiemComponent } from './tieudiem/tieudiem.component';
+
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { adminComponent } from './admin/admin.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -63,13 +58,12 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
         progressAnimation:'increasing',
       }
     ),
-    
 
 
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe],
+  providers: [CurrencyPipe,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
