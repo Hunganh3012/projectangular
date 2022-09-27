@@ -13,7 +13,7 @@ import { TieudiemComponent } from './tieudiem/tieudiem.component';
 import { NotFoundErrorComponent } from './not-found-error/not-found-error.component';
 import { adminComponent } from './admin/admin.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CurrencyPipe, PathLocationStrategy } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductAnnounComponent } from './product-announ/product-announ.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -31,7 +31,7 @@ import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
-import {APP_BASE_HREF} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe,{provide: APP_BASE_HREF, useValue: '/nuocgiaikhat'}],
+  providers: [CurrencyPipe,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
