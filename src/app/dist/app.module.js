@@ -62,7 +62,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_2.HashLocationStrategy }],
+            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_1.PathLocationStrategy }],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

@@ -582,6 +582,10 @@ body {
   }
 }
 @media screen and (max-width: 737px) {
+  .nav-icon-logo {
+    width: 75px;
+  }
+
   .search {
     display: none;
   }
