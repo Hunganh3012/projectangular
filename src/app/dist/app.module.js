@@ -17,7 +17,6 @@ var admin_component_1 = require("./admin/admin.component");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var ngx_pagination_1 = require("ngx-pagination");
-var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -28,6 +27,7 @@ var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
 var dangnhap_component_1 = require("./dangnhap/dangnhap.component");
 var dangky_component_1 = require("./dangky/dangky.component");
 var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
+var common_2 = require("@angular/common");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -62,7 +62,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_1.PathLocationStrategy }],
+            providers: [common_1.CurrencyPipe, { provide: common_2.APP_BASE_HREF, useValue: '/nuocgiaikhat' }],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

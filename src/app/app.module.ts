@@ -31,7 +31,7 @@ import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
-
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe,{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [CurrencyPipe,{provide: APP_BASE_HREF, useValue: '/nuocgiaikhat'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
