@@ -31,6 +31,9 @@ import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { TuyendungComponent } from './tuyendung/tuyendung.component';
+import { TuyendungchitietComponent } from './tuyendungchitiet/tuyendungchitiet.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
     WishlistComponent,
     DangnhapComponent,
     DangkyComponent,
-    QuenmatkhauComponent
+    QuenmatkhauComponent,
+    NewsDetailComponent,
+    TuyendungComponent,
+    TuyendungchitietComponent
   ],
   imports: [
     FormsModule,

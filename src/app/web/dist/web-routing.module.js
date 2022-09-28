@@ -17,11 +17,26 @@ var detail_component_1 = require("../detail/detail.component");
 var cart_component_1 = require("../cart/cart.component");
 var web_component_1 = require("./web.component");
 var wishlist_component_1 = require("../admin/wishlist/wishlist.component");
+var news_detail_component_1 = require("../news-detail/news-detail.component");
+var tuyendung_component_1 = require("../tuyendung/tuyendung.component");
+var tuyendungchitiet_component_1 = require("../tuyendungchitiet/tuyendungchitiet.component");
 var routes = [
     {
         path: '',
         component: web_component_1.WebComponent,
         children: [
+            {
+                path: 'news-detail',
+                component: news_detail_component_1.NewsDetailComponent
+            },
+            {
+                path: 'tuyendung',
+                component: tuyendung_component_1.TuyendungComponent
+            },
+            {
+                path: 'tuyendungchitiet',
+                component: tuyendungchitiet_component_1.TuyendungchitietComponent
+            },
             {
                 path: 'home-page',
                 component: home_page_component_1.HomePageComponent,

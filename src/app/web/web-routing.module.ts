@@ -8,15 +8,30 @@ import { DetailComponent } from '../detail/detail.component';
 import { CartComponent } from '../cart/cart.component';
 import { WebComponent } from './web.component';
 import { WishlistComponent } from '../admin/wishlist/wishlist.component';
+import { NewsDetailComponent } from '../news-detail/news-detail.component';
 import { DangnhapComponent } from '../dangnhap/dangnhap.component';
 import { DangkyComponent } from '../dangky/dangky.component';
+import { TuyendungComponent } from '../tuyendung/tuyendung.component';
+import { TuyendungchitietComponent } from '../tuyendungchitiet/tuyendungchitiet.component';
 const routes: Routes = [
+
   {
     path: '',
     component:WebComponent,
     
     children:[
-      
+      {
+        path:'news-detail',
+        component:NewsDetailComponent
+      },
+      {
+        path:'tuyendung',
+        component:TuyendungComponent
+      },
+      {
+        path:'tuyendungchitiet',
+        component:TuyendungchitietComponent
+      },
       {
         path:'home-page',
         component:HomePageComponent,
