@@ -21,7 +21,7 @@ const routes: Routes = [
     
     children:[
       {
-        path:'news-detail',
+        path:'news-detail/:id',
         component:NewsDetailComponent
       },
       {

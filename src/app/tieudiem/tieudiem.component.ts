@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
+import { NewsService } from '../news.service';
 @Component({
   selector: 'app-tieudiem',
   templateUrl: './tieudiem.component.html',
   styleUrls: ['./tieudiem.component.scss']
 })
 export class TieudiemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -38,5 +34,25 @@ export class TieudiemComponent implements OnInit {
       }
     },
     nav: true
+  }
+
+
+listNews:any=[];
+listNewsSlide:any=[]
+  constructor( private newsService:NewsService) { }
+  ngOnInit(): void {
+    this.getNews()
+    this.getNewsSlide();
+  }
+  getNews(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.listNews=data;
+    })
+  }
+  getNewsSlide(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.listNewsSlide=data.slice(0,4)
+      console.log(this.listNewsSlide)
+    })
   }
 }

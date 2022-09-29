@@ -6,185 +6,47 @@
         
                     <!-- Indicators -->
                     <owl-carousel-o [options]="customOptions">
-                        <ng-template carouselSlide>
-                            <div class="item">
+                        <ng-template carouselSlide *ngFor="let newsHL of listNewsSlide">
+                            <div class="item" >
                                 <article class="featured">
                                     <div class="overlay"></div>
                                     <figure>
-                                        <img src="https://media.istockphoto.com/photos/rose-champagne-cocktails-picture-id861681070?b=1&k=20&m=861681070&s=170667a&w=0&h=UzhIrLkjPdn4ZPsKI28wOTTYaIwBNR2OlUiPIb8z7Mo=" alt="Sample Article">
+                                        <img src="{{newsHL.image}}" alt="Sample Article">
                                     </figure>
                                     <div class="details">
-                                        <div class="category"><a href="category.html">Computer</a></div>
-                                        <h1><a href="single.html">Phasellus iaculis quam sed est elementum vel ornare ligula venenatis</a></h1>
-                                        <div class="time">December 26, 2016</div>
+                                        <h1><a routerLink="/web/news-detail/{{newsHL.id}}" class=" namehidden">{{newsHL.name}}</a></h1>
+                                        <div class="time introhidden">{{newsHL.intro}}</div>
                                     </div>
                                 </article>
                             </div>
                         </ng-template>  
-                        <ng-template carouselSlide>
-                            <div class="item">
-                                <article class="featured">
-                                    <div class="overlay"></div>
-                                    <figure>
-                                        <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                    </figure>
-                                    <div class="details">
-                                        <div class="category"><a href="category.html">Travel</a></div>
-                                        <h1><a href="single.html">Class aptent taciti sociosqu ad litora torquent per conubia nostra</a></h1>
-                                        <div class="time">December 10, 2016</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </ng-template>  
-                        <ng-template carouselSlide> 
-                            <div class="item">
-                                <article class="featured">
-                                    <div class="overlay"></div>
-                                    <figure>
-                                        <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                    </figure>
-                                    <div class="details">
-                                        <div class="category"><a href="category.html">International</a></div>
-                                        <h1><a href="single.html">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
-                                        <div class="time">October 12, 2016</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </ng-template>  
-                        <ng-template carouselSlide>
-                            <div class="item">
-                                <article class="featured">
-                                    <div class="overlay"></div>
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1592858167090-2473780d894d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvY2t0YWlsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Sample Article">
-                                    </figure>
-                                    <div class="details">
-                                        <div class="category"><a href="category.html">Lifestyle</a></div>
-                                        <h1><a href="single.html">Mauris elementum libero at pharetra auctor Fusce ullamcorper elit</a></h1>
-                                        <div class="time">November 27, 2016</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </ng-template>  
-                        </owl-carousel-o>
-                    
-                    <!-- The slideshow -->
-                    
-                    <!-- Left and right controls -->
-                </div>
-                <div class="owl-carousel owl-theme slide" id="featured">
-    
 
-                    
-                   
-                </div>
-                <div class="line">
-                    <div class="text-uppercase">Tin mới nhất</div>
+                        </owl-carousel-o>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="row">
-                            <article class="article col-md-12">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single.html">
-                                            <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <div class="detail">
-                                            <div class="time">December 10, 2016</div>
-                                            <div class="category"><a href="category.html">Healthy</a></div>
-                                        </div>
-                                        <h2><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                        <footer>
-                                            <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a>
-                                            <a class="btn btn-primary more" href="single.html">
+                    <div class="col-md-6 col-sm-4 col-xs-12"  *ngFor="let newsrow of listNewsSlide">
+                        <article class="article ">
+                            <div class="inner">
+                                <figure>
+                                    <a routerLink="/web/news-detail/{{newsrow.id}}">
+                                        <img src="{{newsrow.image}}" alt="Sample Article">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <div class="detail">
+                                        <div class="time">{{newsrow.days}}</div>
+                                        <div class="category">Healthy</div>
+                                    </div>
+                                    <h2 class="namehidden"><a routerLink="/web/news-detail/{{newsrow.id}}">{{newsrow.name}}</a></h2>
+                                    <p class="introhidden">{{newsrow.intro}}</p>
+                                    <footer>
+                                        <a class="btn btn-primary  " routerLink="/web/news-detail/{{newsrow.id}}">
                                                 <div>Xem thêm</div>
-                                                <div><i class="ion-ios-arrow-thin-right"></i></div>
-                                            </a>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article col-md-12">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single.html">
-                                            <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
                                         </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <div class="detail">
-                                            <div class="time">December 22, 2016</div>
-                                            <div class="category"><a href="category.html">Healthy</a></div>
-                                        </div>
-                                        <h2><a href="single.html">Exercitation ullamco laboris nisi ut aliquip</a></h2>
-                                        <p>Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat sollicitudin ut est. In fringilla dui dui.</p>
-                                        <footer>
-                                            <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>327</div></a>
-                                            <a class="btn btn-primary more" href="single.html">
-                                               <div>Xem thêm</div>
-                                                <div><i class="ion-ios-arrow-thin-right"></i></div>
-                                            </a>
-                                        </footer>
-                                    </div>
+                                    </footer>
                                 </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="row">
-                            <article class="article col-md-12">
-                                <div class="inner">
-                                    <figure>                                
-                                        <a href="single.html">
-                                            <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <div class="detail">
-                                            <div class="time">December 09, 2016</div>
-                                            <div class="category"><a href="category.html">Lifestyle</a></div>
-                                        </div>
-                                        <h2><a href="single.html">Mauris elementum libero at pharetra auctor</a></h2>
-                                        <p>Vivamus in efficitur mi. Nullam semper justo ut elit lacinia lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-                                        <footer>
-                                            <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1083</div></a>
-                                            <a class="btn btn-primary more" href="single.html">
-                                               <div>Xem thêm</div>
-                                                <div><i class="ion-ios-arrow-thin-right"></i></div>
-                                            </a>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article col-md-12">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single.html">
-                                            <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <div class="detail">
-                                            <div class="time">December 21, 2016</div>
-                                            <div class="category"><a href="category.html">Sport</a></div>
-                                        </div>
-                                        <h2><a href="single.html">Sed do eiusmod tempor incididunt ut labore</a></h2>
-                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris elementum libero at pharetra auctor.</p>
-                                        <footer>
-                                            <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>980</div></a>
-                                            <a class="btn btn-primary more" href="single.html">
-                                               <div>Xem thêm</div>
-                                                <div><i class="ion-ios-arrow-thin-right"></i></div>
-                                            </a>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
                 
@@ -195,95 +57,34 @@
             <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
                 <div class="sidebar-title for-tablet">Sidebar</div>
                 <aside>
-                    <h1 class="aside-title">Tin phổ biến <a href="#" class="all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a></h1>
+                    <h1 class="aside-title">Tin phổ biến </h1>
                     <div class="aside-body">
-                        <article class="article-mini">
+                        <article class="article-mini" *ngFor="let newsfm of listNews">
                             <div class="inner">
                                 <figure>
-                                    <a href="single.html">
-                                        <img src="https://24hstore.vn/images/news/2022/09/28/resized/sam-macbook-nhan-pmh-avt_1664335897.jpg" alt="Sample Article">
+                                    <a routerLink="/web/news-detail/{{newsfm.id}}">
+                                        <img src="{{newsfm.image}}" alt="Sample Article">
                                     </a>
                                 </figure>
                                 <div class="padding">
-                                    <h1><a href="single.html">
-                                        Sắm Mac ngay - Nhận phiếu mua hàng liền tay</a></h1>
+                                    <h1><a routerLink="/web/news-detail/{{newsfm.id}}">
+                                        {{newsfm.name}}</a></h1>
                                 </div>
                             </div>
                         </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://24hstore.vn/images/news/2022/09/27/resized/facetime-nhom-tren-iphone_1664260584.jpg" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Cách gọi FaceTime nhóm trên iPhone, iPad và MacBook NHANH NHẤT </a></h1>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://24hstore.vn/images/news/2022/09/27/resized/avata-ti%CC%89-so%CC%82%CC%81-tra%CC%A3%CC%82n-da%CC%82%CC%81u_1664250544.png" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">10 ứng dụng trên App Store có hành vi gian lận quảng cáo mà bạn nên xóa ngay lập tức
-                                    </a></h1>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://24hstore.vn/images/news/2022/09/26/resized/avt_1664168589.png" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">iPhone 14 Pro Max sở hữu màn hình tốt nhất 2022, iFan nói gì?
-                                        </a></h1>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">neque est semper nulla, ac elementum risus quam a enim</a></h1>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Morbi vitae nisl ac mi luctus aliquet a vitae libero</a></h1>
-                                </div>
-                            </div>
-                        </article>
+
                     </div>
                 </aside>
 
                 <aside>
                     <ul class="nav nav-tabs nav-justified" role="tablist">
                         <li class="active">
-                            <a href="#recomended" aria-controls="recomended" role="tab" data-toggle="tab">
-                                <i class="ion-android-star-outline"></i> Recomended
+                            <a class="text-uppercase" href="#recomended" aria-controls="recomended" role="tab" data-toggle="tab">
+                                <i class="ion-android-star-outline "></i> introduce
                             </a>
                         </li>
                         <li>
-                            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
+                            <a href="#comments" class="text-uppercase" aria-controls="comments" role="tab" data-toggle="tab">
                                 <i class="ion-ios-chatboxes-outline"></i> Comments
                             </a>
                         </li>
@@ -294,8 +95,8 @@
                                 <div class="inner">
                                     <figure>
                                         <a routerLink="/web/product">
-                                            <img src="https://media.istockphoto.com/photos/barman-add-ingredients-to-glass-with-pumpkin-and-pepper-inside-and-picture-id1291469221?b=1&k=20&m=1291469221&s=170667a&w=0&h=s-T5tJFy-SnelToR3WLb2tHpdAZFq9E7mKLtiLsx3us=" alt="Sample Article">
-                                        </a>
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9GEpZpBkzpI" title="Know Your Beers In 3 Minutes - Newsy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>               
+                                         </a>
                                     </figure>
                                     <div class="details">
                                         <div class="detail">
@@ -407,16 +208,7 @@
                         </div>
                     </div>
                 </aside>
-                <aside>
 
-                    <div class="aside-body">
-                        <ul class="video-list" data-youtube='"carousel":true, "nav": "#video-list-nav"'>
-                            <li><a data-youtube-id="SBjQ9tuuTJQ" data-action="magnific"></a></li>
-                            <li><a data-youtube-id="9cVJr3eQfXc" data-action="magnific"></a></li>
-                            <li><a data-youtube-id="DnGdoEa1tPg" data-action="magnific"></a></li>
-                        </ul>
-                    </div>
-                </aside>
             </div>
         </div>
     </div>
@@ -427,90 +219,29 @@
           <div class="row">
             <div class="col-md-8 text-left">
               <div class="row">
-                <div class="col-md-12">        
-                  <h1 class="page-title">Tin tức mới nhất</h1>
-                  <p class="page-subtitle">Showing all posts with category <i>Computer</i></p>
+                <div class="line">
+                    <div class="text-uppercase">Tin mới nhất</div>
                 </div>
               </div>
-              <div class="line"></div>
-              <div class="row">
-                <article class="col-md-12 article-list">
+              <div class="row" *ngFor="let news of listNews">
+                <article class="col-md-12 article-list mb-2">
                   <div class="inner">
                     <figure>
-                        <a href="single.html">
-                          <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                        <a routerLink="/web/news-detail/{{news.id}}">
+                          <img src="{{news.image}}">
                       </a>
                     </figure>
                     <div class="details">
                       <div class="detail">
-                        <div class="category">
-                         <a href="category.html">Film</a>
-                        </div>
-                        <div class="time">December 26, 2016</div>
-                      </div>
-                      <h1><a href="single.html"> iPhone 14 mở bán tại Trung Quốc: Tưởng không ế mà ế không tưởng</a></h1>
-                      <p>
-                       Chắc hẳn bạn rất ngạc nhiên về việc iPhone 14 mở tại Trung Quốc vô cùng ế ẩm. Vì sao iPhone 14 lại không được người dùng Trung Quốc mua nhiều như iPhone 13 năm trước? Cùng tìm hiểu qua bài viết sau đây nhé!
-                      </p>
-                      <footer>
-                        <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>237</div></a>
-                        <a class="btn btn-primary Xem thêm" href="single.html">
-                          <div>Xem thêm</div>
-                           
-                        </a>
-                      </footer>
-                    </div>
-                  </div>
-                </article>
-                <article class="col-md-12 article-list">
-                  <div class="inner">
-                    <figure>
-                        <a href="single.html">
-                          <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
-                      </a>
-                    </figure>
-                    <div class="details">
-                      <div class="detail">
-                        <div class="category">
-                         <a href="category.html">Film</a>
-                        </div>
-                        <div class="time">December 26, 2016</div>
-                      </div>
-                      <h1><a href="single.html"> iPhone 14 mở bán tại Trung Quốc: Tưởng không ế mà ế không tưởng</a></h1>
-                      <p>
-                       Chắc hẳn bạn rất ngạc nhiên về việc iPhone 14 mở tại Trung Quốc vô cùng ế ẩm. Vì sao iPhone 14 lại không được người dùng Trung Quốc mua nhiều như iPhone 13 năm trước? Cùng tìm hiểu qua bài viết sau đây nhé!
-                      </p>
-                      <footer>
-                        <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>78</div></a>
-                        <a class="btn btn-primary Xem thêm" href="single.html">
-                          <div>Xem thêm</div>
                         
-                        </a>
-                      </footer>
-                    </div>
-                  </div>
-                </article>
-                <article class="col-md-12 article-list">
-                  <div class="inner">
-                    <figure>
-                        <a href="single.html">
-                          <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
-                      </a>
-                    </figure>
-                    <div class="details">
-                      <div class="detail">
-                        <div class="category">
-                         <a href="category.html">Film</a>
-                        </div>
-                        <div class="time">December 26, 2016</div>
+                        <div class="time">{{news.days}}</div>
                       </div>
-                      <h1><a href="single.html"> iPhone 14 mở bán tại Trung Quốc: Tưởng không ế mà ế không tưởng</a></h1>
-                      <p>
-                       Chắc hẳn bạn rất ngạc nhiên về việc iPhone 14 mở tại Trung Quốc vô cùng ế ẩm. Vì sao iPhone 14 lại không được người dùng Trung Quốc mua nhiều như iPhone 13 năm trước? Cùng tìm hiểu qua bài viết sau đây nhé!
+                      <h1 class="namehidden"><a routerLink="/web/news-detail/{{news.id}}"> {{news.name}}</a></h1>
+                      <p class="introhidden">
+                       {{news.intro}}
                       </p>
                       <footer>
-                        <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>10</div></a>
-                        <a class="btn btn-primary Xem thêm" href="single.html">
+                        <a class="btn btn-primary Xem thêm" routerLink="/web/news-detail/{{news.id}}">
                           <div>Xem thêm</div>
                            
                         </a>
@@ -518,35 +249,7 @@
                     </div>
                   </div>
                 </article>
-
-                <article class="col-md-12 article-list">
-                  <div class="inner">
-                    <figure>
-                        <a href="single.html">
-                          <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
-                      </a>
-                    </figure>
-                    <div class="details">
-                      <div class="detail">
-                        <div class="category">
-                         <a href="category.html">Film</a>
-                        </div>
-                        <div class="time">December 26, 2016</div>
-                      </div>
-                      <h1><a href="single.html"> iPhone 14 mở bán tại Trung Quốc: Tưởng không ế mà ế không tưởng</a></h1>
-                      <p>
-                       Chắc hẳn bạn rất ngạc nhiên về việc iPhone 14 mở tại Trung Quốc vô cùng ế ẩm. Vì sao iPhone 14 lại không được người dùng Trung Quốc mua nhiều như iPhone 13 năm trước? Cùng tìm hiểu qua bài viết sau đây nhé!
-                      </p>
-                      <footer>
-                        <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>198</div></a>
-                        <a class="btn btn-primary Xem thêm" href="single.html">
-                          <div>Xem thêm</div>
-                           
-                        </a>
-                      </footer>
-                    </div>
-                  </div>
-                </article>
+                
                 
               </div>
             </div>

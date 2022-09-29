@@ -112,6 +112,7 @@ var ProductAnnounComponent = /** @class */ (function () {
     };
     ProductAnnounComponent.prototype.cartNumberFunc = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
+        console.log("cart giá trị :" + cartValue);
         this.cartNumber = cartValue.length;
         this.AdminService.cartSubject.next(this.cartNumber);
     };

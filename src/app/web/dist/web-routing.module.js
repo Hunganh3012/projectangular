@@ -26,7 +26,7 @@ var routes = [
         component: web_component_1.WebComponent,
         children: [
             {
-                path: 'news-detail',
+                path: 'news-detail/:id',
                 component: news_detail_component_1.NewsDetailComponent
             },
             {

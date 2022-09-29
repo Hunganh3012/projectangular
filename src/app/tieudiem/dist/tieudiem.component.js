@@ -9,7 +9,8 @@ exports.__esModule = true;
 exports.TieudiemComponent = void 0;
 var core_1 = require("@angular/core");
 var TieudiemComponent = /** @class */ (function () {
-    function TieudiemComponent() {
+    function TieudiemComponent(newsService) {
+        this.newsService = newsService;
         this.customOptions = {
             loop: true,
             mouseDrag: true,
@@ -37,8 +38,25 @@ var TieudiemComponent = /** @class */ (function () {
             },
             nav: true
         };
+        this.listNews = [];
+        this.listNewsSlide = [];
     }
     TieudiemComponent.prototype.ngOnInit = function () {
+        this.getNews();
+        this.getNewsSlide();
+    };
+    TieudiemComponent.prototype.getNews = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.listNews = data;
+        });
+    };
+    TieudiemComponent.prototype.getNewsSlide = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.listNewsSlide = data.slice(0, 4);
+            console.log(_this.listNewsSlide);
+        });
     };
     TieudiemComponent = __decorate([
         core_1.Component({

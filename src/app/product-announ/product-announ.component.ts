@@ -95,8 +95,6 @@ export class ProductAnnounComponent implements OnInit {
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       // console.log(data.splice(5,9))
       this.listProductHighlight= data.splice(5,4);
-
-
     })
   }
   products:any=[];
@@ -130,6 +128,7 @@ export class ProductAnnounComponent implements OnInit {
   cartNumber:number =0;
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    console.log("cart giá trị :" + cartValue)
     this.cartNumber=cartValue.length;
     this.AdminService.cartSubject.next(this.cartNumber);
   }
