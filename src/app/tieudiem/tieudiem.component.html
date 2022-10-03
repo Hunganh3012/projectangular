@@ -34,9 +34,16 @@
                     </owl-carousel-o>
                 </div>
                 <div class="row">
+                        <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                            'border-radius': '5px',
+                            height: '500px',
+                            width:'392px',
+                            border: '1px solid white'
+                            
+                          }" *ngIf="loader"></ngx-skeleton-loader> 
                     <div class="col-md-6 col-sm-4 col-xs-12"  *ngFor="let newsrow of listNewsSlide">
                         <article class="article ">
-                            <div class="inner">
+                            <div *ngIf="!loader" class=" inner">
                                 <figure>
                                     <a routerLink="/web/news-detail/{{newsrow.id}}">
                                         <img src="{{newsrow.image}}" alt="Sample Article">
@@ -95,19 +102,27 @@
                 </aside>
 
                 <aside>
-                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                    
+                    <ul class="nav nav-tabs nav-justified" role="tablist" >
                         <li class="active">
-                            <a class="text-uppercase" href="#recomended" aria-controls="recomended" role="tab" data-toggle="tab">
+                            <a class="text-uppercase" href="#recomended" aria-controls="comments" role="tab" data-toggle="tab">
                                 <i class="ion-android-star-outline "></i> introduce
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#comments" class="text-uppercase" aria-controls="comments" role="tab" data-toggle="tab">
                                 <i class="ion-ios-chatboxes-outline"></i> Comments
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
-                    <div class="tab-content">
+                    <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                        'border-radius': '5px',
+                        height: '750px',
+                        width:'391px',
+                        border: '1px solid white'
+                        
+                      }" *ngIf="loader"></ngx-skeleton-loader> 
+                    <div class="tab-content" *ngIf="!loader">
                         <div class="tab-pane active" id="recomended">
                             <article class="article-fw">
                                 <div class="inner">
@@ -178,52 +193,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="tab-pane comments" id="comments">
-                            <div class="comment-list sm">
-                                <div class="item">
-                                    <div class="user">                                
-                                        <figure>
-                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="User Picture">
-                                        </figure>
-                                        <div class="details">
-                                            <h5 class="name">Mark Otto</h5>
-                                            <div class="time">24 Hours</div>
-                                            <div class="description">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="user">                                
-                                        <figure>
-                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="User Picture">
-                                        </figure>
-                                        <div class="details">
-                                            <h5 class="name">Mark Otto</h5>
-                                            <div class="time">24 Hours</div>
-                                            <div class="description">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="user">                                
-                                        <figure>
-                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="User Picture">
-                                        </figure>
-                                        <div class="details">
-                                            <h5 class="name">Mark Otto</h5>
-                                            <div class="time">24 Hours</div>
-                                            <div class="description">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </aside>
 
@@ -241,8 +211,14 @@
                     <div class="text-uppercase">Tin mới nhất</div>
                 </div>
               </div>
+              <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                'border-radius': '5px',
+                height: '206px',
+                width:'813px',
+                border: '1px solid white'
+              }" *ngIf="loader"></ngx-skeleton-loader> 
               <div class="row" *ngFor="let news of listNews | paginate: { itemsPerPage: 4, currentPage: page,totalItems:totalLength }">
-                <article class="col-md-12 article-list mb-2">
+                <article *ngIf="!loader" class="col-md-12 article-list mb-2">
                   <div class="inner">
                     <figure>
                         <a routerLink="/web/news-detail/{{news.id}}">
@@ -283,7 +259,13 @@
             <div class="col-md-4 sidebar">
               <aside>
                 <h1 class="aside-title">Đăng gần đây</h1>
-                <div class="aside-body">
+                <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                    'border-radius': '5px',
+                    height: '732px',
+                    width:'392px',
+                    border: '1px solid white'
+                  }" *ngIf="loader"></ngx-skeleton-loader> 
+                <div *ngIf="!loader"class="aside-body">
                   <article class="article-fw">
                     <div class="inner">
                       <figure>

@@ -57,7 +57,7 @@ var TieudiemComponent = /** @class */ (function () {
             setTimeout(function () {
                 _this.listNews = data;
                 _this.loader = false;
-            }, 2000);
+            }, 1000);
         });
     };
     TieudiemComponent.prototype.getNewsSlide = function () {

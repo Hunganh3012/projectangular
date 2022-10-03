@@ -10,11 +10,10 @@
                         <ng-template carouselSlide >
                             <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
                                 'border-radius': '5px',
-                                height: '369px',
-                                width:'224px',
+                                height: '309px',
+                                width:'304px',
                                 border: '1px solid white'
-                                
-                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                              }" *ngIf="loader"></ngx-skeleton-loader>
                             
                               
                               
@@ -57,8 +56,8 @@
                         <ng-template carouselSlide >
                             <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
                                 'border-radius': '5px',
-                                height: '369px',
-                                width:'224px',
+                                height: '309px',
+                                width:'304px',
                                 border: '1px solid white'
                               }" *ngIf="loader"></ngx-skeleton-loader> 
                             <div class="row mb-3" *ngIf="!loader" >  
@@ -104,8 +103,15 @@
                 <p class="highlight-content">Bia, các loại nước giải khát</p>
             </div>
             <div class="row">
+                <ngx-skeleton-loader count="8" appearance="circle"[theme]="{ 
+                    'border-radius': '5px',
+                    height: '435px',
+                    width:'330px',
+                    border: '1px solid white'
+                    
+                  }" *ngIf="loader"></ngx-skeleton-loader> 
                 <div class="col-md-3 col-sm-3 mb-4"  *ngFor="let item of listProduct | paginate: { itemsPerPage: 12, currentPage: page,totalItems:totalLength }">
-                    <div class="product-grid">
+                    <div *ngIf="!loader" class="product-grid">
                         <div class="product-image">
                             <a routerLink="../detail/{{item.id}}"  class="image">
                                 <img class="pic-1 img-wh" src="{{item.img}}">

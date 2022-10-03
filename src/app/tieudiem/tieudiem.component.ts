@@ -58,7 +58,7 @@ public labels:any={
         this.listNews=data;
 
         this.loader=false;
-      },2000)
+      },1000)
     })
   }
   getNewsSlide(){
