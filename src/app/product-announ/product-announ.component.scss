@@ -496,6 +496,16 @@ h2::after {
         width: 100% !important;
         height: auto !important;
     }
+    .banner{display: none;}
+    .highlight-content{
+        font-size: 29px;
+    }
+    .highlight:after{
+        left: 31%;
+    width: 44%;
+    content: "";
+    top: 92%;
+    }
 }
 @media screen and (max-width:1200px){
     .product-grid{ margin: 0 0 30px; }
