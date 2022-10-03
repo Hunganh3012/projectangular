@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
     })
 
     this.adminService.getProduct().subscribe((res :any)=>{
-      this.productCart.push(res);
+      this.productCart.push(res); 
       this.productItemFunc();
     })
   }
@@ -64,6 +64,7 @@ export class HeaderComponent implements OnInit {
 
   getCartItemFromLocal(): any {
     const data = localStorage.getItem('cart-item');
+    console.log(data);
     if (!data) return;
     return  JSON.parse(data)
   }

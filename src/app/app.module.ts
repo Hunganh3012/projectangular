@@ -34,8 +34,7 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { TuyendungComponent } from './tuyendung/tuyendung.component';
 import { TuyendungchitietComponent } from './tuyendungchitiet/tuyendungchitiet.component';
-
-
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +58,7 @@ import { TuyendungchitietComponent } from './tuyendungchitiet/tuyendungchitiet.c
     NgxCurrencyModule,
     NgDynamicBreadcrumbModule,
     ReactiveFormsModule,
+   
     CurrencyMaskModule,
     ToastrModule.forRoot(
       {

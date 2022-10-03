@@ -22,12 +22,6 @@ var ProductAnnounComponent = /** @class */ (function () {
             previousLabel: '',
             nextLabel: ''
         };
-        // listCart={
-        //   name:'',
-        //   priceold:'',
-        //   sale:'',
-        //   img:'',
-        // };
         this.getFourProduct = [];
         this.page = 1;
         this.productincart = [];
@@ -58,6 +52,7 @@ var ProductAnnounComponent = /** @class */ (function () {
             },
             nav: true
         };
+        this.loader = true;
         this.products = [];
         this.cartNumber = 0;
         this.productcart = [];
@@ -74,8 +69,11 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.getProduct = function () {
         var _this = this;
         return this.AdminService.getProduct().subscribe(function (data) {
-            _this.listProduct = data;
-            _this.totalLength = data.length;
+            setTimeout(function () {
+                _this.listProduct = data;
+                _this.totalLength = data.length;
+                _this.loader = false;
+            }, 2000);
             // console.log(this.listProduct)
         });
     };

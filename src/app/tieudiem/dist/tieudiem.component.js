@@ -40,6 +40,12 @@ var TieudiemComponent = /** @class */ (function () {
         };
         this.listNews = [];
         this.listNewsSlide = [];
+        this.page = 1;
+        this.labels = {
+            previousLabel: '',
+            nextLabel: ''
+        };
+        this.loader = true;
     }
     TieudiemComponent.prototype.ngOnInit = function () {
         this.getNews();
@@ -48,7 +54,10 @@ var TieudiemComponent = /** @class */ (function () {
     TieudiemComponent.prototype.getNews = function () {
         var _this = this;
         return this.newsService.getNews().subscribe(function (data) {
-            _this.listNews = data;
+            setTimeout(function () {
+                _this.listNews = data;
+                _this.loader = false;
+            }, 2000);
         });
     };
     TieudiemComponent.prototype.getNewsSlide = function () {

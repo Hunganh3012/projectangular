@@ -19,6 +19,8 @@ import {NgDynamicBreadcrumbModule} from "ng-dynamic-breadcrumb";
 import { CurrencyPipe } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 @NgModule({
   declarations: [
     WebComponent,
@@ -42,7 +44,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     CarouselModule,
     ReactiveFormsModule,
-    NgDynamicBreadcrumbModule
+    NgDynamicBreadcrumbModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [CurrencyPipe,],
 })

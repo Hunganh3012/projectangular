@@ -5,11 +5,28 @@
                 <h2 class="d-inline-block"><b>Nổi bật</b></h2>		
                 <section class="banner">
                     <owl-carousel-o [options]="customOptions">
+                        
+                        
                         <ng-template carouselSlide >
-                            <div class="row mb-3" >  
+                            <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '369px',
+                                width:'224px',
+                                border: '1px solid white'
+                                
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
                             
-                                <div class="col-sm-3"  *ngFor="let hl of listProductHighlight">
-                                    <div class="product-grid">
+                              
+                              
+                          <!-- Disables the animation -->
+                            <div class="row mb-3"*ngIf="!loader" >  
+                            
+                                <div class="col-sm-3" *ngFor="let hl of listProductHighlight">
+
+                                    <!-- Disables the animation, but receiving boolean value from binding -->
+                                    <!-- Via binding it can receive `false` (boolean), "false" (string), or any other animation type -->
+                                    <!-- Uses `progress` as animation -->
+                                        <div class="product-grid">
                                         <div class="product-image">
                                             <a routerLink="../detail/{{hl.id}}"  class="image">
                                                 <img class="pic-1" src="{{hl.img}}">
@@ -30,13 +47,21 @@
                                             <a class="add-to-cart" (click)="addtoCart(hl)">Thêm vào giỏ hàng</a>
                                         </div>
                                     </div>
+                                    
+                                    
                                 </div>			
 	
                             </div>	
                             
                         </ng-template> 
                         <ng-template carouselSlide >
-                            <div class="row mb-3" >  
+                            <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '369px',
+                                width:'224px',
+                                border: '1px solid white'
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                            <div class="row mb-3" *ngIf="!loader" >  
                             
                                 <div class="col-sm-3"  *ngFor="let hl of listProductHighlight">
                                     <div class="product-grid">

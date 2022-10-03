@@ -38,15 +38,27 @@ export class TieudiemComponent implements OnInit {
 
 
 listNews:any=[];
-listNewsSlide:any=[]
+listNewsSlide:any=[];
+totalLength:any;
+page:number=1;
+public labels:any={   
+  previousLabel:'',
+  nextLabel:'',
+
+}
   constructor( private newsService:NewsService) { }
   ngOnInit(): void {
     this.getNews()
     this.getNewsSlide();
   }
+  loader=true;
   getNews(){
     return this.newsService.getNews().subscribe((data:any)=>{
-      this.listNews=data;
+      setTimeout(()=>{
+        this.listNews=data;
+
+        this.loader=false;
+      },2000)
     })
   }
   getNewsSlide(){

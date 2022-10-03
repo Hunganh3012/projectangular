@@ -15,7 +15,9 @@ var admin_editproduct_component_1 = require("./admin-editproduct/admin-editprodu
 var admin_product_component_1 = require("./admin-product/admin-product.component");
 var admin_component_1 = require("./admin.component");
 var dasboard_component_1 = require("./dasboard/dasboard.component");
+var admin_news_component_1 = require("./admin-news/admin-news.component");
 var sidebar_component_1 = require("./sidebar/sidebar.component");
+var admin_addnews_component_1 = require("./admin-addnews/admin-addnews.component");
 var Adminroutes = [
     {
         path: '',
@@ -32,6 +34,14 @@ var Adminroutes = [
             {
                 path: 'dasboard',
                 component: dasboard_component_1.DasboardComponent
+            },
+            {
+                path: 'admin-news',
+                component: admin_news_component_1.AdminNewsComponent
+            },
+            {
+                path: 'admin-addnews',
+                component: admin_addnews_component_1.AdminAddnewsComponent
             },
             {
                 path: 'admin-product',

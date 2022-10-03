@@ -28,6 +28,9 @@ var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
 var dangnhap_component_1 = require("./dangnhap/dangnhap.component");
 var dangky_component_1 = require("./dangky/dangky.component");
 var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
+var news_detail_component_1 = require("./news-detail/news-detail.component");
+var tuyendung_component_1 = require("./tuyendung/tuyendung.component");
+var tuyendungchitiet_component_1 = require("./tuyendungchitiet/tuyendungchitiet.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -39,7 +42,10 @@ var AppModule = /** @class */ (function () {
                 wishlist_component_1.WishlistComponent,
                 dangnhap_component_1.DangnhapComponent,
                 dangky_component_1.DangkyComponent,
-                quenmatkhau_component_1.QuenmatkhauComponent
+                quenmatkhau_component_1.QuenmatkhauComponent,
+                news_detail_component_1.NewsDetailComponent,
+                tuyendung_component_1.TuyendungComponent,
+                tuyendungchitiet_component_1.TuyendungchitietComponent
             ],
             imports: [
                 forms_1.FormsModule,

@@ -5,9 +5,19 @@
                 <div id="demo" class="carousel__slide" >
         
                     <!-- Indicators -->
+                    
                     <owl-carousel-o [options]="customOptions">
+                            
+                        
                         <ng-template carouselSlide *ngFor="let newsHL of listNewsSlide">
-                            <div class="item" >
+                            <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '550px',
+                                width:'890px',
+                                border: '1px solid white'
+                                
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                            <div *ngIf="!loader" class="item" >
                                 <article class="featured">
                                     <div class="overlay"></div>
                                     <figure>
@@ -21,7 +31,7 @@
                             </div>
                         </ng-template>  
 
-                        </owl-carousel-o>
+                    </owl-carousel-o>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-sm-4 col-xs-12"  *ngFor="let newsrow of listNewsSlide">
@@ -59,8 +69,16 @@
                 <aside>
                     <h1 class="aside-title">Tin phổ biến </h1>
                     <div class="aside-body">
-                        <article class="article-mini" *ngFor="let newsfm of listNews">
-                            <div class="inner">
+                   
+                            <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '60px',
+                                width:'430px',
+                                border: '1px solid white'
+                                
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                        <article class="article-mini" *ngFor="let newsfm of listNews| paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength }">
+                            <div  class="inner" *ngIf="!loader">
                                 <figure>
                                     <a routerLink="/web/news-detail/{{newsfm.id}}">
                                         <img src="{{newsfm.image}}" alt="Sample Article">
@@ -223,7 +241,7 @@
                     <div class="text-uppercase">Tin mới nhất</div>
                 </div>
               </div>
-              <div class="row" *ngFor="let news of listNews">
+              <div class="row" *ngFor="let news of listNews | paginate: { itemsPerPage: 4, currentPage: page,totalItems:totalLength }">
                 <article class="col-md-12 article-list mb-2">
                   <div class="inner">
                     <figure>
@@ -252,6 +270,15 @@
                 
                 
               </div>
+              <div class="container pag-fix">
+                <pagination-controls 
+
+                (pageChange)="page = $event"
+                style="text-align:center"
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                ></pagination-controls>
+                </div>
             </div>
             <div class="col-md-4 sidebar">
               <aside>

@@ -9,8 +9,9 @@ import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { adminComponent } from './admin.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { DasboardComponent } from './dasboard/dasboard.component';
-
+import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminAddnewsComponent } from './admin-addnews/admin-addnews.component';
 
 const Adminroutes: Routes = [
     {
@@ -28,6 +29,14 @@ const Adminroutes: Routes = [
         {
           path:'dasboard',
           component:DasboardComponent
+        },
+        {
+          path:'admin-news',
+          component:AdminNewsComponent
+        },
+        {
+          path:'admin-addnews',
+          component:AdminAddnewsComponent
         },
         {
           path:'admin-product',

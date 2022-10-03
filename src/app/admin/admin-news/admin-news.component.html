@@ -1,0 +1,50 @@
+<div class="p-3 " >
+    <!-- <h1 class="header title admin-highlight">
+        Danh sách quản lý  sản phẩm
+    </h1> -->
+
+    <a routerLink="/admin/admin-addnews" class="addproduct-link float-right">Thêm mới</a>
+
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Ảnh bài viết</th>
+                        <th class="text-left">Tên bài viết</th>
+                        <th>Ngày đăng</th>
+                        <th>Tác giả</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor=" let list of listNews">
+                    <tr ng-app="">
+                        <td>{{list.id}}</td>
+                        <td><img src="{{list.image}}" alt="" class="anhsanpham"></td>
+                        <td class="text-left">{{list.name}}</td>
+                        <td>{{list.days}}</td>
+                        <td>*</td>
+                      
+                        <td>
+                            <button routerLink="" class="buttonclick"> <i class="fa-solid fa-pen-to-square"></i></button> 
+                            <button class="buttonclick" ><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>  
+    <!-- <div class="container pag-fix">
+        <pagination-controls 
+
+        (pageChange)="page = $event"
+        style="text-align:center"
+        [previousLabel]="labels.previousLabel"
+        [nextLabel]="labels.nextLabel"
+        ></pagination-controls>
+    </div> -->
+</div>

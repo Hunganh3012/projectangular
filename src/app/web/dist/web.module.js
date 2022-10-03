@@ -27,6 +27,7 @@ var ng_dynamic_breadcrumb_1 = require("ng-dynamic-breadcrumb");
 var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var ngx_pagination_1 = require("ngx-pagination");
+var ngx_skeleton_loader_1 = require("ngx-skeleton-loader");
 var WebModule = /** @class */ (function () {
     function WebModule() {
     }
@@ -54,7 +55,8 @@ var WebModule = /** @class */ (function () {
                 ngx_pagination_1.NgxPaginationModule,
                 ngx_owl_carousel_o_1.CarouselModule,
                 forms_1.ReactiveFormsModule,
-                ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule
+                ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule,
+                ngx_skeleton_loader_1.NgxSkeletonLoaderModule
             ],
             providers: [common_2.CurrencyPipe,]
         })

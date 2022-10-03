@@ -41,6 +41,7 @@
     "ngx-echarts": "^14.0.0",
     "ngx-owl-carousel-o": "^14.0.1",
     "ngx-pagination": "^6.0.2",
+    "ngx-skeleton-loader": "^6.0.0",
     "ngx-toastr": "^15.0.0",
     "postcss-loader": "^7.0.1",
     "rxjs": "~7.5.0",

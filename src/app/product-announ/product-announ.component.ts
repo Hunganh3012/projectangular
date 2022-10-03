@@ -20,13 +20,7 @@ export class ProductAnnounComponent implements OnInit {
     nextLabel:'',
 
   }
-  // listCart={
-  //   name:'',
-  //   priceold:'',
-  //   sale:'',
-  //   img:'',
 
-  // };
   getFourProduct:any=[];
   totalLength:any;
   page:number=1;
@@ -37,12 +31,14 @@ export class ProductAnnounComponent implements OnInit {
     private toastr:ToastrService) {
     
     
-  }
+    }
+
   ngOnInit(): void {
     
     this.getProduct();
     this.getProductHighlight();
     this.cartDetail();
+    
   
 
     
@@ -83,10 +79,14 @@ export class ProductAnnounComponent implements OnInit {
 
 
   }
+  loader=true;
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
-      this.listProduct= data;
-      this.totalLength=data.length;
+      setTimeout(()=>{
+        this.listProduct= data;
+        this.totalLength=data.length;
+        this.loader=false;
+      },2000)
       // console.log(this.listProduct)
     })
   }
