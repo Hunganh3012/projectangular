@@ -14,7 +14,6 @@ import { AdminOptionComponent } from './admin-option/admin-option.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { HeadComponent } from '../head/head.component';
-
 import { FileUploadModule } from "ng2-file-upload"; 
 import {CloudinaryModule} from '@cloudinary/ng';
 import { NgxDropzoneModule } from 'ngx-dropzone';
@@ -22,9 +21,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
 import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { AdminAddnewsComponent } from './admin-addnews/admin-addnews.component';
-// import {CloudinaryModule} from '@cloudinary/angular';
-// import { NgxPaginationModule } from 'ngx-pagination';
 
+// import { NgxPaginationModule } from 'ngx-pagination';
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
   allowNegative: false,
@@ -45,6 +43,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     DasboardComponent,
     AdminNewsComponent,
     AdminAddnewsComponent,
+    
     // HeadComponent
     // WishlistComponent,
   ],
@@ -56,7 +55,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-
     NgxDropzoneModule,
     CurrencyMaskModule
   ],

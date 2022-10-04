@@ -25,7 +25,8 @@ var ng_1 = require("@cloudinary/ng");
 var ngx_dropzone_1 = require("ngx-dropzone");
 var ng2_currency_mask_1 = require("ng2-currency-mask");
 var ng2_currency_mask_2 = require("ng2-currency-mask");
-// import {CloudinaryModule} from '@cloudinary/angular';
+var admin_news_component_1 = require("./admin-news/admin-news.component");
+var admin_addnews_component_1 = require("./admin-addnews/admin-addnews.component");
 // import { NgxPaginationModule } from 'ngx-pagination';
 exports.CustomCurrencyMaskConfig = {
     align: 'left',
@@ -49,6 +50,8 @@ var AdminModule = /** @class */ (function () {
                 admin_option_component_1.AdminOptionComponent,
                 sidebar_component_1.SidebarComponent,
                 dasboard_component_1.DasboardComponent,
+                admin_news_component_1.AdminNewsComponent,
+                admin_addnews_component_1.AdminAddnewsComponent,
             ],
             imports: [
                 common_1.CommonModule,

@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Input } from '@angular/core';
 import {Cloudinary, CloudinaryImage, } from '@cloudinary/url-gen';
 import { FileUploadService } from 'src/app/file-upload.service';
-
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import * as $ from 'jquery';
 import {
   AbstractControl,
@@ -21,6 +21,8 @@ import {
   providers:[FileUploadService]
 })
 export class AdminAddproductComponent implements OnInit {
+  editor = ClassicEditor;
+  data:any ='' ;
   count = 0;
   rate = 5000;
   lastClick = Date.now() - this.rate;
@@ -85,10 +87,10 @@ export class AdminAddproductComponent implements OnInit {
           imageapi=response.secure_url;
           this.listadd.img=imageapi;
           this.AdminService.addProduct(this.listadd).subscribe(data =>{
-            this.Router.navigateByUrl('/admin/admin-product')
           })
+          this.Router.navigateByUrl('/admin/admin-product')
           this.toastr.success('Thêm thành công','thông báo');
-          })
+        })
         //Success add product
       }else{
         this.toastr.error('Vui lòng nhập thông tin','thông báo');

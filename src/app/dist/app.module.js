@@ -31,6 +31,8 @@ var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
 var news_detail_component_1 = require("./news-detail/news-detail.component");
 var tuyendung_component_1 = require("./tuyendung/tuyendung.component");
 var tuyendungchitiet_component_1 = require("./tuyendungchitiet/tuyendungchitiet.component");
+var my_filter_pipe_1 = require("./my-filter.pipe");
+var ng2_ckeditor_1 = require("ng2-ckeditor");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -45,7 +47,8 @@ var AppModule = /** @class */ (function () {
                 quenmatkhau_component_1.QuenmatkhauComponent,
                 news_detail_component_1.NewsDetailComponent,
                 tuyendung_component_1.TuyendungComponent,
-                tuyendungchitiet_component_1.TuyendungchitietComponent
+                tuyendungchitiet_component_1.TuyendungchitietComponent,
+                my_filter_pipe_1.MyFilterPipe
             ],
             imports: [
                 forms_1.FormsModule,
@@ -58,6 +61,7 @@ var AppModule = /** @class */ (function () {
                 ngx_currency_1.NgxCurrencyModule,
                 ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule,
                 forms_1.ReactiveFormsModule,
+                ng2_ckeditor_1.CKEditorModule,
                 ng2_currency_mask_1.CurrencyMaskModule,
                 ngx_toastr_1.ToastrModule.forRoot({
                     timeOut: 1000,

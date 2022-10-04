@@ -27,6 +27,12 @@ body{
 
     
 }
+p {
+    font-family: Lato;
+  }
+  ::ng-deep .ck-editor__editable {
+       min-height: 200px !important;
+  }
 table, th, td {
     border-top:1px solid black;
   }

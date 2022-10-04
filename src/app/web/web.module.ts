@@ -20,6 +20,7 @@ import { CurrencyPipe } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     CarouselModule,
     ReactiveFormsModule,
     NgDynamicBreadcrumbModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    CKEditorModule
   ],
   providers: [CurrencyPipe,],
 })

@@ -4,19 +4,27 @@ import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2'
 import * as $ from 'jquery';
+import * as ClassicEditorBuild from "@ckeditor/ckeditor5-build-classic";
+
 @Component({
   selector: 'app-admin-product',
   templateUrl: './admin-product.component.html',
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent implements OnInit {
+
+  public onReady(editor:any) {
+    editor.ui.view.editable.element.parentElement.insertBefore(
+      editor.ui.view.toolbar.element,
+      editor.ui.view.editable.element
+    );
+  }
   listproductAdmin:any=[];
   totalLength:any;
   page:number=1;
   public labels:any={   
     previousLabel:'',
     nextLabel:'',
-
   }
   constructor( private AdminService:AdminService, private toastr:ToastrService) { }
   ngOnInit(): void {

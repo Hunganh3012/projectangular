@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.AdminAddproductComponent = void 0;
 var core_1 = require("@angular/core");
 var file_upload_service_1 = require("src/app/file-upload.service");
+var ClassicEditor = require("@ckeditor/ckeditor5-build-classic");
 var forms_1 = require("@angular/forms");
 var AdminAddproductComponent = /** @class */ (function () {
     function AdminAddproductComponent(AdminService, Router, toastr, formBuilder, uploadfileService) {
@@ -17,6 +18,8 @@ var AdminAddproductComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.formBuilder = formBuilder;
         this.uploadfileService = uploadfileService;
+        this.editor = ClassicEditor;
+        this.data = '';
         this.count = 0;
         this.rate = 5000;
         this.lastClick = Date.now() - this.rate;
@@ -68,8 +71,8 @@ var AdminAddproductComponent = /** @class */ (function () {
                     imageapi = response.secure_url;
                     _this.listadd.img = imageapi;
                     _this.AdminService.addProduct(_this.listadd).subscribe(function (data) {
-                        _this.Router.navigateByUrl('/admin/admin-product');
                     });
+                    _this.Router.navigateByUrl('/admin/admin-product');
                     _this.toastr.success('Thêm thành công', 'thông báo');
                 });
                 //Success add product

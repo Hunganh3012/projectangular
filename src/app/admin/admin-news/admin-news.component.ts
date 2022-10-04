@@ -17,4 +17,5 @@ export class AdminNewsComponent implements OnInit {
       this.listNews=data;
     })
   }
+  
 }

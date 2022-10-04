@@ -20,6 +20,9 @@ var AdminProductComponent = /** @class */ (function () {
             nextLabel: ''
         };
     }
+    AdminProductComponent.prototype.onReady = function (editor) {
+        editor.ui.view.editable.element.parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.view.editable.element);
+    };
     AdminProductComponent.prototype.ngOnInit = function () {
         this.getProduct();
     };

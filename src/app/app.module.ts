@@ -35,6 +35,8 @@ import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { TuyendungComponent } from './tuyendung/tuyendung.component';
 import { TuyendungchitietComponent } from './tuyendungchitiet/tuyendungchitiet.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { MyFilterPipe } from './my-filter.pipe';
+import { CKEditorModule } from 'ng2-ckeditor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     QuenmatkhauComponent,
     NewsDetailComponent,
     TuyendungComponent,
-    TuyendungchitietComponent
+    TuyendungchitietComponent,
+    MyFilterPipe
   ],
   imports: [
     FormsModule,
@@ -58,7 +61,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     NgxCurrencyModule,
     NgDynamicBreadcrumbModule,
     ReactiveFormsModule,
-   
+    CKEditorModule ,
     CurrencyMaskModule,
     ToastrModule.forRoot(
       {
