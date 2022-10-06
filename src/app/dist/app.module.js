@@ -17,7 +17,6 @@ var admin_component_1 = require("./admin/admin.component");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var ngx_pagination_1 = require("ngx-pagination");
-var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -32,7 +31,6 @@ var news_detail_component_1 = require("./news-detail/news-detail.component");
 var tuyendung_component_1 = require("./tuyendung/tuyendung.component");
 var tuyendungchitiet_component_1 = require("./tuyendungchitiet/tuyendungchitiet.component");
 var my_filter_pipe_1 = require("./my-filter.pipe");
-var ng2_ckeditor_1 = require("ng2-ckeditor");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -61,7 +59,6 @@ var AppModule = /** @class */ (function () {
                 ngx_currency_1.NgxCurrencyModule,
                 ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule,
                 forms_1.ReactiveFormsModule,
-                ng2_ckeditor_1.CKEditorModule,
                 ng2_currency_mask_1.CurrencyMaskModule,
                 ngx_toastr_1.ToastrModule.forRoot({
                     timeOut: 1000,
@@ -72,7 +69,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_2.HashLocationStrategy }],
+            providers: [common_1.CurrencyPipe],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
