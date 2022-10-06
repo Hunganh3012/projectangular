@@ -709,6 +709,9 @@
   .btn-magz.white:focus, .btn-magz.white:hover {
     color: #034da2 !important;
   }
+  .fixmg-top{
+    margin-top: 50px;
+  }
   
   /* Social */
   .social {
@@ -2226,7 +2229,7 @@
   @media screen and (max-width: 425px) {
     .article-list figure {
       width: 100%;
-      height: 200px;
+      height: 405px;
       margin-bottom: 10px;
     }
     .article-list .details {

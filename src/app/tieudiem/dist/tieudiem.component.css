@@ -804,6 +804,10 @@ section.search .search-result {
   color: #034da2 !important;
 }
 
+.fixmg-top {
+  margin-top: 50px;
+}
+
 /* Social */
 .social {
   padding: 0;
@@ -2586,7 +2590,7 @@ aside .ads figcaption {
 @media screen and (max-width: 425px) {
   .article-list figure {
     width: 100%;
-    height: 200px;
+    height: 405px;
     margin-bottom: 10px;
   }
 

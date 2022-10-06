@@ -69,8 +69,15 @@ body{
 }
 // -----------------------------TRANG CHỦ----------------------------------
 // --------------------------------Slider---------------
-// ---------------prev,next
-
+// -----------t----prev,next
+.header-fixed{
+    z-index: 10;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid rgba(176, 176, 176, 0.556);
+}
 .button-log{
     border: none;
     background-color: #034DA2;
@@ -80,6 +87,13 @@ body{
     color: #ffffff;
     border-radius: 10px;
 }
+li a:focus{
+        border-bottom: 1px solid #034DA2;
+    }
+
+
+
+
 // -----------------------------------END
 .header{
     position: relative;

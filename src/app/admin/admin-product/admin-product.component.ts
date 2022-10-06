@@ -14,7 +14,8 @@ type objField = { name: string };
 })
 export class AdminProductComponent implements OnInit {
   fields:any = {
-    name: ''
+    name: '',
+    
   };
   filter1 = {};
   filter = {};
