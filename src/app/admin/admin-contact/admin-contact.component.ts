@@ -9,6 +9,17 @@ import Swal from 'sweetalert2'
   styleUrls: ['./admin-contact.component.scss']
 })
 export class AdminContactComponent implements OnInit {
+  fields:any = {
+    name: '',
+    
+  };
+  filter1 = {};
+  filter = {};
+
+  updateFilters() {
+    Object.keys(this.fields).forEach(key => this.fields[key] === '' ? delete this.fields[key] : key);
+    this.filter = Object.assign({}, this.fields);
+  }
   list:any=[];
   page:number=1;
   totalLength:any;

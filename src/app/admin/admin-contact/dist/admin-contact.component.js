@@ -13,6 +13,11 @@ var AdminContactComponent = /** @class */ (function () {
     function AdminContactComponent(AppService, toastr) {
         this.AppService = AppService;
         this.toastr = toastr;
+        this.fields = {
+            name: ''
+        };
+        this.filter1 = {};
+        this.filter = {};
         this.list = [];
         this.page = 1;
         this.selectlist = [];
@@ -24,6 +29,11 @@ var AdminContactComponent = /** @class */ (function () {
         this.numId = 0;
         this.parentSelector = false;
     }
+    AdminContactComponent.prototype.updateFilters = function () {
+        var _this = this;
+        Object.keys(this.fields).forEach(function (key) { return _this.fields[key] === '' ? delete _this.fields[key] : key; });
+        this.filter = Object.assign({}, this.fields);
+    };
     AdminContactComponent.prototype.ngOnInit = function () {
         this.renderContent();
     };

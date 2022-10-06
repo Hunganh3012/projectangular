@@ -21,7 +21,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
 import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { AdminAddnewsComponent } from './admin-addnews/admin-addnews.component';
-
+import { MyFilterPipe } from '../my-filter.pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -43,7 +43,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     DasboardComponent,
     AdminNewsComponent,
     AdminAddnewsComponent,
-    
+    MyFilterPipe
     // HeadComponent
     // WishlistComponent,
   ],

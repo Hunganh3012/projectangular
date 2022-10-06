@@ -2,10 +2,15 @@
 
         <div class="table-responsive">
             <div class="table-wrapper">
-                <!-- <div class="table-title">
-                    <label> Tùy chọn: <button class="deletebutton" (click)="clearAll()" ></button> </label>                 
-                </div> -->
+                <div class="input-group col-sm-3 float-right mb-2" >
+                    <input type="search" class=" form-control  " placeholder="Search" 
+                    aria-label="Search" aria-describedby="search-addon"    [(ngModel)]="fields.lastname"
+                    (ngModelChange)="updateFilters()"/>
+                    <button type="button" class="btn btn-outline-primary">search</button>
+                </div>
+
                 <table class="table table-striped table-hover">
+                    
                     <thead>
                         <tr>
                             <th><input type="checkbox" value="-1" (change)="onChangelist($event)" [(ngModel)]="parentSelector"></th>
@@ -18,7 +23,7 @@
                             <th>Xử lý</th>
                         </tr>
                     </thead>
-                    <tbody *ngFor="let item of list | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength}">
+                    <tbody *ngFor="let item of list |myFilter:filter| paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength}">
                         <tr>
                             <td><input type="checkbox"
                                 [checked]="item.select" value="{{item.id}}"  (change)="onChangelist($event)"></td>

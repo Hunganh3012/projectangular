@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2'
 import * as $ from 'jquery';
 import * as ClassicEditorBuild from "@ckeditor/ckeditor5-build-classic";
+type objField = { name: string };
 
 @Component({
   selector: 'app-admin-product',
@@ -12,13 +13,18 @@ import * as ClassicEditorBuild from "@ckeditor/ckeditor5-build-classic";
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent implements OnInit {
+  fields:any = {
+    name: ''
+  };
+  filter1 = {};
+  filter = {};
 
-  public onReady(editor:any) {
-    editor.ui.view.editable.element.parentElement.insertBefore(
-      editor.ui.view.toolbar.element,
-      editor.ui.view.editable.element
-    );
+  updateFilters() {
+    Object.keys(this.fields).forEach(key => this.fields[key] === '' ? delete this.fields[key] : key);
+    this.filter = Object.assign({}, this.fields);
   }
+
+
   listproductAdmin:any=[];
   totalLength:any;
   page:number=1;

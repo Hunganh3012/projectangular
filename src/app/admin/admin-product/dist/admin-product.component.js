@@ -13,6 +13,11 @@ var AdminProductComponent = /** @class */ (function () {
     function AdminProductComponent(AdminService, toastr) {
         this.AdminService = AdminService;
         this.toastr = toastr;
+        this.fields = {
+            name: ''
+        };
+        this.filter1 = {};
+        this.filter = {};
         this.listproductAdmin = [];
         this.page = 1;
         this.labels = {
@@ -20,8 +25,10 @@ var AdminProductComponent = /** @class */ (function () {
             nextLabel: ''
         };
     }
-    AdminProductComponent.prototype.onReady = function (editor) {
-        editor.ui.view.editable.element.parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.view.editable.element);
+    AdminProductComponent.prototype.updateFilters = function () {
+        var _this = this;
+        Object.keys(this.fields).forEach(function (key) { return _this.fields[key] === '' ? delete _this.fields[key] : key; });
+        this.filter = Object.assign({}, this.fields);
     };
     AdminProductComponent.prototype.ngOnInit = function () {
         this.getProduct();

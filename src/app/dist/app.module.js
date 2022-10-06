@@ -17,6 +17,7 @@ var admin_component_1 = require("./admin/admin.component");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var ngx_pagination_1 = require("ngx-pagination");
+var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -30,7 +31,6 @@ var quenmatkhau_component_1 = require("./quenmatkhau/quenmatkhau.component");
 var news_detail_component_1 = require("./news-detail/news-detail.component");
 var tuyendung_component_1 = require("./tuyendung/tuyendung.component");
 var tuyendungchitiet_component_1 = require("./tuyendungchitiet/tuyendungchitiet.component");
-var my_filter_pipe_1 = require("./my-filter.pipe");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -46,7 +46,6 @@ var AppModule = /** @class */ (function () {
                 news_detail_component_1.NewsDetailComponent,
                 tuyendung_component_1.TuyendungComponent,
                 tuyendungchitiet_component_1.TuyendungchitietComponent,
-                my_filter_pipe_1.MyFilterPipe
             ],
             imports: [
                 forms_1.FormsModule,
@@ -69,7 +68,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe, { provide: common_1.APP_BASE_HREF, useValue: '/' }],
+            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_2.HashLocationStrategy }],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

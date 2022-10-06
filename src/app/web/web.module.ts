@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web.component';
@@ -49,6 +49,6 @@ import { CKEditorModule } from 'ng2-ckeditor';
     NgxSkeletonLoaderModule,
     CKEditorModule
   ],
-  providers: [CurrencyPipe,{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [CurrencyPipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
 })
 export class WebModule { }
