@@ -65,7 +65,7 @@
                                 <div class="col-sm-3"  *ngFor="let hl of listProductHighlight">
                                     <div class="product-grid">
                                         <div class="product-image">
-                                            <a routerLink="../web/product-announ/detail/{{hl.id}}"  class="image">
+                                            <a routerLink="../detail/{{hl.id}}"  class="image">
                                                 <img class="pic-1" src="{{hl.img}}">
                                             </a>
                                             <span class="product-discount-label">-{{hl.sale}}%</span>
@@ -110,7 +110,7 @@
                     border: '1px solid white'
                     
                   }" *ngIf="loader"></ngx-skeleton-loader> 
-                <div class="col-md-3 col-sm-3 col-xs-3 mb-4"  *ngFor="let item of listProduct | paginate: { itemsPerPage: 12, currentPage: page,totalItems:totalLength }">
+                <div class="col-md-3 col-sm-3 col-xs-3 mb-4"  *ngFor="let item of listProduct|  paginate: { itemsPerPage: 12, currentPage: page,totalItems:totalLength }">
                     <div *ngIf="!loader" class="product-grid">
                         <div class="product-image">
                             <a routerLink="../detail/{{item.id}}"  class="image">

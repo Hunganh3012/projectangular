@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
+type objField = { name: string };
 @Component({
   selector: 'app-product-announ',
   templateUrl: './product-announ.component.html',

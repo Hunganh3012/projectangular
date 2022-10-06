@@ -43,7 +43,6 @@ var WebModule = /** @class */ (function () {
                 home_page_component_1.HomePageComponent,
                 tieudiem_component_1.TieudiemComponent,
                 not_found_error_component_1.NotFoundErrorComponent,
-                // adminComponent,
                 product_announ_component_1.ProductAnnounComponent,
                 head_component_1.HeadComponent,
                 detail_component_1.DetailComponent,

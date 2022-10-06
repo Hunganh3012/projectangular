@@ -21,7 +21,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CKEditorModule } from 'ng2-ckeditor';
-
+import { MyFilterPipe } from '../my-filter.pipe';
 @NgModule({
   declarations: [
     WebComponent,
@@ -32,7 +32,6 @@ import { CKEditorModule } from 'ng2-ckeditor';
     HomePageComponent,
     TieudiemComponent,
     NotFoundErrorComponent,
-    // adminComponent,
     ProductAnnounComponent,
     HeadComponent,
     DetailComponent,

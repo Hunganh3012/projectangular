@@ -43,7 +43,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     DasboardComponent,
     AdminNewsComponent,
     AdminAddnewsComponent,
-    MyFilterPipe
+ MyFilterPipe   
     // HeadComponent
     // WishlistComponent,
   ],
