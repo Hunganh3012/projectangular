@@ -77,7 +77,7 @@ import { MyFilterPipe } from './my-filter.pipe';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe],
+  providers: [CurrencyPipe,{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

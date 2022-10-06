@@ -69,7 +69,7 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            providers: [common_1.CurrencyPipe],
+            providers: [common_1.CurrencyPipe, { provide: common_1.APP_BASE_HREF, useValue: '/' }],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
