@@ -35,6 +35,10 @@ table, th, td {
 .ngx-pagination{
     text-align: center;
 }
+.custombutton{
+    border: 1px solid #034DA2;;
+    &:hover{background-color: #034DA2;color: white;}
+}
 .anhsanpham{
     text-align: center;
     width: 100px;

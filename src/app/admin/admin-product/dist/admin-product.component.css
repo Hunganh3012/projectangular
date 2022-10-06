@@ -33,6 +33,14 @@ table, th, td {
   text-align: center;
 }
 
+.custombutton {
+  border: 1px solid #034DA2;
+}
+.custombutton:hover {
+  background-color: #034DA2;
+  color: white;
+}
+
 .anhsanpham {
   text-align: center;
   width: 100px;

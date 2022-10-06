@@ -76,7 +76,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [CurrencyPipe,  {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CurrencyPipe],
+    // providers: [CurrencyPipe,  {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
