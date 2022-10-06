@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web.component';
@@ -49,6 +49,6 @@ import { CKEditorModule } from 'ng2-ckeditor';
     NgxSkeletonLoaderModule,
     CKEditorModule
   ],
-  providers: [CurrencyPipe,],
+  providers: [CurrencyPipe,{provide: APP_BASE_HREF, useValue: '/'}],
 })
 export class WebModule { }

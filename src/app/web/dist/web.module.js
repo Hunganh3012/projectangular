@@ -60,7 +60,7 @@ var WebModule = /** @class */ (function () {
                 ngx_skeleton_loader_1.NgxSkeletonLoaderModule,
                 ng2_ckeditor_1.CKEditorModule
             ],
-            providers: [common_2.CurrencyPipe,]
+            providers: [common_2.CurrencyPipe, { provide: common_1.APP_BASE_HREF, useValue: '/' }]
         })
     ], WebModule);
     return WebModule;
