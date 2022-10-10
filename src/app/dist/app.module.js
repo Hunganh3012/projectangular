@@ -17,7 +17,6 @@ var admin_component_1 = require("./admin/admin.component");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var ngx_pagination_1 = require("ngx-pagination");
-var common_2 = require("@angular/common");
 var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var animations_1 = require("@angular/platform-browser/animations");
 var wishlist_component_1 = require("./admin/wishlist/wishlist.component");
@@ -68,8 +67,8 @@ var AppModule = /** @class */ (function () {
                 }),
             ],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
-            // providers: [CurrencyPipe],
-            providers: [common_1.CurrencyPipe, { provide: common_2.LocationStrategy, useClass: common_2.HashLocationStrategy }],
+            providers: [common_1.CurrencyPipe],
+            // providers: [CurrencyPipe,  {provide: LocationStrategy, useClass: HashLocationStrategy}],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

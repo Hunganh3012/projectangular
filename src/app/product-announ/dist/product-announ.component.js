@@ -56,6 +56,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.products = [];
         this.cartNumber = 0;
         this.productcart = [];
+        this.isDisplay = true;
     }
     ProductAnnounComponent.prototype.ngOnInit = function () {
         this.getProduct();
@@ -118,6 +119,9 @@ var ProductAnnounComponent = /** @class */ (function () {
         var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.productcart = productValue;
         this.AdminService.productmini.next(this.productcart);
+    };
+    ProductAnnounComponent.prototype.clickToggle = function () {
+        this.isDisplay = !this.isDisplay;
     };
     ProductAnnounComponent = __decorate([
         core_1.Component({

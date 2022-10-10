@@ -141,4 +141,9 @@ export class ProductAnnounComponent implements OnInit {
     this.AdminService.productmini.next(this.productcart);
 
   }
+  isDisplay=true;
+  clickToggle(){
+    this.isDisplay=!this.isDisplay;
+  }
+
 }
