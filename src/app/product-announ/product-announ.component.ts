@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
+import { IChatController, ChatParticipantType, ChatParticipantStatus } from 'ng-chat';
+import { HttpClient } from '@angular/common/http';
+
 type objField = { name: string };
 @Component({
   selector: 'app-product-announ',
@@ -11,6 +14,8 @@ type objField = { name: string };
   styleUrls: ['./product-announ.component.scss']
 })
 export class ProductAnnounComponent implements OnInit {  
+
+
   public productListcart:any=[];
   public filterCategory : any;
   listProduct:any=[];
@@ -28,7 +33,7 @@ export class ProductAnnounComponent implements OnInit {
   productincart:any=[];
   
 
-  constructor( private AdminService:AdminService,private Router:Router,private route:ActivatedRoute,
+  constructor(private http:HttpClient, private AdminService:AdminService,private Router:Router,private route:ActivatedRoute,
     private toastr:ToastrService) {
     
     
@@ -40,10 +45,12 @@ export class ProductAnnounComponent implements OnInit {
     this.getProductHighlight();
     this.cartDetail();
     
-  
+    //API CHAT
+    
 
     
   }
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -146,4 +153,7 @@ export class ProductAnnounComponent implements OnInit {
     this.isDisplay=!this.isDisplay;
   }
 
+
+  //API CHAT
+  
 }

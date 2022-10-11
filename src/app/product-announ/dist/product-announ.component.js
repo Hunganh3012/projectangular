@@ -9,7 +9,8 @@ exports.__esModule = true;
 exports.ProductAnnounComponent = void 0;
 var core_1 = require("@angular/core");
 var ProductAnnounComponent = /** @class */ (function () {
-    function ProductAnnounComponent(AdminService, Router, route, toastr) {
+    function ProductAnnounComponent(http, AdminService, Router, route, toastr) {
+        this.http = http;
         this.AdminService = AdminService;
         this.Router = Router;
         this.route = route;
@@ -62,6 +63,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.getProduct();
         this.getProductHighlight();
         this.cartDetail();
+        //API CHAT
     };
     ProductAnnounComponent.prototype.addtowlist = function (item) {
         this.AdminService.addtowishlist(item);
