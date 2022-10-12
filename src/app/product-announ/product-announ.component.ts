@@ -18,6 +18,34 @@ export class ProductAnnounComponent implements OnInit {
   messages:Message[]=[];
   value:any| undefined;
 
+  mess:any='';
+  showEmojiPicker = false;
+  set='';
+  isEmoji=true;
+  toggleEmojiPicker() {
+    this.isEmoji=false;
+    console.log(this.showEmojiPicker);
+        this.showEmojiPicker = !this.showEmojiPicker;
+  }
+
+  addEmoji(event:any) {
+    console.log(this.value)
+    const { value } = this;
+    console.log(this.value);
+    console.log(`${event.emoji.native}`)
+    const text = `${this.value}${event.emoji.native}`;
+
+    this.value = text;
+    // this.showEmojiPicker = false;
+  }
+
+  onFocus() {
+    console.log('focus');
+    this.showEmojiPicker = false;
+  }
+  onBlur() {
+    console.log('onblur')
+  }
   public productListcart:any=[];
   public filterCategory : any;
   listProduct:any=[];
@@ -63,6 +91,7 @@ export class ProductAnnounComponent implements OnInit {
     })
   }
   sendMessage() {
+    this.isEmoji=true
     this.chatService.getBotAnswer(this.value);
     this.value = '';
   }

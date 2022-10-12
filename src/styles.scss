@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "app/contact/contact.component.scss";
+@import '~@ctrl/ngx-emoji-mart/picker';
+.emoji-mart-preview{
+    height: 60px;
+}
+.emoji-mart-title-label{
+    font-size: 16px;
+}
 .ngx-pagination{
     font-size:22px;
     margin-top:20px

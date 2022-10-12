@@ -245,14 +245,26 @@
             
                         <div class="publisher bt-1 border-light">
                             <img class="avatar avatar-xs" src="https://scontent.fsgn13-4.fna.fbcdn.net/v/t1.30497-1/84628273_176159830277856_972693363922829312_n.jpg?stp=c24.0.80.80a_cp0_dst-jpg_p80x80&_nc_cat=1&ccb=1-7&_nc_sid=12b3be&_nc_ohc=iWJRX8W1jXUAX_cqrVb&_nc_ht=scontent.fsgn13-4.fna&oh=00_AT9Xbv-sQWkYFInJ3eNUY-qvLJC5pijPhnfdD3c19RXsgw&oe=636A8F19" alt="...">
-                            <input [(ngModel)]="value" (keyup.enter)="sendMessage()" class="publisher-input" type="text" placeholder="Nhập tin nhắn...">
+                            <input id="emoji-mart"name="emoji-mart" [(ngModel)]="value" (keyup.enter)="sendMessage()" class="publisher-input" type="text" placeholder="Nhập tin nhắn...">
                          
                                 <label for="file" class="publisher-btn">
                                     <i class="fa fa-paperclip file-browser">  </i>
                                 </label>
                                 <input class="d-none" type="file" name="file" id="file">
                            
-                            <a class="publisher-btn" href="#" data-abc="true"><i class="fa fa-smile"></i></a>
+                            <label for="emoji-mart">
+                                <a class="publisher-btn" (click)="toggleEmojiPicker()" href="#" data-abc="true"><i class="fa fa-smile" ></i></a>
+                            </label>
+                            <emoji-mart
+                            [hidden]="isEmoji"
+                                id="emoji-mart"
+                                class="emoji-mart"
+                                set="facebook"
+                                *ngIf="showEmojiPicker"
+                                (emojiSelect)="addEmoji($event)"
+                                [style]="{ position: 'absolute', bottom: '85%', right: '40px' }"
+                                
+                                ></emoji-mart>
                             <a (click)="sendMessage()" class="publisher-btn text-info" href="#" data-abc="true"><i class="fa fa-paper-plane"></i></a>
                         </div>
             

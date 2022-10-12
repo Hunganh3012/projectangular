@@ -2,6 +2,7 @@ $primary-color: #034DA2;
 $second-color: #111111;
 $third-color: #007F3E;
 
+
 @mixin textShadow {
     text-shadow: rgb(3, 77, 162) 1px 0px 0px, rgb(3, 77, 162) 0.540302px 0.841471px 0px, rgb(3, 77, 162) -0.416147px 0.909297px 0px, rgb(3, 77, 162) -0.989992px 0.14112px 0px, rgb(3, 77, 162) -0.653644px -0.756802px 0px, rgb(3, 77, 162) 0.283662px -0.958924px 0px, rgb(3, 77, 162) 0.96017px -0.279416px 0px;
             // background-color: #034DA2;
@@ -769,7 +770,7 @@ h4.card-title {
 .media-chat.media-chat-reverse .media-body p:not(:last-child) ,.message.to {
     float: right;
     clear: right;
-    background-color: #034DA2;
+    background-color: #2a6fbe;
     color: #fff;
 }
 .time{

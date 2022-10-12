@@ -21,6 +21,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { MyFilterPipe } from '../my-filter.pipe';
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MyFilterPipe } from '../my-filter.pipe';
     ReactiveFormsModule,
     NgDynamicBreadcrumbModule,
     NgxSkeletonLoaderModule,
-    CKEditorModule
+    CKEditorModule,
+    PickerModule
   ],
   providers: [CurrencyPipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
 })

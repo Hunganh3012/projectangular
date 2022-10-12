@@ -29,6 +29,7 @@ var ngx_owl_carousel_o_1 = require("ngx-owl-carousel-o");
 var ngx_pagination_1 = require("ngx-pagination");
 var ngx_skeleton_loader_1 = require("ngx-skeleton-loader");
 var ng2_ckeditor_1 = require("ng2-ckeditor");
+var ngx_emoji_mart_1 = require("@ctrl/ngx-emoji-mart");
 var WebModule = /** @class */ (function () {
     function WebModule() {
     }
@@ -57,7 +58,8 @@ var WebModule = /** @class */ (function () {
                 forms_1.ReactiveFormsModule,
                 ng_dynamic_breadcrumb_1.NgDynamicBreadcrumbModule,
                 ngx_skeleton_loader_1.NgxSkeletonLoaderModule,
-                ng2_ckeditor_1.CKEditorModule
+                ng2_ckeditor_1.CKEditorModule,
+                ngx_emoji_mart_1.PickerModule
             ],
             providers: [common_2.CurrencyPipe, { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }]
         })

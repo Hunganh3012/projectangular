@@ -815,7 +815,7 @@ h4.card-title {
 .media-chat.media-chat-reverse .media-body p:not(:last-child), .message.to {
   float: right;
   clear: right;
-  background-color: #034DA2;
+  background-color: #2a6fbe;
   color: #fff;
 }
 

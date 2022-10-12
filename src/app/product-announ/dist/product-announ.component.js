@@ -17,6 +17,10 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.route = route;
         this.toastr = toastr;
         this.messages = [];
+        this.mess = '';
+        this.showEmojiPicker = false;
+        this.set = '';
+        this.isEmoji = true;
         this.productListcart = [];
         this.listProduct = [];
         this.listProductHighlight = [];
@@ -61,6 +65,27 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.productcart = [];
         this.isDisplay = true;
     }
+    ProductAnnounComponent.prototype.toggleEmojiPicker = function () {
+        this.isEmoji = false;
+        console.log(this.showEmojiPicker);
+        this.showEmojiPicker = !this.showEmojiPicker;
+    };
+    ProductAnnounComponent.prototype.addEmoji = function (event) {
+        console.log(this.value);
+        var value = this.value;
+        console.log(this.value);
+        console.log("" + event.emoji.native);
+        var text = "" + this.value + event.emoji.native;
+        this.value = text;
+        // this.showEmojiPicker = false;
+    };
+    ProductAnnounComponent.prototype.onFocus = function () {
+        console.log('focus');
+        this.showEmojiPicker = false;
+    };
+    ProductAnnounComponent.prototype.onBlur = function () {
+        console.log('onblur');
+    };
     ProductAnnounComponent.prototype.ngAfterViewChecked = function () {
         this.scrollToBottom();
     };
@@ -82,6 +107,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         });
     };
     ProductAnnounComponent.prototype.sendMessage = function () {
+        this.isEmoji = true;
         this.chatService.getBotAnswer(this.value);
         this.value = '';
     };
