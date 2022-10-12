@@ -29,7 +29,7 @@ var ChatService = /** @class */ (function () {
             "Khỏe không": "Khỏe",
             "oki": "bye",
             "oke": "bye",
-            "default": "Câu hỏi của anh đã vượt qua sự hiểu biết của em"
+            "default": "Bái bai . Bửa sau nch típ"
         };
     }
     ChatService.prototype.getBotAnswer = function (msg) {
@@ -39,7 +39,7 @@ var ChatService = /** @class */ (function () {
         var botMessage = new Message('bot', this.getBotMessage(msg));
         setTimeout(function () {
             _this.conversation.next([botMessage]);
-        }, 1500);
+        }, 1000);
     };
     ChatService.prototype.getBotMessage = function (question) {
         var answer = this.messageMap[question];

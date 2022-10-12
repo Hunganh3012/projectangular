@@ -24,7 +24,7 @@ export class ChatService {
     "oki":"bye",
     "oke":"bye",
     
-    "default": "Câu hỏi của anh đã vượt qua sự hiểu biết của em"
+    "default": "Bái bai . Bửa sau nch típ"
   }
 
   getBotAnswer(msg: string) {
@@ -34,7 +34,7 @@ export class ChatService {
     
     setTimeout(()=>{
       this.conversation.next([botMessage]);
-    }, 1500);
+    }, 1000);
   }
 
   getBotMessage(question: string){

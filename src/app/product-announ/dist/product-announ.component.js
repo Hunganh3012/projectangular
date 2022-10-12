@@ -71,9 +71,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.showEmojiPicker = !this.showEmojiPicker;
     };
     ProductAnnounComponent.prototype.addEmoji = function (event) {
-        console.log(this.value);
         var value = this.value;
-        console.log(this.value);
         console.log("" + event.emoji.native);
         var text = "" + this.value + event.emoji.native;
         this.value = text;

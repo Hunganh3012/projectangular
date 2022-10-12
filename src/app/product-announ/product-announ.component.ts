@@ -16,7 +16,7 @@ type objField = { name: string };
 export class ProductAnnounComponent implements OnInit {  
   
   messages:Message[]=[];
-  value:any| undefined;
+  value:any;
 
   mess:any='';
   showEmojiPicker = false;
@@ -29,9 +29,9 @@ export class ProductAnnounComponent implements OnInit {
   }
 
   addEmoji(event:any) {
-    console.log(this.value)
+
     const { value } = this;
-    console.log(this.value);
+
     console.log(`${event.emoji.native}`)
     const text = `${this.value}${event.emoji.native}`;
 
