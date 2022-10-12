@@ -17,6 +17,7 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.route = route;
         this.toastr = toastr;
         this.messages = [];
+        this.value = '';
         this.mess = '';
         this.showEmojiPicker = false;
         this.set = '';

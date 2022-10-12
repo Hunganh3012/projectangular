@@ -16,7 +16,7 @@ type objField = { name: string };
 export class ProductAnnounComponent implements OnInit {  
   
   messages:Message[]=[];
-  value:any;
+  value:any='';
 
   mess:any='';
   showEmojiPicker = false;
