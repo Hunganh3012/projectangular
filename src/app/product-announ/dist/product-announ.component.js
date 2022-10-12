@@ -9,12 +9,14 @@ exports.__esModule = true;
 exports.ProductAnnounComponent = void 0;
 var core_1 = require("@angular/core");
 var ProductAnnounComponent = /** @class */ (function () {
-    function ProductAnnounComponent(http, AdminService, Router, route, toastr) {
+    function ProductAnnounComponent(chatService, http, AdminService, Router, route, toastr) {
+        this.chatService = chatService;
         this.http = http;
         this.AdminService = AdminService;
         this.Router = Router;
         this.route = route;
         this.toastr = toastr;
+        this.messages = [];
         this.productListcart = [];
         this.listProduct = [];
         this.listProductHighlight = [];
@@ -59,11 +61,29 @@ var ProductAnnounComponent = /** @class */ (function () {
         this.productcart = [];
         this.isDisplay = true;
     }
+    ProductAnnounComponent.prototype.ngAfterViewChecked = function () {
+        this.scrollToBottom();
+    };
+    ProductAnnounComponent.prototype.scrollToBottom = function () {
+        try {
+            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        }
+        catch (err) { }
+    };
     ProductAnnounComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.scrollToBottom();
         this.getProduct();
         this.getProductHighlight();
         this.cartDetail();
         //API CHAT
+        this.chatService.conversation.subscribe(function (val) {
+            _this.messages = _this.messages.concat(val);
+        });
+    };
+    ProductAnnounComponent.prototype.sendMessage = function () {
+        this.chatService.getBotAnswer(this.value);
+        this.value = '';
     };
     ProductAnnounComponent.prototype.addtowlist = function (item) {
         this.AdminService.addtowishlist(item);
@@ -125,6 +145,9 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.clickToggle = function () {
         this.isDisplay = !this.isDisplay;
     };
+    __decorate([
+        core_1.ViewChild('scrollMe')
+    ], ProductAnnounComponent.prototype, "myScrollContainer");
     ProductAnnounComponent = __decorate([
         core_1.Component({
             selector: 'app-product-announ',

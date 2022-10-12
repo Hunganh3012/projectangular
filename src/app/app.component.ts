@@ -21,20 +21,7 @@ export class AppComponent {
       confirmButtonText: 'Tôi trên 18 tuổi',
       cancelButtonText:'Tôi ',
       showLoaderOnConfirm: true,
-      preConfirm: (login) => {
-        return fetch(`//api.github.com/users/${login}`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(response.statusText)
-            }
-            return response.json()
-          })
-          .catch(error => {
-            Swal.showValidationMessage(
-              `Vui lòng nhập Họ và Tên`
-            )
-          })
-      }
+      
       
     })
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -6,7 +6,7 @@ import { OwlOptions,SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import { IChatController, ChatParticipantType, ChatParticipantStatus } from 'ng-chat';
 import { HttpClient } from '@angular/common/http';
-
+import {Message,ChatService} from '../chat.service'
 type objField = { name: string };
 @Component({
   selector: 'app-product-announ',
@@ -14,7 +14,9 @@ type objField = { name: string };
   styleUrls: ['./product-announ.component.scss']
 })
 export class ProductAnnounComponent implements OnInit {  
-
+  
+  messages:Message[]=[];
+  value:any| undefined;
 
   public productListcart:any=[];
   public filterCategory : any;
@@ -33,22 +35,36 @@ export class ProductAnnounComponent implements OnInit {
   productincart:any=[];
   
 
-  constructor(private http:HttpClient, private AdminService:AdminService,private Router:Router,private route:ActivatedRoute,
+  constructor(private chatService:ChatService ,private http:HttpClient, private AdminService:AdminService,private Router:Router,private route:ActivatedRoute,
     private toastr:ToastrService) {
     
     
     }
+    @ViewChild('scrollMe') private myScrollContainer:any| undefined;
 
+    ngAfterViewChecked() {        
+        this.scrollToBottom();        
+    } 
+
+    scrollToBottom(): void {
+        try {
+            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        } catch(err) { }                 
+    }
   ngOnInit(): void {
-    
+    this.scrollToBottom();
     this.getProduct();
     this.getProductHighlight();
     this.cartDetail();
     
     //API CHAT
-    
-
-    
+    this.chatService.conversation.subscribe((val:any)=>{
+      this.messages=this.messages.concat(val)
+    })
+  }
+  sendMessage() {
+    this.chatService.getBotAnswer(this.value);
+    this.value = '';
   }
 
   customOptions: OwlOptions = {

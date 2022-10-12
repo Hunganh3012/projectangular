@@ -801,7 +801,7 @@ h4.card-title {
   flex-direction: row-reverse;
 }
 
-.media-chat {
+.media-chat, .message.to, .message.from {
   padding-right: 64px;
   margin-bottom: 0;
 }
@@ -812,7 +812,7 @@ h4.card-title {
   transition: background-color 0.2s linear;
 }
 
-.media-chat.media-chat-reverse .media-body p:not(:last-child) {
+.media-chat.media-chat-reverse .media-body p:not(:last-child), .message.to {
   float: right;
   clear: right;
   background-color: #034DA2;
@@ -825,12 +825,26 @@ h4.card-title {
   color: #747d89;
 }
 
-.media-chat .media-body p {
+.media-chat .media-body p, .message.from {
   position: relative;
   padding: 6px 8px;
   margin: 4px 0;
   background-color: #f5f6f7;
   border-radius: 3px;
+}
+
+.message.from {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 7px 8px;
+  margin: 36px 13px;
+}
+
+.message.to {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 7px 20px;
+  margin: 9px 13px;
 }
 
 .border-light {

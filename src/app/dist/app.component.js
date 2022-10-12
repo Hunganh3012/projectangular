@@ -24,18 +24,7 @@ var AppComponent = /** @class */ (function () {
             showCancelButton: false,
             confirmButtonText: 'Tôi trên 18 tuổi',
             cancelButtonText: 'Tôi ',
-            showLoaderOnConfirm: true,
-            preConfirm: function (login) {
-                return fetch("//api.github.com/users/" + login)
-                    .then(function (response) {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    return response.json();
-                })["catch"](function (error) {
-                    sweetalert2_1["default"].showValidationMessage("Vui l\u00F2ng nh\u1EADp H\u1ECD v\u00E0 T\u00EAn");
-                });
-            }
+            showLoaderOnConfirm: true
         });
     };
     AppComponent = __decorate([
