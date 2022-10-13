@@ -1,0 +1,345 @@
+<section class="home">
+  <div></div>
+    <div class="container">
+        <div class="row  fixmg-top">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div id="demo" class="carousel__slide" >
+        
+                    <!-- Indicators -->
+                    
+                    <owl-carousel-o [options]="customOptions">
+                            
+                        
+                        <ng-template carouselSlide *ngFor="let newsHL of listNewsSlide">
+                            <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '550px',
+                                width:'890px',
+                                border: '1px solid white'
+                                
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                            <div *ngIf="!loader" class="item" >
+                                <article class="featured">
+                                    <div class="overlay"></div>
+                                    <figure>
+                                        <img src="{{newsHL.image}}" alt="Sample Article">
+                                    </figure>
+                                    <div class="details">
+                                        <h1><a routerLink="/web/news-detail/{{newsHL.id}}" class=" namehidden">{{newsHL.name}}</a></h1>
+                                        <div class="time introhidden">{{newsHL.intro}}</div>
+                                    </div>
+                                </article>
+                            </div>
+                        </ng-template>  
+
+                    </owl-carousel-o>
+                </div>
+                <div class="row">
+                        <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                            'border-radius': '5px',
+                            height: '500px',
+                            width:'392px',
+                            border: '1px solid white'
+                            
+                          }" *ngIf="loader"></ngx-skeleton-loader> 
+                    <div class="col-md-6 col-sm-4 col-xs-12"  *ngFor="let newsrow of listNewsSlide">
+                        <article class="article ">
+                            <div *ngIf="!loader" class=" inner">
+                                <figure>
+                                    <a routerLink="/web/news-detail/{{newsrow.id}}">
+                                        <img src="{{newsrow.image}}" alt="Sample Article">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <div class="detail">
+                                        <div class="time">{{newsrow.days}}</div>
+                                        <div class="category">Healthy</div>
+                                    </div>
+                                    <h2 class="namehidden"><a routerLink="/web/news-detail/{{newsrow.id}}">{{newsrow.name}}</a></h2>
+                                    <p class="introhidden">{{newsrow.intro}}</p>
+                                    <footer>
+                                        <a class="btn btn-primary  " routerLink="/web/news-detail/{{newsrow.id}}">
+                                                <div>Xem thêm</div>
+                                        </a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <div class="line transparent little"></div>
+ 
+                
+            </div>
+            <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
+                <div class="sidebar-title for-tablet">Sidebar</div>
+                <aside>
+                    <h1 class="aside-title">Tin phổ biến </h1>
+                    <div class="aside-body">
+                   
+                            <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                                'border-radius': '5px',
+                                height: '60px',
+                                width:'430px',
+                                border: '1px solid white'
+                                
+                              }" *ngIf="loader"></ngx-skeleton-loader> 
+                        <article class="article-mini" *ngFor="let newsfm of listNews| paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength }">
+                            <div  class="inner" *ngIf="!loader">
+                                <figure>
+                                    <a routerLink="/web/news-detail/{{newsfm.id}}">
+                                        <img src="{{newsfm.image}}" alt="Sample Article">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <h1><a routerLink="/web/news-detail/{{newsfm.id}}">
+                                        {{newsfm.name}}</a></h1>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </aside>
+
+                <aside>
+                    
+                    <ul class="nav nav-tabs nav-justified" role="tablist" >
+                        <li class="active">
+                            <a class="text-uppercase" href="#recomended" aria-controls="comments" role="tab" data-toggle="tab">
+                                <i class="ion-android-star-outline "></i> introduce
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#comments" class="text-uppercase" aria-controls="comments" role="tab" data-toggle="tab">
+                                <i class="ion-ios-chatboxes-outline"></i> Comments
+                            </a>
+                        </li> -->
+                    </ul>
+                    <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                        'border-radius': '5px',
+                        height: '750px',
+                        width:'391px',
+                        border: '1px solid white'
+                        
+                      }" *ngIf="loader"></ngx-skeleton-loader> 
+                    <div class="tab-content" *ngIf="!loader">
+                        <div class="tab-pane active" id="recomended">
+                            <article class="article-fw">
+                                <div class="inner">
+                                    <figure>
+                                        <a routerLink="/web/product">
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9GEpZpBkzpI" title="Know Your Beers In 3 Minutes - Newsy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>               
+                                         </a>
+                                    </figure>
+                                    <div class="details">
+                                        <div class="detail">
+                                            <div class="time">December 31, 2016</div>
+                                            <div class="category"><a href="category.html">Sport</a></div>
+                                        </div>
+                                        <h1><a href="single.html">Donec congue turpis vitae mauris</a></h1>
+                                        <p>
+                                            Donec congue turpis vitae mauris condimentum luctus. Ut dictum neque at egestas convallis. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="line"></div>
+                            <article class="article-mini">
+                                <div class="inner">
+                                    <figure>
+                                        <a href="single.html">
+                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="Sample Article">
+                                        </a>
+                                    </figure>
+                                    <div class="padding">
+                                        <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                                        <div class="detail">
+                                            <div class="category"><a href="category.html">Lifestyle</a></div>
+                                            <div class="time">December 22, 2016</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="article-mini">
+                                <div class="inner">
+                                    <figure>
+                                        <a href="single.html">
+                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="Sample Article">
+                                        </a>
+                                    </figure>
+                                    <div class="padding">
+                                        <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
+                                        <div class="detail">
+                                            <div class="category"><a href="category.html">Travel</a></div>
+                                            <div class="time">December 21, 2016</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="article-mini">
+                                <div class="inner">
+                                    <figure>
+                                        <a href="single.html">
+                                            <img src="https://media.istockphoto.com/photos/young-bartender-pouring-cocktails-in-a-cocktail-bar-picture-id841380972?b=1&k=20&m=841380972&s=170667a&w=0&h=vesS3_ERI1rNlhV878n-WFCBWdwmcwEmbP0q3HNxKTo=" alt="Sample Article">
+                                        </a>
+                                    </figure>
+                                    <div class="padding">
+                                        <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                                        <div class="detail">
+                                            <div class="category"><a href="category.html">Healthy</a></div>
+                                            <div class="time">December 20, 2016</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+</section>
+	<section class="category">
+        <div class="container">
+            
+          <div class="row">
+            <div class="col-md-8 text-left">
+              <div class="row">
+                <div class="line">
+                    <div class="text-uppercase">Tin mới nhất</div>
+                </div>
+              </div>
+              <ngx-skeleton-loader count="4" appearance="circle"[theme]="{ 
+                'border-radius': '5px',
+                height: '206px',
+                width:'813px',
+                border: '1px solid white'
+              }" *ngIf="loader"></ngx-skeleton-loader> 
+              <div class="row" *ngFor="let news of listNews | paginate: { itemsPerPage: 4, currentPage: page,totalItems:totalLength }">
+                <article *ngIf="!loader" class="col-md-12 article-list mb-2">
+                  <div class="inner">
+                    <figure>
+                        <a routerLink="/web/news-detail/{{news.id}}">
+                          <img src="{{news.image}}">
+                      </a>
+                    </figure>
+                    <div class="details">
+                      <div class="detail">
+                        
+                        <div class="time">{{news.days}}</div>
+                      </div>
+                      <h1 class="namehidden"><a routerLink="/web/news-detail/{{news.id}}"> {{news.name}}</a></h1>
+                      <p class="introhidden">
+                       {{news.intro}}
+                      </p>
+                      <footer>
+                        <a class="btn btn-primary Xem thêm" routerLink="/web/news-detail/{{news.id}}">
+                          <div>Xem thêm</div>
+                           
+                        </a>
+                      </footer>
+                    </div>
+                  </div>
+                </article>
+                
+                
+              </div>
+              <div class="container pag-fix">
+                <pagination-controls 
+
+                (pageChange)="page = $event"
+                style="text-align:center"
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                ></pagination-controls>
+                </div>
+            </div>
+            <div class="col-md-4 sidebar">
+              <aside>
+                <h1 class="aside-title">Đăng gần đây</h1>
+                <ngx-skeleton-loader count="1" appearance="circle"[theme]="{ 
+                    'border-radius': '5px',
+                    height: '732px',
+                    width:'392px',
+                    border: '1px solid white'
+                  }" *ngIf="loader"></ngx-skeleton-loader> 
+                <div *ngIf="!loader"class="aside-body">
+                  <article class="article-fw">
+                    <div class="inner">
+                      <figure>
+                          <a href="single.html">
+                            <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                          </a>
+                      </figure>
+                      <div class="details">
+                        <h1><a href="single.html">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit</a></h1>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="detail">
+                          <div class="time">December 26, 2016</div>
+                          <div class="category"><a href="category.html">Lifestyle</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="line"></div>
+                  <article class="article-mini">
+                    <div class="inner">
+                    <figure>
+                        <a href="single.html">
+                          <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                      </a>
+                    </figure>
+                    <div class="padding">
+                      <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                      <div class="detail">
+                        <div class="category"><a href="category.html">Lifestyle</a></div>
+                        <div class="time">December 22, 2016</div>
+                      </div>
+                    </div>
+                    </div>
+                  </article>
+                  <article class="article-mini">
+                    <div class="inner">
+                      <figure>
+                          <a href="single.html">
+                            <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                        </a>
+                      </figure>
+                      <div class="padding">
+                        <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
+                        <div class="detail">
+                          <div class="category"><a href="category.html">Travel</a></div>
+                          <div class="time">December 21, 2016</div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="article-mini">
+                    <div class="inner">
+                      <figure>
+                          <a href="single.html">
+                            <img src="https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                        </a>
+                      </figure>
+                      <div class="padding">
+                        <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                        <div class="detail">
+                          <div class="category"><a href="category.html">International</a></div>
+                          <div class="time">December 20, 2016</div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </aside>
+
+            </div>
+          </div>
+        </div>
+</section>

@@ -1,0 +1,559 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  z-index: 1;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.wrapper {
+  max-width: 1920px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.desc {
+  min-height: 93px;
+  background-image: url(../../assets/images/background-newpaper.png);
+  background-color: #034DA2;
+}
+.desc-text {
+  padding-top: 35px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.desc-bold {
+  font-weight: 600;
+}
+
+.title-h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 71px;
+  text-transform: uppercase;
+  text-shadow: #034da2 1px 0px 0px, #034da2 0.540302px 0.841471px 0px, #034da2 -0.416147px 0.909297px 0px, #034da2 -0.989992px 0.14112px 0px, #034da2 -0.653644px -0.756802px 0px, #034da2 0.283662px -0.958924px 0px, #034da2 0.96017px -0.279416px 0px;
+  color: white;
+}
+
+.detal {
+  position: relative;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #034DA2;
+  text-align: center;
+  text-transform: uppercase;
+}
+.detal::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 34%;
+  width: 70px;
+  height: 10px;
+  background-color: #007F3E;
+  transform: skewX(-25deg);
+}
+.detal::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 34%;
+  width: 70px;
+  height: 10px;
+  background-color: #007F3E;
+  transform: skewX(-25deg);
+}
+
+.contactsupport {
+  margin-top: 71px;
+  position: relative;
+}
+.contactsupport-blue1 {
+  position: absolute;
+  left: 300px;
+  top: 107px;
+  overflow: hidden;
+  opacity: 0.05;
+}
+.contactsupport-blue2 {
+  position: absolute;
+  opacity: 0.05;
+  top: 942px;
+  left: 1307px;
+  overflow: hidden;
+}
+.contactsupport-blue3 {
+  position: absolute;
+  opacity: 0.05;
+  overflow: hidden;
+}
+.contactsupport-desc {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.contactsupport-box {
+  margin-bottom: 53px;
+}
+.contactsupport-box-support {
+  padding-top: 10px;
+  height: 178px;
+  padding-left: 33px;
+  background-color: #034DA2;
+  color: #ffffff;
+}
+.contactsupport-box-support-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+  color: #FFFFFF;
+}
+.contactsupport-box-support-detail {
+  font-weight: 100;
+}
+.contactsupport-box-highlight {
+  display: flex;
+}
+.contactsupport-box-highlight-text {
+  width: 568px;
+}
+.contactsupport-box-highlight-img {
+  width: 100%;
+}
+.contactsupport-box-highlight-desc {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 52px;
+  text-transform: uppercase;
+}
+.contactsupport-box-form {
+  color: #034DA2;
+  width: 568px;
+  border: 1px solid #034DA2;
+  border-left: none;
+}
+.contactsupport-box-form-h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.contactsupport-box-form-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+.contactsupport-box-form-list {
+  margin-right: 20px;
+  display: flex;
+  flex-basis: calc(50% - 20px);
+}
+.contactsupport-box-form-list-advise {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 20px;
+  display: block;
+}
+.contactsupport-box-form-detail {
+  width: 100%;
+}
+.contactsupport-box-form-detail-namephone {
+  margin-left: 20px;
+}
+.contactsupport-box-form-input {
+  outline: none;
+  margin: 13px 0;
+  width: 100%;
+  border: 0;
+  background-color: none;
+  border-bottom: 1px solid #034DA2;
+  display: block;
+}
+.contactsupport-box-form-add {
+  display: block;
+  text-align: center;
+  margin: 0 13px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #034DA2;
+  margin-top: 30px;
+  margin-bottom: 32px;
+}
+.contactsupport-box-form-button {
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border: 0;
+  padding: 10px 24px;
+  border-radius: 45.12px;
+  background-color: #034DA2;
+  color: #ffffff;
+}
+
+.contact {
+  background-color: #034da2;
+  background-image: url(/assets/images/bạkground-contact.png);
+}
+.contact-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-item-copyright {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.contact-item-list {
+  display: flex;
+  align-items: center;
+}
+.contact-item-we {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  color: #FFFFFF;
+}
+.contact-icon {
+  cursor: pointer;
+  display: block;
+  padding: 8px;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1279px) {
+  .header-social {
+    display: none;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .header-menu-bars {
+    color: #034DA2;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 33px;
+    transform: translate(-93%, 100%);
+  }
+  .header-highlight {
+    object-fit: cover;
+    min-height: 731px;
+  }
+  .header-social {
+    display: none;
+  }
+  .header-toggle {
+    top: 100%;
+    transition: all 0.2s linear;
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+
+  .detal::before {
+    left: 26%;
+  }
+
+  .detal::after {
+    right: 26%;
+  }
+
+  .menu-toggle-list {
+    color: white;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+  .menu-toggle-item {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 1rem;
+  }
+  .menu-toggle-search {
+    display: none;
+    color: #FFFFFF;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    position: relative;
+  }
+  .menu-toggle-search-circle {
+    position: absolute;
+    top: -9px;
+  }
+  .menu-toggle-search-down {
+    color: white;
+    position: absolute;
+    left: 155px;
+    bottom: -9px;
+  }
+  .menu-language {
+    color: white;
+    padding-top: 2rem;
+    display: block;
+    font-family: "Mark Pro";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    margin-left: 16px;
+    margin-right: 6px;
+  }
+  .menu-icon-star {
+    padding: 4px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  .nav-icon-home, .nav-icon-search, .nav-language, .nav-icon-star, .nav-icon-dropdown {
+    display: none;
+  }
+  .nav-menu {
+    position: inherit;
+  }
+  .nav-menu-list {
+    display: none;
+  }
+
+  .contactsupport-desc {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .title-h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 49px;
+  }
+
+  .detal {
+    font-size: 28px;
+  }
+
+  .detal::before {
+    left: 30%;
+  }
+
+  .detal::after {
+    right: 30%;
+  }
+
+  .contactsupport-box-highlight {
+    display: block;
+  }
+
+  .contactsupport-box-highlight-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contactsupport-box-form {
+    color: #034DA2;
+    width: 100%;
+    border: 1px solid #034DA2;
+  }
+
+  .contact-item-we {
+    display: none;
+  }
+
+  .contact-item {
+    display: block;
+    text-align: center;
+  }
+  .contact-item-copyright {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .contact-item-list {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav-icon-logo {
+    width: 95px;
+  }
+
+  .header-menu-bars {
+    font-size: 26px;
+  }
+
+  .title-h1 {
+    font-size: 30px;
+  }
+
+  .contactsupport-desc {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .desc-text {
+    font-size: 17px;
+  }
+
+  .detal {
+    font-size: 18px;
+  }
+  .detal::before {
+    left: 17%;
+  }
+  .detal::after {
+    right: 17%;
+  }
+
+  .contactsupport-box-highlight-desc {
+    font-size: 17px;
+  }
+
+  .contactsupport-box-support-text {
+    font-size: 12px;
+  }
+
+  .contactsupport-box-form-item {
+    display: block;
+  }
+
+  .contactsupport-box-form-detail-namephone {
+    margin-left: 0;
+  }
+
+  .contactsupport-box-form-list {
+    margin-left: 2rem;
+  }
+
+  .contactsupport-box-form-button {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .menu-toggle-item {
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .desc-text {
+    padding-top: 3.5rem;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .title-h1 {
+    font-size: 25px;
+  }
+
+  .detal {
+    font-size: 16px;
+  }
+
+  .contactsupport-box-highlight-desc {
+    font-size: 15px;
+  }
+
+  .contactsupport-box-support-text {
+    font-size: 10px;
+  }
+
+  .contactsupport-box-form-item,
+.contactsupport-box-form-list-advise,
+.contactsupport-box-form-add {
+    font-size: 13px;
+  }
+
+  .contactsupport-box-form-button {
+    font-size: 13px;
+  }
+
+  .contact-item-copyright {
+    font-size: 15px;
+  }
+
+  .footer-bottom-content {
+    font-size: 10px;
+  }
+}
