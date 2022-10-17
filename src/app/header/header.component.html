@@ -105,9 +105,9 @@
                                 </div>
                             </div>
                     </i></a>
-                    <a class="nav-menu-item users" style="text-decoration:none; cursor:pointer; padding:10px 0px;" *ngIf="isShow">Quan tri vien
+                    <a class="nav-menu-item users" style="text-decoration:none; cursor:pointer; padding:10px 0px;" *ngIf="isShow" (click)="showdropdownadmin()">Quan tri vien
                         <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
-                        <div class="user-dropdown">
+                        <div class="user-dropdown" [hidden]="dropdownmo">
                             <span class="user-dropdown-item"><a routerLink="/admin/" >Tài khoản của tôi</a></span>
                             <span class="user-dropdown-item"><a routerLink="/web/cart/" (click)="close()" >Giỏ hàng</a></span>
                             <span class="user-dropdown-item"><a routerLink="/web/wishlist">Sản phẩm yêu thích</a></span>

@@ -25,6 +25,7 @@ var HeaderComponent = /** @class */ (function () {
         this.getCartDetail = [];
         // -----------------------Log In & Log Out--------------------------
         this.isDisplay = true;
+        this.dropdownmo = true;
         this.adminService.cartSubject.subscribe(function (data) {
             _this.totalItem = data;
         });
@@ -111,6 +112,9 @@ var HeaderComponent = /** @class */ (function () {
     };
     HeaderComponent.prototype.clickToggle = function () {
         this.isDisplay = !this.isDisplay;
+    };
+    HeaderComponent.prototype.showdropdownadmin = function () {
+        this.dropdownmo = !this.dropdownmo;
     };
     HeaderComponent.prototype.logIn = function () {
         this.authService.logIn();
