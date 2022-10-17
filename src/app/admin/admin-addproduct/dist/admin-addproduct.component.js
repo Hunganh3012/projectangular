@@ -42,7 +42,6 @@ var AdminAddproductComponent = /** @class */ (function () {
             // linkphoto: ['',[Validators.required,Validators.minLength(6),]],
             priceold: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{2,10}")]],
             sale: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{1,2}")]],
-            detail: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6),]],
             acceptTerms: [false, forms_1.Validators.requiredTrue]
         });
         //UPLOAD FILE
@@ -71,9 +70,9 @@ var AdminAddproductComponent = /** @class */ (function () {
                     imageapi = response.secure_url;
                     _this.listadd.img = imageapi;
                     _this.AdminService.addProduct(_this.listadd).subscribe(function (data) {
+                        _this.Router.navigateByUrl('/admin/admin-product');
+                        _this.toastr.success('Thêm thành công', 'thông báo');
                     });
-                    _this.Router.navigateByUrl('/admin/admin-product');
-                    _this.toastr.success('Thêm thành công', 'thông báo');
                 });
                 //Success add product
             }
@@ -83,6 +82,14 @@ var AdminAddproductComponent = /** @class */ (function () {
             }
         }
         //Upload FILE
+    };
+    AdminAddproductComponent.prototype.onChange = function ($event) {
+        console.log("onChange");
+        //this.log += new Date() + "<br />";
+    };
+    AdminAddproductComponent.prototype.onPaste = function ($event) {
+        console.log("onPaste");
+        //this.log += new Date() + "<br />";
     };
     AdminAddproductComponent.prototype.onSelect = function (event) {
         var _a;

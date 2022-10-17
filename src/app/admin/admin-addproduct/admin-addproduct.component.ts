@@ -21,6 +21,7 @@ import {
   providers:[FileUploadService]
 })
 export class AdminAddproductComponent implements OnInit {
+  ckeConfig!: CKEDITOR.config;
   editor = ClassicEditor;
   data:any ='' ;
   count = 0;
@@ -56,8 +57,7 @@ export class AdminAddproductComponent implements OnInit {
         // linkphoto: ['',[Validators.required,Validators.minLength(6),]],
         priceold: ['', [Validators.required,Validators.pattern("[0-9 ]{2,10}")]],
         sale: ['', [Validators.required, Validators.pattern("[0-9 ]{1,2}")]],
-        detail: ['', [Validators.required, Validators.minLength(6),]],
-        acceptTerms: [false, Validators.requiredTrue]
+                acceptTerms: [false, Validators.requiredTrue]
       },
     );
 
@@ -87,9 +87,9 @@ export class AdminAddproductComponent implements OnInit {
           imageapi=response.secure_url;
           this.listadd.img=imageapi;
           this.AdminService.addProduct(this.listadd).subscribe(data =>{
+            this.Router.navigateByUrl('/admin/admin-product')
+            this.toastr.success('Thêm thành công','thông báo');
           })
-          this.Router.navigateByUrl('/admin/admin-product')
-          this.toastr.success('Thêm thành công','thông báo');
         })
         //Success add product
       }else{
@@ -100,14 +100,17 @@ export class AdminAddproductComponent implements OnInit {
     
 
     //Upload FILE
-    
 
-   
-      
-
-    
   }  
+  onChange($event: any): void {
+    console.log("onChange");
+    //this.log += new Date() + "<br />";
+  }
 
+  onPaste($event: any): void {
+    console.log("onPaste");
+    //this.log += new Date() + "<br />";
+  }
   //Upload File
   file:File[]=[]
   onSelect(event:any) {

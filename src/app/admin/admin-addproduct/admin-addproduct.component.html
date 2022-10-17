@@ -48,16 +48,12 @@
                     [(ngModel)]="listadd.priceold" 
 
                      formControlName="priceold"
-                     [ngClass]="{ 'is-invalid': submitted && f['priceold'].errors }"/>
+                     [ngClass]="{ 'is-invalid': submitted && f['priceold'].errors }">
                      <div *ngIf="submitted && f['priceold'].errors" class="invalid-feedback">
-                      <div *ngIf="f['priceold'].errors['required']">Vui lòng nhập giá sản phẩm</div>
-                      <div *ngIf="f['priceold'].errors['pattern']">
-                        Giá tiền phải là số 0-9 
-                      </div>
-                    </div>
-
-
-                    
+                        <div *ngIf="f['priceold'].errors['required']">Vui lòng nhập giá sản phẩm</div>
+                        <div *ngIf="f['priceold'].errors['pattern']">Giá tiền phải là số 0-9 
+                        </div>
+                    </div> 
                 </div>
             </div>
             <div class="col-sm-6">
@@ -77,8 +73,22 @@
             </div>
         </div> 
     </div>
-    <ckeditor [(ngModel)]="data"></ckeditor>
-    <div class="form-group">
+    <div 
+    class="form-group has-feedback " 
+    style="padding:15px"
+    [ngClass]="{ 'has-error': myckeditor.invalid && myckeditor.touched }">
+    <ckeditor [(ngModel)]="listadd.detail" [ngModelOptions]="{standalone: true}"
+          #myckeditor="ngModel"
+          name="myckeditor"
+          required
+          [config]="ckeConfig" 
+          debounce="500" 
+          (paste)="onPaste($event)"
+          (change)="onChange($event)">
+    </ckeditor>
+<!-- <div *ngIf="myckeditor.invalid && myckeditor.touched" class="help-block">Required field.</div> -->
+  </div>
+    <!-- <div class="form-group">
       <label for="about" class="col-sm-3 control-label">Mô tả sẩn phẩm</label>
       <div class="col-sm-12">
         <textarea class="form-control" cols="" rows="10"  [(ngModel)]="listadd.detail"
@@ -92,7 +102,7 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>  -->
     <div class="form-group form-check">
       <input
         type="checkbox"

@@ -11,19 +11,33 @@ var core_1 = require("@angular/core");
 var $ = require("jquery");
 var forms_1 = require("@angular/forms");
 var AdminEditproductComponent = /** @class */ (function () {
-    function AdminEditproductComponent(AdminService, route, Router, toastr, uploadfileService) {
+    function AdminEditproductComponent(AdminService, route, Router, toastr, uploadfileService, formBuilder) {
         this.AdminService = AdminService;
         this.route = route;
         this.Router = Router;
         this.toastr = toastr;
         this.uploadfileService = uploadfileService;
+        this.formBuilder = formBuilder;
+        this.submitted = false;
         this.formControlExample = new forms_1.FormControl(20);
         this.edit = [];
         this.url = this.edit.img;
         this.file = [];
         this.filebefore = [];
     }
+    Object.defineProperty(AdminEditproductComponent.prototype, "f", {
+        get: function () {
+            return this.form.controls;
+        },
+        enumerable: false,
+        configurable: true
+    });
     AdminEditproductComponent.prototype.ngOnInit = function () {
+        this.form = this.formBuilder.group({
+            nameproduct: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]],
+            priceold: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{2,10}")]],
+            sale: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{1,2}")]]
+        });
         $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
@@ -37,26 +51,36 @@ var AdminEditproductComponent = /** @class */ (function () {
             _this.AdminService.getDetailProduct(data.id).subscribe(function (data) { _this.edit = data; });
         });
     };
-    AdminEditproductComponent.prototype.updateProduct = function () {
+    AdminEditproductComponent.prototype.OnSubmit = function () {
         var _this = this;
-        console.log(this.file);
+        this.submitted = true;
         var imageapi;
         //UPLOAD FILE
-        var file_data = this.file[0];
-        var data = new FormData();
-        data.append('file', file_data);
-        data.append('upload_preset', 'project-angular');
-        data.append('cloud_name', 'db1zqfcad');
-        this.uploadfileService.upload(data).subscribe(function (response) {
-            console.log(response);
-            imageapi = response.secure_url;
-            _this.edit.img = imageapi;
-            //Sửa sản phâ
-            _this.AdminService.updateProduct(_this.edit.id, _this.edit).subscribe(function (data) {
-                _this.Router.navigateByUrl('/admin/admin-product');
+        if (this.form.valid) {
+            var file_data = this.file[0];
+            var data = new FormData();
+            data.append('file', file_data);
+            data.append('upload_preset', 'project-angular');
+            data.append('cloud_name', 'db1zqfcad');
+            this.uploadfileService.upload(data).subscribe(function (response) {
+                console.log(response);
+                imageapi = response.secure_url;
+                _this.edit.img = imageapi;
+                //Sửa sản phâ
+                _this.AdminService.updateProduct(_this.edit.id, _this.edit).subscribe(function (data) {
+                    _this.Router.navigateByUrl('/admin/admin-product');
+                    _this.toastr.success('Sửa thành công', 'thông báo');
+                });
             });
-            _this.toastr.success('Sửa thành công', 'thông báo');
-        });
+        }
+    };
+    AdminEditproductComponent.prototype.onChange = function ($event) {
+        console.log("onChange");
+        //this.log += new Date() + "<br />";
+    };
+    AdminEditproductComponent.prototype.onPaste = function ($event) {
+        console.log("onPaste");
+        //this.log += new Date() + "<br />";
     };
     AdminEditproductComponent.prototype.onSelect = function (event) {
         var _a;
