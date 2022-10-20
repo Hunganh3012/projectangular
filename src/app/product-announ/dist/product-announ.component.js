@@ -85,18 +85,18 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.onBlur = function () {
         console.log('onblur');
     };
-    ProductAnnounComponent.prototype.ngAfterViewChecked = function () {
-        this.scrollToBottom();
-    };
-    ProductAnnounComponent.prototype.scrollToBottom = function () {
-        try {
-            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-        }
-        catch (err) { }
-    };
+    // @ViewChild('scrollMe') private myScrollContainer:any| undefined;
+    // ngAfterViewChecked() {        
+    //     this.scrollToBottom();        
+    // } 
+    // scrollToBottom(): void {
+    //     try {
+    //         this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    //     } catch(err) { }                 
+    // }
     ProductAnnounComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.scrollToBottom();
+        // this.scrollToBottom();
         this.getProduct();
         this.getProductHighlight();
         this.cartDetail();
@@ -170,9 +170,6 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.clickToggle = function () {
         this.isDisplay = !this.isDisplay;
     };
-    __decorate([
-        core_1.ViewChild('scrollMe')
-    ], ProductAnnounComponent.prototype, "myScrollContainer");
     ProductAnnounComponent = __decorate([
         core_1.Component({
             selector: 'app-product-announ',

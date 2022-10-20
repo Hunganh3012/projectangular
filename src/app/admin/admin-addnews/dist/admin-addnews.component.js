@@ -10,11 +10,17 @@ exports.AdminAddnewsComponent = void 0;
 /// <reference types="@types/ckeditor" />
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var ClassicEditor = require("@ckeditor/ckeditor5-build-classic");
 var AdminAddnewsComponent = /** @class */ (function () {
-    function AdminAddnewsComponent(newsService, formBuilder) {
+    function AdminAddnewsComponent(newsService, formBuilder, toastr, router, uploadfileService) {
         this.newsService = newsService;
         this.formBuilder = formBuilder;
+        this.toastr = toastr;
+        this.router = router;
+        this.uploadfileService = uploadfileService;
+        this.Editor = ClassicEditor;
         this.log = '';
+        this.componentEvents = [];
         this.formControlExample = new forms_1.FormControl(20);
         this.submitted = false;
         this.listadd = {
@@ -23,15 +29,12 @@ var AdminAddnewsComponent = /** @class */ (function () {
             days: '',
             athour: ''
         };
+        //Upload File
+        this.file = [];
     }
     AdminAddnewsComponent.prototype.ngOnInit = function () {
         this.form = this.formBuilder.group({
-            nameproduct: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]],
-            // linkphoto: ['',[Validators.required,Validators.minLength(6),]],
-            priceold: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{2,10}")]],
-            sale: ['', [forms_1.Validators.required, forms_1.Validators.pattern("[0-9 ]{1,2}")]],
-            detail: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6),]],
-            acceptTerms: [false, forms_1.Validators.requiredTrue]
+            nameproduct: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]]
         });
         //Ckeditor
         this.ckeConfig = {
@@ -49,6 +52,25 @@ var AdminAddnewsComponent = /** @class */ (function () {
         configurable: true
     });
     AdminAddnewsComponent.prototype.OnSubmit = function () {
+        var _this = this;
+        this.submitted = true;
+        var imageapi = '';
+        if (this.form.valid) {
+            var file_data = this.file[0];
+            var data = new FormData();
+            data.append('file', file_data);
+            data.append('upload_preset', 'project-angular');
+            data.append('cloud_name', 'db1zqfcad');
+            this.uploadfileService.upload(data).subscribe(function (response) {
+                imageapi = response.secure_url;
+                _this.listadd.image = imageapi;
+                console.log(_this.listadd.image);
+                _this.newsService.addNews(_this.listadd).subscribe(function (data) {
+                    _this.router.navigateByUrl('admin/admin-news');
+                    _this.toastr.success('Thêm thành công', 'thông báo');
+                });
+            });
+        }
     };
     AdminAddnewsComponent.prototype.onChange = function ($event) {
         console.log("onChange");
@@ -57,6 +79,15 @@ var AdminAddnewsComponent = /** @class */ (function () {
     AdminAddnewsComponent.prototype.onPaste = function ($event) {
         console.log("onPaste");
         //this.log += new Date() + "<br />";
+    };
+    AdminAddnewsComponent.prototype.onSelect = function (event) {
+        var _a;
+        console.log(event);
+        (_a = this.file).push.apply(_a, event.addedFiles);
+    };
+    AdminAddnewsComponent.prototype.onRemove = function (event) {
+        console.log(event);
+        this.file.splice(this.file.indexOf(event), 1);
     };
     __decorate([
         core_1.ViewChild("myckeditor")

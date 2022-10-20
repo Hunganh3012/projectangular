@@ -13,6 +13,7 @@ type objField = { name: string };
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent implements OnInit {
+  
   fields:any = {
     name: '',
     

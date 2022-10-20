@@ -29,6 +29,7 @@ var admin_news_component_1 = require("./admin-news/admin-news.component");
 var admin_addnews_component_1 = require("./admin-addnews/admin-addnews.component");
 var my_filter_pipe_1 = require("../my-filter.pipe");
 var ng2_ckeditor_1 = require("ng2-ckeditor");
+var drag_drop_1 = require("@angular/cdk/drag-drop");
 // import { NgxPaginationModule } from 'ngx-pagination';
 exports.CustomCurrencyMaskConfig = {
     align: 'left',
@@ -68,7 +69,8 @@ var AdminModule = /** @class */ (function () {
                 forms_1.ReactiveFormsModule,
                 ngx_pagination_1.NgxPaginationModule,
                 ngx_dropzone_1.NgxDropzoneModule,
-                ng2_currency_mask_1.CurrencyMaskModule
+                ng2_currency_mask_1.CurrencyMaskModule,
+                drag_drop_1.DragDropModule,
             ],
             providers: [
                 { provide: ng2_currency_mask_2.CURRENCY_MASK_CONFIG, useValue: exports.CustomCurrencyMaskConfig }

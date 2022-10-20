@@ -68,19 +68,19 @@ export class ProductAnnounComponent implements OnInit {
     
     
     }
-    @ViewChild('scrollMe') private myScrollContainer:any| undefined;
+    // @ViewChild('scrollMe') private myScrollContainer:any| undefined;
 
-    ngAfterViewChecked() {        
-        this.scrollToBottom();        
-    } 
+    // ngAfterViewChecked() {        
+    //     this.scrollToBottom();        
+    // } 
 
-    scrollToBottom(): void {
-        try {
-            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-        } catch(err) { }                 
-    }
+    // scrollToBottom(): void {
+    //     try {
+    //         this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    //     } catch(err) { }                 
+    // }
   ngOnInit(): void {
-    this.scrollToBottom();
+    // this.scrollToBottom();
     this.getProduct();
     this.getProductHighlight();
     this.cartDetail();

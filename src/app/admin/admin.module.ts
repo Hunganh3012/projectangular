@@ -23,6 +23,8 @@ import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { AdminAddnewsComponent } from './admin-addnews/admin-addnews.component';
 import { MyFilterPipe } from '../my-filter.pipe';
 import { CKEditorModule } from 'ng2-ckeditor';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AdminEditnewsComponent } from './admin-editnews/admin-editnews.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -44,7 +46,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     DasboardComponent,
     AdminNewsComponent,
     AdminAddnewsComponent,
- MyFilterPipe   
+ MyFilterPipe,
+ AdminEditnewsComponent   
     // HeadComponent
     // WishlistComponent,
   ],
@@ -58,7 +61,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     ReactiveFormsModule,
     NgxPaginationModule,
     NgxDropzoneModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    DragDropModule,
   ],
   providers: [
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }

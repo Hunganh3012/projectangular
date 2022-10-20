@@ -56,7 +56,7 @@
                                         <div class="category">Healthy</div>
                                     </div>
                                     <h2 class="namehidden"><a routerLink="/web/news-detail/{{newsrow.id}}">{{newsrow.name}}</a></h2>
-                                    <p class="introhidden">{{newsrow.intro}}</p>
+                                    <p class="introhidden" [innerHTML]="newsrow.detail"></p>
                                     <footer>
                                         <a class="btn btn-primary  " routerLink="/web/news-detail/{{newsrow.id}}">
                                                 <div>Xem thêm</div>
@@ -232,8 +232,7 @@
                         <div class="time">{{news.days}}</div>
                       </div>
                       <h1 class="namehidden"><a routerLink="/web/news-detail/{{news.id}}"> {{news.name}}</a></h1>
-                      <p class="introhidden">
-                       {{news.intro}}
+                      <p class="introhidden" [innerHTML]="news.detail">
                       </p>
                       <footer>
                         <a class="btn btn-primary Xem thêm" routerLink="/web/news-detail/{{news.id}}">
