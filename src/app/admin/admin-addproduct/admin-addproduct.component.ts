@@ -62,8 +62,6 @@ export class AdminAddproductComponent implements OnInit {
     );
 
       //UPLOAD FILE
-
-
   }
   img!: CloudinaryImage;
 

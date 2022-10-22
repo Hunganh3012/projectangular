@@ -7,13 +7,13 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news-detail.component.scss']
 })
 export class NewsDetailComponent implements OnInit {
-  newsDetail:any=[]
+  newsDetail:any=[];
   constructor(
     private route:ActivatedRoute,
     private router:Router,
     private newsService:NewsService
 
-  ) { }
+  ) { this.newsDetail.detail='<img'}
 
   ngOnInit(): void {
     this.getNewsDetail()

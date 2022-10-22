@@ -54,7 +54,9 @@ export class AdminEditproductComponent implements OnInit {
   }
   getDetailProduct(){
     this.route.params.subscribe((data:any)=>{
-      this.AdminService.getDetailProduct(data.id).subscribe(data => {this.edit=data})
+      this.AdminService.getDetailProduct(data.id).subscribe(data => {
+        this.edit=data
+      })
     })
   }
   OnSubmit(){

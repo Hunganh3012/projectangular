@@ -12,7 +12,7 @@ import { DasboardComponent } from './dasboard/dasboard.component';
 import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminAddnewsComponent } from './admin-addnews/admin-addnews.component';
-
+import { AdminEditnewsComponent } from './admin-editnews/admin-editnews.component';
 const Adminroutes: Routes = [
     {
       path:'',
@@ -37,6 +37,10 @@ const Adminroutes: Routes = [
         {
           path:'admin-addnews',
           component:AdminAddnewsComponent
+        },
+        {
+          path:'admin-editnews/:id',
+          component:AdminEditnewsComponent
         },
         {
           path:'admin-product',

@@ -48,7 +48,9 @@ var AdminEditproductComponent = /** @class */ (function () {
     AdminEditproductComponent.prototype.getDetailProduct = function () {
         var _this = this;
         this.route.params.subscribe(function (data) {
-            _this.AdminService.getDetailProduct(data.id).subscribe(function (data) { _this.edit = data; });
+            _this.AdminService.getDetailProduct(data.id).subscribe(function (data) {
+                _this.edit = data;
+            });
         });
     };
     AdminEditproductComponent.prototype.OnSubmit = function () {

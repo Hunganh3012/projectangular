@@ -14,6 +14,7 @@ var NewsDetailComponent = /** @class */ (function () {
         this.router = router;
         this.newsService = newsService;
         this.newsDetail = [];
+        this.newsDetail.detail = '<img';
     }
     NewsDetailComponent.prototype.ngOnInit = function () {
         this.getNewsDetail();
