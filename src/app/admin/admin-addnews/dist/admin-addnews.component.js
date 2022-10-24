@@ -27,7 +27,8 @@ var AdminAddnewsComponent = /** @class */ (function () {
             image: '',
             name: '',
             days: '',
-            athour: ''
+            athour: '',
+            time: ''
         };
         //Upload File
         this.file = [];
@@ -56,6 +57,11 @@ var AdminAddnewsComponent = /** @class */ (function () {
         this.submitted = true;
         var imageapi = '';
         if (this.form.valid) {
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+            var timedate = time + " " + date;
+            this.listadd.time = timedate;
             var file_data = this.file[0];
             var data = new FormData();
             data.append('file', file_data);

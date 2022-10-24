@@ -49,7 +49,7 @@ var CartComponent = /** @class */ (function () {
     };
     CartComponent.prototype.successbuy = function () {
         this.adminService.clearCart(this.getCartDetail);
-        this.Router.navigateByUrl("/web/product");
+        this.Router.navigateByUrl("/web/product-announ");
         this.authService.open();
         this.isShowClose = true;
         this.cartNumberFunc();

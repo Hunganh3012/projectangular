@@ -21,11 +21,11 @@
                     </tr>
                 </thead>
                 <tbody *ngFor=" let list of listNews">
-                    <tr ng-app="">
+                    <tr ng-app="" routerLink="../admin-editnews/{{list.id}}">
                         <td>{{list.id}}</td>
                         <td><img src="{{list.image}}" alt="" class="anhsanpham"></td>
                         <td class="text-left">{{list.name}}</td>
-                        <td>{{list.days}}</td>
+                        <td>{{list.time}}</td>
                         <td>*</td>
                         <td>
                             <button routerLink="/admin/admin-editnews/{{list.id}}" class="buttonclick"> <i class="fa-solid fa-pen-to-square"></i></button> 
