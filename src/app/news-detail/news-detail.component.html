@@ -32,68 +32,31 @@
                         <article class="article-fw">
                             <div class="inner">
                                 <figure>
-                                    <a href="single.html">												
-                                        <img src="https://24hstore.vn/images/news/2022/09/23/resized/ava-tin-tuc-24hstore-520x290--7_1663903332.png">
+                                    <a routerLink="/web/news-detail/{{newsrecent.id}}">												
+                                        <img src="{{newsrecent.image}}">
                                     </a>
                                 </figure>
                                 <div class="details">
-                                    <h1><a href="single.html">Sắm Mac ngay - Nhận phiếu mua hàng liền tay</a></h1>
-                                    <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
+                                    <h1><a href="single.html">{{newsrecent.name}}</a></h1>
+                                    <div class="fixxuongdong" [innerHTML]="newsrecent.detail"></div>
                                     <div class="detail">
-                                        <div class="time">December 26, 2016</div>
-                                        <div class="category"><a href="category.html">Lifestyle</a></div>
+                                        <div class="time">{{newsrecent.time}}</div>
                                     </div>
                                 </div>
                             </div>
                         </article>
                         <div class="line"></div>
-                        <article class="article-mini">
+                        <article *ngFor="let item3 of listnews3item" class="article-mini">
                             <div class="inner">
                                 <figure>
-                                    <a href="single.html">
-                                        <img src="https://media.istockphoto.com/photos/drinks-for-celebration-4th-of-july-picture-id1253112566?b=1&k=20&m=1253112566&s=170667a&w=0&h=B44z9FlmyCBvwjTpNbYFO48dkFcoMSwac4PTbDdoqz0=">
+                                    <a routerLink="/web/news-detail/{{item3.id}}">
+                                        <img src="{{item3.image}}">
                                     </a>
                                 </figure>
                                 <div class="padding">
-                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                                    <h1><a  routerLink="/web/news-detail/{{item3.id}}">{{item3.name}}</a></h1>
                                     <div class="detail">
-                                        <div class="category"><a href="category.html">Lifestyle</a></div>
-                                        <div class="time">December 22, 2016</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="images/news/img02.jpghttps://media.istockphoto.com/photos/drinks-for-celebration-4th-of-july-picture-id1253112566?b=1&k=20&m=1253112566&s=170667a&w=0&h=B44z9FlmyCBvwjTpNbYFO48dkFcoMSwac4PTbDdoqz0=">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
-                                    <div class="detail">
-                                        <div class="category"><a href="category.html">Travel</a></div>
-                                        <div class="time">December 21, 2016</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="https://media.istockphoto.com/photos/drinks-for-celebration-4th-of-july-picture-id1253112566?b=1&k=20&m=1253112566&s=170667a&w=0&h=B44z9FlmyCBvwjTpNbYFO48dkFcoMSwac4PTbDdoqz0=">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-                                    <div class="detail">
-                                        <div class="category"><a href="category.html">International</a></div>
-                                        <div class="time">December 20, 2016</div>
+                                        <div class="time">{{item3.time}}</div>
                                     </div>
                                 </div>
                             </div>

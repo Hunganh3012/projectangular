@@ -199,6 +199,17 @@
     padding: 0 15px;
     margin: 0 auto;
 }
+.fixxuongdong{
+  display: block;
+  display: -webkit-box;
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+}
   .bold {
     font-weight: 600;
   }

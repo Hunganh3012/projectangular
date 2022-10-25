@@ -14,10 +14,14 @@ var NewsDetailComponent = /** @class */ (function () {
         this.router = router;
         this.newsService = newsService;
         this.newsDetail = [];
+        this.newsrecent = [];
+        this.listnews3item = [];
         this.newsDetail.detail = '<img';
     }
     NewsDetailComponent.prototype.ngOnInit = function () {
         this.getNewsDetail();
+        this.Newsrecent();
+        this.listNews3item();
     };
     NewsDetailComponent.prototype.getNewsDetail = function () {
         var _this = this;
@@ -26,6 +30,18 @@ var NewsDetailComponent = /** @class */ (function () {
                 _this.newsDetail = data;
                 console.log(_this.newsDetail);
             });
+        });
+    };
+    NewsDetailComponent.prototype.Newsrecent = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.newsrecent = data.reverse()[0];
+        });
+    };
+    NewsDetailComponent.prototype.listNews3item = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.listnews3item = data.reverse().splice(1, 4);
         });
     };
     NewsDetailComponent = __decorate([

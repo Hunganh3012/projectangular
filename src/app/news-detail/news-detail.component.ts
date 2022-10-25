@@ -17,6 +17,8 @@ export class NewsDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNewsDetail()
+    this.Newsrecent()
+    this.listNews3item()
   }
   getNewsDetail(){
     this.route.params.subscribe((data:any)=>{
@@ -24,6 +26,18 @@ export class NewsDetailComponent implements OnInit {
         this.newsDetail=data;
         console.log(this.newsDetail)
       })
+    })
+  }
+  newsrecent:any=[]
+  Newsrecent(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.newsrecent=data.reverse()[0];
+    })
+  }
+  listnews3item:any=[]
+  listNews3item(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.listnews3item=data.reverse().splice(1,4);
     })
   }
 }
