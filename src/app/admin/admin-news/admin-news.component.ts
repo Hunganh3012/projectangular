@@ -8,10 +8,26 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./admin-news.component.scss']
 })
 export class AdminNewsComponent implements OnInit {
+  totalLength:any;
+  page:number=1;
+  fields:any = {
+    name: '',
+    
+  };
+  filter1 = {};
+  filter = {};
 
+  public labels:any={   
+    previousLabel:'',
+    nextLabel:'',
+  }
   constructor(private newsService:NewsService, private toastr:ToastrService) { }
   ngOnInit(): void {
     this.getNews();
+  }
+  updateFilters() {
+    Object.keys(this.fields).forEach(key => this.fields[key] === '' ? delete this.fields[key] : key);
+    this.filter = Object.assign({}, this.fields);
   }
   listNews:any=[];
   getNews(){

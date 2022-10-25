@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
   }
   clearCart(item:any){
     this.adminService.clearCart(this.getCartDetail);
-    this.cartNumber=0;
+
     this.cartNumberFunc();
     this.productNumberFunc();
     this.toastr.success('Xóa thành công giỏ hàng','thông báo')
@@ -72,6 +72,7 @@ export class CartComponent implements OnInit {
     {qtyTotal:1, priceold:0}
     ).priceold;
   }
+
   increase(prod:any){
       prod.qtyTotal +=1;
       this.productNumberFunction(); 
@@ -129,12 +130,4 @@ export class CartComponent implements OnInit {
   }
 
 
-  close(){
-    this.authService.close();
-    this.isShowClose=false;
-  } 
-  open(){
-    this.authService.open();
-    this.isShowClose=true;
-  } 
 }

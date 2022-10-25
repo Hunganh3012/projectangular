@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../admin/admin.service';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -8,6 +9,7 @@ import { AdminService } from '../admin/admin.service';
 })
 export class DetailComponent implements OnInit {
   cartNumber:number =0;
+  cartDetailHeader:any=''
   detail:any=[];
   constructor(private AdminService:AdminService, private route:ActivatedRoute,private Router:Router, ) { }
 
@@ -16,15 +18,22 @@ export class DetailComponent implements OnInit {
   }
   addtocart(item:any){
     item.qtyTotal=1;
-    if(!this.AdminService.itemInCart(item)){
+   
       this.AdminService.addtoCart(item)
       this.cartNumberFunc();
-    }
+      this.cartDetailheaderFunc()
+    
   }
   cartNumberFunc(){
     var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
     this.cartNumber=cartValue.length;
-    this.AdminService.cartSubject.next(this.cartNumber)
+    this.AdminService.cartSubject.next(this.cartNumber);
+  }
+  cartDetailheaderFunc(){
+    var cartValue=JSON.parse(localStorage.getItem('cart-item') || '{}');
+    this.cartDetailHeader=cartValue;
+    console.log(this.cartDetailHeader)
+    this.AdminService.productmini.next(this.cartDetailHeader)
   }
   productDetail(){
     this.route.params.subscribe((data:any)=>{

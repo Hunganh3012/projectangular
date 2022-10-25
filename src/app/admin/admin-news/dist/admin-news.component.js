@@ -13,10 +13,25 @@ var AdminNewsComponent = /** @class */ (function () {
     function AdminNewsComponent(newsService, toastr) {
         this.newsService = newsService;
         this.toastr = toastr;
+        this.page = 1;
+        this.fields = {
+            name: ''
+        };
+        this.filter1 = {};
+        this.filter = {};
+        this.labels = {
+            previousLabel: '',
+            nextLabel: ''
+        };
         this.listNews = [];
     }
     AdminNewsComponent.prototype.ngOnInit = function () {
         this.getNews();
+    };
+    AdminNewsComponent.prototype.updateFilters = function () {
+        var _this = this;
+        Object.keys(this.fields).forEach(function (key) { return _this.fields[key] === '' ? delete _this.fields[key] : key; });
+        this.filter = Object.assign({}, this.fields);
     };
     AdminNewsComponent.prototype.getNews = function () {
         var _this = this;

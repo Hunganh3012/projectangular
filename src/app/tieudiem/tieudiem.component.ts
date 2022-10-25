@@ -40,7 +40,9 @@ export class TieudiemComponent implements OnInit {
 listNews:any=[];
 listNewsSlide:any=[];
 totalLength:any;
+totalLengths:any;
 page:number=1;
+
 public labels:any={   
   previousLabel:'',
   nextLabel:'',
@@ -50,21 +52,37 @@ public labels:any={
   ngOnInit(): void {
     this.getNews()
     this.getNewsSlide();
+    this.Newsrecent()
+    this.getNews3item();
   }
   loader=true;
   getNews(){
     return this.newsService.getNews().subscribe((data:any)=>{
-      setTimeout(()=>{
+      
         this.listNews=data;
 
         this.loader=false;
-      },1000)
+     
     })
   }
   getNewsSlide(){
     return this.newsService.getNews().subscribe((data:any)=>{
       this.listNewsSlide=data.slice(0,4)
       console.log(this.listNewsSlide)
+    })
+  }
+  listNews3item:any=[]
+  getNews3item(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.listNews3item=data.reverse().slice(1,4);
+      
+    })
+  }
+  listrecent:any=[]
+  Newsrecent(){
+    return this.newsService.getNews().subscribe((data:any)=>{
+      this.listrecent=data.reverse()[0]
+      console.log(this.listrecent)
     })
   }
 }

@@ -9,6 +9,25 @@
     width: 100vw;
 
 }
+.addbutton{
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: white;
+    background-color: #034DA2;
+    border: none;
+    border-radius: 6px;
+    &:hover{
+        background-color: #034da2bf;
+        color: white;
+    }
+}
+.custombutton{
+    border: 1px solid #034DA2;;
+    &:hover{background-color: #034DA2;color: white;}
+}
 .container{
     
     max-width: 1170px;

@@ -58,7 +58,6 @@ var CartComponent = /** @class */ (function () {
     };
     CartComponent.prototype.clearCart = function (item) {
         this.adminService.clearCart(this.getCartDetail);
-        this.cartNumber = 0;
         this.cartNumberFunc();
         this.productNumberFunc();
         this.toastr.success('Xóa thành công giỏ hàng', 'thông báo');
@@ -109,14 +108,6 @@ var CartComponent = /** @class */ (function () {
         this.productcart = productValue;
         console.log(this.productcart);
         this.adminService.productmini.next(this.productcart);
-    };
-    CartComponent.prototype.close = function () {
-        this.authService.close();
-        this.isShowClose = false;
-    };
-    CartComponent.prototype.open = function () {
-        this.authService.open();
-        this.isShowClose = true;
     };
     __decorate([
         core_2.ViewChildren('subTotalWrap')

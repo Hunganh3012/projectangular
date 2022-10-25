@@ -14,6 +14,7 @@ var DetailComponent = /** @class */ (function () {
         this.route = route;
         this.Router = Router;
         this.cartNumber = 0;
+        this.cartDetailHeader = '';
         this.detail = [];
     }
     DetailComponent.prototype.ngOnInit = function () {
@@ -21,15 +22,20 @@ var DetailComponent = /** @class */ (function () {
     };
     DetailComponent.prototype.addtocart = function (item) {
         item.qtyTotal = 1;
-        if (!this.AdminService.itemInCart(item)) {
-            this.AdminService.addtoCart(item);
-            this.cartNumberFunc();
-        }
+        this.AdminService.addtoCart(item);
+        this.cartNumberFunc();
+        this.cartDetailheaderFunc();
     };
     DetailComponent.prototype.cartNumberFunc = function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.cartNumber = cartValue.length;
         this.AdminService.cartSubject.next(this.cartNumber);
+    };
+    DetailComponent.prototype.cartDetailheaderFunc = function () {
+        var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
+        this.cartDetailHeader = cartValue;
+        console.log(this.cartDetailHeader);
+        this.AdminService.productmini.next(this.cartDetailHeader);
     };
     DetailComponent.prototype.productDetail = function () {
         var _this = this;

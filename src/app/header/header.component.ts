@@ -21,8 +21,9 @@ export class HeaderComponent implements OnInit {
     this.adminService.productmini.subscribe(data =>{
       this.CartDetailheader=data;
     })
+    
   }
-  public qtyCart:any;
+
   public totalItem:number=0;
   numberProduct:any=[];
   productCart:any=[];

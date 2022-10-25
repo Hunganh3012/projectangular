@@ -157,17 +157,7 @@ export class ProductAnnounComponent implements OnInit {
 
     }
   }
-  Desc(prod:any){
-    if(prod.qtyTotal!=0){
-      prod.qtyTotal-=1;
-    }
-  }
-  Insc(prod:any){
-    if(prod.qtyTotal!=10){
-      prod.qtyTotal+=1;
-    }
 
-  }
   addtoCart(product:any){
     product.qtyTotal=1;
     // console.log(item);

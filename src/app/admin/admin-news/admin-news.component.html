@@ -2,9 +2,15 @@
     <!-- <h1 class="header title admin-highlight">
         Danh sách quản lý  sản phẩm
     </h1> -->
-
-    <a routerLink="/admin/admin-addnews" class="addproduct-link float-right">Thêm mới</a>
-
+    <div class="float-right">
+        <a routerLink="/admin/admin-addnews" class="addproduct-link float-right">Thêm mới</a>
+        <div class="input-group float-right mt-2" >
+            <input type="search" class=" form-control  " placeholder="Search" 
+            aria-label="Search" aria-describedby="search-addon"    [(ngModel)]="fields.name"
+            (ngModelChange)="updateFilters()"/>
+            <button type="button" class="btn btn-outline  custombutton">search</button>
+        </div>
+    </div>
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -20,11 +26,11 @@
                         <th>Admin</th>
                     </tr>
                 </thead>
-                <tbody *ngFor=" let list of listNews">
-                    <tr ng-app="" routerLink="../admin-editnews/{{list.id}}">
+                <tbody *ngFor=" let list of listNews | myFilter :filter | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength}">
+                    <tr ng-app="" >
                         <td>{{list.id}}</td>
-                        <td><img src="{{list.image}}" alt="" class="anhsanpham"></td>
-                        <td class="text-left">{{list.name}}</td>
+                        <td routerLink="../admin-editnews/{{list.id}}" ><img src="{{list.image}}" alt="" class="anhsanpham"></td>
+                        <td routerLink="../admin-editnews/{{list.id}}"class="text-left">{{list.name}}</td>
                         <td>{{list.time}}</td>
                         <td>*</td>
                         <td>
@@ -37,6 +43,15 @@
             
         </div>
     </div>  
+    <div class="container pag-fix">
+        <pagination-controls 
+
+        (pageChange)="page = $event"
+        style="text-align:center"
+        [previousLabel]="labels.previousLabel"
+        [nextLabel]="labels.nextLabel"
+        ></pagination-controls>
+    </div>
     <!-- <div class="container pag-fix">
         <pagination-controls 
 

@@ -46,18 +46,20 @@ var TieudiemComponent = /** @class */ (function () {
             nextLabel: ''
         };
         this.loader = true;
+        this.listNews3item = [];
+        this.listrecent = [];
     }
     TieudiemComponent.prototype.ngOnInit = function () {
         this.getNews();
         this.getNewsSlide();
+        this.Newsrecent();
+        this.getNews3item();
     };
     TieudiemComponent.prototype.getNews = function () {
         var _this = this;
         return this.newsService.getNews().subscribe(function (data) {
-            setTimeout(function () {
-                _this.listNews = data;
-                _this.loader = false;
-            }, 1000);
+            _this.listNews = data;
+            _this.loader = false;
         });
     };
     TieudiemComponent.prototype.getNewsSlide = function () {
@@ -65,6 +67,19 @@ var TieudiemComponent = /** @class */ (function () {
         return this.newsService.getNews().subscribe(function (data) {
             _this.listNewsSlide = data.slice(0, 4);
             console.log(_this.listNewsSlide);
+        });
+    };
+    TieudiemComponent.prototype.getNews3item = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.listNews3item = data.reverse().slice(1, 4);
+        });
+    };
+    TieudiemComponent.prototype.Newsrecent = function () {
+        var _this = this;
+        return this.newsService.getNews().subscribe(function (data) {
+            _this.listrecent = data.reverse()[0];
+            console.log(_this.listrecent);
         });
     };
     TieudiemComponent = __decorate([

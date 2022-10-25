@@ -137,16 +137,6 @@ var ProductAnnounComponent = /** @class */ (function () {
             this.products = JSON.parse(localStorage.getItem('cart-item') || '{}');
         }
     };
-    ProductAnnounComponent.prototype.Desc = function (prod) {
-        if (prod.qtyTotal != 0) {
-            prod.qtyTotal -= 1;
-        }
-    };
-    ProductAnnounComponent.prototype.Insc = function (prod) {
-        if (prod.qtyTotal != 10) {
-            prod.qtyTotal += 1;
-        }
-    };
     ProductAnnounComponent.prototype.addtoCart = function (product) {
         product.qtyTotal = 1;
         // console.log(item);
