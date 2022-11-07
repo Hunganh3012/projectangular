@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.AdminProductComponent = void 0;
 var core_1 = require("@angular/core");
 var sweetalert2_1 = require("sweetalert2");
+var drag_drop_1 = require("@angular/cdk/drag-drop");
 var AdminProductComponent = /** @class */ (function () {
     function AdminProductComponent(AdminService, toastr) {
         this.AdminService = AdminService;
@@ -61,6 +62,9 @@ var AdminProductComponent = /** @class */ (function () {
                 });
             }
         });
+    };
+    AdminProductComponent.prototype.drop = function (event) {
+        drag_drop_1.moveItemInArray(this.listproductAdmin, event.previousIndex, event.currentIndex);
     };
     AdminProductComponent = __decorate([
         core_1.Component({

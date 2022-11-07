@@ -15,7 +15,6 @@ var admin_contact_component_1 = require("./admin-contact/admin-contact.component
 var admin_product_component_1 = require("./admin-product/admin-product.component");
 var admin_addproduct_component_1 = require("./admin-addproduct/admin-addproduct.component");
 var sidebar_component_1 = require("./sidebar/sidebar.component");
-// import { FormsModule } from '@angular/forms';
 var admin_editproduct_component_1 = require("./admin-editproduct/admin-editproduct.component");
 var admin_option_component_1 = require("./admin-option/admin-option.component");
 var ngx_pagination_1 = require("ngx-pagination");
@@ -30,7 +29,10 @@ var admin_addnews_component_1 = require("./admin-addnews/admin-addnews.component
 var my_filter_pipe_1 = require("../my-filter.pipe");
 var ng2_ckeditor_1 = require("ng2-ckeditor");
 var drag_drop_1 = require("@angular/cdk/drag-drop");
+var admin_editnews_component_1 = require("./admin-editnews/admin-editnews.component");
 // import { NgxPaginationModule } from 'ngx-pagination';
+var button_1 = require("@angular/material/button");
+var checkbox_1 = require("@angular/material/checkbox");
 exports.CustomCurrencyMaskConfig = {
     align: 'left',
     allowNegative: false,
@@ -55,11 +57,14 @@ var AdminModule = /** @class */ (function () {
                 dasboard_component_1.DasboardComponent,
                 admin_news_component_1.AdminNewsComponent,
                 admin_addnews_component_1.AdminAddnewsComponent,
-                my_filter_pipe_1.MyFilterPipe
+                my_filter_pipe_1.MyFilterPipe,
+                admin_editnews_component_1.AdminEditnewsComponent
                 // HeadComponent
                 // WishlistComponent,
             ],
             imports: [
+                button_1.MatButtonModule,
+                checkbox_1.MatCheckboxModule,
                 common_1.CommonModule,
                 ng2_ckeditor_1.CKEditorModule,
                 ng2_file_upload_1.FileUploadModule,

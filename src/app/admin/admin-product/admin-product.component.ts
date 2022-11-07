@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2'
 import * as $ from 'jquery';
 import * as ClassicEditorBuild from "@ckeditor/ckeditor5-build-classic";
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
 type objField = { name: string };
 
 @Component({
@@ -70,5 +72,8 @@ export class AdminProductComponent implements OnInit {
       }
     })
     
+  }
+  drop(event: CdkDragDrop<any>) {
+    moveItemInArray(this.listproductAdmin, event.previousIndex, event.currentIndex);
   }
 }

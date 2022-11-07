@@ -143,7 +143,6 @@ export class ProductAnnounComponent implements OnInit {
       // console.log(this.listProduct)
     })
   }
-
   getProductHighlight(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
       // console.log(data.splice(5,9))
@@ -157,6 +156,8 @@ export class ProductAnnounComponent implements OnInit {
 
     }
   }
+
+
 
   addtoCart(product:any){
     product.qtyTotal=1;

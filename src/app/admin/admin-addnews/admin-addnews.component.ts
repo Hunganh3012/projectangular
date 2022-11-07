@@ -68,7 +68,6 @@ export class AdminAddnewsComponent implements OnInit {
     let imageapi:any='';
     if(this.form.valid){
       var today=new Date();
-      // var time = today.getHours() + ":" + today.getMinutes() +":"+ today.getSeconds();
       var date=  today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
       var timedate=date;
       this.listadd.time=timedate;
