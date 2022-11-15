@@ -135,11 +135,14 @@ export class ProductAnnounComponent implements OnInit {
   loader=true;
   getProduct(){
     return this.AdminService.getProduct().subscribe( (data:any)=>{
-      setTimeout(()=>{
-        this.listProduct= data;
+      // setTimeout(()=>{
+      //   this.listProduct= data;
+      //   this.totalLength=data.length;
+      //   this.loader=false;
+      // },2000)
+      this.listProduct= data;
         this.totalLength=data.length;
         this.loader=false;
-      },2000)
       // console.log(this.listProduct)
     })
   }

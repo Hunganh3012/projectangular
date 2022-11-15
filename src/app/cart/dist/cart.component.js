@@ -24,7 +24,6 @@ var CartComponent = /** @class */ (function () {
         this.totalItem = 0;
         this.getCartDetail = [];
         this.cartNumber = 0;
-        this.productcarts = [];
         // changeSubtotal(item:any, index:number) {
         //   const qty = item.qtyTotal;
         //   console.log(qty)
@@ -65,6 +64,7 @@ var CartComponent = /** @class */ (function () {
     CartComponent.prototype.removeFromCart = function (item) {
         this.adminService.removeItem(item);
         this.getCartDetail = this.adminService.getItems();
+        console.log(this.getCartDetail);
         this.cartNumberFunc();
         this.productNumberFunc();
         this.toastr.success('Xóa thành công', 'thông báo');
@@ -81,7 +81,7 @@ var CartComponent = /** @class */ (function () {
     });
     CartComponent.prototype.increase = function (prod) {
         prod.qtyTotal += 1;
-        this.productNumberFunction();
+        this.productNumberFunc();
         localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
         // this.getCartDetail = this.adminService.getItem();
         // this.qtyNumberFunc(prod.qtyTotal)
@@ -89,7 +89,7 @@ var CartComponent = /** @class */ (function () {
     CartComponent.prototype.decrease = function (prod) {
         if (prod.qtyTotal != 0) {
             prod.qtyTotal -= 1;
-            this.productNumberFunction();
+            this.productNumberFunc();
             localStorage.setItem('cart-item', JSON.stringify(this.getCartDetail));
         }
     };
@@ -97,11 +97,6 @@ var CartComponent = /** @class */ (function () {
         var cartValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
         this.cartNumber = cartValue.length;
         this.adminService.cartSubject.next(this.cartNumber);
-    };
-    CartComponent.prototype.productNumberFunction = function () {
-        var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');
-        this.productcart = productValue;
-        this.adminService.productmini.next(this.productcart);
     };
     CartComponent.prototype.productNumberFunc = function () {
         var productValue = JSON.parse(localStorage.getItem('cart-item') || '{}');

@@ -143,6 +143,7 @@ var AdminService = /** @class */ (function () {
     AdminService.prototype.clearCart = function (items) {
         this.cartItemList = [];
         localStorage.removeItem("cart-item");
+        this.loadCart();
     };
     // removeItem(item:any) {
     //   const index = this.cartItemList.findIndex((o:any) => o.id === item.id);

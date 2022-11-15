@@ -117,11 +117,14 @@ var ProductAnnounComponent = /** @class */ (function () {
     ProductAnnounComponent.prototype.getProduct = function () {
         var _this = this;
         return this.AdminService.getProduct().subscribe(function (data) {
-            setTimeout(function () {
-                _this.listProduct = data;
-                _this.totalLength = data.length;
-                _this.loader = false;
-            }, 2000);
+            // setTimeout(()=>{
+            //   this.listProduct= data;
+            //   this.totalLength=data.length;
+            //   this.loader=false;
+            // },2000)
+            _this.listProduct = data;
+            _this.totalLength = data.length;
+            _this.loader = false;
             // console.log(this.listProduct)
         });
     };

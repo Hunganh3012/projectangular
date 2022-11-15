@@ -131,7 +131,7 @@ export class AdminService {
         if(index == -1){
           this. cartItemList.push(product);
           
-          console.log(this. cartItemList)
+          console.log(this. cartItemList);
           localStorage.setItem('cart-item',JSON.stringify(this. cartItemList))
 
         }
@@ -151,6 +151,7 @@ export class AdminService {
     clearCart(items:any){
       this.cartItemList=[];
       localStorage.removeItem("cart-item");
+      this.loadCart()
     }
     // removeItem(item:any) {
     //   const index = this.cartItemList.findIndex((o:any) => o.id === item.id);

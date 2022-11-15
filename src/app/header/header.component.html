@@ -99,13 +99,14 @@
                                 
                                 </ul>
                                 <div class="add-cart-button">
-                                    <a routerLink="/web/cart" class="">Total :  {{Totals | currency: 'VND':'symbol':'1.2-2'}}0</a>
+                                    <!-- <a routerLink="/web/cart" class="">Total :  {{Totals | currency: 'VND':'symbol':'1.2-2'}}0</a> -->
                                     <!-- <a routerLink="/cart" class="">Thành tiền: {{Total | currency: 'VND':'symbol':'1.2-2'}}0</a> -->
                                     <a routerLink="/web/cart" > <i class="fa-solid fa-cart-shopping mr-3"></i>Xem giỏ hàng</a>
                                 </div>
                             </div>
                     </i></a>
-                    <a class="nav-menu-item users" style="text-decoration:none; cursor:pointer; padding:10px 0px;" *ngIf="isShow" (click)="showdropdownadmin()">Quan tri vien
+                    <a class="nav-menu-item users" style="text-decoration:none; cursor:pointer; padding:10px 0px;" *ngIf="isShow" (click)="showdropdownadmin()">
+                        Quan tri vien
                         <img src="./assets/images/drop-down.png" alt="" class="nav-icon-dropdown">
                         <div class="user-dropdown" [hidden]="dropdownmo">
                             <span class="user-dropdown-item"><a routerLink="/admin/" >Tài khoản của tôi</a></span>
