@@ -37,7 +37,7 @@ export class DetailComponent implements OnInit {
   }
   productDetail(){
     this.route.params.subscribe((data:any)=>{
-      this.AdminService.porductdetail(data.id).subscribe(data =>{
+      this.AdminService.getDetailProduct(data.id).subscribe(data =>{
         this.detail=data;
         console.log(this.detail);
        

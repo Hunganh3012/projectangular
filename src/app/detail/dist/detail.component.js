@@ -40,7 +40,7 @@ var DetailComponent = /** @class */ (function () {
     DetailComponent.prototype.productDetail = function () {
         var _this = this;
         this.route.params.subscribe(function (data) {
-            _this.AdminService.porductdetail(data.id).subscribe(function (data) {
+            _this.AdminService.getDetailProduct(data.id).subscribe(function (data) {
                 _this.detail = data;
                 console.log(_this.detail);
             });

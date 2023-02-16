@@ -42,9 +42,6 @@ var AdminService = /** @class */ (function () {
     AdminService.prototype.updateProduct = function (id, data) {
         return this.http.put(this.API_Product + "/" + id, data);
     };
-    AdminService.prototype.porductdetail = function (id) {
-        return this.http.get(this.API_Product + "/" + id);
-    };
     AdminService.prototype.addtowishlist = function (wlist) {
         console.log(wlist);
         var cartDataNull = localStorage.getItem('wlist-item');

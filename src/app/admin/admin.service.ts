@@ -26,9 +26,7 @@ export class AdminService {
   updateProduct(id:number, data:any){
     return this.http.put(`${this.API_Product}/${id}`,data)
   }
-  porductdetail(id:number){
-    return this.http.get(`${this.API_Product}/${id}`)
-  }
+
   hideSubject=new Subject<any>();
   OpenLoginService=new Subject<any>();
   cartSubject=new Subject<any>()
